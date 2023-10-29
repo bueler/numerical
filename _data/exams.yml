@@ -1,0 +1,17 @@
+semester: Spring 2024
+home: assets/exams/S24
+exams:
+- name: Midterm Quiz 1
+  #date: Wednesday 11 October
+  info: <b>in class</b> or proctored
+  #reviewguide: mid1review.pdf
+  #blank: mid1.pdf
+  #solutions: mid1solns.pdf
+- name: Midterm Quiz 2
+  #date: Wednesday 15 November
+  info: <b>in class</b> or proctored
+- name: Final Exam
+  #date: Wednesday 13 December, 1-3 pm
+  info: <b>in class</b> or proctored
+  #doc: finalessays.pdf
+  #rubric: finalrubric.pdf

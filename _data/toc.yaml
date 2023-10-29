@@ -1,0 +1,21 @@
+sidenavtitle: 'MATH F617'
+
+docs:
+
+- title: Advertisement
+  url: assets/general/S24/advert.pdf  # delete once course started
+
+- title: Syllabus
+  url: assets/general/S24/syllabus.pdf  # rebuild by "make syllabus.pdf" in assets/general/S24/
+
+- title: Schedule
+  url: assets/general/S24/schedule.pdf  # rebuild by "make schedule.pdf" in assets/general/S24/
+
+- title: Homework
+  url: homework.html
+
+- title: Exams
+  url: exams.html
+
+- title: Worksheets
+  url: worksheets.html

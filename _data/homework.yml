@@ -1,0 +1,10 @@
+semester: Spring 2024
+home: assets/homework/S24
+homework:
+#- name: Assignment 1
+#  due: Wed 6 September
+#  blank: A1.pdf
+#  sections: Lectures 1,2
+
+#  seealsoname: Classical iterative methods slides
+#  seealsopdf: https://bueler.github.io/nade/assets/slides/iterative.pdf
