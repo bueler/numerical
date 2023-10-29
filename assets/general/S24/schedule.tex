@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage[top=1.0in, bottom=0.5in, left=0.9in, right=1.0in]{geometry}
+
+\usepackage{tabularx,enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{palatino}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,urlcolor=black]{hyperref}
+
+% commands to put defined left and right headers on the top
+% and a page number on the bottom of all pages after 1
+\pagestyle{fancy}
+\makeatletter
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[R]{\ifx\@docdate\@empty\else\@docdate\fi}
+\headheight 15pt
+\headsep 5pt
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\def\docdate#1{\gdef\@docdate{#1}}
+\makeatother
+
+%% General formatting parameters
+\parindent 0pt
+\parskip 6pt plus 1pt
+
+% header content
+\doclabel{Math 614 Numerical Linear Algebra}
+\docdate{Fall 2023 (Bueler)}
+
+% macros
+\renewcommand{\d}{\displaystyle}
+\newcommand{\wkday}[3]{\textbf{\large #1\strut}\quad #2\,--\,#3}
+\newcommand{\vacinline}[1]{{\color{OliveGreen} \textsl{#1}}}
+\newcommand{\vac}[1]{\strut \small{\vacinline{#1}}}
+\newcommand{\due}[1]{\strut {\color{BrickRed} \textsl{#1}}}
+\newcommand{\hdue}[1]{\due{#1 due}}
+\newcommand{\proj}[1]{\strut {\color{RedOrange} #1}}
+\newcommand{\ee}[1]{\strut {\color{Blue} \textbf{#1}}}
+\newcommand{\dlinline}[1]{{\color{Purple} \textbf{#1}}}
+\newcommand{\dl}[1]{{\footnotesize \dlinline{#1}}}
+
+
+\begin{document}
+\hfill \small \emph{version 1: \today} \normalsize
+
+\bigskip\bigskip
+\centerline{\Large \textbf{Weekly Schedule}}
+
+\bigskip
+The schedule below is subject to changes!  See the public course webpage
+
+\medskip
+
+\centerline{\href{https://bueler.github.io/fa/index.html}{\texttt{bueler.github.io/fa/}}}
+
+\noindent for \due{Homework} and \ee{Exam} details.  Homework is due at the start of class.  Textbook Lecture numbers are in black.  Note some \dl{deadlines}.  Classes are MWF FIXME, FIXME.
+
+\bigskip
+
+\begin{tabularx}{1.03\textwidth}{l|>{\raggedright\arraybackslash}X|X|X|}
+\textbf{Week} \quad Dates & M & W & F \\ \hline
+
+\wkday{1}{X}{X}     & 1 &  &  \\ \hline
+
+\wkday{2}{X}{X}     &  \\ \hline
+
+\wkday{16}{X}{X}    &  & \ee{Final Exam} \par X--X &   \\ \hline
+
+\end{tabularx}
+
+
+\end{document}

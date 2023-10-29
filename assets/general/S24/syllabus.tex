@@ -1,0 +1,186 @@
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=1.2in, bottom=0.9in, left=1in, right=1in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=1.0]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,hyperref}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdfauthor={Ed Bueler}
+    pdftitle={Syllabus for MATH F614 Fall 2023},
+    }
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+%\chead{\large\sf\textbf{}}
+\lhead{\large\sf\textbf{Syllabus MATH F617}}
+\rhead{\large\sf\textbf{Spring 2024}}
+  
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1} \smallskip\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+\newenvironment{clist}%
+{\bgroup\parskip 0pt\begin{list}{$\bullet$}{\partopsep 4pt\topsep 0pt\itemsep -2pt}}%
+{\end{list}\egroup}%
+
+
+\begin{document}
+
+\strut\par\vskip-12pt
+\heading{Essential Information}
+
+\vskip -12pt
+\strut\hbox to \hsize{\tableindent\vtop{\halign{#\hfill\ts&#\hfil\cr
+{\emph{Course Title}} & {\Large Functional Analysis} \cr
+\strut & \cr
+{\emph{Instructor}} & Ed Bueler \quad \href{mailto:elbueler@alaska.edu}{\texttt{elbueler\@@alaska.edu}} \cr
+\strut & \cr
+{\emph{Class meeting}} & MWF FIXME, FIXME \cr
+\strut & \cr
+{\emph{CRNs}} & in-person:\, X \quad online: X \href{https://canvas.alaska.edu/courses/X}{(find zoom link on Canvas)}\cr
+\strut & \cr
+{\emph{Public website}} & \href{https://bueler.github.io/fa/}{\texttt{bueler.github.io/fa}}\cr
+\strut & \cr
+{\emph{Canvas website}} & \href{https://canvas.alaska.edu/courses/X}{\texttt{canvas.alaska.edu/courses/X}} \cr
+\strut & \cr
+\emph{Required text} & D.~Borthwick, \textsl{Spectral Theory}, Graduate Texts in Mathematics 284 \cr
+ & Springer 2020\cr
+}
+\hfil}}
+
+
+\heading{Description}
+FIXME
+
+\heading{Course Goals and Student Learning Outcomes}
+At the end you will be able to FIXME
+
+
+%\clearpage \newpage
+%\phantom{foo}
+\heading{Prerequisites}
+FIXME In summary, the prerequisites are undergraduate linear algebra, exposure to or interest in scientific programming, and a certain amount of mathematical maturity.
+
+Officially: \textsl{MATH F314 Linear Algebra and MATH 401 Introduction to Real Analysis, or permission of instructor. Recommended: MATH F422 Introduction to Complex Analysis and MATH F641 Real Analysis.}
+
+
+\heading{The Hybrid Classroom}
+There are two sections of the class, in-person (901) and online (701).  They are treated as one course and occur simultaneously.  In this ``hybrid'' set-up, each lecture will be a recorded Zoom session generated from Chapman 107.  (The link for the Zoom session is \href{https://canvas.alaska.edu/courses/X}{in Canvas}.  The recordings will be linked from inside Canvas only; they are not public.)  I will try to treat all students the same regarding proctored assessments---see below---and participation during class time.  Students have certain obligations to help make this work:
+\begin{itemize}
+\item \textbf{in-person students}: Please participate as energetically as you can.  I prefer for in-person students to turn in their homework assignments on paper.
+\item \textbf{online students}:  Please sign into the Zoom session, from Canvas, just before class starts.  Please participate as energetically as you can, and, if possible, keep your camera on.  Regarding in-class group work, check for worksheet PDFs from the \href{https://bueler.github.io/fa/}{public site} before class starts.  When you turn in homework assignments electronically, please generate clear, well-ordered, and combined PDFs; this may require scanning documents.  You will need to schedule proctoring for the in-class assessments (see below), or attend in person on those days.
+\end{itemize}
+
+
+\heading{Schedule and Online Materials}
+The \href{https://bueler.github.io/fa/}{public course website} includes a \href{https://bueler.github.io/nla/assets/general/S24/schedule.pdf}{day-by-day schedule} listing the textbook sections to be covered during each lecture, the due date of each homework Assignment, and the dates for the Midterm Quizzes and Final Exam.  Please consult this schedule frequently; it is subject to change and will be kept up to date.
+
+Most course materials (syllabus, schedule, homework Assignments, code examples, etc.) will be posted on the \href{https://bueler.github.io/fa/}{public website}.  Some course materials (student grades, homework and exam solutions) will go on the \href{https://canvas.alaska.edu/courses/X}{Canvas site}.
+
+
+\heading{Office Hours and Communication}
+My Office Hours are shown online at \href{http://bueler.github.io/OffHrs.htm}{\texttt{bueler.github.io/OffHrs.htm}}; I hold office hours in Chapman 306C.  Students can also schedule meetings with me outside of regular office hours.  I will use Canvas to send announcements.  If I need to contact you outside of class times, I'll try to email via Canvas.  (Please set your email address in Canvas to one that you check regularly!)
+
+
+%\clearpage\newpage
+%\phantom{foo}
+\heading{Evaluation and Grades}
+\vskip -10pt
+
+\begin{tabular}{|c|c|c|}
+\hline
+Homework & nearly weekly & 50\% \\
+\hline
+Midterm Quiz 1 & in-class Wednesday X  & 15\%  \\
+\hline
+Midterm Quiz 2 & in-class Wednesday X & 15\%  \\
+\hline
+Final Exam     & in-class Wednesday X & 20\% \\
+\hline
+total & & 100\% \, \\
+\hline
+\end{tabular}
+
+Scores for specific assessments may be adjusted based on the actual difficulty of the work and/or on average class performance, and adjustments will be applied to all students equally.  The scores of the various parts will be summed and the final course grade will be assigned as follows.
+
+\begin{tabular}{llllll}
+A  & 93--100\% & B- & 79--81\%  & D+ & 65--67\%  \\
+A- & 90--92\%  & C+ & 76--78\%  & D  & 60--64\%  \\
+B+ & 87--89\%  & C  & 68--75\%  & D- & 57--59\%  \\
+B  & 82--86\%  & C- & not given & F  & $\le$ 56\%
+\end{tabular}
+
+These ranges are a guarantee and a lower bound.  I reserve the right to increase your grade above these ranges based on the actual difficulty of the work and/or on average class performance.  Any such increases will preserve grade ordering by weighted total score.
+
+
+\heading{Homework}
+Homework is due at the start of class.  \emph{Late homework is not accepted.}  If you have unavoidable circumstances which do not allow you to turn in an Assignment on time then please contact me (\href{mailto:elbueler@alaska.edu}{\texttt{elbueler\@@alaska.edu}}) in advance.
+
+FIXME The homework consists of by-hand computations, design and analysis of numerical algorithms, computer implementation of those algorithms, by-hand and computer visualization, rigorously-justified examples and counter-examples, and proofs.  Problems very similar to, or shortened versions of, Homework problems will appear on the in-class Midterm Quizzes.
+
+
+\heading{Exams}
+There will be two in-class Midterm Quizzes covering mostly basic concepts and definitions.  Each of these will be 45 minutes, with a 15 minute debrief at the end after all exams are turned in.
+
+The in-class Final Exam will require you to be familiar with two of the major methods we have studied.  I will describe the format of this Exam in more detail in due course.
+
+Make-up Quizzes or Exam will be given only for documented extenuating circumstances, at my discretion.  Department policy (below) does not allow me to move the time of the Final Exam.
+
+
+%\clearpage\newpage
+\phantom{foo}
+\heading{Rules and Policies}
+\vskip -20pt
+
+\subheading{Incomplete Grade} 
+Incomplete (I) will only be given in
+  DMS courses in cases where
+  the student has completed the majority (normally all but the last
+  three weeks) of a course with a grade of C or better, but for
+  personal reasons beyond his/her control has been unable to complete
+  the course during the regular term. Negligence or indifference are
+  not acceptable reasons for granting an incomplete grade.
+
+\subheading{Late Withdrawals} 
+A withdrawal after the deadline from a DMS course will
+  normally be granted only in cases where the student is performing
+  satisfactorily (i.e., C or better) in a course, but has exceptional
+  reasons, beyond his/her control, for being unable to complete the
+  course.  These exceptional reasons should be detailed in writing to
+  the instructor, Department Chair and the Dean.
+
+\subheading{No Early Final Examinations}
+Final examinations for DMS courses shall not be held earlier than the date and time published in the official term schedule.  Normally, a student will not be allowed to take a final exam early.  Exceptions can be made by individual instructors, but should only be allowed in exceptional circumstances and in a manner which doesn't endanger the security of the exam.
+
+\subheading{Academic Dishonesty}
+Academic dishonesty, including cheating and plagiarism, will not be tolerated.  It is a violation of the Student Code of Conduct and will be punished according to UAF procedures.
+
+\subheading{Student protections and service statement}
+Every qualified student is welcome in my classroom.  As needed, I am happy to work with you, Disability Services, Veterans' Services, Rural Student Services, and so on, to find reasonable accommodations.  Students at this University are protected against sexual harassment and discrimination (Title IX), and minors have additional protections.  For more information on your rights as a student and the resources available to you to resolve problems, please go the following site: \href{https://www.uaf.edu/handbook/}{\texttt{www.uaf.edu/handbook}}.
+
+\hfill  \scriptsize [syllabus version: \today] \normalsize
+
+\end{document}
