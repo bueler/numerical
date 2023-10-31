@@ -3,7 +3,7 @@ layout: course-page
 title: Bueler's Math F617 in Spring 2024 at UAF
 ---
 
-# UNDER CONSTRUCTION: MANY BROKEN LINKS!!
+## UNDER CONSTRUCTION: MANY BROKEN LINKS!!
 
 Welcome to the public homepage of **Math F617 Functional Analysis**, Spring 2024, in the [Dept. of Mathematics and Statistics](http://www.uaf.edu/dms/) at the [University of Alaska Fairbanks](http://www.uaf.edu/).
 
@@ -15,13 +15,13 @@ Email me at [elbueler@alaska.edu](mailto:elbueler@alaska.edu).  I hold [office h
 
 ### Canvas course page
 
-Log in to [canvas.alaska.edu/courses/FIXME] FIXME for the lecture Zoom link, Homework and Exam solutions, and to see your grades.
+Log in to [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18441) for the lecture Zoom link, Homework and Exam solutions, and to see your grades.
 
 ## UNDER CONSTRUCTION: MANY BROKEN LINKS!!
 
 ### Getting Started
 
-* Attend lectures: MWF FIXME in FIXME, or online.
+* Attend lectures: MWF 2:15-3:15pm in Chapman 107, or online.
 
 * Read the [Syllabus (PDF)](assets/general/S24/syllabus.pdf).
 
