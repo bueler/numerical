@@ -9,6 +9,6 @@ Each homework Assignment has its own PDF.  The links below are in reverse chrono
 
 Assignments are **due at the start of class**.  Please turn in each Assignment on paper, stapled in the upper-left corner, and with your name on the upper-right corner.  Please clearly indicate the assignment number in the title, and clearly indicate the beginning of each exercise/problem.
 
-After each Assignment is due, complete solutions will be posted at the **Modules tab** of the [Canvas course page] FIXME.
+After each Assignment is due, complete solutions will be posted at the **Modules tab** of the [Canvas course page](https://canvas.alaska.edu/courses/18441).
 
 {% include homework_table.md  data=site.data.homework %}

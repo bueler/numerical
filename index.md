@@ -7,7 +7,7 @@ title: Bueler's Math F617 in Spring 2024 at UAF
 
 Welcome to the public homepage of **Math F617 Functional Analysis**, Spring 2024, in the [Dept. of Mathematics and Statistics](http://www.uaf.edu/dms/) at the [University of Alaska Fairbanks](http://www.uaf.edu/).
 
-If you plan to be present on campus in Fairbanks during the semester, please sign up for the in-person "901" section (crn FIXME), and plan to attend lecture in FIXME.  If you are remote, signing up for the web-based "701" section (crn FIXME) is just fine!
+If you plan to be present on campus in Fairbanks during the semester, please sign up for the in-person "901" section (crn 35367), and plan to attend lecture in Chapman 107.  If you are remote, signing up for the web-based "701" section (crn 35378) is just fine!
 
 #### Instructor:  [Ed Bueler](http://bueler.github.io/)
 
