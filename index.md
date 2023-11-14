@@ -3,8 +3,6 @@ layout: course-page
 title: Bueler's Math F617 in Spring 2024 at UAF
 ---
 
-## UNDER CONSTRUCTION: MANY BROKEN LINKS!!
-
 Welcome to the public homepage of **Math F617 Functional Analysis**, Spring 2024, in the [Dept. of Mathematics and Statistics](http://www.uaf.edu/dms/) at the [University of Alaska Fairbanks](http://www.uaf.edu/).
 
 If you plan to be present on campus in Fairbanks during the semester, please sign up for the in-person "901" section (crn 35367), and plan to attend lecture in Chapman 107.  If you are remote, signing up for the web-based "701" section (crn 35378) is just fine!
@@ -16,8 +14,6 @@ Email me at [elbueler@alaska.edu](mailto:elbueler@alaska.edu).  I hold [office h
 ### Canvas course page
 
 Log in to [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18441) for the lecture Zoom link, Homework and Exam solutions, and to see your grades.
-
-## UNDER CONSTRUCTION: MANY BROKEN LINKS!!
 
 ### Getting Started
 
@@ -35,7 +31,16 @@ Log in to [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18
 
 * What are we studying?  Check out these Wikipedia pages for the topics we will get to, in this approximate order:
 
-    * FIXME
+    * [functional analysis](https://en.wikipedia.org/wiki/Functional_analysis)
+    * [Hilbert spaces](https://en.wikipedia.org/wiki/Hilbert_space)
+    * [Sobolev spaces](https://en.wikipedia.org/wiki/Sobolev_space)
+    * [self-adjoint operators](https://en.wikipedia.org/wiki/Self-adjoint_operator)
+    * [unbounded operators](https://en.wikipedia.org/wiki/Unbounded_operator)
+    * [Laplacian operators](https://en.wikipedia.org/wiki/Laplace_operator)
+    * [finite element method](https://en.wikipedia.org/wiki/Finite_element_method)
+    * [spectral theorem](https://en.wikipedia.org/wiki/Spectral_theorem)
+    * [axioms of quantum mechanics](https://en.wikipedia.org/wiki/Dirac%E2%80%93von_Neumann_axioms) (and [here](https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics))
+    * [quantum Hamiltonian operators](https://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics))
 
 ---
 _Site design derived from [coordinated Calc I](https://uaf-math251.github.io/), an original [Jekyll](https://jekyllrb.com/) design by [David Maxwell](https://damaxwell.github.io/)._
