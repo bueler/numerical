@@ -27,7 +27,7 @@ Log in to [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18
 
 * There are three Exams, two Midterm Quizzes and a Final.  All are in class, and the Final will happen at the scheduled time.  See the [Exams](exams) tab for review guides.
 
-[<img src="assets/images/borthwick.jpg" height="250">](https://link.springer.com/book/10.1007/978-3-030-38002-1 "the textbook")
+[<img src="assets/images/boundstates.png" height="200">](https://en.wikipedia.org/wiki/Unbounded_operator "bound states") &nbsp; &nbsp; [<img src="assets/images/harmonic.jpg" height="200">](https://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics) "Hamiltonian operator eigenfunctions") &nbsp; &nbsp; [<img src="assets/images/borthwick.jpg" height="250">](https://link.springer.com/book/10.1007/978-3-030-38002-1 "the textbook")
 
 * What are we studying?  Check out these Wikipedia pages for the topics we will get to, in this approximate order:
 
