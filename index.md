@@ -46,6 +46,7 @@ Log in to [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18
     * [abstract vector spaces](https://www.youtube.com/watch?v=TgKwz5Ikpc8)
     * [compactness](https://www.youtube.com/watch?v=td7Nz9ATyWY)
     * [Lebesgue integral](https://www.youtube.com/watch?v=LDNDTOVnKJk)
+    * [the complex derivative](https://www.youtube.com/watch?v=0CHZMY02Dhk)
 
 ---
 _Site design derived from [coordinated Calc I](https://uaf-math251.github.io/), an original [Jekyll](https://jekyllrb.com/) design by [David Maxwell](https://damaxwell.github.io/)._
