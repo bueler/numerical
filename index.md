@@ -42,6 +42,11 @@ Log in to [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18
     * [axioms of quantum mechanics](https://en.wikipedia.org/wiki/Dirac%E2%80%93von_Neumann_axioms) (and [here](https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics))
     * [quantum Hamiltonian operators](https://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics))
 
+* Videos which might help with "getting started":
+    * [abstract vector spaces](https://www.youtube.com/watch?v=TgKwz5Ikpc8)
+    * [compactness](https://www.youtube.com/watch?v=td7Nz9ATyWY)
+    * [Lebesgue integral](https://www.youtube.com/watch?v=LDNDTOVnKJk)
+
 ---
 _Site design derived from [coordinated Calc I](https://uaf-math251.github.io/), an original [Jekyll](https://jekyllrb.com/) design by [David Maxwell](https://damaxwell.github.io/)._
 
