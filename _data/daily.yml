@@ -1,0 +1,19 @@
+semester: Fall 2023
+daily:
+- name: Monday 29 January
+  description: section 2.5 (and 2.7.1)
+- name: Friday 26 January
+  description: section 2.7
+- name: Wednesday 24 January
+  description: sections 2.4 & 2.6
+- name: Monday 22 January
+  description: section 2.3
+- name: Friday 19 January
+  description: definitions and facts to get started
+# handout: assets/handouts/getstarted.pdf
+- name: Wednesday 17 January
+  description: sections 2.1, 2.2
+#  slides: assets/slides/F23/8-4.pdf
+#  more: x
+#  mfile: x
+#  image: x
