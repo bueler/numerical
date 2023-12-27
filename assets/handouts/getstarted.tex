@@ -32,10 +32,12 @@
 \newcommand{\bI}{\mathbf{I}}
 \newcommand{\bX}{\mathbf{X}}
 
+\newcommand{\cV}{\mathcal{V}}
+
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\RR}{\mathbb{R}}
 
-\newcommand{\exer}[1]{\noindent \textbf{Problem #1.} \,}
+%\newcommand{\exer}[1]{\noindent \textbf{Problem #1.} \,}
 %\newcommand{\epart}[1]{\noindent \textbf{(#1)} \,}
 \newcommand{\eps}{\epsilon}
 \newcommand{\ds}{\displaystyle}
@@ -43,9 +45,19 @@
 %\newcommand{\sect}[1]{\medskip\noindent \textbf{#1.}}
 \newcommand{\sect}[1]{\subsection*{#1.}}
 
+\newcommand{\defin}{\emph{Definition.}\,}
+
+\newlist{enumex}{enumerate}{3}
+\setlist[enumex]{label={Example \Alph*.},leftmargin=27mm,before=\raggedright}
+
+\newcommand{\exer}[2]{\emph{\underline{Exercise.}\, #2} \vspace*{#1mm}}
+\newcommand{\instruct}[2]{\emph{\underline{Instructions:}\, #2} \vspace*{#1mm}}
+\newcommand{\showit}[2]{\emph{\underline{Show it!} (#2)} \vspace*{#1mm}}
+
+
+
 \doclabel{Math 617}
 \docdate{January 2024; Bueler}
-
 
 \begin{document}
 \strut
@@ -54,34 +66,27 @@
 \centerline{{\Large\strut \textbf{which you will need to get started}}}
 \bigskip
 
-Functional analysis is the study of vector spaces which have a topology.  Therefore studying functional analysis requires you to have some sense of what a ``topology'' is.  Our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know about basic topology.
+Functional analysis is the study of vector spaces which have a topology.  Therefore studying functional analysis requires you to have some sense of what a ``topology'' is.  In fact, our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know the basics of vector spaces, topology, measures, and integrals.  This handout is an attempt to get you up to speed.
+
 
 \sect{Metric spaces}
 
 To talk about topology we start with a ``metric'' and then to define open and closed sets from that.
 
-\newcommand{\defin}{\noindent \emph{Definition.}\,}
-
 \defin Suppose $X$ is any set of points.  A function $d:X\times X\to \RR$ is a \textbf{metric} if, for all $x,y,z\in X$, these conditions hold:
 \begin{enumerate}
-\item $d(x,x)=0$, and $x\ne y$ implies $d(x,y)>0$
+\item $d(x,y)\ge 0$, and $d(x,y)=0$ if and only if $x=y$
 \item $d(x,y)=d(y,x)$ \hfill (symmetry)
 \item $d(x,z) \le d(x,y) + d(y,z)$ \hfill (triangle inequality)
 \end{enumerate}
 
-Note that by condition 1 a metric always produces nonnegative numbers.  Observe that one cannot substitute complex numbers for real numbers in this definition because an ordering ``$\le$'' is then not available.  The addition symbol in condition 3 acts on real numbers, and not on the elements of the general set $X$.  (We may not be able to add elements of $X$!)
+Observe that one cannot substitute complex numbers for real numbers in this definition because an ordering ``$\le$'' is then not available.  The addition symbol in condition 3 acts on real numbers, and not on the elements of the general set $X$.  (We may not be able to add elements of $X$!)
 
 If you have seen ``norms'' on vector spaces then the above definition will ring a bell; more soon!
 
 \defin If $X$ is a set and $d$ is a metric then one calls the pair $(X,d)$ a \textbf{metric space}.
 
 Here are two examples of metric spaces:
-
-\newlist{enumex}{enumerate}{3}
-\setlist[enumex]{label={Example \Alph*.},leftmargin=27mm,before=\raggedright}
-
-\newcommand{\doit}[2]{\emph{\underline{Instructions:}\, #2} \vspace*{#1mm}}
-\newcommand{\showit}[2]{\emph{\underline{Show it!} (#2)} \vspace*{#1mm}}
 
 \begin{enumex}
 \item Let $X=S^1$ be the unit sphere, namely the set of points in $\RR^n$ which are Euclidean distance 1 from the origin.  Let $d$ be the Euclidean distance between points of $S^1$.
@@ -97,11 +102,11 @@ Here are two examples of metric spaces:
 \end{enumex}
 
 
-\sect{Vector spaces}  Many metric spaces are actually vector spaces with norms.  I think you already know what an abstract vector space is, so here the definition is an exercise.
+\sect{Vector spaces}  Many metric spaces are actually vector spaces with norms.  I think you already know what an abstract vector space is, so the definition is an exercise.
 
-\doit{0}{Fill in the axioms for a vector space, to complete the definition below.  Add bullet points as needed.}
+\instruct{0}{Fill in the axioms for a vector space, to complete the definition below.  Add bullet points as needed.}
 
-\defin A set $X$ (of vectors) with an operation $*:\CC\times X \to X$ and another operation $+:X\times X\to X$ is a \textbf{vector space} if the following hypotheses and conditions hold:
+\defin A set $\cV$ (of vectors) with an operation $*:\CC\times \cV \to \cV$ and another operation $+:\cV\times \cV\to \cV$ is a \textbf{(complex) vector space} if the following hypotheses and conditions hold:
 \begin{itemize}
 \item \phantom{x} \vspace{5mm}
 
@@ -115,21 +120,71 @@ Here are two examples of metric spaces:
 
 \item \phantom{x} \vspace{5mm}
 
-\item \phantom{x} \vspace{5mm}
-
-\item \phantom{x} \vspace{5mm}
+\item \phantom{x} \vspace{25mm}
 
 \end{itemize}
 
 
-\sect{Norms}  
+\sect{Norms}  Section 2.1 of the textbook defines a ``norm''.
+
+\instruct{0}{Fill in the definition below.  Refer to Section 2.1 as needed.}
+
+\defin A \textbf{norm} on a complex vector space $\cV$ is a function $\|\cdot\|:\cV \to \RR$ satisfying, for all $v,w\in\cV$ and $a\in \CC$,
+\begin{enumerate}
+\item \phantom{foo} \vspace{5mm}
+
+\item \phantom{foo} \vspace{5mm}
+
+\item \phantom{foo} \vspace{7mm}
+
+\end{enumerate}
+
+\defin If $\cV$ is a vector space and $\|\cdot\|$ is a norm on it then we say $(\cV,\|\cdot\|)$ is a \textbf{normed vector space}.
+
+A key observation is that a norm is similar to a metric, but it assumes more structure.  You need to be able to add the elements of the set itself, and multiply them by scalars.  The elements of the set have to be vectors, not just numbers.
+
+\exer{50}{Show that if $\|\cdot\|$ is a norm on $\cV$ then the distance function defined in Section 2.1, namely $\operatorname{dist}(v,w) := \|v-w\|$, is a metric, so $(\cV,\operatorname{dist})$ is a metric space.}
+
+
 \sect{Open and closed sets}
+
+Once you have a metric (or a norm) then you can define ``open'' and ``closed'' subsets, and talk about the ``boundaries'' of sets.  The starting point is to define a ``ball'' around a point.
+
+\defin Suppose $(X,d)$ is a metric space.  Suppose $x\in X$ is a point and $\eps>0$ is a real number.  The \textbf{open ball} of radius $\eps$ around $x$ is the set
+	$$B_\eps(x) = \left\{y\,:\,d(x,y) < \eps\right\}$$ 
+
+\defin Suppose $(X,d)$ is a metric space.
+\begin{itemize}
+\item A subset $Y\subset X$ is \textbf{open} if for all $y\in Y$ there is $\eps>0$ so that $B_\eps(y) \subset Y$.
+\item A subset $Y\subset X$ is \textbf{closed} if $X \setminus Y$ is open.
+\end{itemize}
+
+Generally speaking, many sets which are neither open nor closed!
+
+\exer{60}{Suppose $(\cV,\|\cdot\|)$ is a normed vector space.  Rewrite the above definition (of open and closed subsets) using the norm.}
+
+\exer{60}{Sketch an open set and illustrate the definition of open set.}
+
+\clearpage\newpage
+\defin Suppose $(X,d)$ is a metric space and $Y \subset X$ is any subset.  A point $y\in X$ is in the \textbf{boundary of } $Y$ if for all $\eps>0$, the intersection $B_\eps(y)\cap Y$ is non-empty and the intersection $B_\eps(y)\cap (X\setminus Y)$ is also non-empty.  We write $\partial Y$ for the set of points which are in the boundary of $Y$.
+
+\exer{60}{Sketch a set $Y$ which is neither open nor closed, and illustrate the definition of a boundary point.  Use a different color to show $\partial Y$.}
+
 
 \sect{Limits and continuity}
 
+foo
+
+
 \sect{Compact sets}
 
+foo
+
+
 \sect{Cauchy sequences and completeness}
+
+foo
+
 
 \sect{Extreme value theorem}
 
