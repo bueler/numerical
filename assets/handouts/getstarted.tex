@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+\usepackage[top=1.2in, bottom=0.8in, left=1.0in, right=1.2in]{geometry}
+
+\usepackage{graphicx,color,enumitem,fancyvrb}
+\usepackage{amsmath,amsthm,amsbsy,amssymb}
+\usepackage{palatino}
+\usepackage{mdframed}
+
+\usepackage{tikz}
+\usepackage[colorlinks=true]{hyperref}
+
+\makeatletter
+
+%% The following commands put defined left and right headers on the top, and a page number
+%% on the bottom of all pages beyond page 1
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[R]{\ifx\@docdate\@empty\else\@docdate\fi}
+\headheight 15pt
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\def\docdate#1{\gdef\@docdate{#1}}
+\makeatother
+
+%% General formatting parameters
+\parindent 0pt
+\parskip 6pt plus 1pt
+
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bX}{\mathbf{X}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+
+\newcommand{\exer}[1]{\noindent \textbf{Problem #1.} \,}
+%\newcommand{\epart}[1]{\noindent \textbf{(#1)} \,}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ds}{\displaystyle}
+
+%\newcommand{\sect}[1]{\medskip\noindent \textbf{#1.}}
+\newcommand{\sect}[1]{\subsection*{#1.}}
+
+\doclabel{Math 617}
+\docdate{January 2024; Bueler}
+
+
+\begin{document}
+\strut
+\centerline{{\Large \textbf{Handout: Definitions and facts}}}
+
+\centerline{{\Large\strut \textbf{which you will need to get started}}}
+\bigskip
+
+Functional analysis is the study of vector spaces which have a topology.  Therefore studying functional analysis requires you to have some sense of what a ``topology'' is.  Our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know about basic topology.
+
+\sect{Metric spaces}
+
+To talk about topology we start with a ``metric'' and then to define open and closed sets from that.
+
+\newcommand{\defin}{\noindent \emph{Definition.}\,}
+
+\defin Suppose $X$ is any set of points.  A function $d:X\times X\to \RR$ is a \textbf{metric} if, for all $x,y,z\in X$, these conditions hold:
+\begin{enumerate}
+\item $d(x,x)=0$, and $x\ne y$ implies $d(x,y)>0$
+\item $d(x,y)=d(y,x)$ \hfill (symmetry)
+\item $d(x,z) \le d(x,y) + d(y,z)$ \hfill (triangle inequality)
+\end{enumerate}
+
+Note that by condition 1 a metric always produces nonnegative numbers.  Observe that one cannot substitute complex numbers for real numbers in this definition because an ordering ``$\le$'' is then not available.  The addition symbol in condition 3 acts on real numbers, and not on the elements of the general set $X$.  (We may not be able to add elements of $X$!)
+
+If you have seen ``norms'' on vector spaces then the above definition will ring a bell; more soon!
+
+\defin If $X$ is a set and $d$ is a metric then one calls the pair $(X,d)$ a \textbf{metric space}.
+
+Here are two examples of metric spaces:
+
+\newlist{enumex}{enumerate}{3}
+\setlist[enumex]{label={Example \Alph*.},leftmargin=27mm,before=\raggedright}
+
+\newcommand{\doit}[2]{\emph{\underline{Instructions:}\, #2} \vspace*{#1mm}}
+\newcommand{\showit}[2]{\emph{\underline{Show it!} (#2)} \vspace*{#1mm}}
+
+\begin{enumex}
+\item Let $X=S^1$ be the unit sphere, namely the set of points in $\RR^n$ which are Euclidean distance 1 from the origin.  Let $d$ be the Euclidean distance between points of $S^1$.
+
+\showit{20}{Argue that $d$ defines a metric.}
+
+\clearpage
+\vspace*{20mm}
+
+\item Let $X$ be any set whatsoever.  Define $d(x,x)=0$ and $d(x,y)=1$ if $x\ne y$.
+
+\showit{50}{Argue that $d$ defines a metric.  Note $X$ could be very general, such as the set of all words in the English language.}
+\end{enumex}
+
+
+\sect{Vector spaces}  Many metric spaces are actually vector spaces with norms.  I think you already know what an abstract vector space is, so here the definition is an exercise.
+
+\doit{0}{Fill in the axioms for a vector space, to complete the definition below.  Add bullet points as needed.}
+
+\defin A set $X$ (of vectors) with an operation $*:\CC\times X \to X$ and another operation $+:X\times X\to X$ is a \textbf{vector space} if the following hypotheses and conditions hold:
+\begin{itemize}
+\item \phantom{x} \vspace{5mm}
+
+\item \phantom{x} \vspace{5mm}
+
+\item \phantom{x} \vspace{5mm}
+
+\item \phantom{x} \vspace{5mm}
+
+\item \phantom{x} \vspace{5mm}
+
+\item \phantom{x} \vspace{5mm}
+
+\item \phantom{x} \vspace{5mm}
+
+\item \phantom{x} \vspace{5mm}
+
+\end{itemize}
+
+
+\sect{Norms}  
+\sect{Open and closed sets}
+
+\sect{Limits and continuity}
+
+\sect{Compact sets}
+
+\sect{Cauchy sequences and completeness}
+
+\sect{Extreme value theorem}
+
+\sect{Linear map}
+
+\sect{Linear independence}
+
+\sect{Measure}
+
+\sect{Integral}
+
+\end{document}
