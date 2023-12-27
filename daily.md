@@ -5,7 +5,7 @@ title: Daily Log and Materials
 
 ## Daily Log and Materials
 
-Daily topics, and PDF worksheets, will appear here as they occur.  (You **do not** have to turn-in any worksheet!)  There will also be solutions to worksheets and other stuff as needed.  Note that the recorded lectures are in Announcements at [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18441).
+Daily topics and PDFs (handouts and worksheets) will appear here as they occur.  You **do not** have to turn-in any handout or worksheet!  Note that the recorded lectures are in Announcements at [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18441).
 
 {% include daily_table.md  data=site.data.daily %}
 

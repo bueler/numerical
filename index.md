@@ -21,7 +21,9 @@ Log in to [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18
 
 * Read the [Syllabus (PDF)](assets/general/S24/syllabus.pdf).
 
-* See the [Schedule (PDF)](assets/general/S24/schedule.pdf).  Check it often for due dates, and for which topics come next!
+* The [Schedule (PDF)](assets/general/S24/schedule.pdf) is my longer-term plan.  Check it for exam dates and due dates, and for which topics come next!
+
+* The [daily log](daily) has the recent happenings, including handouts and worksheets as PDFs.
 
 * Check out the nearly-weekly [homework Assignments](homework).
 
