@@ -56,33 +56,31 @@
 
 
 
-\doclabel{Math 617}
+\doclabel{Math 617 Functional Analysis}
 \docdate{January 2024; Bueler}
 
 \begin{document}
 \strut
 \centerline{{\Large \textbf{Handout: Definitions and facts}}}
 
-\centerline{{\Large\strut \textbf{which you will need to get started}}}
+\centerline{{\Large\strut \textbf{(which you will need to get started)}}}
 \bigskip
 
-Functional analysis is the study of vector spaces which have a topology.  Therefore studying functional analysis requires you to have some sense of what a ``topology'' is.  In fact, our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know the basics of vector spaces, topology, measures, and integrals.  This handout is an attempt to get you up to speed.
+Functional analysis is the study of vector spaces which have a topology.  Therefore studying functional analysis requires you to have some sense of what a ``topology'' is.  In fact, our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know the basics of vector spaces, topology, measures, and integrals.  This handout is an attempt to get you up to speed, so that you can read the book with real understanding.  When you do read, please stop and ask yourself ``do I understand the definition of this term?''
 
 
-\sect{Metric spaces}
+\sect{Metric spaces} \label{topic:metric}
 
-To talk about topology we start with a ``metric'' and then to define open and closed sets from that.
+To talk about topology we start with a ``metric'' and then define open and closed sets from that.  A metric is a generalized distance function.
 
-\defin Suppose $X$ is any set of points.  A function $d:X\times X\to \RR$ is a \textbf{metric} if, for all $x,y,z\in X$, these conditions hold:
+\defin Suppose $X$ is any set (of ``points'').  A function $d:X\times X\to \RR$ is a \textbf{metric} if, for all $x,y,z\in X$, these conditions hold:
 \begin{enumerate}
 \item $d(x,y)\ge 0$, and $d(x,y)=0$ if and only if $x=y$
 \item $d(x,y)=d(y,x)$ \hfill (symmetry)
 \item $d(x,z) \le d(x,y) + d(y,z)$ \hfill (triangle inequality)
 \end{enumerate}
 
-Observe that one cannot substitute complex numbers for real numbers in this definition because an ordering ``$\le$'' is then not available.  The addition symbol in condition 3 acts on real numbers, and not on the elements of the general set $X$.  (We may not be able to add elements of $X$!)
-
-If you have seen ``norms'' on vector spaces then the above definition will ring a bell; more soon!
+The addition and inequality symbols in condition 3 acts on real numbers, and not on the elements of the general set $X$.  (We may not be able to add elements of $X$!)  Also observe that one cannot substitute $\CC$ for $\RR$ in this definition because an ordering ``$\le$'' is not available for $\CC$.  If you have seen ``norms'' on vector spaces then the above definition will ring a bell; see page \pageref{topic:norms}.
 
 \defin If $X$ is a set and $d$ is a metric then one calls the pair $(X,d)$ a \textbf{metric space}.
 
@@ -102,7 +100,7 @@ Here are two examples of metric spaces:
 \end{enumex}
 
 
-\sect{Vector spaces}  Many metric spaces are actually vector spaces with norms.  I think you already know what an abstract vector space is, so the definition is an exercise.
+\sect{Vector spaces}  Many metric spaces are actually vector spaces with norms.  Because you should already know what an abstract vector space is, the definition is an exercise.  Then we get to norms below.
 
 \instruct{0}{Fill in the axioms for a vector space, to complete the definition below.  Add bullet points as needed.}
 
@@ -125,7 +123,9 @@ Here are two examples of metric spaces:
 \end{itemize}
 
 
-\sect{Norms}  Section 2.1 of the textbook defines a ``norm''.
+\sect{Norms} \label{topic:norms}
+
+Section 2.1 of the textbook defines a ``norm''.
 
 \instruct{0}{Fill in the definition below.  Refer to Section 2.1 as needed.}
 
@@ -141,7 +141,7 @@ Here are two examples of metric spaces:
 
 \defin If $\cV$ is a vector space and $\|\cdot\|$ is a norm on it then we say $(\cV,\|\cdot\|)$ is a \textbf{normed vector space}.
 
-A key observation is that a norm is similar to a metric, but it assumes more structure.  You need to be able to add the elements of the set itself, and multiply them by scalars.  The elements of the set have to be vectors, not just numbers.
+Every normed vector space is also a metric space, which the next Exercise asks you to show.  While a norm is similar to a metric, norms require more structure.  You need to be able to add the elements of the set itself, and multiply them by scalars.  That is, the elements of the set have to be vectors, not just ``points''.
 
 \exer{50}{Show that if $\|\cdot\|$ is a norm on $\cV$ then the distance function defined in Section 2.1, namely $\operatorname{dist}(v,w) := \|v-w\|$, is a metric, so $(\cV,\operatorname{dist})$ is a metric space.}
 
@@ -150,8 +150,8 @@ A key observation is that a norm is similar to a metric, but it assumes more str
 
 Once you have a metric (or a norm) then you can define ``open'' and ``closed'' subsets, and talk about the ``boundaries'' of sets.  The starting point is to define a ``ball'' around a point.
 
-\defin Suppose $(X,d)$ is a metric space.  Suppose $x\in X$ is a point and $\eps>0$ is a real number.  The \textbf{open ball} of radius $\eps$ around $x$ is the set
-	$$B_\eps(x) = \left\{y\,:\,d(x,y) < \eps\right\}$$ 
+\defin Suppose $(X,d)$ is a metric space.  Suppose $x\in X$ is a point and $\eps>0$ is a real number.  The \textbf{open ball} of radius $\eps>0$ around $x$ is the set
+	$$B_\eps(x) = \left\{y\in X\,:\,d(x,y) < \eps\right\}$$ 
 
 \defin Suppose $(X,d)$ is a metric space.
 \begin{itemize}
@@ -159,21 +159,45 @@ Once you have a metric (or a norm) then you can define ``open'' and ``closed'' s
 \item A subset $Y\subset X$ is \textbf{closed} if $X \setminus Y$ is open.
 \end{itemize}
 
-Generally speaking, many sets which are neither open nor closed!
+\exer{60}{Suppose $(\cV,\|\cdot\|)$ is a normed vector space.  Rewrite the above definitions using the norm.}
 
-\exer{60}{Suppose $(\cV,\|\cdot\|)$ is a normed vector space.  Rewrite the above definition (of open and closed subsets) using the norm.}
-
-\exer{60}{Sketch an open set and illustrate the definition of open set.}
+\exer{60}{Sketch an open set in the plane $\RR^2$, and illustrate the definition of open set.}
 
 \clearpage\newpage
+\exer{60}{Generally speaking, many sets are neither open nor closed.  Sketch such an example of such a set $Y$ in the plane $\RR^2$.}
+
 \defin Suppose $(X,d)$ is a metric space and $Y \subset X$ is any subset.  A point $y\in X$ is in the \textbf{boundary of } $Y$ if for all $\eps>0$, the intersection $B_\eps(y)\cap Y$ is non-empty and the intersection $B_\eps(y)\cap (X\setminus Y)$ is also non-empty.  We write $\partial Y$ for the set of points which are in the boundary of $Y$.
 
-\exer{60}{Sketch a set $Y$ which is neither open nor closed, and illustrate the definition of a boundary point.  Use a different color to show $\partial Y$.}
+\exer{1}{Using a different color, add $\partial Y$ to your above example.}
 
 
 \sect{Limits and continuity}
 
-foo
+From the definition of open sets, or more directly by using open balls, we can define the limit of a sequence.
+
+\defin Suppose $(X,d)$ is a metric space and $(x_n)$ is a sequence of points from $X$.  We say that \textbf{the limit of $(x_n)$ is $\hat x$}, written
+	$$\lim_{n\to\infty} x_n = \hat x, \qquad \text{or} \qquad x_n \to \hat x,$$
+if
+\begin{enumerate}
+\item for each open set $Y$ which contains $\hat x$ there is $N$ so that $n\ge N$ implies $x_n \in Y$, or
+\item for each $\eps>0$ there is $N$ so that $n\ge N$ implies $x_n \in B_\eps(\hat x)$.
+\end{enumerate}
+
+\exer{30}{Show that the two definitions are equivalent.}
+
+\clearpage\newpage
+\exer{40}{Write a third equivalent form of the definition using only the metric $d$.  (Do not mention open sets or $B_\eps(\cdot)$.)}
+
+Now let us think about real-valued functions.
+
+\defin Suppose $(X,d)$ is a metric space and $f:X\to \RR$ is a function.  We say that $f$ is \textbf{continuous at $\hat x\in X$} if for all sequences $(x_n)$ such that $\hat x = \lim_{n\to\infty} x_n$, it holds that
+    $$\lim_{n\to\infty} f(x_n) = f(\hat x).$$
+We say that $f$ is \textbf{continuous} if it is continuous at every $\hat x\in X$.
+
+\exer{40}{(This follows Example B on page \pageref{topic:metric}, and it is kind of silly.)  Let $X$ be any set and define $d(x,x)=0$ and $d(x,y)=1$ if $x\ne y$.  Let $f:X\to\RR$ be any function.  Show that $f$ is continuous.}
+
+\exer{40}{Let xxx}
+
 
 
 \sect{Compact sets}
