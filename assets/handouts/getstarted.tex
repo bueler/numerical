@@ -45,7 +45,8 @@
 %\newcommand{\sect}[1]{\medskip\noindent \textbf{#1.}}
 \newcommand{\sect}[1]{\subsection*{#1.}}
 
-\newcommand{\defin}{\emph{Definition.}\,}
+\newcommand{\defin}{\emph{Definition.}\,\,}
+\newcommand{\thm}{\emph{Theorem.}\,\,}
 
 \newlist{enumex}{enumerate}{3}
 \setlist[enumex]{label={Example \Alph*.},leftmargin=27mm,before=\raggedright}
@@ -66,7 +67,7 @@
 \centerline{{\Large\strut \textbf{(which you will need to get started)}}}
 \bigskip
 
-Functional analysis is the study of vector spaces which have a topology.  Therefore studying functional analysis requires you to have some sense of what a ``topology'' is.  In fact, our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know the basics of vector spaces, topology, measures, and integrals.  This handout is an attempt to get you up to speed, so that you can read the book with real understanding.  When you do read, please stop and ask yourself ``do I understand the definition of this term?''
+Functional analysis is the study of vector spaces which have a topology.  Therefore you need to have some sense of what a ``topology'' is.  In fact, our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know the basics of vector spaces, topology, measures, and integrals.  This handout is an attempt to get you up to speed, so that you can read the book with real understanding.  When you do read, please stop and ask yourself ``do I understand the definition of this term?''
 
 
 \sect{Metric spaces} \label{topic:metric}
@@ -170,6 +171,14 @@ Once you have a metric (or a norm) then you can define ``open'' and ``closed'' s
 
 \exer{1}{Using a different color, add $\partial Y$ to your above example.}
 
+Finally, here is a promised definition.
+
+\defin Suppose $X$ is a set, and if $\{Y_\alpha\}$ is a collection of subsets of $X$ which we call the ``open sets'', then we say $\{Y_\alpha\}$ is a \textbf{topology} on $X$.
+
+In fact, the above definition is too informal.  The collection of subsets must satisfy certain requirements to qualify as a system of open sets.  The collection must include the empty set $\emptyset$ and the whole set $X$, it must be closed under arbitrary unions, and the intersection of any pair of subsets in the collection must be in the collection.
+
+From this definition we can make sense of a phrase like ``functional analysis is the study of vector spaces which have a topology.''  Having a system of identified open sets makes it possible to talk about limits, continuity, and so on, and ultimately to find solutions to hard problems.
+
 
 \sect{Limits and continuity}
 
@@ -183,20 +192,50 @@ if
 \item for each $\eps>0$ there is $N$ so that $n\ge N$ implies $x_n \in B_\eps(\hat x)$.
 \end{enumerate}
 
-\exer{30}{Show that the two definitions are equivalent.}
+\exer{40}{Show that the two definitions are equivalent.}
 
-\clearpage\newpage
-\exer{40}{Write a third equivalent form of the definition using only the metric $d$.  (Do not mention open sets or $B_\eps(\cdot)$.)}
+\exer{30}{Write a third equivalent form of the definition using only the metric $d$.  (Do not mention open sets or $B_\eps(\cdot)$.)}
 
-Now let us think about real-valued functions.
+\defin Suppose $(X,d)$ is a metric space and that $\hat x = \lim_{n\to\infty} x_n$ for some sequence $(x_n)$.  We say that the sequence \textbf{converges}.
+
+\exer{40}{Show that a sequence cannot converge to two different limits.}
+
+Now consider real-valued functions.
 
 \defin Suppose $(X,d)$ is a metric space and $f:X\to \RR$ is a function.  We say that $f$ is \textbf{continuous at $\hat x\in X$} if for all sequences $(x_n)$ such that $\hat x = \lim_{n\to\infty} x_n$, it holds that
     $$\lim_{n\to\infty} f(x_n) = f(\hat x).$$
 We say that $f$ is \textbf{continuous} if it is continuous at every $\hat x\in X$.
 
-\exer{40}{(This follows Example B on page \pageref{topic:metric}, and it is kind of silly.)  Let $X$ be any set and define $d(x,x)=0$ and $d(x,y)=1$ if $x\ne y$.  Let $f:X\to\RR$ be any function.  Show that $f$ is continuous.}
+\exer{40}{Let $f(x)=x^2$ for $x\in \RR$.  Show that $f$ is continous.}
 
-\exer{40}{Let xxx}
+%\clearpage\newpage
+\exer{40}{(This follows Example B on page \pageref{topic:metric}.  It is an extreme case.)  Let $X$ be any set and define $d(x,x)=0$ and $d(x,y)=1$ if $x\ne y$.  We have already shown $d$ is a metric.  Let $f:X\to\RR$ be \emph{any} function.  Show that $f$ is continuous.}
+
+
+\sect{Cauchy sequences and completeness}
+
+When we have a topology on $X$ then we can discuss whether a given sequence $(x_n)$ of points converges; see the above definition.  However, that definition requires that we ``know'' which is the limit $\hat x \in X$.  That is, convergence of a sequence means convergence to a particular limit.
+
+In certain metric space topologies this becomes easier because there is an easier-to-check condition that is equivalent to convergence to some limit.  The condition only compares elements of the sequence.
+
+\defin Suppose $(X,d)$ is a metric space and $(x_n)$ is a sequence.  We say that $(x_n)$ is a \textbf{Cauchy sequence} if for any $\eps>0$ there is $N$ so that if $m \ge N$ and $n\ge N$ then $d(x_m,x_n)<\eps$.
+
+\exer{50}{Rewrite the above definition for a normed vector space.  Compare the resulting definition to the one stated in section 2.1 of our textbook.  Show that the two definitions are the same.}
+
+\exer{40}{Show that if $(x_n)$ converges to limit $\hat x$ then $(x_n)$ is Cauchy.}
+
+\defin Suppose $(X,d)$ is a metric space.  If every Cauchy sequence $(x_n)$ in $X$ has a limit (there is $\hat x\in X$ so that $\lim_{n\to\infty} x_n=\hat x$) then we say that $(X,d)$ is \textbf{complete}.
+
+We will accept the following Theorem without proof.
+
+\thm The real numbers $\RR$, with the usual metric, is a complete metric space.  Likewise the complex numbers $\CC$ is a complete metric space.
+
+\exer{50}{Let $x_0=2$ and define $x_{k+1}$ as the real zero of the tangent line to $y=x^2-2$ at $x_k$.  Argue geometrically, from the graph of $y=x^2-2$, that $(x_k)$ is Cauchy.  Note that $x_k$ is always a rational number.  What is the limit of $(x_k)$?}
+
+
+Furthermore, we are now at the start of functional analysis!  The following definition is the main idea of section 2.1 of our textbook.
+
+\defin Suppose $(\cV,\|\cdot\|)$ is a normed vector space, and that it is complete.  We call $(\cV,\|\cdot\|)$ a \textbf{Banach space}.
 
 
 
@@ -204,13 +243,9 @@ We say that $f$ is \textbf{continuous} if it is continuous at every $\hat x\in X
 
 foo
 
-
-\sect{Cauchy sequences and completeness}
-
-foo
+\thm (Extreme value theorem) bar
 
 
-\sect{Extreme value theorem}
 
 \sect{Linear map}
 
