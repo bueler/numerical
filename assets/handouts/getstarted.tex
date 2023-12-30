@@ -237,20 +237,45 @@ We will accept the following Theorem without proof.
 
 \thm The real numbers $\RR$, with the usual metric, is a complete metric space.  Likewise the complex numbers $\CC$ is a complete metric space.
 
-\exer{50}{Let $x_0=2$ and define $x_{k+1}$ as the real zero of the tangent line to $y=x^2-2$ at $x_k$.  Argue geometrically, from the graph of $y=x^2-2$, that $(x_k)$ is Cauchy.  Note that $x_k$ is always a rational number.  What is the limit of $(x_k)$?}
+\exer{60}{Let $x_0=2$ and define $x_{k+1}$ as the real zero of the tangent line to $y=x^2-2$ at $x_k$.  Argue geometrically, from the graph of $y=x^2-2$, that $(x_k)$ is Cauchy.  Note that $x_k$ is always a rational number.  What is the limit of $(x_k)$?}
 
-
-With this definition, we are now at the start of functional analysis!  The following definition is the main idea of section 2.1 of our textbook.
+With the above definition, we are now at the start of functional analysis!  The following is a major concept starting in section 2.1 of our textbook.
 
 \defin Suppose $(\cV,\|\cdot\|)$ is a normed vector space, and that it is complete.  We call $(\cV,\|\cdot\|)$ a \textbf{Banach space}.
 
 
-
+\clearpage\newpage
 \sect{Compact sets}
 
-foo
+Informally speaking, a compact subset in a metric space is well-approximated by finitely-many points.  The precise definition seems a little awkward when you first read it.
 
-\thm (Extreme value theorem) bar
+\defin Suppose $(X,d)$ is a metric space and $K \subset X$.  We say that $\{Y_\alpha\}$ is an \textbf{open cover} of $K$ if each $Y_\alpha$ is open set in $X$ and if
+	$$K \subset \,\bigcup_{\alpha} \,Y_\alpha.$$
+
+\defin We say $K$ is \textbf{compact} if from every open cover $\{Y_\alpha\}$ of $K$ we can choose a finite sub-collection $\{Y_{\alpha_j}\}_{j=1}^n$ which is also an open cover of $K$.
+
+This definition is often said as ``every open cover of $K$ has a finite sub-cover''.
+
+\exer{50}{For $X=\RR^2$ being the plane, sketch a subset $K$ and sketch the above definitions.}
+
+\exer{40}{Suppose $K\subset X$ is a finite set.  Show that $K$ is compact.}
+
+\exer{40}{Pretending to do numerical stuff: Sketch a grid of balls $B_\eps(x_{j,k})$ over the set $K=[0,1]^2$.  Make the balls an open cover.  This illustrates the informal description of ``compact.''}
+
+\clearpage\newpage
+\exer{50}{Suppose $K=[0,1] \subset \RR$.  Sketch the (direct) proof that $K$ is compact.  You may use the fact that $(\RR,|\cdot|)$ is a complete metric space.}
+
+Closed and bounded sets in normed vector spaces are common objects of interest in functional analysis.  In finite dimensions these are compact sets.  We will see that they are \emph{not} generally compact in infinite dimensions (in the topology coming from the norm).
+
+\thm (Heine-Borel theorem) If $K \subset \CC^n$ is closed and bounded then $K$ is compact.
+
+A very important idea is that an optimization problem for a real-valued function can be solved if the function is continuous and the input set is compact.
+
+\thm (Extreme value theorem) Suppose $(X,d)$ is a metric space, $K\subset X$, and $f:K\to\RR$ (or $f:X\to\RR$) is continuous.  If $K \subset X$ is compact then $f$ attains its maximum and minimum on $K$.
+
+Precisely-stated, the conclusion of this theorem is that there are $p,q\in K$ so that
+    $$f(p) \le f(x) \le f(q)$$
+for all $x \in K$.
 
 
 
