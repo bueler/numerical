@@ -319,8 +319,19 @@ In functional analysis we will have much to say about linear maps, that is, line
 
 \sect{Linear independence}  Sometimes a vector can be built from other vectors in a manner that linear maps will respect.
 
-\defin Suppose $\cV$ is a complex vector space and $u \in \cV$ is a vector.  Suppose $\cS = \{v_\alpha\}$ is any collection of vectors.  We say $u$ \textbf{is a linear combination from} $\cS$ if there exist \emph{finitely-many} vectors $\{v_{\alpha_j}\}_{j=1}^n$ from $\cS$, and coefficients $c_j\in\CC$, so that
-	$$u = c_1 v_{\alpha_1} + \dots + c_n v_{\alpha_n}$$
+\defin Suppose $\cV$ is a complex vector space and $u \in \cV$ is a vector.  Suppose $\cS = \{v_\alpha\}$ is any collection of vectors.  We say $u$ \textbf{is a (finite) linear combination from} $\cS$ if there exist \emph{finitely-many} vectors $\{v_{\alpha_j}\}_{j=1}^n$ from $\cS$, and coefficients $c_j\in\CC$, so that
+	$$u = c_1 v_{\alpha_1} + \dots + c_n v_{\alpha_n} = \sum_{j=1}^n c_j v_{\alpha_j}$$
+
+It is very important, for the purposes of functional analysis, to reserve ``linear combination'' as \emph{finite} linear combination.  We will use infinite sums of vectors all the time, but these will be called \textbf{series}, just as one does in calculus.
+
+\exer{15}{Show that if $L:\cV \to \cW$ is a linear map then
+	$$L\left(\sum_{j=1}^n c_j v_{\alpha_j}\right) = \sum_{j=1}^n c_j L v_{\alpha_j}$$}
+
+\clearpage\newpage
+For future reference, note that \emph{any} linear map, whether or not it is continuous, can be applied to finite sums as above.
+
+FIXME span
+
 
 \sect{Measure}
 
