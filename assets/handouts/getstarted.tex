@@ -2,7 +2,7 @@
 \usepackage[top=1.2in, bottom=0.8in, left=1.0in, right=1.2in]{geometry}
 
 \usepackage{graphicx,color,enumitem,fancyvrb}
-\usepackage{amsmath,amsthm,amsbsy,amssymb}
+\usepackage{amsmath,amsthm,amsbsy,amssymb,bm}
 \usepackage{palatino}
 \usepackage{mdframed}
 
@@ -32,10 +32,17 @@
 \newcommand{\bI}{\mathbf{I}}
 \newcommand{\bX}{\mathbf{X}}
 
+\newcommand{\bzero}{\bm{0}}
+
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cS}{\mathcal{S}}
 \newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
 
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\RR}{\mathbb{R}}
+
+\newcommand{\range}{\operatorname{range}}
 
 %\newcommand{\exer}[1]{\noindent \textbf{Problem #1.} \,}
 %\newcommand{\epart}[1]{\noindent \textbf{(#1)} \,}
@@ -67,7 +74,7 @@
 \centerline{{\Large\strut \textbf{(which you will need to get started)}}}
 \bigskip
 
-Functional analysis is the study of vector spaces which have a topology.  Therefore you need to have some sense of what a ``topology'' is.  In fact, our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know the basics of topology, vector spaces, measures, and integrals.  This handout is an attempt to get you up to speed on these topics, so that you can read the book with real understanding.  Note that good mathematicians regularly stop reading and ask themselves ``do I understand the definition of this term?''
+Functional analysis is the study of vector spaces which have a topology.  Therefore you need to have some sense of what a ``topology'' is.  In fact, our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know the basics of topology, vector spaces, measures, and integrals.  This handout is an attempt to get you up to speed on these topics, so that you can develop real understanding from the book.  Note that good mathematicians regularly stop their reading and ask themselves ``do I genuinely understand the definition of this term?''
 
 
 \sect{Metric spaces} \label{topic:metric}
@@ -81,14 +88,14 @@ We start with a ``metric'', and then define open and closed sets from that, whic
 \item $d(x,z) \le d(x,y) + d(y,z)$ \hfill (triangle inequality)
 \end{enumerate}
 
-The addition symbol in condition 3 acts on real numbers, and not on the elements of the general set $X$.  (We may not be able to add elements of $X$!)  Also observe that one cannot substitute $\CC$ for $\RR$ in this definition because a reasonable ordering ``$\le$'' is not available for $\CC$.  If you have seen ``norms'' on vector spaces then the above definition will seem familiar; in which case see page \pageref{topic:norms}.
+The addition symbol in condition 3 acts on real numbers, and not on the elements of the general set $X$.  (Addition may not be meaningful for elements of $X$!)  Also observe that one cannot substitute $\CC$ for $\RR$ in this definition because a reasonable ordering ``$\le$'' is not available for $\CC$.  If you have seen ``norms'' on vector spaces then the above definition will seem familiar; we will get there shortly.
 
 \defin If $X$ is a set and $d$ is a metric then one calls the pair $(X,d)$ a \textbf{metric space}.
 
 Here are two examples of metric spaces:
 
 \begin{enumex}
-\item Let $X=S^1$ be the unit sphere, namely the set of points in $\RR^n$ which are Euclidean distance 1 from the origin.  Let $d$ be the Euclidean distance between points of $S^1$.
+\item Let $X=S^n$ be the unit sphere, namely the set of points in $\RR^n$ which are Euclidean distance 1 from the origin.  Let $d$ be the Euclidean distance between points of $S^n$.
 
 \showit{20}{Argue that $d$ defines a metric.}
 
@@ -100,8 +107,10 @@ Here are two examples of metric spaces:
 \showit{50}{Argue that $d$ defines a metric.  Note $X$ could be a very general set.}
 \end{enumex}
 
+One should conclude the following general fact from thinking about Example A: every subset of a metric space is also a metric space, with the same metric.
 
-\sect{Vector spaces}  Many metric spaces are actually vector spaces with norms.  Let us start with the definition of an abstract vector space, but treat it as an exercise.  Do you remember all the conditions?
+
+\sect{Vector spaces}  Many metric spaces are actually vector spaces with norms.  We start by defining an abstract vector space, but treated as an exercise.  Do you remember all the conditions?
 
 \instruct{0}{Fill in the axioms for a vector space, to complete the definition below.  Add bullet points as needed.}
 
@@ -142,14 +151,14 @@ Section 2.1 of the textbook defines a ``norm''.
 
 \defin If $\cV$ is a vector space and $\|\cdot\|$ is a norm on it then we say $(\cV,\|\cdot\|)$ is a \textbf{normed vector space}.
 
-Every normed vector space is also a metric space.  (The next Exercise asks you to show this.)  A norm is similar to a metric, but a norm requires more structure.  That is, you need to be able to add the elements of the set itself, and multiply them by scalars; the elements of the set have to be vectors and not just ``points''.
+Every normed vector space is also a metric space, and the next Exercise asks you to show this.  A norm is thus a special case of a metric; \emph{a norm requires the additional structure of a vector space}.  You need to be able to add elements themselves, and multiply them by scalars; the elements of the set need to be vectors and not just ``points''.
 
-\exer{50}{Show that if $\|\cdot\|$ is a norm on $\cV$ then the distance function defined in Section 2.1, namely $\operatorname{dist}(v,w) := \|v-w\|$, is a metric, so $(\cV,\operatorname{dist})$ is a metric space.}
+\exer{30}{Show that if $\|\cdot\|$ is a norm on $\cV$ then the distance function defined in Section 2.1, namely $\operatorname{dist}(v,w) := \|v-w\|$, is a metric.  Thus $(\cV,\operatorname{dist})$ is a metric space.}
 
 
-\sect{Open and closed sets}
+\sect{Open and closed sets (are topology)}
 
-Once you have a metric (or a norm) then you can define ``open'' and ``closed'' subsets, and talk about the ``boundaries'' of sets.  Our starting point is a ``ball'' around a point.
+Once you have a metric on a set, or a norm on a vector space, then you can define ``open'' and ``closed'' subsets, and talk about the ``boundaries'' of sets.  Open sets allow one to talk about ``nearness'' generally.  Our starting point is a ``ball'' around a point.
 
 \defin Suppose $(X,d)$ is a metric space.  If $x\in X$ is a point and $\eps>0$ is a real number then the \textbf{open ball} of radius $\eps>0$ around $x$ is the set
 	$$B_\eps(x) = \left\{y\in X\,:\,d(x,y) < \eps\right\}$$ 
@@ -160,49 +169,53 @@ Once you have a metric (or a norm) then you can define ``open'' and ``closed'' s
 \item A subset $Y\subset X$ is \textbf{closed} if $X \setminus Y$ is open.
 \end{itemize}
 
-\exer{60}{Suppose $(\cV,\|\cdot\|)$ is a normed vector space.  Rewrite the above definitions using the norm.}
+If $(\cV,\|\cdot\|)$ is a normed vector space then the above definitions all make sense, of course, with the formula $B_\eps(x) = \left\{y\in X\,:\,\|x-y\|<\eps\right\}$.
 
-\exer{60}{Sketch an open set in the plane $\RR^2$, and illustrate the definition of open set.}
+\exer{50}{Sketch an open set in the plane $\RR^2$, and illustrate the definition of open set.}
+
+\exer{50}{Generally speaking, sets are neither open nor closed.  Sketch an example of such a set in the plane $\RR^2$.}
 
 \clearpage\newpage
-\exer{60}{Generally speaking, sets are neither open nor closed.  Sketch an example of such a set in the plane $\RR^2$.}
-
-\defin Suppose $(X,d)$ is a metric space and $Y \subset X$ is any subset.  A point $z\in X$ is in the \textbf{boundary of } $Y$ if for all $\eps>0$, the intersection $B_\eps(z)\cap Y$ is non-empty and the intersection $B_\eps(z)\cap (X\setminus Y)$ is also non-empty.  We write $\partial Y$ for the set of points which are in the boundary of $Y$.
+\defin Suppose $(X,d)$ is a metric space and $Y \subset X$ is any subset.  A point $z\in X$ is in the \textbf{boundary of } $Y$ if for all $\eps>0$, both $B_\eps(z)\cap Y$ and $B_\eps(z)\cap (X\setminus Y)$ are non-empty.  We write $\partial Y$ for the set of points which are in the boundary of $Y$.
 
 \exer{1}{Using a different color, sketch $\partial Y$ onto your above example.}
 
 Finally, here is a promised definition.
 
-\defin Suppose $X$ is a set, and if $\{Y_\alpha\}$ is a collection of subsets of $X$ which we call the ``open sets'', then we say $\{Y_\alpha\}$ is a \textbf{topology} on $X$.
+\defin Suppose $X$ is a set, and if $\{Y_\alpha\}$ is a collection of subsets of $X$ which are the open sets.  Then we say $\{Y_\alpha\}$ is a \textbf{topology} on $X$.
 
-In fact, the above definition is too informal.  The collection of subsets must satisfy certain requirements to qualify as a system of open sets.  The collection must include the empty set $\emptyset$ and the whole set $X$, it must be closed under arbitrary unions, and the intersection of any pair of subsets in the collection must be in the collection.  These conditions all hold if you define open sets via a metric, as we have done above.
+If $(X,d)$ is a metric space then the above definition suffices because we already know which are the open sets.  However, topology is more general than metric spaces.  On any set a collection of subsets can be defined as the \textbf{open sets} if it satisfies certain requirements.  The collection must include the empty set $\emptyset$ and the whole set $X$, the intersection of any pair of subsets in the collection must be in the collection, and any union of subsets in the collection must be back in the collection.  These conditions all hold if you define open sets via a metric; feel free to treat this as another Exercise!
 
 From the definition of a ``topology'' we can make sense of a phrase like ``functional analysis is the study of vector spaces which have a topology.''  Having a system of identified open sets makes it possible to talk about limits, continuity, and so on, and ultimately to find solutions to hard problems.
 
 
 \sect{Limits and continuity}
 
-From the definition of open sets, or more directly by using open balls and/or a metric, we can define the limit of a sequence.
+From the definition of open sets, or more directly by using a metric, we can define the limit of a sequence.
 
 \defin Suppose $(X,d)$ is a metric space and $(x_n)$ is a sequence of points from $X$.  We say that \textbf{the limit of $(x_n)$ is $\hat x$}, written
 	$$\lim_{n\to\infty} x_n = \hat x, \qquad \text{or} \qquad x_n \to \hat x,$$
-if $\hat x \in X$ and
+if $\hat x \in X$ and if either of the following conditions holds:
 \begin{enumerate}
 \item for each open set $Y$ which contains $\hat x$ there is $N$ so that $n\ge N$ implies $x_n \in Y$, or
 \item for each $\eps>0$ there is $N$ so that $n\ge N$ implies $x_n \in B_\eps(\hat x)$.
 \end{enumerate}
 
-\exer{40}{Show that the two definitions are equivalent.}
+\exer{20}{Show that the two definitions are equivalent.}
+
+\clearpage\newpage
+\phantom{foo}
+\vspace{20mm}
 
 \exer{30}{Write a third equivalent form of the definition using only the metric $d$.  (Do not mention open sets or $B_\eps(\cdot)$.)}
 
-\defin Suppose $(X,d)$ is a metric space and that $\hat x = \lim_{n\to\infty} x_n$ for a sequence $(x_n)$.  We say that the sequence \textbf{converges}.
+\defin Suppose $(X,d)$ is a metric space and that $\ds \hat x = \lim_{n\to\infty} x_n$ for a sequence $(x_n)$.  We say that the sequence \textbf{converges}.
 
 \exer{40}{Show that a sequence cannot converge to two different limits.}
 
 Now consider complex-valued and real-valued functions.
 
-\defin Suppose $(X,d)$ is a metric space and $f:X\to \CC$ is a function.  We say that $f$ is \textbf{continuous at $\hat x\in X$} if
+\defin Suppose $(X,d)$ is a metric space and $f:X\to \CC$ is a function.  We say that $f$ is \textbf{continuous at $\hat x\in X$} if either of the following conditions holds:
 \begin{enumerate}
 \item for each $\eps>0$ there is $\delta>0$ so that $x \in B_\eps(\hat x)$ implies $|f(x)-f(\hat x)| < \eps$, or
 \item for all sequences $(x_n)$ such that $\displaystyle \lim_{n\to\infty} x_n = \hat x$, it holds that $\displaystyle \lim_{n\to\infty} f(x_n) = f(\hat x)$.
@@ -212,66 +225,73 @@ The second definition is often called ``sequential continuity''.
 
 \defin We say that $f$ is \textbf{continuous} if it is continuous at every $\hat x\in X$.
 
-\exer{40}{Let $f(x)=x^2$ for $x\in \RR$.  Show that $f$ is continuous.}
+\exer{20}{Let $f(x)=x^2$ for $x\in \RR$.  Show that $f$ is continuous.}
 
-%\clearpage\newpage
-\exer{40}{(This follows Example B on page \pageref{topic:metric}.  It is an extreme case.)  Let $X$ be any set and define the metric by $d(x,x)=0$ and $d(x,y)=1$ if $x\ne y$.  Let $f:X\to\CC$ be \emph{any} function.  Show that $f$ is continuous.}
+\clearpage\newpage
+\phantom{foo}
+\vspace{20mm}
+
+\exer{40}{(\emph{This follows Example B on page \pageref{topic:metric}.  It is an extreme, entertaining, and not terribly important case.})  Let $X$ be any set and define the metric by $d(x,x)=0$ and $d(x,y)=1$ if $x\ne y$.  Show that if a sequence converges then it is eventually constant.  Then, for \emph{any} function $f:X\to\CC$, show that $f$ is continuous.}
 
 
 \sect{Cauchy sequences and completeness}
 
-When we have a topology on $X$ then we can discuss whether a given sequence $(x_n)$ of points in $X$ converges; see the above definition.  However, the definition requires that we have identified the limit $\hat x \in X$.  That is, convergence of a sequence means convergence to a particular limit.
+When we have a topology on $X$ and a sequence $(x_n)$ of points in $X$ then the above definition determines whether the sequence converges.  However, the definition requires that we have identified the limit $\hat x \in X$.  That is, convergence of a sequence means convergence to a particular limit.
 
-In certain metric space topologies this becomes easier because there is an easier-to-check condition that is equivalent to convergence to some limit.  The condition only involves the distance between elements of the sequence.
+In certain metric space topologies convergence becomes easier!  That is, sometimes there is an easier-to-check condition that is equivalent to convergence to some limit.  The condition only involves the distance between elements of the sequence.
 
 \defin Suppose $(X,d)$ is a metric space and $(x_n)$ is a sequence of points in $X$.  We say that $(x_n)$ is a \textbf{Cauchy sequence} if for any $\eps>0$ there is $N$ so that if $m \ge N$ and $n\ge N$ then $d(x_m,x_n)<\eps$.
 
 \exer{35}{Show that if a sequence $(x_n)$ converges to limit $\hat x$ then $(x_n)$ is Cauchy.}
 
 \clearpage\newpage
-\exer{50}{Rewrite the above definition for a normed vector space.  Compare the resulting definition to the one stated in section 2.1 of our textbook.  Show that the two definitions are the same.}
+\exer{50}{Rewrite the Cauchy sequence definition for a normed vector space.  Compare the resulting definition to the one stated in section 2.1 of our textbook.  Show that the two definitions are the same.}
 
 \defin Suppose $(X,d)$ is a metric space.  If every Cauchy sequence $(x_n)$ in $X$ has a limit, i.e.~there is $\hat x\in X$ so that $\displaystyle \lim_{n\to\infty} x_n=\hat x$, then we say that $(X,d)$ is \textbf{complete}.
 
+Not all metric spaces are complete.  For example, the rational numbers are a normed vector space, using the usual absolute value as the metric, but there are Cauchy sequences of rational numbers which do not converge.
+
 We will accept the following Theorem without proof.
 
-\thm The real numbers $\RR$, with the usual metric, is a complete metric space.  Likewise the complex numbers $\CC$ is a complete metric space.
+\thm The real numbers $\RR$, with the usual absolute value norm, is a complete normed vector space, and thus a complete metric space.  Likewise the complex numbers $\CC$ is a complete normed vector space.
 
-\exer{60}{Let $x_0=2$ and define $x_{k+1}$ as the real zero of the tangent line to $y=x^2-2$ at $x_k$.  Argue geometrically, from the graph of $y=x^2-2$, that $(x_k)$ is Cauchy.  Note that $x_k$ is always a rational number.  What is the limit of $(x_k)$?}
+\exer{60}{Let $x_0=2$.  For $k=1,2,\dots$ define $x_k$ as the real zero of the tangent line to $y=x^2-2$ at $x_{k-1}$.  Argue that $x_k$ is rational.  Argue geometrically, from the graph of $y=x^2-2$, that $(x_k)$ is Cauchy.  What is the limit of $(x_k)$?}
 
-With the above definition, we are now at the start of functional analysis!  The following is a major concept starting in section 2.1 of our textbook.
+With the above definition of completeness, we are now at the start of functional analysis!  The following is a major conceptual starting point.
 
-\defin Suppose $(\cV,\|\cdot\|)$ is a normed vector space, and that it is complete.  We call $(\cV,\|\cdot\|)$ a \textbf{Banach space}.
+\defin Suppose $(\cV,\|\cdot\|)$ is a normed vector space, and that it is complete metric space.  We call $(\cV,\|\cdot\|)$ a \textbf{Banach space}.
 
 
 \clearpage\newpage
 \sect{Compact sets}
 
-Informally speaking, a compact subset in a metric space is well-approximated by finitely-many points.  The precise definition seems a little awkward when you first read it.
+Speaking very informally, a compact subset of a metric space is well-approximated by finitely-many points.  The precise definition seems awkward when you first read it.
 
-\defin Suppose $(X,d)$ is a metric space and $K \subset X$.  We say that $\{Y_\alpha\}$ is an \textbf{open cover} of $K$ if each $Y_\alpha$ is open set in $X$ and if
-	$$K \subset \,\bigcup_{\alpha} \,Y_\alpha.$$
+\defin Suppose $(X,d)$ is a metric space and $Z \subset X$.  We say that $\{Y_\alpha\}$ is an \textbf{open cover} of $Z$ if each $Y_\alpha$ is open set in $X$ and if
+	$$Z \subset \,\bigcup_{\alpha} \,Y_\alpha.$$
 
 \defin We say $K$ is \textbf{compact} if from every open cover $\{Y_\alpha\}$ of $K$ we can choose a finite sub-collection $\{Y_{\alpha_j}\}_{j=1}^n$ which is also an open cover of $K$.
 
-This definition is often said as ``every open cover of $K$ has a finite sub-cover''.
+This definition is often said as ``a set is compact if every open cover of $K$ has a finite sub-cover''.
 
-\exer{50}{For $X=\RR^2$ being the plane, sketch a subset $K$ and sketch the above definitions.}
+\exer{50}{For $X=\RR^2$, sketch a subset $K$ and sketch the above definitions.}
 
 \exer{40}{Suppose $K\subset X$ is a finite set.  Show that $K$ is compact.}
 
-\exer{40}{Pretending to do numerical stuff: Sketch a grid of balls $B_\eps(x_{j,k})$ over the set $K=[0,1]^2$.  Make the balls an open cover.  This illustrates the informal description of ``compact.''}
+\exer{35}{Pretend to do numerical stuff as follows: Sketch a grid of balls $B_\eps(x_{j,k})$, an open cover, over the set $K=[0,1]^2$.  This illustrates the informal description of ``compact.''}
 
 \clearpage\newpage
-\exer{50}{Suppose $K=[0,1] \subset \RR$.  Sketch the (direct) proof that $K$ is compact.  You may use the fact that $(\RR,|\cdot|)$ is a complete metric space.}
+\exer{50}{Suppose $K=[0,1] \subset \RR$.  Sketch the (direct) proof that $K$ is compact.  You will need the fact that $(\RR,|\cdot|)$ is a complete metric space.}
 
-Closed and bounded sets in normed vector spaces are common objects of interest in functional analysis.  In finite dimensions these are compact sets.  We will see that they are \emph{not} generally compact in infinite dimensions (in the topology coming from the norm).
+Closed and bounded sets in normed vector spaces are commonly objects of interest in functional analysis.  In finite dimensions these are compact sets.  We will see that they are \emph{not} generally compact in infinite-dimensional normed vector spaces, whether or not those spaces are complete (i.e.~Banach spaces).
 
-\thm (Heine-Borel theorem) If $K \subset \CC^n$ is closed and bounded then $K$ is compact.
+We will accept the following important theorem without proof.
 
-A very important idea is that an optimization problem for a real-valued function can be solved if the function is continuous and the input set is compact.
+\thm (Heine-Borel) If $K \subset \CC^n$ is closed and bounded then $K$ is compact.
 
-\thm (Extreme value theorem) Suppose $(X,d)$ is a metric space, $K\subset X$, and $f:K\to\RR$ (or $f:X\to\RR$) is continuous.  If $K \subset X$ is compact then $f$ attains its maximum and minimum on $K$.
+An optimization problem for a real-valued function can always be solved if the function is continuous and the input set is compact.  This is the start of the entire field of optimization!
+
+\thm (``Extreme value theorem'') Suppose $(X,d)$ is a metric space, $K\subset X$, and $f:K\to\RR$ (or $f:X\to\RR$) is continuous.  If $K \subset X$ is compact then $f$ attains its maximum and minimum on $K$.
 
 Precisely-stated, the conclusion of this theorem is that there are $p,q\in K$ so that
     $$f(p) \le f(x) \le f(q)$$
@@ -279,9 +299,28 @@ for all $x \in K$.
 
 
 
-\sect{Linear map}
+\sect{Linear maps}
 
-\sect{Linear independence}
+\instruct{0}{The core meaning of ``linear'' is another fill-in-the-blanks exercise.}
+
+\defin Suppose $\cV,\cW$ are vector spaces.  A function (map) $L:\cV \to \cW$ is \textbf{linear} if the following two conditions hold:
+\begin{enumerate}
+\item \phantom{foo}
+\item \phantom{foo}
+\end{enumerate}
+
+\clearpage\newpage
+\exer{60}{Show that if $L:\cV \to \cW$ is linear then $L\bzero = \bzero$.  Also show that the sets
+    $$\ker L = \{v\in\cV\,:\,Lv=\bzero\}, \quad \range L = \{w\in\cW\,:\,\exists v \in \cV \text{ so that } Lv=w\}$$
+are vector spaces.}
+
+In functional analysis we will have much to say about linear maps, that is, linear maps on vector spaces \emph{which also have a topology}.  The above is what you need to get started.
+
+
+\sect{Linear independence}  Sometimes a vector can be built from other vectors in a manner that linear maps will respect.
+
+\defin Suppose $\cV$ is a complex vector space and $u \in \cV$ is a vector.  Suppose $\cS = \{v_\alpha\}$ is any collection of vectors.  We say $u$ \textbf{is a linear combination from} $\cS$ if there exist \emph{finitely-many} vectors $\{v_{\alpha_j}\}_{j=1}^n$ from $\cS$, and coefficients $c_j\in\CC$, so that
+	$$u = c_1 v_{\alpha_1} + \dots + c_n v_{\alpha_n}$$
 
 \sect{Measure}
 
