@@ -41,6 +41,7 @@
 \newcommand{\cW}{\mathcal{W}}
 
 \newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 
 \newcommand{\range}{\operatorname{range}}
@@ -55,6 +56,7 @@
 \newcommand{\sect}[1]{\subsection*{#1.}}
 
 \newcommand{\defin}{\emph{Definition.}\,\,}
+\newcommand{\lem}{\emph{Lemma.}\,\,}
 \newcommand{\thm}{\emph{Theorem.}\,\,}
 
 \newlist{enumex}{enumerate}{3}
@@ -349,44 +351,64 @@ In the above definition, if $S$ itself is finite then $\cV$ is finite-dimensiona
 However, if $S$ is infinite, so that $\cV$ is an infinite dimensional vector space, then the above definition of Hamel basis is widely regarded as useless!  This strange situation is despite the fact that the axiom of choice shows that every vector space $\cV$ \emph{has} an algebraic/Hamel basis.  For all of the many parts of mathematics of which I am aware which use infinite-dimensional vector spaces, there are \emph{zero} applications of algebraic/Hamel bases.  In any case the concept never comes up in our textbook.
 
 
-
 \sect{Measure}
 
-Now we finish up with integration, which is to say \emph{Lebesgue} integration.  Here I will suppress many details.  Appendix A of our textbook fills in much of the theory, though at a more general level than the brief version here.  (If you want more then you will need to find a book on Lebesgue integration.)
+Our final topic is integration, which is to say \emph{Lebesgue} integration.  Especially for this topic, we will suppress \emph{many} details and be very brief.  However, Appendix A of our textbook fills in much of the theory, at a more general level than here.  (For even more information, please see a graduate text on real analysis.)  These notes restrict to integration over Euclidean space $\RR^n$ and its subsets.  The main preparatory ideas are ``measurable sets'' and (positive) ``measure''.
 
-The main preparatory ideas are of ``measureable sets'' and of a (positive) ``measure''.  For these notes we restrict to integration over Euclidean space $\RR^n$ and its subsets.  The following is not really a definition because I am suppressing the precise properties satisfied by (Lebesgue) measurable subsets of $\RR^n$.  We will accept, without proof, the existence of such a well-defined and useful system of measurable sets.
+The following is not really a definition because I am suppressing the precise properties satisfied by measurable subsets of $\RR^n$.  We will accept, without proof, the existence of such a well-defined and useful system of measurable sets.
 
-\defin Consider $\RR^n$ with the usual (Euclidean) norm and metric.  The \textbf{Lebesgue measurable subsets} $\cM$ is a collection of subsets of $\RR^n$ including the open and closed sets and all countable unions and intersections thereof.\footnote{The technical issue in the construction of $\cM$ is that first you build the Borel measurable sets as the smallest $\sigma$-algebra including the open and closed sets, and then later you build $\cM$ by including all subsets of sets of measure zero.  As I said, I am suppressing such details here.}
+\defin Consider $\RR^n$ with the usual (Euclidean) norm and metric.  The \textbf{(Lebesgue) measurable subsets} are a collection $\cM$ of subsets of $\RR^n$.  $\cM$ includes all open and closed sets, and furthermore it is closed under countable unions, countable intersections, and complements.\footnote{The technical issue in the construction of $\cM$ is that first you build the Borel measurable sets as the smallest $\sigma$-algebra including the open and closed sets, and then later you build $\cM$ by including all subsets of sets of measure zero.  As I said, I am suppressing such details here.}
 
-Intuitively, if one can describe precisely how a subset of $\RR^n$ is constructed then it will be Lebesgue measurable!  Even ``weird'' sets like fractals and randomly-generated subsets are measurable.  Nonetheless, there are (many) non-measurable subsets, but their ``constructions'' require highly-abstracted steps, like using the axiom of choice.
+Intuitively, if one can describe precisely how a subset of $\RR^n$ is constructed then it will be Lebesgue measurable.  Even ``weird'' sets like fractals and randomly-generated subsets are measurable.  Nonetheless, there are (many) non-measurable subsets, but their ``constructions'' require highly-abstracted steps, e.g.~using the axiom of choice.
 
-\defin A \textbf{measure} is a function
+\defin A \textbf{(positive) measure} is a function
 	$$\mu : \cM \to [0,\infty)$$
-with the property of \textbf{countable additivity}, which is that if $A_j \in \cM$ for $j=1,2,\dots$ are disjoint sets then
+with the property of \textbf{countable additivity}, namely that if $A_j \in \cM$ for $j=1,2,\dots$ are disjoint measureable sets then
 	$$\mu\left(\bigcup_{j=1}^\infty A_j\right) = \sum_{j=1}^\infty \mu(A_j)$$
 
-A measure gives an answer to ``how big'' is a given set.  That answer can be quite general, so that some measures give large numbers for even finite sets, whereas other measures give zero for all finite sets.  Primarily we want to measure sets by their \textbf{volumes}.  Lebesgue measure does this.  Again the following definition suppresses many details.
+Intuitively, a measure reports how big a given set is.  Thus a measure is a generalization of area or volume.  But the concept is very general.  For example, some measures give large numbers for finite sets, whereas other measures give zero for all finite sets.
+
+Again the following definition suppresses many details.
 
 \defin On $\RR^n$, \textbf{Lebesgue measure} is a measure
-	$$m : \cM \to [0,\infty),$$
-satisfying countable additivity (of course), such that rectangular solids (products of intervals) have their usual volume:
+	$$m : \cM \to [0,\infty)$$
+for which the rectangular solids (products of intervals) have their usual volume:
 	$$\text{if } R = I_1\times I_2 \times \dots \times I_n \text{ then } m(R) = \prod_{j=1}^n (b_j - a_j)$$
-where each $I_j$ is an interval which may or may not include its endpoints:
+Here each $I_j$ is an interval which may or may not include its endpoints:
 	$$I_j = (a_j,b_j) \,\Big|\, (a_j,b_j] \,\Big|\, [a_j,b_j) \,\Big|\, [a_j,b_j].$$
+All such sets $R_j$ are measurable.
 
-A key idea here is that the Lebesgue measure $m(A)$ of sets $A\subset \RR^n$ is defined for many sets much more general than products of intervals, as long as $A\in \cM$.  The number $m(A)$ is the $n$-dimensional volume of $A$, and it is well-defined for extraordinarily complex sets, e.g.~the famous Mandelbrot set in $\RR^2$, or any ordinary polygon.  One could denote $m(A)$ by $\operatorname{vol}(A)$.
+However, a key idea is that the Lebesgue measure $m(A)$ is defined for many sets $A$ which are much more general than products of intervals.  The requirement is that $A\subset \RR^n$ and $A\in \cM$.  The number $m(A)$ is the $n$-dimensional volume of $A$; some sources denote $m(A)$ by $\operatorname{vol}(A)$.  Lebesgue measure is well-defined for extraordinarily complicated sets, e.g.~the famous Mandelbrot set in $\RR^2$, but also for any ordinary polygon.
 
-\exer{60}{Argue for why the rule $m(T)=\frac{1}{2} b h$ works for triangles.  Specifically, consider right triangles $T$ in $\RR^2$ with vertices at $(0,0)$, $(b,0)$, and $(0,h)$.  Cover $T$ with disjoint rectangles so that countable additivity and the products-of-intervals rules can be used.}
+\exer{40}{In any dimension the Lebesgue measure of a single point is zero: $m(\{x\})=0$.  Show that the set of rational numbers $\QQ \subset \RR^1$ is measurable and that it is also of measure zero.}
 
-An essential formula, and a waypoint when defining Lebesgue measure, which helps one understand the measure, is that if $A\in\cM$ then
+\exer{60}{Argue for why the rule \,$m(T)=\frac{1}{2} b h$\, applies to triangles $T\subset \RR^2$.  Specifically, consider right triangles with vertices at $(0,0)$, $(b,0)$, and $(0,h)$.  Cover $T$ with disjoint rectangles so that countable additivity and the products-of-intervals rules can be used.}
+
+\clearpage\newpage
+An essential formula, and a waypoint when defining Lebesgue measure, and a key formula which helps one understand measures, is that if $A\in\cM$ then
 	$$m(A) = \inf \left\{\sum_{j=1}^\infty m(R_j) \,:\, A \subset \bigcup_{j=1}^\infty R_j\right\}$$
-where $R_j$ are products of intervals as above.  That is, for measurable sets $A$ we can compute (imagine computing?) $m(A)$ by covering $A$ with rectangles and taking the smallest resulting volume.
+where $R_j$ are products of intervals as above.  That is, for measurable sets $A$ we can compute (imagine computing?) $m(A)$ by covering $A$ with rectangles more and more accurately, and taking the smallest resulting volume.
 
-Also Lebesgue measure is translation invariant: if $A\in \cM$ and $y\in\RR^n$ then $A+y\in\cM$ and
+We will accept the following very important fact without proof.
+
+\lem Lebesgue measure is translation invariant: if $A\in \cM$ and $y\in\RR^n$ then $A+y\in\cM$ and
 	$$m(A+y) = m(A).$$
+
+Finally a definition which suggests (correctly) that there are many measures out there.
+
+\defin  The triple $(\RR^n,\cM,m)$ is called a \textbf{measure space}.  One says that $\RR^n$ is the \textbf{base space}, $\cM$ is the (collection of) \textbf{measurable sets}, and $m$ is the \textbf{measure}.
 
 
 \sect{Integral}
+
+Some functions are well-behaved with respect to the measurable sets.
+
+\defin A function $f:X\to\CC$, or $f:X\to \RR$, where $X \in \cM$ is a measurable subset of $\RR^n$, is \textbf{measurable} if the preimage of every open set is a measurable set:
+	$$A \subset \CC \text{ is open} \quad \implies \quad f^{-1}(A)=\{x\in X\,:\,f(x)\in A\} \in \cM$$
+
+If a measurable function is also non-negative ($f:X\to [0,\infty)$) then we will be able to give an unambiguous value for its integral, though that value may be infinite.  However, the definition of the integral goes via a simpler class of functions than measurable functions.
+
+\defin A function $\varphi:X\to \CC$ is \textbf{simple} if 
 
     $$\int_{\RR^n} f(x)\,dx = FIXME$$
 
