@@ -43,6 +43,7 @@
 \newcommand{\RR}{\mathbb{R}}
 
 \newcommand{\range}{\operatorname{range}}
+\newcommand{\Span}{\operatorname{span}}
 
 %\newcommand{\exer}[1]{\noindent \textbf{Problem #1.} \,}
 %\newcommand{\epart}[1]{\noindent \textbf{(#1)} \,}
@@ -317,24 +318,54 @@ are vector spaces.}
 In functional analysis we will have much to say about linear maps, that is, linear maps on vector spaces \emph{which also have a topology}.  The above is what you need to get started.
 
 
-\sect{Linear independence}  Sometimes a vector can be built from other vectors in a manner that linear maps will respect.
+\sect{Linear combinations}
 
-\defin Suppose $\cV$ is a complex vector space and $u \in \cV$ is a vector.  Suppose $\cS = \{v_\alpha\}$ is any collection of vectors.  We say $u$ \textbf{is a (finite) linear combination from} $\cS$ if there exist \emph{finitely-many} vectors $\{v_{\alpha_j}\}_{j=1}^n$ from $\cS$, and coefficients $c_j\in\CC$, so that
+Sometimes a vector can be built from other vectors in a manner that linear maps will respect, that is, as a linear combination.  However, it is \emph{extremely} important to distinguish between finite sums and infinite sums.  Finite sums are never problematic for linear maps, but infinite sums have issues of convergence, that is, of topology.
+
+\defin Suppose $\cV$ is a complex vector space and $u \in \cV$ is a vector.  Suppose $\cS = \{v_\alpha\}$ is any collection of vectors.  We say $u$ is a \textbf{(finite) linear combination from} $\cS$ if there exist \emph{finitely-many} vectors $\{v_{\alpha_j}\}_{j=1}^n$ from $\cS$, and coefficients $c_j\in\CC$, so that
 	$$u = c_1 v_{\alpha_1} + \dots + c_n v_{\alpha_n} = \sum_{j=1}^n c_j v_{\alpha_j}$$
 
-It is very important, for the purposes of functional analysis, to reserve ``linear combination'' as \emph{finite} linear combination.  We will use infinite sums of vectors all the time, but these will be called \textbf{series}, just as one does in calculus.
-
-\exer{15}{Show that if $L:\cV \to \cW$ is a linear map then
-	$$L\left(\sum_{j=1}^n c_j v_{\alpha_j}\right) = \sum_{j=1}^n c_j L v_{\alpha_j}$$}
+In the above definition $S$ may be a finite or an infinite set.  However, for the purposes of functional analysis we will reserve the words ``linear combination'' for \emph{finite} linear combinations.  We will also use infinite sums of vectors, quite routinely, but these will be called \textbf{series}, the same name for infinite sums as in calculus, and we will pay close attention to whether these series converge.
 
 \clearpage\newpage
+\exer{30}{Show that if $L:\cV \to \cW$ is a linear map then \, $\ds L\left(\sum_{j=1}^n c_j v_{\alpha_j}\right) = \sum_{j=1}^n c_j L v_{\alpha_j}$.}
+
 For future reference, note that \emph{any} linear map, whether or not it is continuous, can be applied to finite sums as above.
 
-FIXME span
+\defin Suppose $\cV$ is a complex vector space.  Suppose $S = \{v_\alpha\}$ is any set of vectors from $\cV$, whether finite or infinite.  The \textbf{span} of $S$ is the set of all \emph{finite} linear combinations:
+	$$\Span S = \left\{\sum_{j=1}^n c_j L v_{\alpha_j}\,:\,c_j \in \CC \text{ and } v_{\alpha_j} \in S\right\}.$$
+
+\defin Suppose $\cV$ is a complex vector space.  If there exists a finite subset $S \subset \cV$ so that $\cV = \Span S$ then we say $\cV$ is \textbf{finite dimensional}.  If not, we say $\cV$ is \textbf{infinite dimensional}.  In the former case $\dim \cV = \min |S|$ is the \textbf{dimension of} $cV$, where the minimum is over $S \subset \cV$ such that $\Span S = \cV$.  (Here $|S|$ denotes the cardinality of $S$.)
+
+\defin Suppose $\cV$ is a complex vector space and $S = \{v_1,\dots,v_n\} \subset \cV$ is a finite subset.  We say $S$ is \textbf{linearly independent} if there exist no coefficients $c_j \in \CC$, other than identically zero coefficients, so that \,$\ds \bzero = \sum_{j=1}^n c_j v_j$.
+
+\exer{30}{Show that the set $\ds \left\{\begin{bmatrix} 1 \\ 0 \\ 0\end{bmatrix}, \begin{bmatrix} 0 \\ 2 \\ 0\end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 3 \end{bmatrix}, \begin{bmatrix} 1 \\ 1 \\ 1\end{bmatrix}\right\}$ in $\CC^3$ is linearly dependent.}
+
+\defin Suppose $\cV$ is a complex vector space and that $S \subset \cV$.  If every finite subset of $S$ is linearly independent and if $\Span S = \cV$ then we call $S$ a \textbf{(algebraic or Hamel) basis} for $\cV$.
+
+In the above definition, if $S$ itself is finite then $\cV$ is finite-dimensional and this is the usual definition of ``basis'': a \textbf{basis} is a finite and linearly-independent set of vectors which spans the vector space.
+
+However, if $S$ is infinite, so that $\cV$ is an infinite dimensional vector space, then the above definition of Hamel basis is widely regarded as useless!  This strange situation is despite the fact that the axiom of choice shows that every vector space $\cV$ \emph{has} an algebraic/Hamel basis.  For all of the many parts of mathematics of which I am aware which use infinite-dimensional vector spaces, there are \emph{zero} applications of algebraic/Hamel bases.  In any case the concept never comes up in our textbook.
+
 
 
 \sect{Measure}
 
+Finally we get to integration, which is to say \emph{Lebesgue} integration.  Here I will suppress many details.  The main preparatory ideas are of ``measureable sets'' and of a (positive) ``measure''.  Also, for these notes we restrict to integration over Euclidean space $\RR^n$ and its subsets.
+
+Find a book on Lebesgue integration if you want to fill in the details!
+
+The following is not really a definition because I am suppressing the precise properties satisfied by (Lebesgue) measurable subsets of $\RR^n$.  We will accept, without proof, the existence of such a well-defined and useful system of measurable sets.
+
+\defin Consider $\RR^n$ with the usual (Euclidean) norm and metric.  The \textbf{Lebesgue measurable subsets} of $\RR^n$ include the open and closed sets and all countable unions and intersections thereof.
+
+Intuitively, if one can describe precisely how a subset of $\RR^n$ is constructed then it will be measurable!  Even ``weird'' sets like fractals and randomly-generated subsets are measurable.  Nonetheless, there are (many) non-measurable subsets, but in their constructions these need highly-abstracted steps like the axiom of choice.
+
+FIXME \textbf{measure}
+
+
 \sect{Integral}
+
+    $$\int_{\RR^n} f(x)\,dx = FIXME$$
 
 \end{document}
