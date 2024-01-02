@@ -78,7 +78,7 @@
 \centerline{{\Large\strut \textbf{(which you will need to get started)}}}
 \bigskip
 
-Functional analysis is the study of vector spaces which have a topology.  Therefore you need to have some sense of what a ``topology'' is.  In fact, our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know the basics of topology, vector spaces, measures, and integrals.  This handout is an attempt to get you up to speed on these topics, so that you can develop real understanding from the book.  Note that good mathematicians regularly stop their reading and ask themselves ``do I genuinely understand the definition of this term?''
+Functional analysis is the study of vector spaces which have a topology.  Therefore you need to have some sense of what a ``topology'' is.  In fact, our textbook (D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer, 2020) assumes that you know the basics of topology, vector spaces, measures, and integrals.  This handout is an attempt to get you up to speed on these topics, so that you can develop real understanding from the book.  Note that good mathematicians regularly stop their reading and ask themselves ``Do I genuinely understand the definition of this term? What little exercises would confirm that understanding?''
 
 
 \sect{Metric spaces} \label{topic:metric}
@@ -92,7 +92,7 @@ We start with a ``metric'', and then define open and closed sets from that, whic
 \item $d(x,z) \le d(x,y) + d(y,z)$ \hfill (triangle inequality)
 \end{enumerate}
 
-The addition symbol in condition 3 acts on real numbers, and not on the elements of the general set $X$.  (Addition may not be meaningful for elements of $X$!)  Also observe that one cannot substitute $\CC$ for $\RR$ in this definition because a reasonable ordering ``$\le$'' is not available for $\CC$.  If you have seen ``norms'' on vector spaces then the above definition will seem familiar; we will get there shortly.
+The addition symbol in condition 3 acts on real numbers, and not on the elements of the general set $X$.  (Addition may not even be meaningful for elements of $X$!)  Also observe that one cannot substitute $\CC$ for $\RR$ in this definition because a reasonable ordering ``$\le$'' is not available for $\CC$.  If you have seen ``norms'' on vector spaces then the above definition will seem familiar; we will get there shortly.
 
 \defin If $X$ is a set and $d$ is a metric then one calls the pair $(X,d)$ a \textbf{metric space}.
 
@@ -353,63 +353,109 @@ However, if $S$ is infinite, so that $\cV$ is an infinite dimensional vector spa
 
 \sect{Measure}
 
-Our final topic is integration, which is to say \emph{Lebesgue} integration.  Especially for this topic, we will suppress \emph{many} details and be very brief.  However, Appendix A of our textbook fills in much of the theory, at a more general level than here.  (For even more information, please see a graduate text on real analysis.)  These notes restrict to integration over Euclidean space $\RR^n$ and its subsets.  The main preparatory ideas are ``measurable sets'' and (positive) ``measure''.
+Our final topic is integration, which is to say \emph{Lebesgue} integration.  We will suppress \emph{many} details and be very brief.  However, Appendix A of our textbook fills in much of the theory, at a more general level than here.  (For even more information, please see a graduate text on real analysis.)  These notes restrict to Lebesgue integration of complex-valued functions over Euclidean space $\RR^n$ (or a subset thereof).
 
-The following is not really a definition because I am suppressing the precise properties satisfied by measurable subsets of $\RR^n$.  We will accept, without proof, the existence of such a well-defined and useful system of measurable sets.
+The main preparatory ideas are ``measurable sets'' and (positive) ``measure''.  The following is not really a definition because I am suppressing the precise properties satisfied by measurable subsets of $\RR^n$.  We will accept, without proof, the existence of such a well-defined and useful system of measurable sets.
 
 \defin Consider $\RR^n$ with the usual (Euclidean) norm and metric.  The \textbf{(Lebesgue) measurable subsets} are a collection $\cM$ of subsets of $\RR^n$.  $\cM$ includes all open and closed sets, and furthermore it is closed under countable unions, countable intersections, and complements.\footnote{The technical issue in the construction of $\cM$ is that first you build the Borel measurable sets as the smallest $\sigma$-algebra including the open and closed sets, and then later you build $\cM$ by including all subsets of sets of measure zero.  As I said, I am suppressing such details here.}
 
-Intuitively, if one can describe precisely how a subset of $\RR^n$ is constructed then it will be Lebesgue measurable.  Even ``weird'' sets like fractals and randomly-generated subsets are measurable.  Nonetheless, there are (many) non-measurable subsets, but their ``constructions'' require highly-abstracted steps, e.g.~using the axiom of choice.
+Intuitively, if one can describe precisely how a subset of $\RR^n$ is constructed then it will be measurable.  Even ``weird'' sets like fractals and randomly-generated subsets are measurable.  Nonetheless, there are (many) non-measurable subsets, but their ``constructions'' require highly-abstracted steps, e.g.~using the axiom of choice.
 
 \defin A \textbf{(positive) measure} is a function
 	$$\mu : \cM \to [0,\infty)$$
 with the property of \textbf{countable additivity}, namely that if $A_j \in \cM$ for $j=1,2,\dots$ are disjoint measureable sets then
 	$$\mu\left(\bigcup_{j=1}^\infty A_j\right) = \sum_{j=1}^\infty \mu(A_j)$$
 
-Intuitively, a measure reports how big a given set is.  Thus a measure is a generalization of area or volume.  But the concept is very general.  For example, some measures give large numbers for finite sets, whereas other measures give zero for all finite sets.
-
-Again the following definition suppresses many details.
+Intuitively, a measure reports how big a given set is.  Thus a measure is a generalization of area or volume.  But the concept is very general, and it \emph{also} generalizes the idea of counting the number of points in a set.  In fact, some measures yield large numbers for certain finite sets, whereas other measures give zero for all finite sets; the latter is true of Lebesgue measure.  Again the following definition suppresses many details.
 
 \defin On $\RR^n$, \textbf{Lebesgue measure} is a measure
 	$$m : \cM \to [0,\infty)$$
-for which the rectangular solids (products of intervals) have their usual volume:
-	$$\text{if } R = I_1\times I_2 \times \dots \times I_n \text{ then } m(R) = \prod_{j=1}^n (b_j - a_j)$$
+for which the rectangles (products of intervals) have their usual volume:
+	$$\text{if }\, R = I_1\times I_2 \times \dots \times I_n \, \text{ then } \, m(R) = \prod_{j=1}^n (b_j - a_j).$$
 Here each $I_j$ is an interval which may or may not include its endpoints:
 	$$I_j = (a_j,b_j) \,\Big|\, (a_j,b_j] \,\Big|\, [a_j,b_j) \,\Big|\, [a_j,b_j].$$
-All such sets $R_j$ are measurable.
+(Note that all rectangles $R_j$ are themselves Lebesgue measurable.)
 
-However, a key idea is that the Lebesgue measure $m(A)$ is defined for many sets $A$ which are much more general than products of intervals.  The requirement is that $A\subset \RR^n$ and $A\in \cM$.  The number $m(A)$ is the $n$-dimensional volume of $A$; some sources denote $m(A)$ by $\operatorname{vol}(A)$.  Lebesgue measure is well-defined for extraordinarily complicated sets, e.g.~the famous Mandelbrot set in $\RR^2$, but also for any ordinary polygon.
+A key idea is that the Lebesgue measure $m(A)$ is defined for any set $A\in\cM$, and thus for many subsets of $\RR^n$ which are much more general than products of intervals.  In any case the number $m(A)$ is the $n$-dimensional volume of $A$.  (Some sources denote $m(A)$ by $\operatorname{vol}(A)$.)  Lebesgue measure is well-defined for extraordinarily complicated sets, e.g.~the famous Mandelbrot set in $\RR^2$, but also for any ordinary polygon.
 
-\exer{40}{In any dimension the Lebesgue measure of a single point is zero: $m(\{x\})=0$.  Show that the set of rational numbers $\QQ \subset \RR^1$ is measurable and that it is also of measure zero.}
+\exer{50}{In any dimension the Lebesgue measure of a single point is zero: $m(\{x\})=0$.  (It follows from the above \dots why?)  Show that the set of rational numbers $\QQ \subset \RR^1$ is measurable and that it is also of measure zero.}
 
-\exer{60}{Argue for why the rule \,$m(T)=\frac{1}{2} b h$\, applies to triangles $T\subset \RR^2$.  Specifically, consider right triangles with vertices at $(0,0)$, $(b,0)$, and $(0,h)$.  Cover $T$ with disjoint rectangles so that countable additivity and the products-of-intervals rules can be used.}
+An essential formula, and a key one for understanding Lebesgue measure, is that if $A\in\cM$ then
+	$$m(A) = \inf \left\{\sum_{j=1}^\infty m(R_j) \,:\, A \subset \bigcup_{j=1}^\infty R_j\right\}$$
+where $R_j$ are products of intervals as above.  That is, for measurable sets $A$ we can compute (imagine computing?) $m(A)$ by covering $A$ with rectangles more and more accurately, and then taking the smallest resulting volume.
 
 \clearpage\newpage
-An essential formula, and a waypoint when defining Lebesgue measure, and a key formula which helps one understand measures, is that if $A\in\cM$ then
-	$$m(A) = \inf \left\{\sum_{j=1}^\infty m(R_j) \,:\, A \subset \bigcup_{j=1}^\infty R_j\right\}$$
-where $R_j$ are products of intervals as above.  That is, for measurable sets $A$ we can compute (imagine computing?) $m(A)$ by covering $A$ with rectangles more and more accurately, and taking the smallest resulting volume.
+\exer{60}{Argue for why the rule \,$m(T)=\frac{1}{2} b h$\, applies to triangles $T\subset \RR^2$.  For simplicity consider right triangles with vertices at $(0,0)$, $(b,0)$, and $(0,h)$.  Cover $T$ with disjoint rectangles and use the above idea.}
 
 We will accept the following very important fact without proof.
 
 \lem Lebesgue measure is translation invariant: if $A\in \cM$ and $y\in\RR^n$ then $A+y\in\cM$ and
 	$$m(A+y) = m(A).$$
 
-Finally a definition which suggests (correctly) that there are many measures out there.
+%Finally a definition which suggests (correctly) that there are many measures out there.
 
-\defin  The triple $(\RR^n,\cM,m)$ is called a \textbf{measure space}.  One says that $\RR^n$ is the \textbf{base space}, $\cM$ is the (collection of) \textbf{measurable sets}, and $m$ is the \textbf{measure}.
+%\defin  The triple $(\RR^n,\cM,m)$ is called a \textbf{measure space}.  One says that $\RR^n$ is the \textbf{base space}, $\cM$ is the (collection of) \textbf{measurable sets}, and $m$ is the \textbf{measure}.
 
 
 \sect{Integral}
 
-Some functions are well-behaved with respect to the measurable sets.
+Some functions are well-behaved with respect to the measurable sets.  For the following definition, recall that $f^{-1}(A)=\{x\in X\,:\,f(x)\in A\}$.
 
-\defin A function $f:X\to\CC$, or $f:X\to \RR$, where $X \in \cM$ is a measurable subset of $\RR^n$, is \textbf{measurable} if the preimage of every open set is a measurable set:
-	$$A \subset \CC \text{ is open} \quad \implies \quad f^{-1}(A)=\{x\in X\,:\,f(x)\in A\} \in \cM$$
+\defin Consider a function $f:X\to\CC$, or $f:X\to \RR$, where the domain is a measurable subset of $\RR^n$: $X \in \cM$.  (Note $X=\RR^n$ itself is a common case.)  The function is \textbf{measurable} if the preimage of every open set is a measurable set:
+	$$A \subset \CC \text{ is open} \quad \implies \quad f^{-1}(A) \in \cM.$$
 
-If a measurable function is also non-negative ($f:X\to [0,\infty)$) then we will be able to give an unambiguous value for its integral, though that value may be infinite.  However, the definition of the integral goes via a simpler class of functions than measurable functions.
 
-\defin A function $\varphi:X\to \CC$ is \textbf{simple} if 
+The definition of the integral of a measurable function starts via a simpler class of functions than measurable functions, namely ``simple'' functions.
 
-    $$\int_{\RR^n} f(x)\,dx = FIXME$$
+\defin The \textbf{characteristic function} of a set $E \subset \RR^n$ is
+	$$\chi_E(x) = \begin{cases} 1, & x\in E \\ 0, & x \notin E. \end{cases}$$
+
+\defin A function $\varphi:X\to \CC$ is \textbf{simple} if there exist finitely-many measureable sets $E_j \in \cM$, such that $m(E_j)<\infty$, and coefficients $c_j \in \CC$ so that
+	$$\boxed{\varphi = \sum_{j=1}^\ell c_j \chi_{E_j}}$$
+
+If $\varphi$ is simple then $|\varphi|$ is also simple.  Note that a simple function attains only finitely-many values.
+
+\exer{55}{Argue that one can always choose the sets $E_j$ to be nonempty and disjoint.  (In which case the coefficients $c_j$ are equal to the attained nonzero values.)}
+
+A key idea about simple functions is that one can approximate more general functions by simple functions based on finely ``cutting up'' the $y$-axis.
+
+\exer{50}{Sketch a continuous function $f:[0,1]\to\RR$.  Now use a different color to sketch a simple function $\varphi$ which approximates it closely ($\varphi\approx f$).  Argue, along the way, that a continuous function is measurable.}
+
+We will accept without proof the following approximation fact.
+
+\lem If $f:X\to \CC$ is measurable then there exists a sequence of simple functions $(\varphi_k)$ such that $\varphi_k \to f$ pointwise, and such that $|\varphi_k|$ increases to $|f|$.
+
+The core idea of Lebesgue integration, versus Riemann integration, is in the following easy definition.
+
+\defin The \textbf{(Lebesgue) integral of a simple function} is the weighted sum of the Lebesgue measures of its constituent sets:
+	$$\boxed{\int_X \varphi\,dm = \sum_{j=1}^\ell c_j m(E_j)}.$$
+
+\clearpage\newpage
+\exer{50}{Make side-by-side sketches of the Lebesgue integral of a simple function and of some Riemann sums for the same function and integral.}
+
+We can integrate measurable functions via approximation by simple functions.  However, the following definition also reflects the fact that we need to be cautious and avoid ambiguous ``infinity minus infinity'' situations.
+
+\defin Suppose $f:X\to\CC$ is a measurable function.  If $(\varphi_k)$ is a sequence of simple functions as in the previous lemma, and if
+    $$\lim_{k\to\infty} \int_X |\varphi_k|\,dm < \infty$$
+then we say $f$ is \textbf{integrable}.
+
+For a measurable function $f$, one is free to define the integral of $|f|$ as the above limit whenever the sequence $(\varphi_k)$ comes from the previous lemma, i.e.~$\int_X |f|\,dm = \lim_{k\to\infty} \int_X |\varphi_k|\,dm$, and our textbook does this.  However, the value might be $+\infty$.  The adjective ``integrable'' means that \emph{this limit is finite}.
+
+\defin Suppose $f:X\to\CC$ is an integrable function.  (Note $f$ is, of course, also measurable.)  Then its \textbf{Lebesgue integral} is
+    $$\boxed{\int_X f\,dm = \lim_{k\to\infty} \int_X \varphi_k\,dm}$$
+
+We will accept without proof that the integral value is in $\CC$, and that it is unique.  The integral does not depend on \emph{which} approximating sequence $(\varphi_k)$ was used.
+
+Sometimes the integral is written with an independent variable, and it is sometimes not.  The notation ``$dx$'' is (very) common for Lebesgue measure.  In fact, if $X=(a,b)$ is an interval then one can further calculus-ify the notation:
+    	$$\int_0^1 f(x)\,dx = \int_X f(x)\,dx = \int_X f\,dm.$$
+These are all the same integral.
+
+FIXME def $L^1(a,b)$
+
+To actually compute numbers from integrals, the technique invented by Newton and Leibniz remains the most popular!  FIXME here is one form; Theorem A.7 in the textbook is better but it requires one to define ``absolutely continuous''
+
+\thm (Fundamental Theorem of Calculus)  FIXME in weakest form: if $f$ is $L^1$ then there is a continuous function $F(x)$ with $F'(x)=f(x)$, and $F(b) - F(a) = \int_a^b f(x)\,dx$ 
+
+\exer{60}{(Use several colors for this exercise.)  Sketch $f(x)=1-x^2$ on $[0,1]$.  Sketch simple functions $\varphi_k(x)$ which approximate it from below, and their integrals.  Sketch $\int_0^1 f(x)\,dx$ as an area.  Compute it by the FTC.}
 
 \end{document}
