@@ -353,20 +353,20 @@ However, if $S$ is infinite, so that $\cV$ is an infinite dimensional vector spa
 
 \sect{Measure}
 
-Our final topic is integration, which is to say \emph{Lebesgue} integration.  We will suppress \emph{many} details and be very brief.  However, Appendix A of our textbook fills in much of the theory, at a more general level than here.  (For even more information, please see a graduate text on real analysis.)  These notes restrict to Lebesgue integration of complex-valued functions over Euclidean space $\RR^n$ (or a subset thereof).
+Our final topic is integration, which is to say \emph{Lebesgue} integration.  We will suppress \emph{many} details and be very brief.  However, Appendix A of our textbook fills in much of the theory, at a more general level than here.  For even more information, please see a graduate text on real analysis.
 
-The main preparatory ideas are ``measurable sets'' and (positive) ``measure''.  The following is not really a definition because I am suppressing the precise properties satisfied by measurable subsets of $\RR^n$.  We will accept, without proof, the existence of such a well-defined and useful system of measurable sets.
+These notes restrict to Lebesgue integration of complex-valued functions over Euclidean space $\RR^n$, or a subset thereof.  The main starting ideas are ``measurable sets'' and (positive) ``measure''.  The following is not really a definition because it suppresses the precise properties satisfied by measurable subsets of $\RR^n$.  We will accept, without proof, the existence of such a well-defined and useful system of measurable sets.
 
-\defin Consider $\RR^n$ with the usual (Euclidean) norm and metric.  The \textbf{(Lebesgue) measurable subsets} are a collection $\cM$ of subsets of $\RR^n$.  $\cM$ includes all open and closed sets, and furthermore it is closed under countable unions, countable intersections, and complements.\footnote{The technical issue in the construction of $\cM$ is that first you build the Borel measurable sets as the smallest $\sigma$-algebra including the open and closed sets, and then later you build $\cM$ by including all subsets of sets of measure zero.  As I said, I am suppressing such details here.}
+\defin The \textbf{(Lebesgue) measurable subsets} are a collection $\cM$ of subsets of $\RR^n$.  The collection $\cM$ includes all open and closed sets, and furthermore it is closed under countable unions, countable intersections, and complements.\footnote{The technical issue in the construction of $\cM$ is that first you build the Borel measurable sets as the smallest $\sigma$-algebra including the open and closed sets, and then later you build $\cM$ by including all subsets of sets of measure zero.  As I said, I am suppressing such details here.}
 
 Intuitively, if one can describe precisely how a subset of $\RR^n$ is constructed then it will be measurable.  Even ``weird'' sets like fractals and randomly-generated subsets are measurable.  Nonetheless, there are (many) non-measurable subsets, but their ``constructions'' require highly-abstracted steps, e.g.~using the axiom of choice.
 
 \defin A \textbf{(positive) measure} is a function
 	$$\mu : \cM \to [0,\infty)$$
-with the property of \textbf{countable additivity}, namely that if $A_j \in \cM$ for $j=1,2,\dots$ are disjoint measureable sets then
-	$$\mu\left(\bigcup_{j=1}^\infty A_j\right) = \sum_{j=1}^\infty \mu(A_j)$$
+with the property of \textbf{countable additivity}, namely that if $A_j \in \cM$ for $j=1,2,\dots$ is a sequence of disjoint measureable sets then
+	$$\mu\left(\bigcup_{j=1}^\infty A_j\right) = \sum_{j=1}^\infty \mu(A_j).$$
 
-Intuitively, a measure reports how big a given set is.  Thus a measure is a generalization of area or volume.  But the concept is very general, and it \emph{also} generalizes the idea of counting the number of points in a set.  In fact, some measures yield large numbers for certain finite sets, whereas other measures give zero for all finite sets; the latter is true of Lebesgue measure.  Again the following definition suppresses many details.
+Intuitively, a measure reports how big a given set is.  Thus a measure is a generalization of area or volume.  But the concept is very general!  It \emph{also} generalizes the idea of counting the number of points in a set.  In fact, some measures yield large numbers for certain finite sets, whereas other measures give zero for all finite sets; the latter is true of Lebesgue measure.  Again the following definition suppresses many details.
 
 \defin On $\RR^n$, \textbf{Lebesgue measure} is a measure
 	$$m : \cM \to [0,\infty)$$
@@ -376,13 +376,15 @@ Here each $I_j$ is an interval which may or may not include its endpoints:
 	$$I_j = (a_j,b_j) \,\Big|\, (a_j,b_j] \,\Big|\, [a_j,b_j) \,\Big|\, [a_j,b_j].$$
 (Note that all rectangles $R_j$ are themselves Lebesgue measurable.)
 
-A key idea is that the Lebesgue measure $m(A)$ is defined for any set $A\in\cM$, and thus for many subsets of $\RR^n$ which are much more general than products of intervals.  In any case the number $m(A)$ is the $n$-dimensional volume of $A$.  (Some sources denote $m(A)$ by $\operatorname{vol}(A)$.)  Lebesgue measure is well-defined for extraordinarily complicated sets, e.g.~the famous Mandelbrot set in $\RR^2$, but also for any ordinary polygon.
+We will accept without proof that Lebesgue measure actually exists.
 
-\exer{50}{In any dimension the Lebesgue measure of a single point is zero: $m(\{x\})=0$.  (It follows from the above \dots why?)  Show that the set of rational numbers $\QQ \subset \RR^1$ is measurable and that it is also of measure zero.}
+A key idea is that the Lebesgue measure $m(A)$ is defined for any set $A\in\cM$, and thus for many subsets of $\RR^n$ which are much more general than products of intervals.  In any case the number $m(A)$ is the $n$-dimensional volume of $A$.  Some sources denote $m(A)$ by $\operatorname{vol}(A)$.  Lebesgue measure is well-defined for extraordinarily complicated sets, e.g.~the famous Mandelbrot set in $\RR^2$, but also for any ordinary polygon.
+
+\exer{50}{In any dimension the Lebesgue measure of a single point is zero: $m(\{x\})=0$.  It follows from the above definition \dots why?  Show that the set of rational numbers $\QQ \subset \RR^1$ is measurable and that it is also of measure zero.}
 
 An essential formula, and a key one for understanding Lebesgue measure, is that if $A\in\cM$ then
 	$$m(A) = \inf \left\{\sum_{j=1}^\infty m(R_j) \,:\, A \subset \bigcup_{j=1}^\infty R_j\right\}$$
-where $R_j$ are products of intervals as above.  That is, for measurable sets $A$ we can compute (imagine computing?) $m(A)$ by covering $A$ with rectangles more and more accurately, and then taking the smallest resulting volume.
+where $R_j$ are products of intervals as above.  That is, for measurable sets $A$ we can compute (or imagine computing) $m(A)$ by covering $A$ with rectangles more and more accurately, and then taking the smallest resulting volume.
 
 \clearpage\newpage
 \exer{60}{Argue for why the rule \,$m(T)=\frac{1}{2} b h$\, applies to triangles $T\subset \RR^2$.  For simplicity consider right triangles with vertices at $(0,0)$, $(b,0)$, and $(0,h)$.  Cover $T$ with disjoint rectangles and use the above idea.}
@@ -399,27 +401,27 @@ We will accept the following very important fact without proof.
 
 \sect{Integral}
 
-Some functions are well-behaved with respect to the measurable sets.  For the following definition, recall that $f^{-1}(A)=\{x\in X\,:\,f(x)\in A\}$.
+Some functions are well-behaved with respect to the measurable sets.  For the following definition, recall that $f^{-1}(A)=\{x\in X\,:\,f(x)\in A\}$ is the preimage of $A$.
 
-\defin Consider a function $f:X\to\CC$, or $f:X\to \RR$, where the domain is a measurable subset of $\RR^n$: $X \in \cM$.  (Note $X=\RR^n$ itself is a common case.)  The function is \textbf{measurable} if the preimage of every open set is a measurable set:
+\defin Consider a function $f:X\to\CC$ where the domain is a measurable subset of $\RR^n$: $X \in \cM$.  (Note $X=\RR^n$ itself is a common case.)  The function is \textbf{measurable} if the preimage of every open set is a measurable set:
 	$$A \subset \CC \text{ is open} \quad \implies \quad f^{-1}(A) \in \cM.$$
 
+The same definition applies to real-valued functions.
 
 The definition of the integral of a measurable function starts via a simpler class of functions than measurable functions, namely ``simple'' functions.
 
-\defin The \textbf{characteristic function} of a set $E \subset \RR^n$ is
-	$$\chi_E(x) = \begin{cases} 1, & x\in E \\ 0, & x \notin E. \end{cases}$$
+\defin The \textbf{characteristic function} of a set $E \subset \RR^n$ is\, $\ds \chi_E(x) = \begin{cases} 1, & x\in E \\ 0, & x \notin E \end{cases}$.
 
-\defin A function $\varphi:X\to \CC$ is \textbf{simple} if there exist finitely-many measureable sets $E_j \in \cM$, such that $m(E_j)<\infty$, and coefficients $c_j \in \CC$ so that
-	$$\boxed{\varphi = \sum_{j=1}^\ell c_j \chi_{E_j}}$$
+\defin A function $\varphi:X\to \CC$ is \textbf{simple} if there exist finitely-many measurable sets $E_j \in \cM$, such that $m(E_j)<\infty$, and coefficients $c_j \in \CC$ so that
+	$$\boxed{\varphi(x) = \sum_{j=1}^\ell c_j \chi_{E_j}(x)}$$
 
 If $\varphi$ is simple then $|\varphi|$ is also simple.  Note that a simple function attains only finitely-many values.
 
 \exer{55}{Argue that one can always choose the sets $E_j$ to be nonempty and disjoint.  (In which case the coefficients $c_j$ are equal to the attained nonzero values.)}
 
-A key idea about simple functions is that one can approximate more general functions by simple functions based on finely ``cutting up'' the $y$-axis.
+A key idea about simple functions is that one can approximate more general functions by simple functions based on finely cutting up the $y$-axis.
 
-\exer{50}{Sketch a continuous function $f:[0,1]\to\RR$.  Now use a different color to sketch a simple function $\varphi$ which approximates it closely ($\varphi\approx f$).  Argue, along the way, that a continuous function is measurable.}
+\exer{50}{Sketch a continuous function $f:[0,1]\to\RR$.  Now use a different color to sketch a simple function $\varphi$ which approximates it closely ($\varphi\approx f$).}
 
 We will accept without proof the following approximation fact.
 
@@ -427,7 +429,7 @@ We will accept without proof the following approximation fact.
 
 The core idea of Lebesgue integration, versus Riemann integration, is in the following easy definition.
 
-\defin The \textbf{(Lebesgue) integral of a simple function} is the weighted sum of the Lebesgue measures of its constituent sets:
+\defin The \textbf{(Lebesgue) integral of the simple function} $\varphi = \sum_{j=1}^\ell c_j \chi_{E_j}$ is the weighted sum of the Lebesgue measures of its constituent sets:
 	$$\boxed{\int_X \varphi\,dm = \sum_{j=1}^\ell c_j m(E_j)}.$$
 
 \clearpage\newpage
@@ -444,17 +446,27 @@ For a measurable function $f$, one is free to define the integral of $|f|$ as th
 \defin Suppose $f:X\to\CC$ is an integrable function.  (Note $f$ is, of course, also measurable.)  Then its \textbf{Lebesgue integral} is
     $$\boxed{\int_X f\,dm = \lim_{k\to\infty} \int_X \varphi_k\,dm}$$
 
-We will accept without proof that the integral value is in $\CC$, and that it is unique.  The integral does not depend on \emph{which} approximating sequence $(\varphi_k)$ was used.
+We will accept without proof that the integral value is in $\CC$, and that it is unique.  (That is, the integral does not depend on \emph{which} approximating sequence $(\varphi_k)$ was used.)
 
-Sometimes the integral is written with an independent variable, and it is sometimes not.  The notation ``$dx$'' is (very) common for Lebesgue measure.  In fact, if $X=(a,b)$ is an interval then one can further calculus-ify the notation:
+Sometimes the integral is written with an independent variable, and sometimes not.  The notation ``$dx$'' is (very) common for Lebesgue measure.  In fact, if $X=(a,b)$ is an interval then one can further calculus-ify the notation:
     	$$\int_0^1 f(x)\,dx = \int_X f(x)\,dx = \int_X f\,dm.$$
 These are all the same integral.
 
-FIXME def $L^1(a,b)$
+Another name for integrable functions is ``$L^1$''.
 
-To actually compute numbers from integrals, the technique invented by Newton and Leibniz remains the most popular!  FIXME here is one form; Theorem A.7 in the textbook is better but it requires one to define ``absolutely continuous''
+\defin For $X \subset \RR^n$ measurable, $X\in\cM$,
+	$$L^1(X) = \left\{f:X\to\CC \text{ is integrable}\right\}$$
+If $X=(a,b)$ is an interval then one writes $L^1(a,b)$ or $L^1[a,b]$.
 
-\thm (Fundamental Theorem of Calculus)  FIXME in weakest form: if $f$ is $L^1$ then there is a continuous function $F(x)$ with $F'(x)=f(x)$, and $F(b) - F(a) = \int_a^b f(x)\,dx$ 
+\exer{30}{Explain why the choice of writing $L^1(a,b)$ or $L^1[a,b]$ does not matter.}
+
+To actually compute numbers from integrals, the technique invented by Newton and Leibniz remains the most popular!  Here is one form of their idea, in terms of Lebesgue integrability.  Theorem A.7 in the textbook is a better form, because it describes a property satisfied by the antiderivative, namely ``absolute continuity.''
+
+\thm (\textbf{Fundamental Theorem of Calculus})\,  If $f \in L^1(a,b)$ then there is a continuous function $F(x)$ with $F'(x)=f(x)$, and
+    $$F(b) - F(a) = \int_a^b f(x)\,dx.$$
+
+Though it seems somewhat circular, a formula for one such antiderivative $F(x)$ is
+    $$F(x) = \int_a^x f(x)\,dx.$$
 
 \exer{60}{(Use several colors for this exercise.)  Sketch $f(x)=1-x^2$ on $[0,1]$.  Sketch simple functions $\varphi_k(x)$ which approximate it from below, and their integrals.  Sketch $\int_0^1 f(x)\,dx$ as an area.  Compute it by the FTC.}
 
