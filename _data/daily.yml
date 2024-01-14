@@ -18,7 +18,7 @@ daily:
   description: definitions and facts to get started
   handout: assets/handouts/getstarted.pdf
 - name: Wednesday 17 January
-  description: sections 2.1, 2.2, 2.4
+  description: intro; sections 2.1, 2.2
 #  slides: assets/slides/F23/8-4.pdf
 #  more: x
 #  mfile: x
