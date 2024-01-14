@@ -9,7 +9,7 @@
 \renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
 
 % Misc packages.
-\usepackage{amsmath,amssymb,latexsym}
+\usepackage{amsmath,amssymb,latexsym,xspace}
 \usepackage{graphicx,hyperref}
 \usepackage{array}
 \usepackage{xcolor}
@@ -77,9 +77,9 @@ Functional analysis is the theory of infinite-dimensional vector spaces and line
 
 The UAF catalog description of the course is this:  \textsl{Study of Banach and Hilbert spaces, and continuous linear maps between them.  Linear functionals and the Hahn-Banach theorem. Applications of the Baire Category theorem.  Compact operators, self adjoint operators, and their spectral properties. Weak topology and its applications.}
 
-The above description is reasonably accurate, and all of these topics will arise.  However, I will strongly emphasize some parts and gloss others.  The course will focus on:  \textsl{Hilbert spaces including Sobolev spaces.  Continuous and unbounded operators (linear maps) on Hilbert spaces.  The spectral theory of compact and self-adjoint operators, including the Laplacian.  Connections with finite-dimensional linear algebra and partial differential equations.  Motiviation of the axioms and basic concepts of quantum mechanics.}
+The above description is reasonably accurate, and all of these topics will arise.  However, I will strongly emphasize some parts and gloss others.  The course will focus on:  \textsl{Hilbert spaces including Sobolev spaces.  Continuous and unbounded operators (linear maps) on Hilbert spaces.  The spectral theory of compact and self-adjoint operators, including the Laplacian.  Connections with finite-dimensional linear algebra and partial differential equations.  Motiviation from the axioms and basic concepts of quantum mechanics.}
 
-Mathematically-inclined students from the sciences and engineering are encouraged to register, as are graduate students in mathematics looking for an elective with practical relevance.  This course is particularly aimed at students interested in the mathematics of quantum mechanics and partial differential equations.
+Mathematically-inclined students from the sciences and engineering are encouraged to register, as are graduate students in mathematics looking for an elective with practical relevance.  This course is particularly aimed at students interested in the mathematics of partial differential equations and of quantum mechanics.  On the other hand, this will definitely be a graduate mathematics course, wherein almost every problem will be a proof!
 
 
 \clearpage\newpage
@@ -87,27 +87,29 @@ Mathematically-inclined students from the sciences and engineering are encourage
 \heading{Prerequisites}
 Officially: \textsl{MATH F314 Linear Algebra and MATH 401 Introduction to Real Analysis, or permission of instructor. Recommended: MATH F422 Introduction to Complex Analysis and MATH F641 Real Analysis.}
 
-For graduate students with a background from another university, these prerequisites describe rigorous, though introductory, exposure to the analysis of real functions, plus exposure to linear algebra with a little rigor.  The basics of complex numbers are assumed.  Quite a bit of mathematical maturity and motivation is assumed.  The difficulty of assigned work will depend on the student's comfort doing proofs, especially with real functions, convergence, continuity, and integrals.
+For graduate students with a background from another university, these prerequisites describe rigorous, though introductory, exposure to the analysis of real functions, plus exposure to linear algebra with a little rigor.  The basics of complex numbers are assumed.  Quite a bit of mathematical maturity and motivation is assumed.  The experienced difficulty of assigned work will depend on the student's comfort doing proofs, especially with real functions, convergence, continuity, and integrals.
 
 
 \heading{The Hybrid Classroom}
 There are two sections of the class, in-person (901; crn 35367) and online (701; crn 35378).  They are treated as one course and occur simultaneously.  In this ``hybrid'' set-up, each lecture will be a recorded Zoom session generated from Chapman 107.  (The link for the Zoom session is \href{https://canvas.alaska.edu/courses/18441}{in Canvas}.  The recordings will be linked from inside Canvas only; they are not public.)  I will try to treat all students the same regarding proctored assessments---see below---and participation during class time.  Students have certain obligations to help make this work:
 \begin{itemize}
 \item \textbf{in-person students}: Please participate as energetically as you can.  I prefer for in-person students to turn in their homework assignments on paper.
-\item \textbf{online students}:  Please sign into the Zoom session, from Canvas, just before class starts.  Please participate as energetically as you can, and, if possible, keep your camera on.  Regarding in-class group work, check for worksheet PDFs from the \href{https://bueler.github.io/fa/}{public site} before class starts.  When you turn in homework assignments electronically, please generate clear, well-ordered, and combined PDFs; this may require scanning documents.  You will need to schedule proctoring for the in-class assessments (see below), or attend in person on those days.
+\item \textbf{online students}:  Please sign into the Zoom session, from Canvas, just before class starts.  Please participate as energetically as you can, and, if possible, keep your camera on.  Regarding in-class group work, check for worksheet PDFs from the \href{https://bueler.github.io/fa/}{public site} before class starts.  When you turn in homework assignments electronically, please generate clear, well-ordered, and combined PDFs.  You will need to schedule proctoring for the in-class assessments (see below), or attend in person on those days.
 \end{itemize}
 
 
 \heading{Schedule and Online Materials}
-The \href{https://bueler.github.io/fa/}{public course website} includes a \href{https://bueler.github.io/nla/assets/general/S24/schedule.pdf}{day-by-day schedule} listing the textbook sections to be covered during each lecture, the due date of each homework Assignment, and the dates for the Midterm Quizzes and Final Exam.  Please consult this schedule frequently; it is subject to change and will be kept up to date.
+The \href{https://bueler.github.io/fa/}{public course website} includes a \href{https://bueler.github.io/nla/assets/general/S24/schedule.pdf}{schedule} and \href{https://bueler.github.io/fa/daily.html}{daily log}.  The schedule includes the due date of each homework Assignment, and the dates for the Midterm Quizzes and Final Exam.  The daily log tracks the textbook sections actually covered during each lecture, and handouts or worksheets used during class.  Please consult these frequently; they are subject to change but they will be kept up to date.
 
-Most course materials (syllabus, schedule, homework Assignments, code examples, etc.) will be posted on the \href{https://bueler.github.io/fa/}{public website}.  Some course materials (student grades, homework and exam solutions) will go on the \href{https://canvas.alaska.edu/courses/18441}{Canvas site}.
+Most course materials (Homework assignments, worksheets, code examples, etc.) will be posted on the \href{https://bueler.github.io/fa/}{public website}.  Certain specific course materials will go on the \href{https://canvas.alaska.edu/courses/18441}{Canvas site}: student grades, homework solutions, and exam solutions.
 
 
 \clearpage\newpage
 \phantom{foo}
 \heading{Office Hours and Communication}
-My office hours are shown online at \href{http://bueler.github.io/OffHrs.htm}{\texttt{bueler.github.io/OffHrs.htm}}; I hold them in Chapman 306C.  Students can also schedule meetings with me outside of these hours.  I will use Canvas to send announcements.  If I need to contact you outside of class times, I'll try to email via Canvas.  (Please set your email address in Canvas to one that you check regularly!)
+My office hours are shown online at \href{http://bueler.github.io/OffHrs.htm}{\texttt{bueler.github.io/OffHrs.htm}}; I hold them in Chapman 306C.  Students can also schedule meetings with me outside of these hours.
+
+I will use Canvas to send announcements.  If I need to contact you outside of class times, I'll try to email via Canvas.  Please set your email address in Canvas to one that you check regularly!
 
 
 \heading{Evaluation and Grades}
@@ -127,7 +129,7 @@ total & & 100\% \\
 \hline
 \end{tabular}
 
-Scores for specific assessments may be adjusted based on the actual difficulty of the work and/or on average class performance, and adjustments will be applied to all students equally.  The scores of the various parts will be summed and the final course grade will be assigned as follows.
+Scores may be adjusted based on the actual difficulty of the work and/or on average class performance, and adjustments will be applied to all students equally.  The scores of the various parts will be summed and the final course grade will be assigned as follows.
 
 \begin{tabular}{llllll}
 A  & 93--100\% & B- & 79--81\%  & D+ & 65--67\%  \\
@@ -142,13 +144,19 @@ These ranges are a guarantee and a lower bound.  I reserve the right to increase
 \heading{Homework}
 Homework is due at the start of class.  \emph{Late homework is not accepted.}  If you have unavoidable circumstances which do not allow you to turn in an Assignment on time then please contact me (\href{mailto:elbueler@alaska.edu}{\texttt{elbueler\@@alaska.edu}}) in advance.
 
-The homework consists of proofs, rigorously-justified examples and counter-examples, and by-hand computations.  Occasionally a computer visualization will arise, but no particular facility with programming is needed.  Problems very similar to, or shortened versions of, Homework problems will appear on the in-class Midterm Quizzes.
+The homework consists of proofs, rigorously-justified examples and counter-examples, and by-hand computations.  Problems very similar to, or shortened versions of, Homework problems will appear on the in-class Midterm Quizzes.  \LaTeX\xspace is encouraged for Homework, but definitely \textsl{not} required.  Well-organized hand-written proofs are happily accepted!
 
 
 \heading{Exams}
-There will be two in-class, hour-long Midterm Quizzes.  These Midterms will firm-up the basic concepts and definitions addressed more thoroughly in the Homework.  The 2-hour, in-class Final Exam will require you to be familiar with, and prepared on, major themes and theorems in the course.  I will describe the format of the Final in more detail in due course.
+There will be two in-class, hour-long Midterm Quizzes.  These Quizzes will firm-up the basic concepts and definitions addressed more thoroughly in the Homework.  The 2-hour, in-class Final Exam will require you to be familiar with, and prepared on, major themes and theorems in the course.  I will describe the format of the Final in more detail as its date approaches.
 
-Make-up Quizzes or Exam will be given only for documented extenuating circumstances, at my discretion.  Department policy (below) does not allow me to move the time of the Final Exam.
+Make-up Quizzes or Final Exam will be given only for documented extenuating circumstances, at my discretion.  Department policy (below) does not allow me to move the time of the Final Exam.
+
+
+\heading{AI usage on Homework}
+You will not have access to AI tools, or any other tools except a writing implement, during the Quizzes and Final Exam, which are proctored and on-paper.
+
+FIXME  new AI tools like ChatGPT for homework, and to use a calculator.  How you guide your prompts and verify the results is what matters.  Merely doing cut and paste without understanding will have no benefit.  Noting that Quizzes and Exams represent the vast majority of your grade, your own thinking as you do the homework will have the greatest benefits.
 
 
 %\clearpage\newpage
