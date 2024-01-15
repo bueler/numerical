@@ -12,6 +12,7 @@ daily:
   description: cont.
 - name: Wednesday 24 January
   description: section 2.4, 2.6, & 2.7
+  more: Assignment 1 due
 - name: Monday 22 January
   description: cont.
 - name: Friday 19 January
@@ -20,6 +21,5 @@ daily:
 - name: Wednesday 17 January
   description: intro; sections 2.1, 2.2
 #  slides: assets/slides/F23/8-4.pdf
-#  more: x
 #  mfile: x
 #  image: x
