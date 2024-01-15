@@ -1,10 +1,10 @@
 \documentclass[12pt]{amsart}
 %prepared in AMSLaTeX, under LaTeX2e
-\addtolength{\oddsidemargin}{-.65in} 
-\addtolength{\evensidemargin}{-.65in}
+\addtolength{\oddsidemargin}{-.55in} 
+\addtolength{\evensidemargin}{-.55in}
 \addtolength{\topmargin}{-.4in}
-\addtolength{\textwidth}{1.3in}
-\addtolength{\textheight}{.85in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\textheight}{.6in}
 
 \renewcommand{\baselinestretch}{1.05}
 
@@ -40,6 +40,7 @@
 \newcommand{\by}{\mathbf{y}}
 
 \newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
 
@@ -76,7 +77,6 @@
 frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 
-
 \begin{document}
 \scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{assigned 17 January 2024}
 \normalsize\medskip
@@ -98,12 +98,44 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 D.~Borthwick (2020).~\emph{Spectral Theory: Basic Concepts and Applications}, Springer
 \end{quote}
 
-\bigskip
-\noindent \textsc{Do the following exercises.}
 \medskip
+\noindent \textsc{Do the following exercises.}
+\smallskip
 
 %\prob{P1}  \emph{FIXME}
 
-\prob{P1}  
+\prob{P1}  Suppose $(V,\|\cdot\|)$ is a normed vector space.  Let $Y$ be any finite set of points.  Show that $Y$ is closed.
+
+\prob{P2}  Let $(V,\|\cdot\|)$ be a normed vector space.  Let $S=\{x\in V\,:\,\|x\|=1\}$.  Recalling that $B_1$ is the open ball of radius one, show $S$ is exactly the boundary set of $B_1$: $\partial B_1=S$.
+
+\prob{P3}  Let $X_k$ be the set of RNA sequences of length $k$.  All you need to know about such things is that an RNA sequence has one character from $\{A,C,G,U\}$ in each location.  That is, an element of $X_k$ is a string of $k$ letters, each of which is $A,C,G,U$.  Let $\delta(a,b)=0$ if $a=b$ and $\delta(a,b)=1$ if $a\ne b$.  For $x,y \in X_k$ let
+	$$d(x,y) = \sum_{j=1}^k \delta(x_j,y_j)$$
+where $x_j$ is the $j$th letter in the RNA sequence $x$.
+
+\epart{a}  Show rigorously that $(X_k,d)$ is a metric space.  That is, show $d(x,y)$ computes a valid distance between any two RNA sequences of the same length.
+
+\epart{b}  Can $(X_k,d)$ be regarded as a subset of a real normed vector space $(V,\|\cdot\|)$?  Argue, at least informally, that this is true.  You will need to construct $V$ and sketch the embedding.  Formally, one says that there is an \emph{isometric} embedding $X_k \hookrightarrow V$.  (\emph{Hint.}  I used $\|\cdot\|_\infty$ on each letter.)
+
+\prob{P4}  Show that a convergent sequence in a metric space cannot converge to two different limits.
+
+\prob{P5}  \ppart{a}  Is $\ds f(x) = \frac{1}{\sqrt{x}}$ in $L^1(0,1)$?  In $L^2(0,1)$?
+
+\epart{b}  Let $s \ge 0$ and define $\ds g_s(x) = \frac{1}{x^s}$.  For $1\le p \le \infty$, determine exactly which spaces $L^p(0,1)$ contain $g_s$.
+
+\prob{P6}  \emph{The definition of the spaces $\ell^p = \ell^p(\NN)$ in section 2.2 of the textbook is too terse.  This problem at least includes a clear definition for $p=\infty$.  Make sure to observe that infinite sequences are the same as functions from $\NN$ to $\CC$.}
+
+\medskip
+\noindent The normed vector space $(\ell^\infty,\|\cdot\|_\infty)$ is the set of infinite sequences $a=(a_k)=(a_1,a_2,a_3,\dots)$ with complex entries ($a_k\in\CC$) which are bounded, that is, so that there is $M>0$ so that $|a_k|<M$ for all $k \in\NN$.  The norm is the supremum of the absolute values of the entries:
+	$$\|a\|_\infty = \sup_{k=1,2,\dots} |a_k|.$$
+
+\epart{a}  Show that $(\ell^\infty,\|\cdot\|_\infty)$ is a Banach space.
+
+\epart{b}  Consider the set of complex-valued sequences which have a limit of zero:
+	$$Y=\{(a_k)\,:\, a_k \to 0\}.$$
+Show that $Y \subset \ell^\infty$.
+
+\epart{c}  Show that $(Y,\|\cdot\|_\infty)$ is a Banach space.  (\emph{Hint.}  You may do this directly or use part \textbf{(a)}.  For less than obvious reasons, this subset $Y$ is often instead called $c_0$.)
+
+\prob{P7}  For any set $X$ and measure $\mu$, the normed vector space $L^1(X,d\mu)$ is defined in section 2.2 of our textbook.  For such a space the Minkowski (triangle) inequality (2.5) can be proved directly, without reference to Appendix A.2.  Do so.
 
 \end{document}
