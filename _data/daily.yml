@@ -16,10 +16,11 @@ daily:
 - name: Monday 22 January
   description: cont.
 - name: Friday 19 January
-  description: definitions and facts to get started
+  description: sections 2.1, 2.2
+  more: + definitions and facts to get started
   handout: assets/handouts/getstarted.pdf
 - name: Wednesday 17 January
-  description: intro; sections 2.1, 2.2
+  description: intro
 #  slides: assets/slides/F23/8-4.pdf
 #  mfile: x
 #  image: x
