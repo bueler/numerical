@@ -9,10 +9,10 @@ daily:
 - name: Monday 29 January
   description: section 2.3
 - name: Friday 26 January
-  description: cont.
-- name: Wednesday 24 January
   description: section 2.4, 2.6, & 2.7
   more: Assignment 1 due
+- name: Wednesday 24 January
+  description: cont.
 - name: Monday 22 January
   description: definitions and facts to get started
   handout: assets/handouts/getstarted.pdf
