@@ -1,0 +1,129 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.55in} 
+\addtolength{\evensidemargin}{-.55in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\textheight}{.6in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\usepackage{fancyvrb,xspace}
+
+\usepackage[final]{graphicx}
+
+% macros
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\fl}{\operatorname{fl}}
+
+\newcommand{\ds}{\displaystyle}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
+frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+\newcommand{\nex}{\medskip\noindent}
+
+
+\begin{document}
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{assigned 26 January 2024}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment 2}}
+\large
+\medskip
+
+\centerline{\textbf{Due Friday 2 February 2024, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+\noindent This Assignment is based primarily sections 2.3 and 2.4 of our textbook,\footnote{D.~Borthwick (2020).~\emph{Spectral Theory: Basic Concepts and Applications}, Springer} but see also sections 2.1 and 2.2, and the handout.
+
+\medskip
+\noindent \textsc{Do the following exercises.}
+\smallskip
+
+\prob{P8}  \emph{This is Exercise 2.1.  Note that ``bounded'' is defined on page 9 and ``continuous'' was defined on the handout.}
+
+\nex For normed vector spaces $\cV$ and $\cW$, prove that a linear map $T:\cV\to\cW$ is bounded if and only if it is continuous.
+
+
+\prob{P9}  \emph{This is Exercise 2.5.  Note that $\|T\|$ is defined on page 9.}
+
+\nex For $T\in\cL(\cH)$, prove that
+	$$\|T\| = \sup_{v,w\ne 0} \frac{|\ip{v}{Tw}|}{\|v\|\,\|w\|}.$$
+
+
+\prob{P10}  \emph{This is Exercise 2.7.  Start from the definition of weak convergence of a sequence in $\cH$, given on page 27.  Then use Corollary 2.36.}
+
+\nex In a Hilbert space $\cH$, prove that an orthonormal sequence $\{e_n\}$ converges weakly to 0. 
+
+
+\prob{P11}  \emph{This example is so important and clear that I did it in class \emph{and} I want you to write out the details as an exercise.  You may use the standard properties of integration, which hold on $L^1$.  .}
+
+\epart{a}  Consider the Banach space $\cV = L^1(0,1)$ and the linear operator
+	$$(Af)(x) = \int_0^x FIXME$$
+for $f\in\cV$.  Show that $A$ is bounded, so we can write $A\in\cL(\cV)$.
+\end{document}
