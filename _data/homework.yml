@@ -7,3 +7,7 @@ homework:
   sections: 2.1, 2.2
   seealsoname: Definitions and facts handout
   seealsopdf: https://bueler.github.io/fa/assets/handouts/getstarted.pdf
+- name: Assignment 2
+  due: Friday 2 February
+  blank: A2.pdf
+  sections: 2.3, 2.4
