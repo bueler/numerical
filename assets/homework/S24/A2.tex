@@ -116,14 +116,32 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 	$$\|T\| = \sup_{v,w\ne 0} \frac{|\ip{v}{Tw}|}{\|v\|\,\|w\|}.$$
 
 
-\prob{P10}  \emph{This is Exercise 2.7.  Start from the definition of weak convergence of a sequence in $\cH$, given on page 27.  Then use Corollary 2.36.}
+\prob{P10}  \emph{This is Exercise 2.7.  Weak convergence of a sequence in $\cH$ is defined on page 27.  You may use Corollary 2.36.}
 
-\nex In a Hilbert space $\cH$, prove that an orthonormal sequence $\{e_n\}$ converges weakly to 0. 
+\nex Let $\cH$ be a Hilbert space and suppose $\{e_n\}_{n\in\NN}$ is an orthonormal set.  Prove that the sequence $(e_n)$ converges weakly to 0. 
 
 
-\prob{P11}  \emph{This example is so important and clear that I did it in class \emph{and} I want you to write out the details as an exercise.  You may use the standard properties of integration, which hold on $L^1$.  .}
+\prob{P11}  Prove directly, without using the Heine-Borel theorem, that the set
+	$$K = \{0\} \cup \left\{\tfrac{1}{n}\,:\,n \in \NN\right\} \subset \RR$$
+is compact in the usual topology on $\RR$.
+
+
+\clearpage \newpage
+\prob{P12}  \emph{This example is so important that I did it in class \emph{and} I want you to write out the details!  You may use, without comment, the standard properties of integration, as they apply to functions in $L^1(0,1)$.}
 
 \epart{a}  Consider the Banach space $\cV = L^1(0,1)$ and the linear operator
-	$$(Af)(x) = \int_0^x FIXME$$
-for $f\in\cV$.  Show that $A$ is bounded, so we can write $A\in\cL(\cV)$.
+	$$(Af)(x) = \int_0^x f(t)\,dt$$
+for $f\in\cV$.  Show that $Af \in \cV$.  Also show $A$ is bounded.
+
+\nex \emph{By part \emph{\textbf{(a)}}, we may write $A\in\cL(\cV)$.}
+
+\medskip
+\epart{b}  Show that, in fact, if $f\in \cV$ then $Af$ is a continuous function on $[0,1]$.\footnote{Show this directly, even though it is also stated in the handout as a fact.}  Observe that $(Af)(0)=0$.
+
+\nex \emph{In the next part, you may use, without comment, the form of the Fundamental Theorem of Calculus in the handout.  You may also use the fact that the only continuous functions $y(x)$ satisfying $y'(x) = \alpha y(x)$, for $\alpha\in\CC$, on $x$ in a given interval of the real line, are the functions $y(x) = c e^{\alpha x}$ for $c\in\CC$.}
+
+\medskip
+
+\epart{c}  By definition, $f \in \cV$ is an \emph{eigenfunction} of $A$ if $f\ne 0$ and there is $\lambda \in \CC$ so that $Af=\lambda f$.\footnote{Pay attention here. ``$f\ne 0$'' means $f$ is not the zero vector of $\cV$.  Which means what about the pointwise values $f(x)$?  Also, ``$Af=\lambda f$`` means what?  (Think about \emph{almost everywhere}.)}  If $f$ is an eigenfunction of $A$ then we call the corresponding $\lambda$ the \emph{eigenvalue}.  Show that $A$ has no eigenvalues.
+
 \end{document}
