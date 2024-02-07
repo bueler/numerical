@@ -5,20 +5,20 @@ daily:
 - name: Wednesday 14 February
   description: section 2.5 (and 2.7.1)
 - name: Monday 12 February
-  description: cont.
-- name: Friday 9 February
   description: section 2.6, 2.7
   more: Assignment 2 due (revised)
-- name: Wednesday 7 February
+- name: Friday 9 February
   description: cont.
-- name: Monday 5 February
+- name: Wednesday 7 February
   description: section 2.3
+- name: Monday 5 February
+  description: cont.
 - name: Friday 2 February
   description: cont.
 - name: Wednesday 31 January
-  description: cont.
-- name: Monday 29 January
   description: section 2.4
+- name: Monday 29 January
+  description: cont. handout
 - name: Friday 26 January
   description: cont. handout
   more: Assignment 1 due
