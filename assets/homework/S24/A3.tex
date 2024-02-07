@@ -18,7 +18,7 @@
 \newtheorem*{problem}{Problem}
 \newtheorem*{remark}{Remark}
 
-\usepackage{fancyvrb,xspace}
+\usepackage{fancyvrb,xspace,dsfont}
 
 \usepackage[final]{graphicx}
 
@@ -93,7 +93,7 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \large
 \medskip
 
-\centerline{\textbf{Due Friday 16 February 2024}}
+\centerline{\textbf{Due Wednesday 21 February 2024}}
 \medskip
 \normalsize
 
@@ -108,58 +108,52 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 \prob{P13}  \emph{Note that the polarization identity (2.17) in the textbook has a typo.  I believe that the one below is correct.  In any case, be careful with which inner product argument has conjugate linearity and which has ordinary linearity!}
 
-\medskip
-\noindent
-Let $(V,\ip{\cdot}{\cdot})$ be a complex inner product space.  Prove the parallelogram law
-    $$\|u+v\|^2 + \|u-v\|^2 = 2 \|u\|^2 + 2 \|v\|^2$$
-and the polarization identity
+\epart{a} Let $(V,\ip{\cdot}{\cdot})$ be an inner product space.  Recall that $\|v\|=\sqrt{\ip{v}{v}}$ defines the norm.  Prove the parallelogram law
+    $$\|u+v\|^2 + \|u-v\|^2 = 2 \|u\|^2 + 2 \|v\|^2.$$
+
+\epart{b} For a complex inner product space, prove the polarization identity
     $$\ip{u}{v} = \frac{1}{4} \Big(\|u+v\|^2 - \|u-v\|^2 - i\|u+iv\|^2 + i\|u-iv\|^2\Big).$$
 
 
-\prob{P14}  \emph{I want you to be able to \emph{read} Chapter 3 effectively as soon as possible.  This and later Chapters are typical of post-1960 mathematical writing in analysis or mathematical physics or partial differential equations.  Specifically, they assume familiarity with many vector spaces of functions. The precise count in the ``game'' below is not quite the issue, but the goal is to identify all the major vector spaces at least.  For instance, in my count I do not include ``$\cH_1$'' and ``$\cH_2$'' when they appear in the middle of page 36.  (They are generic Hilbert spaces, and ``$\cH$'' has already been mentioned.)}
+\prob{P14}  \emph{I want you to be able to successfully \emph{read} Chapter 3 as soon as possible.  This and later Chapters are typical of post-1960 mathematical writing in analysis, mathematical physics, or partial differential equations.  Specifically, they assume familiarity with many vector spaces of functions. The precise count in the ``name game'' of this problem is not quite the issue, but please identify all the major vector spaces at least.  For instance, in my count I do not include ``$\cH_1$'' and ``$\cH_2$'', when they appear in the middle of page 36,  because they are generic Hilbert spaces, and ``$\cH$'' has already been mentioned.}
 
 \medskip
 \noindent
-\textbf{NAME GAME v3.1.}  Section 3.1 is only two pages long.  By my count, 15 different vector spaces are mentioned.  Most are complex vector space (but not all) and most are spaces of complex-valued functions (but not all).  Some are subspaces of others.  Identify all the distinct vector spaces mentioned in section 3.1, and for each one write out the definition.  State all subspace relationships.
+Section 3.1 is only two pages long.  However, by my count, 15 different vector spaces are mentioned.  Most are complex vector space (but not all) and most are spaces of complex-valued functions (but not all).  Some are subspaces of others.  In a numbered list, identify all the distinct vector spaces mentioned in section 3.1, and for each one write out the definition.  State all subspace relationships.
 
 
-\prob{P15}  \ppart{a} For each $k\in \NN \cup\{\infty\}$, give an example of a Hilbert space isometry with kernel of dimension $k$.
+\prob{P15}  \ppart{a} For each $k\in \NN \cup\{\infty\}$, give an example of a linear isometry $A$ on $\ell^2$ for which $(\range{A})^\perp$ has dimension $k$.  (\emph{Hint: Shifts.})
 
-\epart{b}  Explain what is wrong with saying ``if $T\in\cL(V,W)$ has a nontrivial kernel then $T$ has an eigenvalue of zero''.
+\epart{b}  For each $k\in \NN \cup\{\infty\}$, give an example of a linear map on $\ell^2$ for which the kernel has dimension $k$.  (\emph{Hint: Shifts.})
 
 
+\clearpage\newpage
 \prob{P16}  \emph{Multiplication operators are defined in Example 2.8 on page 10.}
 
 \medskip
 \noindent
-Consider $L^2(0,1)$ and fix $f=\chi_{(0,1/2)}$, the characteristic function of $I=(0,1/2)$.  What is $\|M_f\|$?  Show that $M_f$ has eigenvalues 0 and 1.  What are the geometric multiplicities of these eigenvalues?
+Consider $L^2(0,1)$ and fix $f=\chi_{(0,1/2)}=\mathds{1}_{(0,1/2)}$, which is the characteristic function of $I=(0,1/2)$.  What is $\|M_f\|$?  Show that $M_f$ has eigenvalues 0 and 1.  What are the geometric multiplicities of these eigenvalues?
 
 
-\clearpage\newpage
-\prob{P17}  \emph{The definition of $C_0^\infty(\RR)$ is never given in the textbook, so here I make it explicit.  The main importance of the Fourier transform is that it converts differentiation into multiplication by polynomials.  Prove that here!  The technique you need is \emph{integration by parts}, which encounters no difficulties because you only prove the formulas for $f\in C_0^\infty(\RR)$.}
-
-\medskip
-\noindent
-By definition,
+\prob{P17}  \emph{Consider the smooth functions and the compact-support subspace:}
 \begin{align*}
 C^\infty(\RR) &= \left\{f:\RR\to\CC\,\big|\, f^{(n)} \in C(\RR) \text{ for } n=0,1,2,\dots\right\} \\
 C_0^\infty(\RR) &= \left\{f\in C^\infty(\RR)\big|\, \text{there exists $I=[a,b]$ so that $f(x)=0$ for $x\notin I$}\right\}
 \end{align*}
-That is, $C^\infty(\RR)$ are the smooth functions and $C_0^\infty(\RR)$ is the subspace with compact supports.
+\emph{In this problem we see that functions in $C^\infty(\RR)$ are nice, but they are not as nice as $C_0^\infty(\RR)$.}
+
+\epart{a} Show that $C_0^\infty(\RR) \subseteq L^2(\RR)$, but that $C^\infty(\RR) \nsubseteq L^2(\RR)$.
+
+\epart{b} Find a function $f \in \left(C^\infty(\RR) \cap L^2(\RR)\right) \setminus C_0^\infty(\RR)$ for which every derivative $f^{(n)}$ is also in $L^2(\RR)$.  (\emph{Recommended search technique: Consider reasonably familiar functions.})
+
+\prob{P18}  \emph{The main importance of the Fourier transform is that it converts differentiation into multiplication by polynomials.  One needs integration by parts to prove this, but it encounters no difficulties here because you only prove the formulas for $f\in C_0^\infty(\RR)$.}
 
 \medskip\noindent
-From the Fourier transform of $f$ defined by formula (2.18) on page 17, denoted either $\cF(f)(\xi)$ or $\hat f(\xi)$, prove that for $f\in C_0^\infty(\RR)$ we have
+From the Fourier transform of $f$ defined by formula (2.18) on page 17, denoted $\cF(f)(\xi)=\hat f(\xi)$, prove that for $f\in C_0^\infty(\RR)$ we have
 \begin{align*}
 \cF(f')(\xi) &= i\xi \hat f(\xi) \\
 \cF(f'')(\xi) &= -\xi^2 \hat f(\xi)
 \end{align*}
-
-
-\prob{P18}  \emph{Functions in $C^\infty(\RR)$ are nice, but they are not as nice as $C_0^\infty(\RR)$.}
-
-\medskip
-\noindent
-Show that $C_0^\infty(\RR) \subseteq L^2(\RR)$, but that $C^\infty(\RR) \nsubseteq L^2(\RR)$.  Then find a function $f \in \left(C^\infty(\RR) \cap L^2(\RR)\right) \setminus C_0^\infty(\RR)$ for which every derivative $f^{(n)}$ is also in $L^2(\RR)$.
 
 
 \end{document}

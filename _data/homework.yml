@@ -8,6 +8,10 @@ homework:
   seealsoname: Definitions and facts handout
   seealsopdf: https://bueler.github.io/fa/assets/handouts/getstarted.pdf
 - name: Assignment 2
-  due: Friday 9 February (revised)
+  due: Monday 12 February (revised x2)
   blank: A2.pdf
   sections: 2.3, 2.4, 2.6, 2.7
+- name: Assignment 3
+  due: Wednesday 21 February
+  blank: A3.pdf
+  sections: 2.3, 2.4, 2.6, 2.7, 3.1
