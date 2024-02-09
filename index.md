@@ -31,18 +31,20 @@ Log in to [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18
 
 [<img src="assets/images/boundstates.png" height="200">](https://en.wikipedia.org/wiki/Unbounded_operator "bound states") &nbsp; &nbsp; [<img src="assets/images/harmonic.jpg" height="200">](https://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics) "Hamiltonian operator eigenfunctions") &nbsp; &nbsp; [<img src="assets/images/borthwick.jpg" height="250">](https://link.springer.com/book/10.1007/978-3-030-38002-1 "the textbook")
 
-* What are we studying?  Check out these Wikipedia pages for the topics we will get to, in this approximate order:
+* What are we studying?  Check out these Wikipedia pages for the topics we plan to touch:
 
     * [functional analysis](https://en.wikipedia.org/wiki/Functional_analysis)
+    * [Banach spaces](https://en.wikipedia.org/wiki/Banach_space)
     * [Hilbert spaces](https://en.wikipedia.org/wiki/Hilbert_space)
     * [Sobolev spaces](https://en.wikipedia.org/wiki/Sobolev_space)
+    * [bounded operators](https://en.wikipedia.org/wiki/Bounded_operator)
     * [self-adjoint operators](https://en.wikipedia.org/wiki/Self-adjoint_operator)
     * [unbounded operators](https://en.wikipedia.org/wiki/Unbounded_operator)
     * [Laplacian operators](https://en.wikipedia.org/wiki/Laplace_operator)
-    * [finite element method](https://en.wikipedia.org/wiki/Finite_element_method)
     * [spectral theorem](https://en.wikipedia.org/wiki/Spectral_theorem)
     * [axioms of quantum mechanics](https://en.wikipedia.org/wiki/Dirac%E2%80%93von_Neumann_axioms) (and [here](https://en.wikipedia.org/wiki/Mathematical_formulation_of_quantum_mechanics))
     * [quantum Hamiltonian operators](https://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics))
+    * [finite element method](https://en.wikipedia.org/wiki/Finite_element_method)
 
 * Videos which might help with "getting started":
     * [abstract vector spaces](https://www.youtube.com/watch?v=TgKwz5Ikpc8)
