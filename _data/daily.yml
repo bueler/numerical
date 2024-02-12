@@ -1,11 +1,16 @@
 semester: Fall 2023
 daily:
-- name: Friday 16 February
+- name: Wednesday 21 February
+  description: cont.
+  more: Assignment 3 due
+- name: Monday 19 February
   description: section 3.1, 3.2
-- name: Wednesday 14 February
+- name: Friday 16 February
   description: section 2.5 (and 2.7.1)
-- name: Monday 12 February
+- name: Wednesday 14 February
   description: section 2.6, 2.7
+- name: Monday 12 February
+  description: cont.
   more: Assignment 2 due (revised)
 - name: Friday 9 February
   description: cont.
