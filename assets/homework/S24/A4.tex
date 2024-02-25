@@ -1,0 +1,143 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.55in} 
+\addtolength{\evensidemargin}{-.55in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\textheight}{.6in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\usepackage{fancyvrb,xspace,dsfont}
+
+\usepackage[final]{graphicx}
+
+% macros
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\fl}{\operatorname{fl}}
+
+\newcommand{\ds}{\displaystyle}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
+frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+\newcommand{\nex}{\medskip\noindent}
+
+
+\begin{document}
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{assigned 26 February 2024}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment 4}}
+\large
+\medskip
+
+\centerline{\textbf{Due Wednesday 6 March 2024}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+\noindent This Assignment is based primarily on sections 2.6, 2.7, and 3.1 of our textbook, D.~Borthwick (2020).~\emph{Spectral Theory: Basic Concepts and Applications}, Springer.
+
+\medskip
+\noindent \textsc{Please do the following exercises.}
+\smallskip
+
+\prob{P19}  \emph{This is Exercise 2.6, the proof of Corollary 2.29.  Hint: First show that for fixed $w\in\cH$, the functional $\ell(v) = \eta(w,v)$ is in $\cH'$.  Remember that $\ip{\cdot}{\cdot}$ and $\eta(\cdot,\cdot)$ are only conjugate linear in the first spot.  Please prove the linearity and boundedness of $T$.}
+
+\medskip\noindent Given a bounded sesquilinear form $\eta:\cH\times \cH \to \CC$, show that there is a unique operator $T\in \cL(\cH)$ so that
+	$$\eta(v,w) = \ip{v}{Tw}$$
+for all $v,w\in\cH$.
+
+
+\prob{P20}  \emph{This is Exercise 2.10, but clarified.  One way to show \emph{\textbf{(a)}} is to argue that it is $\range(P)=\ker(Q)$ of some operator $Q$ built from $P$.}
+
+\medskip\noindent Suppose $P\in\cL(\cH)$ satisfies $P^2=P$ and $\ip{Pv}{w} = \ip{v}{Pw}$ for all $v,w\in\cH$.
+
+\epart{a}  Show that $\range(P)$ is a closed subspace of $\cH$.
+
+\epart{b}  Show that
+	$$\cH = \range(P) \oplus \ker(P).$$
+
+
+\prob{P21}  Carefully prove Corollary 2.36, which is Parseval's theorem and equality, from Theorems 2.34 and 2.35.
+
+
+\prob{P22}  \emph{Hints.  Cauchy-Schwarz for \emph{\textbf{(a)}}, naturally.  An example for \emph{\textbf{(b)}} can be built as a power of the polar coordinate $r=(x^2+y^2)^{1/2}$.}
+
+\epart{a}  Let $X=(0,1)^2 \subset \RR^2$.  Suppose $K \in L^2(X)$, that is,
+	$$\int_0^1 \int_0^1 |K(x,y)|^2\,dx\,dy < \infty.$$
+Show that
+	$$(Tf)(x) = \int_0^1 K(x,y) f(y)\,dy$$
+defines $T\in\cL(\cH)$ for $\cH = L^2(0,1)$.
+
+\epart{b} Find $K \in L^2(X)$ which is \emph{not} a bounded function on $X$.
+
+
+\prob{P23}  FIXME Dirichlet kernel stuff
+
+
+\end{document}
