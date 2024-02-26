@@ -63,6 +63,8 @@
 \newcommand{\range}{\operatorname{range}}
 \newcommand{\trace}{\operatorname{tr}}
 
+\newcommand{\Span}{\operatorname{span}}
+
 \newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
 \newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
 
@@ -100,44 +102,61 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \thispagestyle{empty}
 
 \bigskip
-\noindent This Assignment is based primarily on sections 2.6, 2.7, and 3.1 of our textbook, D.~Borthwick (2020).~\emph{Spectral Theory: Basic Concepts and Applications}, Springer.
+\noindent This Assignment is based primarily on sections 2.6, 2.7, and 3.1 of our textbook, Borthwick (2020)~\emph{Spectral Theory: Basic Concepts and Applications}, Springer.
 
 \medskip
 \noindent \textsc{Please do the following exercises.}
 \smallskip
 
-\prob{P19}  \emph{This is Exercise 2.6, the proof of Corollary 2.29.  Hint: First show that for fixed $w\in\cH$, the functional $\ell(v) = \eta(w,v)$ is in $\cH'$.  Remember that $\ip{\cdot}{\cdot}$ and $\eta(\cdot,\cdot)$ are only conjugate linear in the first spot.  Please prove the linearity and boundedness of $T$.}
+
+\prob{P19}  \emph{This is Exercise 2.10, but clarified.  One way to show \emph{\textbf{(a)}} is to argue that $\range(P)=\ker(Q)$ for some bounded operator $Q\in\cL(\cH)$ built from $P$.}
+
+\medskip\noindent Suppose $P\in\cL(\cH)$ satisfies $P^2=P$ and $\ip{Pv}{w} = \ip{v}{Pw}$ for all $v,w\in\cH$.
+
+\epart{a}  Show that $\range(P)$ is a closed subspace of $\cH$.
+
+\epart{b}  Show that $\cH = \range(P) \oplus \ker(P)$.
+
+\prob{P20}  \emph{This is Exercise 2.6, asking for the proof of Corollary 2.29.  Hint: First show that for fixed $w\in\cH$, the functional $\ell(v) = \eta(w,v)$ is in $\cH'$.  Remember that $\ip{\cdot}{\cdot}$ and $\eta(\cdot,\cdot)$ are only conjugate linear in the first spot.  Please prove the linearity and boundedness of $T$.}
 
 \medskip\noindent Given a bounded sesquilinear form $\eta:\cH\times \cH \to \CC$, show that there is a unique operator $T\in \cL(\cH)$ so that
 	$$\eta(v,w) = \ip{v}{Tw}$$
 for all $v,w\in\cH$.
 
 
-\prob{P20}  \emph{This is Exercise 2.10, but clarified.  One way to show \emph{\textbf{(a)}} is to argue that it is $\range(P)=\ker(Q)$ of some operator $Q$ built from $P$.}
-
-\medskip\noindent Suppose $P\in\cL(\cH)$ satisfies $P^2=P$ and $\ip{Pv}{w} = \ip{v}{Pw}$ for all $v,w\in\cH$.
-
-\epart{a}  Show that $\range(P)$ is a closed subspace of $\cH$.
-
-\epart{b}  Show that
-	$$\cH = \range(P) \oplus \ker(P).$$
-
-
 \prob{P21}  Carefully prove Corollary 2.36, which is Parseval's theorem and equality, from Theorems 2.34 and 2.35.
 
 
-\prob{P22}  \emph{Hints.  Cauchy-Schwarz for \emph{\textbf{(a)}}, naturally.  An example for \emph{\textbf{(b)}} can be built as a power of the polar coordinate $r=(x^2+y^2)^{1/2}$.}
+\prob{P22}  \emph{In Example 2.32 on page 28 our textbook casually says that a ``standard argument using the Dirichlet kernel'' shows that a certain set of orthogonal complex exponentials is in fact a basis.  This exercise begins this quite substantial ``standard argument,'' actually perhaps the greatest triumph of 19th century analysis, by defining the Dirichlet kernel.  Note I use $\cH=L^2(-\pi,\pi)$ here, instead of $L^2(0,2\pi)$, but this is a detail.}
 
-\epart{a}  Let $X=(0,1)^2 \subset \RR^2$.  Suppose $K \in L^2(X)$, that is,
+\epart{a}  Let $\ds \phi_k(\theta) = \frac{1}{\sqrt{2 \pi}} e^{ik\theta}$ for $k\in\ZZ$.  Since these functions are continuous and bounded they are in $\cH=L^2(-\pi,\pi)$.  Show that $\{\phi_k\}_{k\in\ZZ}$ is an orthonormal set.
+
+\epart{b}  For $n\in\NN$, let $\ds D_n(\theta) = \sum_{j=-n}^n e^{ij\theta}$ be the Dirichlet kernel.  Show that $D_n(0)=2n+1$ (\emph{easy!}).  For $\theta\ne 0$ show by a geometric series argument that
+	$$D_n(\theta) = \frac{\sin\left((n+1/2)\theta\right)}{\sin(\theta/2)}.$$
+
+\epart{c}  Use a computer to plot $D_2(\theta)$, $D_8(\theta)$, and $D_{20}(\theta)$ in a single figure, on the interval $-\pi \le \theta \le \pi$.
+
+\epart{d}  Compute $\ds \int_{-\pi}^\pi D_n(\theta)\,d\theta$.  Conjecture what the integral $\ds \int_{-\pi}^\pi D_n(\theta) f(\theta)\,d\theta$ yields when $f(x)$ is continuous at $x=0$, and if $n$ is very large?
+
+\epart{e}  Show that if $f\in\cH=L^2(-\pi,\pi)$ then
+	$$\int_{-\pi}^\pi D_n(\theta - x) f(\theta)\,d\theta = 2\pi \sum_{j=-n}^n \ip{\phi_j}{f} \phi_j(x).$$
+Observe---there is nothing to prove here---that this says that
+	$$(P_n f)(x) = \frac{1}{2\pi} \int_{-\pi}^\pi D_n(\theta - x) f(\theta)\,d\theta$$
+is the orthogonal projection of $f \in \cH$ onto $\Span\{\phi_{-n},\dots,\phi_n\}$; compare (2.30).
+
+
+\prob{P23}  \emph{Hints.  Use Cauchy-Schwarz for part \emph{\textbf{(a)}}.  An example for part \emph{\textbf{(b)}} can be built from a power of the polar coordinate $r=(x^2+y^2)^{1/2}$.}
+
+\epart{a}  Let $\Omega=(0,1)^2 \subset \RR^2$.  Suppose $K \in L^2(\Omega)$, that is,
 	$$\int_0^1 \int_0^1 |K(x,y)|^2\,dx\,dy < \infty.$$
-Show that
-	$$(Tf)(x) = \int_0^1 K(x,y) f(y)\,dy$$
-defines $T\in\cL(\cH)$ for $\cH = L^2(0,1)$.
+Show that the integral operator with kernel $K$, namely,
+	$$(T_K f)(x) = \int_0^1 K(x,y) f(y)\,dy$$
+is linear and bounded ($T_K \in\cL(\cH)$) on $\cH = L^2(0,1)$.
 
-\epart{b} Find $K \in L^2(X)$ which is \emph{not} a bounded function on $X$.
+\epart{b} Find $K \in L^2(\Omega)$ which is \emph{not} a bounded function.
 
-
-\prob{P23}  FIXME Dirichlet kernel stuff
-
+\epart{c} For a finite sequence $a_j\in\CC$, $j=1,\dots,n$, let
+    $$K_{a}(x,y) = \sum_{j=1}^n a_j e^{i \,2\pi j(x-y)}.$$
+This is a continuous and bounded function and thus $K_a \in L^2(\Omega)$.  Find all of the eigenvalues and eigenfunctions of the operator $T_{K_a} \in \cL(\cH)$.
 
 \end{document}
