@@ -4,7 +4,7 @@
 {% for material in data.daily %}
 <li>{{ material.name }}: {{ material.description }}
 {% if material.due %}
-    <br><b>{{ material.due }}</b>
+    <br><b>due: {{ material.due }}</b>
 {% endif %}
 {% if material.more %}
     <br>{{ material.more }}
