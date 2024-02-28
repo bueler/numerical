@@ -88,7 +88,7 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 
 \begin{document}
-\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{version 2; assigned 26 February 2024}
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{version 3; assigned 26 February 2024}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment 4}}
@@ -117,6 +117,7 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 \epart{b}  Show that $\cH = \range(P) \oplus \ker(P)$.
 
+
 \prob{P20}  \emph{This is Exercise 2.6, asking for the proof of Corollary 2.29.  Note that ``bounded sesquilinear form'' is defined on page 27; observe that both $\ip{\cdot}{\cdot}$ and $\eta(\cdot,\cdot)$ are conjugate linear in the first spot.  Please prove the linearity and boundedness of $T$.  Hint: Get started by showing that for fixed $w\in\cH$, the functional $\ell(v) = \eta(w,v)$ is in $\cH'$.}
 
 \medskip\noindent Given a bounded sesquilinear form $\eta:\cH\times \cH \to \CC$, show that there is a unique operator $T\in \cL(\cH)$ so that
@@ -140,9 +141,9 @@ for all $v,w\in\cH$.
 \epart{d}  Compute $\ds \int_{-\pi}^\pi D_n(\theta)\,d\theta$.  Conjecture what the integral $\ds \int_{-\pi}^\pi D_n(\theta) f(\theta)\,d\theta$ yields when $f(x)$ is continuous at $x=0$ and $n$ is large.
 
 \epart{e}  Show that if $f\in\cH=L^2(-\pi,\pi)$ then
-	$$\int_{-\pi}^\pi D_n(\theta - x) f(\theta)\,d\theta = 2\pi \sum_{j=-n}^n \ip{\phi_j}{f} \phi_j(x).$$
+	$$\int_{-\pi}^\pi D_n(x-\theta) f(\theta)\,d\theta = 2\pi \sum_{j=-n}^n \ip{\phi_j}{f} \phi_j(x).$$
 Argue that therefore
-	$$(P_n f)(x) = \frac{1}{2\pi} \int_{-\pi}^\pi D_n(\theta - x) f(\theta)\,d\theta$$
+	$$(P_n f)(x) = \frac{1}{2\pi} \int_{-\pi}^\pi D_n(x-\theta) f(\theta)\,d\theta$$
 is the orthogonal projection of $f \in \cH$ onto $\Span\{\phi_{-n},\dots,\phi_n\}$.  (\emph{Hint. Compare (2.30).})
 
 
