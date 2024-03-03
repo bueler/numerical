@@ -1,0 +1,161 @@
+\documentclass[11pt]{amsart}
+\addtolength{\topmargin}{-0.6in} % usually -0.25in
+\addtolength{\textheight}{1.2in} % usually 1.25in
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.5in} %\setlength{\parindent}{0pt}
+
+\newcommand{\normalspacing}{\renewcommand{\baselinestretch}{1.1}\tiny\normalsize}
+\newcommand{\bigspacing}{\renewcommand{\baselinestretch}{1.21}\tiny\normalsize}
+\newcommand{\tablespacing}{\renewcommand{\baselinestretch}{1.0}\tiny\normalsize}
+\normalspacing
+
+% macros
+\usepackage{amssymb,xspace}
+\usepackage[pdftex,colorlinks=true]{hyperref}
+
+\usepackage[final]{graphicx}
+\newcommand{\regfigure}[3]{\includegraphics[height=#2in,width=#3in]{#1.eps}}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{lem}{Lemma}
+
+\newcommand{\mtt}{\texttt}
+\newcommand{\mtl}[1]{{\texttt{>>#1}}}
+\usepackage{alltt}
+\usepackage{fancyvrb}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\ZZn}{{\mathbb{Z}}_n}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\lam}{\lambda}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\ip}[2]{\mathrm{\left<#1,#2\right>}}
+\newcommand{\erf}{\operatorname{erf}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+\newcommand{\Null}{\operatorname{null}}
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\pylab}{\textsc{pylab}\xspace}
+\newcommand{\longMOP}{\textsc{Matlab}\big|\textsc{Octave}\big|\textsc{pylab}\xspace}
+\newcommand{\MOP}{\textsc{M}\big|\textsc{O}\big|\textsc{p}\xspace}
+
+\newcommand{\prob}[1]{\bigskip\noindent\large\textbf{#1.} \normalsize}
+\newcommand{\bookprob}[1]{\bigskip\noindent\large\textbf{Exercise #1.} \normalsize}
+\newcommand{\probpart}[1]{\smallskip\noindent\textbf{(#1)}\quad }
+\newcommand{\aprobpart}[1]{\textbf{(#1)}\quad }
+
+\newcommand{\textbook}{\textsc{Trefethen \& Bau}}
+
+\begin{document}
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \today
+\thispagestyle{empty}
+
+\bigskip
+\LARGE\centerline{\textbf{Review Guide}}
+
+\medskip
+\Large\centerline{for in-class \textbf{Midterm Quiz} on \textbf{Wednesday 22 March 2024}}
+
+\normalsize
+\bigskip
+\begin{quote}
+FIXME The Midterm Quiz will cover Lectures 1, 2, 3, 4, 5, 6, 7 in \textbook.  The problems will be of these types: state definitions, state theorems, state algorithms (as pseudocode or \Matlab), describe or illustrate geometrical ideas, basic applications of theorems, quick calculations, prove simple theorems/corollaries.
+\end{quote}
+\bigskip
+
+\bigspacing
+\noindent \textbf{Definitions}. Know how to define:
+\begin{itemize}
+\item matrix-vector product; matrix-matrix product
+\item adjoint; hermitian; transpose
+\item inner product; outer product
+\item unitary
+\item $\|\cdot\|_p$ of a vector in $\CC^m$ for any $1\le p \le \infty$
+\item induced matrix norm $\|\cdot\|$
+\item Frobenius matrix norm $\|\cdot\|_F$
+\item projector; orthogonal projector
+\item eigenvalue; eigenvector
+\item singular value
+%\item residual (for overdetermined ``$Ax=b$'')
+%\item absolute condition number $\hat\kappa(x)$ of a problem instance
+%\item relative condition number $\kappa(x)$ of a problem instance
+%\item condition number of a square matrix: $\kappa(A)=\|A\|\,\|A^{-1}\|$
+\end{itemize}
+
+\normalspacing
+
+\medskip\noindent \textbf{Matrix Factorizations and Constructions}.  Know the properties of the factors in each factorization below.  (\emph{For example, $\hat U$ has orthonormal columns and is of same size as $A$ in the $m\ge n$ case of the reduced SVD factorization $A=\hat U \hat \Sigma V^*$.})  Assume $A\in \CC^{m\times n}$ unless otherwise stated.  Be able to use the factorization in simple calculations.  Be able to compute the factorization by hand in sufficiently small and simple cases.
+
+\bigspacing
+
+\begin{itemize}
+\item full SVD: $A=U \Sigma V^*$
+\item reduced SVD, $m\ge n$: $A=\hat U \hat \Sigma V^*$
+\item full QR, $m\ge n$: $A=QR$
+\item reduced QR, $m\ge n$: $A=\hat Q \hat R$
+\item eigenvalue, $m=n$: $A = X\Lambda X^{-1}$ \hfill {\footnotesize\emph{$\leftarrow$ not always possible!}}
+\item orthogonal projector onto $\range(A)$: $P=\hat Q\hat Q^* = A\left(A^* A\right)^{-1} A^*$
+%\item Householder reflector: $F = I - 2 v v^* / (v^* v)$
+\end{itemize}
+
+\medskip\noindent \textbf{Algorithms}. Be able to state these algorithms, including the amount of work to leading order.
+\begin{itemize}
+\item matrix-vector and matrix-matrix products
+\item Alg.~7.1: classical Gram-Schmidt for $\hat Q \hat R$
+%\item Alg.~8.1: modified Gram-Schmidt for $\hat Q \hat R$
+\item high-level algorithm to solve $Ax=b$ when invertible $A=U\Sigma V^*$ has known SVD
+\item high-level algorithm to solve $Ax=b$ when invertible $A=QR$ has known QR decomposition
+%\item Alg.~10.1: Householder triangularization for $QR$
+%\item Alg.~10.2: compute $Q^*b$ after Householder triangularization
+%\item Alg.~11.2: $QR$ for least squares on overdetermined ``$Ax=b$''
+%\item Alg.~11.1: normal equations for least squares on overdetermined ``$Ax=b$''
+\end{itemize}
+
+\newpage\noindent \textbf{Facts and Formulas}.  Know as facts.  Be able to prove unless otherwise stated.
+\begin{itemize}
+\item if $A,B$ are invertible matrices then $(AB)^{-1} = B^{-1} A^{-1}$
+\item if $A,B$ are matrices so that $AB$ is defined then $(AB)^* = B^* A^*$
+\item Cauchy-Schwarz: $|x^* y| \le \|x\|\,\|y\|$ \qquad [\emph{proof not required}]
+\item invariance of $\|\cdot\|_2$ and $\|\cdot\|_F$ matrix norms under unitaries
+\item $\|A\|_F = \sqrt{\sigma_1^2 + \dots + \sigma_r^2}$
+\item $\|A\|_2 = \sigma_1$
+\item for $A\in \CC^{m\times n}$ with $m\ge n$, $A$ has full rank if and only if $A^* A$ is nonsingular
+\item $\rank(A)$ is number of nonzero singular values (in exact arithmetic)
+\item if $m=n$ then $|\det(A)|=\prod_{i=1}^m \sigma_i$
+\item the singular values of $A$ are the square roots of the eigenvalues of $A^*A$
+\item if $P$ is an (orthogonal) projector then $I-P$ is an (orthogonal) projector
+\item if $P$ is an orthogonal projector then $I-2P$ is unitary
+%\item if $A$ is square and $\|\cdot\| = \|\cdot\|_2$:\quad $\kappa(A)=\sigma_1/\sigma_m$
+\end{itemize}
+
+\normalspacing
+
+\bigskip\noindent \textbf{Ideas}.  Please be comfortable with the following ideas!  Some ideas correspond to theorems, but otherwise it is just a perspective or paradigm.
+
+\bigspacing
+\begin{itemize}
+\item L1 and L2: how to think about $Ax$, $A^{-1}b$, $Qx$, $Q^* b$
+\item L4: the image of the unit sphere under any $m\times n$ matrix is a hyperellipsoid
+\item L5: sums like this are optimal (in what sense?) approximations of $A$:
+	$$A_\nu = \sum_{j=1}^\nu \sigma_j u_j v_j^*$$
+\item L6: given $A$, the orthogonal projector onto $\range(A)$ is constructable \dots know the formulas \dots full rank versus not full rank?
+\item L7: construction of orthogonal functions (e.g.~orthogonal polynomials) is an application of the Gram-Schmidt process, and/or of $A=QR$, when the columns of $A$ are infinitely long
+%\item L8: the leading-order number of operations in some algorithm can be counted by geometric arguments
+%\item L10: Gram-Schmidt is ``triangular orthogonalization'' while Householder is ``orthogonal triangularization''\footnote{Gauss elimination is ``triangular triangularization'' \dots but it will not be on the Midterm Exam!}
+\end{itemize}
+
+
+\end{document}
+
