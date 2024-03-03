@@ -1,15 +1,12 @@
 semester: Spring 2024
 home: assets/exams/S24
 exams:
-- name: Midterm Quiz 1
-  date: Wednesday 28 February
+- name: Midterm Quiz
+  date: Wednesday 20 March
   info: <b>in class</b> or proctored
   #reviewguide: mid1review.pdf
   #blank: mid1.pdf
   #solutions: mid1solns.pdf
-- name: Midterm Quiz 2
-  date: Wednesday 3 April
-  info: <b>in class</b> or proctored
 - name: Final Exam
   date: Friday 3 May, 1-3 pm
   info: <b>in class</b> or proctored
