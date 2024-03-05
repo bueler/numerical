@@ -7,7 +7,7 @@ daily:
 - name: Friday 8 March
   description: section 3.1
 - name: Wednesday 6 March
-  description: "axioms" of quantum mechanics
+  description: axioms of quantum mechanics
   due: Assignment 4
 - name: Monday 4 March
   description: cont.
