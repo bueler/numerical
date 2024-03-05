@@ -1,8 +1,8 @@
 \documentclass[12pt]{amsart}
-\addtolength{\topmargin}{-0.6in} % usually -0.25in
-\addtolength{\textheight}{1.2in} % usually 1.25in
-\addtolength{\oddsidemargin}{-0.7in}
-\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\topmargin}{-0.4in} % usually -0.25in
+\addtolength{\textheight}{0.9in} % usually 1.25in
+\addtolength{\oddsidemargin}{-0.8in}
+\addtolength{\evensidemargin}{-0.8in}
 \addtolength{\textwidth}{1.5in} %\setlength{\parindent}{0pt}
 
 \newcommand{\normalspacing}{\renewcommand{\baselinestretch}{1.1}\tiny\normalsize}
@@ -19,24 +19,26 @@
 
 \newtheorem*{thm}{Theorem}
 \newtheorem*{lem}{Lemma}
-
-\newcommand{\mtt}{\texttt}
-\newcommand{\mtl}[1]{{\texttt{>>#1}}}
-\usepackage{alltt}
 \usepackage{fancyvrb}
+
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cL}{\mathcal{L}}
 
 \newcommand{\CC}{{\mathbb{C}}}
 \newcommand{\RR}{{\mathbb{R}}}
 \newcommand{\ZZ}{{\mathbb{Z}}}
 \newcommand{\ZZn}{{\mathbb{Z}}_n}
 \newcommand{\NN}{{\mathbb{N}}}
+
 \newcommand{\eps}{\epsilon}
 \newcommand{\lam}{\lambda}
-\newcommand{\bu}{\mathbf{u}}
-\newcommand{\bv}{\mathbf{v}}
-\newcommand{\ip}[2]{\mathrm{\left<#1,#2\right>}}
+\newcommand{\ip}[2]{\left<#1,#2\right>}
 \newcommand{\erf}{\operatorname{erf}}
 
+\renewcommand{\Im}{\operatorname{Im}}
 \renewcommand{\Re}{\operatorname{Re}}
 
 \newcommand{\Span}{\operatorname{span}}
@@ -45,11 +47,9 @@
 \newcommand{\trace}{\operatorname{tr}}
 \newcommand{\Null}{\operatorname{null}}
 
+\newcommand{\ds}{\displaystyle}
+
 \newcommand{\Matlab}{\textsc{Matlab}\xspace}
-\newcommand{\Octave}{\textsc{Octave}\xspace}
-\newcommand{\pylab}{\textsc{pylab}\xspace}
-\newcommand{\longMOP}{\textsc{Matlab}\big|\textsc{Octave}\big|\textsc{pylab}\xspace}
-\newcommand{\MOP}{\textsc{M}\big|\textsc{O}\big|\textsc{p}\xspace}
 
 \newcommand{\prob}[1]{\bigskip\noindent\large\textbf{#1.} \normalsize}
 \newcommand{\bookprob}[1]{\bigskip\noindent\large\textbf{Exercise #1.} \normalsize}
@@ -57,6 +57,7 @@
 \newcommand{\aprobpart}[1]{\textbf{(#1)}\quad }
 
 \newcommand{\textbook}{D.~Borthwick, \emph{Spectral Theory: Basic Concepts and Applications}, GTM 284, Springer 2020}
+
 
 \begin{document}
 \scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \today
@@ -66,46 +67,84 @@
 \LARGE\centerline{\textbf{Review Guide}}
 
 \medskip
-\Large\centerline{for in-class \textbf{Midterm Quiz} on \textbf{Wednesday March 22}}
+\Large\centerline{for in-class \textbf{Midterm Quiz} on \textbf{Wednesday March 20}}
 
 \normalsize
 \bigskip
 \begin{quote}
-The Midterm Quiz will be built from those parts of Chapter 2 in Borthwick\footnote{\textbook.} which we have actually covered, and from the Handout on definitions and facts.\footnote{\href{https://bueler.github.io/fa/assets/handouts/getstarted.pdf}{\,\texttt{bueler.github.io/fa/assets/handouts/getstarted.pdf}}}  In Borthwick we covered 2.1, 2.2, 2.3, 2.4, 2.6, and 2.7 thoroughly, except for 2.3.2.  You will not be asked about 2.5 (Sobolev spaces).
+The Midterm Quiz will be built from those parts of Chapter 2 in Borthwick\footnote{\textbook.} which we have actually covered, and from the Handout.\footnote{\href{https://bueler.github.io/fa/assets/handouts/getstarted.pdf}{\,\texttt{bueler.github.io/fa/assets/handouts/getstarted.pdf}}}  In Borthwick we covered 2.1, 2.2, 2.3, 2.4, 2.6, and 2.7 pretty thoroughly, except for 2.3.2.  You will not be asked about 2.5 (Sobolev spaces) or 2.3.2.
 
-The problems will be of these types: state definitions, state theorems, describe or illustrate geometrical ideas, basic applications of theorems, quick calculations, prove simple theorems/corollaries.
+The problems will be of these types, based on the lists below: state definitions, state theorems, describe or illustrate geometrical ideas, apply theorems in easy situations, and prove simple theorems/corollaries.
 \end{quote}
 \bigskip
 
 \bigspacing
-\noindent \textbf{Definitions}. Know how to define:
+\noindent \textbf{Definitions}.  Be able to state the precise definition.
 \begin{itemize}
-\item X
+\item metric $d(\cdot,\cdot)$
+\item norm $\|\cdot\|$
+\item open and closed subsets of a metric space
+\item compact set
+\item limit of a sequence (in a metric space)
+\item continuous $\CC$-valued function (on a metric space)
+\item Cauchy sequence (in a metric space)
+\item sequential compactness of a set (in a metric space; p.~30)
+\item complete metric space
+\item Banach space
+\item linear map between vector spaces
+\item eigenvector and eigenvalue for a linear map on a vector space
+\item inner product $\ip{\cdot}{\cdot}$ on a complex vector space
+\item norm in an inner product space
+\item complex Hilbert space $\cH$
+\item $\ell^p=\ell^p(\NN)$ spaces for $1\le p \le \infty$, including norm
+\item positive measure
+\item almost everywhere
+\item simple function
+\item $L^p(X)=L^p(X,dm)$\footnote{For $1\le p \le \infty$ and $dm=(\text{Lebesgue measure})$, $L^p(X)=L^p(X,dm)$ can be defined for any Lebesgue-measurable set $X\subset \RR^n$.  Note that $L^p(X,dm)$ is a set of \emph{measurable} functions $f:X\to\CC$.} for $1\le p < \infty$, including norm
+\item $L^\infty(X)=L^\infty(X,dm)$, including norm
+\item $C^\infty(\RR)$, $C^\infty(a,b)$, $C_0^\infty(\RR)$, $C_0^\infty(a,b)$
+\item bounded operator between normed vector spaces
+\item $\cL(V,W)$ for $V,W$ normed vector spaces
+\item dual space $W'$, for $W$ a normed vector space
+\item operator norm
+\item multiplication operator $M_f$ on $L^p(X,d\mu)$, for $f\in L^\infty(X,d\mu)$
+\item kernel and range of $T \in \cL(V,W)$
+\item linear isometry between normed vector spaces (p.~11)
+\item left and right shift operators on $\ell^2$
+\item $S^\perp$, for $S\subset \cH$ any subset
+\item direct sum\footnote{We write $V\oplus W=X$ if: \quad \emph{i}) $X$ is a vector space, \emph{ii}) $V,W$ are subspaces of $X$, \emph{iii}) for each $x\in X$ there exists $v\in V$ and $w\in W$ so that $v+w=x$ (i.e.~$V+W=X$), and \emph{iv}) $V\cap W = \{0\}$.} $V\oplus W=X$ of subspaces
+\item separable Hilbert space
+\item $w_n \to w$ weakly in $\cH$ (p.~27)
+\item orthonormal (ON) sequence in $\cH$
+\item ON basis in $\cH$
 \end{itemize}
 
 \normalspacing
-
-\noindent \textbf{Theorems}.  Know as facts.  Be able to prove unless otherwise stated.
+\medskip
+\noindent \textbf{Theorems and Lemmas}.  Know the precise statement of the theorem.  Be able to prove if so indicated.
 \begin{itemize}
-\item X
+\item Heine-Borel theorem for $\RR^n$ (Handout)
+\item extreme value theorem for $\RR$-valued functions on compact $K\subset \RR^n$ (Handout)
+\item Fundamental Theorem of Calculus (Handout)
+\item $\cL(V,W)$ is complete in operator norm if $W$ is complete (Theorem 2.10)
+\item Cauchy-Schwarz (Theorem 2.15)
+\item parallelogram law (Lemma 2.17; \textbf{be able to prove})
+\item if $W\subset \cH$ is closed then $\cH = W\oplus W^\perp$ (Theorem 2.27)
+\item Riesz lemma (Theorem 2.28)
+\item $\cH$ separable $\iff$ there exists an ON basis of $\cH$ (Theorem 2.33)
+\item Bessel's inequality (Theorem 2.34)
 \end{itemize}
 
 \normalspacing
-
-\noindent \textbf{Facts and Formulas}.  Know as facts.  Be able to prove unless otherwise stated.
+\medskip
+\noindent \textbf{Techniques}.  Be able to justify and use these calculation/proof techniques.
 \begin{itemize}
-\item X
+\item To show that $W\subset X$ is a subspace of a complex vector space it suffices to show that $0\in W$ and that for $v,w\in W$ and $\lambda \in \CC$ then $v + \lambda w \in W$.
+\item If $\cH$ is a Hilbert space and $\{e_j\}_{j\in\NN}$ is an ON basis of $\cH$ then for $v\in\cH$  there are coefficients $c_j\in\CC$ so that $\ds v = \sum_{j=1}^\infty c_j e_j$, and furthermore $c_j=\ip{e_j}{v}$.
+\item The triangle inequality $\|x+y\|\le \|x\|+\|y\|$ holds in a normed vector space, and its corollary $\big|\|x\|-\|y\|\big| \le \|x-y\|$ as well.
+\item The norm in a normed vector space is continuous.
+\item The inner product in an inner product space is continuous.
 \end{itemize}
-
-\normalspacing
-
-\bigskip\noindent \textbf{Ideas}.  Please be comfortable with the following ideas!  Some ideas correspond to theorems, but otherwise it is just a perspective or paradigm.
-
-\bigspacing
-\begin{itemize}
-\item X
-\end{itemize}
-
 
 \end{document}
 
