@@ -110,31 +110,43 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \smallskip
 
 
-\prob{P24}  For an operator, as in Definition 3.1, the text says that ``a bounded operator admits a unique continuous extension to the full space $\cH$, since $\cD(T)$ is dense'' (page 36).  Prove this.  Once this is proven, one may freely assume that $\cD(T) = \cH$ for bounded operators.
+\prob{P24}  For an operator (Definition 3.1; page 36), the text says that ``a bounded operator admits a unique continuous extension to the full space $\cH$, since $\cD(T)$ is dense.''  Prove this.  Once this is proven, one may freely assume that $\cD(T) = \cH$ for bounded operators.
 
 
 \prob{P25}  \emph{This is a basic exercise for the essential Definition 3.4, of the adjoint.}
 
-\epart{a} Consider the unbounded multiplication operator $M_a$ on $\cH=\ell^2$, defined for $x=(x_1,x_2,x_3,\dots) \in \ell^2$ by
+\epart{a} Consider the unbounded multiplication operator $M_a$ on $\cH=\ell^2=\ell^2(\NN)$, defined for $x=(x_1,x_2,x_3,\dots)$ as
 	$$M_a x = (x_1, 2 x_2, 3 x_3, \dots),$$
-with domain
+with a domain of sequences which are eventually zero:
 	$$\cD(M_a) = \left\{x \in \ell^2\,:\,\text{ there is $N$ so that if $k\ge N$ then } x_k=0\right\}.$$
 Show that $\cD(M_a)$ is dense in $\cH$.
 
-\epart{b} Find a formula for, and the domain of, the adjoint $M_a^*$.
+\epart{b} Directly from Definition 3.4, find a formula for the adjoint $M_a^*$, and its domain.
 
 \epart{c} Let $M_b$ be the unbounded multiplication operator with the same formula $M_b x = (x_1, 2 x_2, 3 x_3, \dots)$ but on the larger domain
     $$\cD(M_b) = \Big\{x \in \ell^2\,:\, \sum_{k=1}^\infty k|x_k|^2 < \infty\Big\}.$$
-Show that $M_b$ is self-adjoint.  (\emph{See Definition 3.19}.)
+Show that $\cD(M_b)$ is dense and that $M_b$ is self-adjoint (Definition 3.19).
 
 
-\prob{P26}  
+\prob{P26}  \emph{Please read Example 3.6 on page 39.  This exercise asks you to prove a crucial aspect.}
+
+\epart{a} Let $\cV = C^1[0,1]$ be a normed vector space with norm $\|v\| = \left(\int_0^1 |v(x)|^2\,dx\right)^{1/2}$.  Define $\omega: \to \CC$ by $\omega(v) = v(0)$.  Show that $\omega$ is linear.  Then show that it is \emph{not} bounded (continuous).
+
+\clearpage\newpage
+\noindent \emph{In the next part you do \underline{not} need to prove the assertion that $C^1[0,1]$ is dense in $L^2[0,1]$, \underline{nor} do you need to prove that $\ell$ is linear.}
+
+\epart{b} Let $\cH=L^2[0,1]$ and $\cD(T) = C^1[0,1]$ for $T = d/dx$ the first derivative.  Since $\cD(T)$ is dense in $\cH$, thus $T$ is an operator by Definition 3.1.  Fix $u\in\cD(T)$ and define the linear functional $\ell:\cD(T)\to\CC$ by
+	$$\ell(v) = - \ip{Tu}{v} + \overline{u(1)} v(1) - \overline{u(0)} v(0).$$
+Show that if $\ell$ is bounded in the $\cH$ norm then $u(0)=u(1)=0$.
 
 
-\prob{P27}  
+\prob{P27}  \emph{This is a simplification of Exercise 3.12.  A key idea for both parts is that $f$, being merely measurable, could be unbounded, and indeed it could go to infinity anywhere in $(0,1)$.  However, $f(x)\in\CC$ is well-defined for every $x\in(0,1)$.  Also, we conclude from part \emph{\textbf{(b)}} that $M_f$ is self-adjoint if and only if $f$ is real a.e.}
 
+\medskip \noindent Let $M_f$ be a multiplication operator on $\cH=L^2(0,1)$ with $f:(0,1)\to\CC$ measurable and with domain
+	$$\cD(M_f) = \left\{v \in L^2(0,1)\,:\,fv \in L^2(0,1)\right\}.$$
 
-\prob{P28}  
+\epart{a}  Show that $\cD(M_f)$ is dense in $\cH$.
 
+\epart{b}  Show that $\cD(M_f) = \cD(M_f^*)$ and that $M_f^* = M_{\overline{f}}$.
 
 \end{document}
