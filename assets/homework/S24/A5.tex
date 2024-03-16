@@ -89,7 +89,7 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 
 \begin{document}
-\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{assigned 18 March 2024}
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{version 2; assigned 18 March 2024}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment 5}}
@@ -121,12 +121,12 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 	$$M_a x = (x_1, 2 x_2, 3 x_3, \dots),$$
 with a domain consisting of sequences which are eventually zero:
 	$$\cD(M_a) = \left\{x \in \ell^2\,:\,\text{ there is $N$ so that if $k\ge N$ then } x_k=0\right\}.$$
-Show that $\cD(M_a)$ is dense in $\cH$.
+Show that $\cD(M_a)$ is a dense subspace of $\cH$.
 
 \epart{b} Directly from Definition 3.4, find a formula for the adjoint $M_a^*$, and its domain.
 
 \epart{c} Let $M_b$ be the unbounded multiplication operator with the same formula $M_b x = (x_1, 2 x_2, 3 x_3, \dots)$ but on the larger domain
-    $$\cD(M_b) = \Big\{x \in \ell^2\,:\, \sum_{k=1}^\infty k|x_k|^2 < \infty\Big\}.$$
+    $$\cD(M_b) = \Big\{x \in \ell^2\,:\, \sum_{k=1}^\infty k^2 |x_k|^2 < \infty\Big\}.$$
 Show that $\cD(M_b)$ is dense and that $M_b$ is self-adjoint (Definition 3.19).
 
 
@@ -142,10 +142,13 @@ Show that $\cD(M_b)$ is dense and that $M_b$ is self-adjoint (Definition 3.19).
 Show that if $\ell$ is bounded in the $\cH$ norm then $u(0)=u(1)=0$.
 
 
-\prob{P27}  \emph{This is a simplification of Exercise 3.12.  For both parts note that $f$, being merely measurable, could be unbounded, and indeed it could go to infinity anywhere in $(0,1)$.  However, $f(x)\in\CC$ is well-defined for every $x\in(0,1)$.  Also, note we conclude from part \emph{\textbf{(b)}} that $M_f$ is self-adjoint if and only if $f$ is real a.e.}
+\prob{P27}  \emph{This is a simplification of Exercise 3.12.  For both parts below note that $f$, being merely measurable, could be unbounded, and indeed it could go to infinity anywhere in $(0,1)$, but at least $f(x)\in\CC$ is well-defined for every $x\in(0,1)$.  Also, note that we may conclude from part \emph{\textbf{(b)}} that $M_f$ is self-adjoint if and only if $f$ is real a.e.}
 
-\medskip \noindent Let $M_f$ be a multiplication operator on $\cH=L^2(0,1)$ with $f:(0,1)\to\CC$ measurable and with domain
-	$$\cD(M_f) = \left\{v \in L^2(0,1)\,:\,fv \in L^2(0,1)\right\}.$$
+\medskip \noindent Suppose $f:(0,1)\to\CC$ is measurable.  Let $M_f$ be the multiplication operator on $\cH=L^2(0,1)$ with domain
+	$$\cD(M_f) = \left\{v \in L^2(0,1)\,:\,fv \in L^2(0,1)\right\}$$
+and formula
+	$$(M_f g)(x) = f(x) g(x)$$
+for $g\in\cH$.
 
 \epart{a}  Show that $\cD(M_f)$ is dense in $\cH$.
 
