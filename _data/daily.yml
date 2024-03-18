@@ -1,11 +1,13 @@
 semester: Fall 2023
 daily:
+- name: Friday 22 March
+  description: cont.
 - name: Wednesday 20 March
   description: Midterm Quiz
 - name: Monday 18 March
-  description: cont.
+  description: cont.; section 3.1
 - name: Friday 8 March
-  description: section 3.1
+  description: cont.
 - name: Wednesday 6 March
   description: axioms of quantum mechanics
   due: Assignment 4
