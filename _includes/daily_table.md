@@ -10,7 +10,7 @@
         <br>{{ material.more }}
     {% endif %}
     {% if material.handout %}
-        <br><a href="{{ material.handout }}">handout</a>
+        <br><a href="{{ material.handout }}">{{ material.handoutname }}</a>
     {% endif %}
 </li>
 {% endfor %}
