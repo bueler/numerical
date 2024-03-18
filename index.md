@@ -52,6 +52,8 @@ Log in to [canvas.alaska.edu/courses/18441](https://canvas.alaska.edu/courses/18
     * [Lebesgue integral](https://www.youtube.com/watch?v=LDNDTOVnKJk)
     * [the complex derivative](https://www.youtube.com/watch?v=0CHZMY02Dhk)
 
+* [The course advertisement](assets/general/S24/advert.pdf)
+
 ---
 _Site design derived from [coordinated Calc I](https://uaf-math251.github.io/), an original [Jekyll](https://jekyllrb.com/) design by [David Maxwell](https://damaxwell.github.io/)._
 
