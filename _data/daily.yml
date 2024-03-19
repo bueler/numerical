@@ -1,13 +1,13 @@
 semester: Fall 2023
 daily:
 - name: Friday 22 March
-  description: cont.
-  handout: assets/handouts/qaxioms.pdf
-  handoutname: "handout: Axioms of Quantum Mechanics"
+  description: section 3.1
 - name: Wednesday 20 March
   description: Midterm Quiz
 - name: Monday 18 March
-  description: cont.; section 3.1
+  description: cont.
+  handout: assets/handouts/qaxioms.pdf
+  handoutname: "handout: Axioms of Quantum Mechanics"
 - name: Friday 8 March
   description: cont.
 - name: Wednesday 6 March
