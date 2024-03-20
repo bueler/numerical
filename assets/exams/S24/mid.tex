@@ -1,0 +1,174 @@
+\documentclass[12pt]{amsart}
+%\pagestyle{empty} 
+\setlength{\topmargin}{-0.5in} % usually -0.25in
+\addtolength{\textheight}{1.2in} % usually 1.25in
+\addtolength{\oddsidemargin}{-0.95in}
+\addtolength{\evensidemargin}{-0.95in}
+\addtolength{\textwidth}{1.9in} %\setlength{\parindent}{0pt}
+
+\newcommand{\normalspacing}{\renewcommand{\baselinestretch}{1.1}\tiny\normalsize}
+\normalspacing
+
+% macros
+\usepackage{amssymb,xspace}
+\usepackage[final]{graphicx}
+\usepackage[pdftex,colorlinks=true]{hyperref}
+\usepackage{fancyvrb}
+\usepackage{tikz}
+
+\newtheorem*{lem*}{Lemma}
+
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bbf}{\mathbf{f}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cV}{\mathcal{V}}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\ZZn}{{\mathbb{Z}}_n}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\ip}[2]{\left<#1,#2\right>}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Log}{\operatorname{Log}}
+
+\newcommand{\range}{\operatorname{range}}
+
+\newcommand{\grad}{\nabla}
+
+\newcommand{\ds}{\displaystyle}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.} }
+\newcommand{\pts}[1]{(\emph{#1 pts})}
+
+\newcommand{\probpts}[2]{\prob{#1} \pts{#2} \quad}
+\newcommand{\ppartpts}[2]{\textbf{(#1)} \pts{#2} \quad}
+\newcommand{\epartpts}[2]{\medskip\noindent \textbf{(#1)} \pts{#2} \quad}
+
+
+\begin{document}
+\hfill \Large Name:\underline{\phantom{Ed Bueler really really long long long name}}
+\medskip
+
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill Wednesday 20 March 2024
+\medskip
+
+\LARGE\centerline{\textbf{Midterm Quiz}}
+
+\normalsize
+\smallskip
+\begin{quote}
+%\large
+\textbf{In-class or proctored.  No book, notes, electronics, calculator, internet access, or communication with other people.  Precise statements of definitions, theorems, and lemmas are expected.  Proofs will be graded generously.  If you put work on the blank pages at the end, please clearly label any portions which you would want to be graded.  100 points possible. \,\underline{65 minutes} maximum.}
+\end{quote}
+
+\normalsize
+\medskip
+
+\thispagestyle{empty}
+
+\prob{1}  Let $(\cV,\|\cdot\|)$ be a (complex) normed vector space.
+
+\epartpts{a}{5}  Suppose $S \subset \cV$.  Define what it means for $S$ to be \textbf{open}.
+\vfill
+
+\epartpts{b}{5}  Let $\{v_n\}$ be a sequence in $\cV$.  Define what it means for this sequence to be \textbf{Cauchy}.
+\vfill
+
+\probpts{2}{5}  Let $\cH$ be a complex Hilbert space.  Define $\cH'$, the \textbf{dual space}.
+\vfill
+
+
+\clearpage\newpage
+\probpts{3}{5}  Suppose $1\le p\le \infty$.  Define $\ell^p=\ell^p(\NN)$ and its norm.  (\emph{Hint. Separate $p=\infty$.})
+\vfill
+
+\prob{4}  Suppose $\cH$ is a complex Hilbert space and $S\subset \cH$ is a subset.
+
+\epartpts{a}{5}  Define $S^\perp$, the \textbf{orthogonal complement} of $S$.
+\vspace{1.5in}
+
+\epartpts{b}{8}  Show that $S^\perp\subset \cH$ is a subspace.
+\vfill
+
+
+\clearpage\newpage
+\prob{5}  \ppartpts{a}{5}  Define $C_0^\infty(\RR)$, the vector space of $\CC$-valued \textbf{smooth functions of compact support}.
+\vspace{3.0in}
+
+\epartpts{b}{8}  Show that if $f,g \in C_0^\infty(\RR)$ then
+	$$\int_\RR f''(x) g(x) \,dx = \int_\RR f(x) g''(x) \,dx.$$
+(\emph{Hint. Carefully do integration by parts.})
+\vfill
+
+
+\clearpage\newpage
+\probpts{6}{8}  Suppose $V,W$ are (complex) normed vector spaces, and that $T:V\to W$ is a linear map.  Show that if $T$ is bounded then $T$ is continuous.
+\vfill
+
+\probpts{7}{8}  Let $\cH$ be a complex Hilbert space.  Suppose that $P\in\cL(\cH)$ satisfies $P^2=P$ and also that $\ip{x}{Py}=\ip{Px}{y}$ for all $x,y\in\cH$.  Show that if $w=Pu$ for some $u\in\cH$, and if $W=\range P$, then $u-w \in W^\perp$.
+\vfill
+
+
+\clearpage\newpage
+\probpts{8}{8}  State the Riesz lemma.  (\emph{No proof is required.})
+\vfill
+
+\probpts{9}{8}  State the Fundamental Theorem of Calculus.  Pay attention to the types of functions to which the Theorem applies.  (\emph{No proof is required.})
+\vfill
+
+
+\clearpage\newpage
+\probpts{10}{11}  Let
+	$$\phi_k(x) = e^{i 2\pi k x}$$
+for $k\in\ZZ$.  Then $\phi_k$ is a continuous, $\CC$-valued function on $[0,1]$, so $\phi_k \in L^2(0,1)$.  (\emph{There is no need to prove this.})  Show that
+	$$\left\{\phi_j(x) \phi_k(y)\right\}_{j,k\in\ZZ}$$
+is an orthonormal set on $L^2(\Omega)$, where $\Omega=(0,1)^2$.
+\vfill
+
+
+\clearpage\newpage
+\probpts{11}{11}  Let $\cH=\ell^2$ and suppose $R\in\cL(\cH)$ is the right-shift operator
+	$$R (a_1,a_2,a_3,\dots) = (0,a_1,a_2,a_3,\dots).$$
+(\emph{There is no need to prove that $R\in\cL(\cH)$.})  Show that $R$ has no eigenvalues.
+\vfill
+
+
+\clearpage\newpage
+\probpts{Extra Credit}{4}  The ON set $\left\{\phi_j(x) \phi_k(y)\right\}$ in problem \textbf{10}, for $j,k\in\ZZ$, is actually an ON \emph{basis} of $L^2(\Omega)$ where $\Omega=(0,1)^2$.  Furthermore this basis diagonalizes the Laplacian operator
+	$$L u = u_{xx} + u_{yy}.$$
+We will see that $L$ is an unbounded operator on $L^2(\Omega)$.  (\emph{There is no need to prove any of the previous statements.})  Find all the eigenvalues of $L$.
+\vfill
+
+%\hrulefill
+\clearpage
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\small
+\textsc{blank space (full page)}
+\end{center}
+\vfill
+
+\clearpage
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\small
+\textsc{blank space (full page)}
+\end{center}
+\vfill
+
+\end{document}
