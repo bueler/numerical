@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage[top=1.2in, bottom=0.8in, left=1.0in, right=1.2in]{geometry}
 
 \usepackage{graphicx,color,enumitem,verbatim,fancyvrb}
@@ -9,23 +9,19 @@
 \usepackage{tikz}
 \usepackage[colorlinks=true]{hyperref}
 
-\makeatletter
-
 %% The following commands put defined left and right headers on the top, and a page number
 %% on the bottom of all pages beyond page 1
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
-\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
-\fancyhead[R]{\ifx\@docdate\@empty\else\@docdate\fi}
-\headheight 15pt
-\def\doclabel#1{\gdef\@doclabel{#1}}
-\def\docdate#1{\gdef\@docdate{#1}}
-\makeatother
+\setlength{\headheight}{15pt}
+\fancyhead[L]{{\small Math 617 Functional Analysis}}
+\fancyhead[R]{\emph{v1.0} \, {\small 24 March 2024 (Bueler)}}
+
 
 %% General formatting parameters
-\parindent 0pt
-\parskip 6pt plus 1pt
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 1pt}
 
 \newcommand{\bA}{\mathbf{A}}
 \newcommand{\bC}{\mathbf{C}}
@@ -66,20 +62,16 @@
 \setlist[enumex]{label={Example \Alph*.},leftmargin=27mm,before=\raggedright}
 
 
-
-\doclabel{Math 617 Functional Analysis}
-\docdate{March 2024 (Bueler)}
-
 \begin{document}
 \strut
-\centerline{{\Large \textbf{Definitions and facts}}}
-
-\large \smallskip
-\centerline{{\textbf{(leading to the spectral theorem)}}}
-\bigskip
+\centerline{{\Large \textbf{Definitions and facts leading to the spectral theorem}}}
 
 \normalsize
-Page numbers are given, from Borthwick, \emph{Spectral Theory}.  Notation: $\forall$=``for all'', $\exists$=``there exists'', $\cH$ is a separable Hilbert space, $T$ is an (unbounded) operator on $\cH$, $U \in \cL(\cH)$ is a unitary operator, and $A$ is an (unbounded) self-adjoint operator on $\cH$.
+\medskip
+
+Page numbers are for Borthwick, \emph{Spectral Theory} Springer 2020.
+
+\textbf{Notation:} $\forall$=``for all'', $\exists$=``there exists'', $\cH$ is a separable Hilbert space, $T$ is an (unbounded) operator on $\cH$, $T-z=T-zI$, $U \in \cL(\cH)$ is a unitary operator, and $A$ is an (unbounded) self-adjoint operator on $\cH$.
 %\sect{Metric spaces} \label{topic:metric}
 
 
@@ -96,14 +88,18 @@ so that $\ip{T^* v}{u} = \ip{v}{Tu}$ \, for all $v\in\cD(T^*)$, $u\in\cD(T)$
 \item[\ft{43}] the adjoint $T^*$ is always closed
 \item[\ft{44}] $T=T^{**}$ if $T$ is closed
 \item[\ft{44}] $T$ closable $\iff$ $\cD(T^*)$ dense
-\item[\ft{44}] \emph{closed graph thm.} when $\cD(T)=\cH$: \, $T$ closed $\iff$ $T\in\cL(\cH)$
+\item[\ft{44}] \textbf{closed graph theorem.} when $\cD(T)=\cH$: \, $T$ closed $\iff$ $T\in\cL(\cH)$
 \item[\df{46}] $T$ has \emph{bounded inverse}: \, $\exists$ $T^{-1}\in\cL(\cH)$ s.t.~$TT^{-1}=I$ on $\cH$ and $T^{-1}T=I$ on $\cD(T)$
 \item[\ft{46}] $T^{-1}\in\cL(\cH)$ $\iff$ $T$ is closed, $T$ is bounded away from zero, and $\range(T)$ dense
-\item[\df{47}] $A$ is \emph{self-adjoint} if $A^*=A$ \hfill $\leftarrow$ \textbf{requires} $\cD(A^*)=\cD(A)$
+\item[\df{47}] $A$ is \emph{self-adjoint} if $A^*=A$ \hfill {\footnotesize $\leftarrow$ \textbf{requires:} $\cD(A^*)=\cD(A)$}
+\item[\df{47}] $T$ is \emph{symmetric} if $\ip{Tu}{v}=\ip{u}{Tv}$ for all $v\in\cD(T)$
+\item[\ft{47}] $T$ is symmetric $\implies$ $T$ is closable
+\item[\ft{47}] $A$ is self-adjoint $\implies$ $A$ is symmetric
+\item[\df{47}] $T$ is \emph{positive} if $\ip{v}{Tv}\ge 0$ for all $v\in\cD(T)$
 \item[\df{67}] \emph{eigenvalue} and \emph{eigenvector}: \, $T\phi=\lambda\phi$ \,for $\phi\in\cD(T)\setminus\{0\}$ and $\lambda\in\CC$
 \item[\df{68}] \emph{spectrum}: the set $\sigma(T)=\{\lambda \in\CC\,:\,T - \lambda \text{ does not have a bounded inverse}\}$
 \item[\df{68}] \emph{resolvent set}: $\rho(T) = \CC\setminus \sigma(T)$
-\item[\df{68}] if $\lambda\in\rho(T)$ then $R_\lambda = (T-\lambda)^{-1}$ is the \emph{resolvent} operator
+\item[\df{68}] if $z\in\rho(T)$ then $R_z = (T-z)^{-1}$ is the \emph{resolvent} operator
 \item[\ft{68}] $\sigma(T)=\CC$ if $T$ is not closed
 \item[\ft{69}] $\sigma(T) \subset B_{\|T\|}(0)$ if $T$ is bounded
 \item[\ft{69}] $\sigma(T^*) = \sigma(T)^*$, $\rho(T^*)=\rho(T)^*$, and $\left[(T-z)^{-1}\right]^* = \left(T-\overline{z}\right)^{-1}$
@@ -114,26 +110,37 @@ $\lambda\in\CC$ is an eigenvalue of $M_f$ $\iff$ $\mu(f^{-1}(\lambda))>0$
 \item[\ft{71}] $\sigma(M_f) = \operatorname{ess-range} f$
 \item[\ft{71}] $\|(M_f - z)^{-1}\| = \Big(\operatorname{dist}\big(z,\sigma(M_f)\big)\Big)^{-1}$
 \item[\ft{83}] if $T$ closed then $\rho(T)$ is open and $R_z = (T-z)^{-1}$ is analytic in $z$ on $\rho(T)$
-\item[\df{85}] \emph{spectral radius}: $\ds r(T) = \sup_{z \in \sigma(T)} |z|$
+\item[\df{85}] \emph{spectral radius}: $r(T) = \sup_{z \in \sigma(T)} |z|$
 \item[\ft{85}] if $T$ bounded then $r(T) \le \|T\|$
 \item[\ft{86}] $\sigma(A)\subset \RR$
 \item[\ft{87}] $z\in\sigma(A)$ $\iff$ $\exists \{u_n\}\subset \cD(A) \text{ s.t.~} \|u_n\|=1 \text{ and } \|(A-z)u_n\| \to 0$
 \item[\df{17}] $U$ is \emph{unitary} if it is bijective and an isometry (i.e.~$\|Ux\|=\|x\|\,\forall x\in\cH$)
 \item[\ft{17}] $U$ unitary $\iff$ $U$ bijective \& $\ip{Ux}{Uy}=\ip{x}{y}\,\forall x,y\in\cH$
 \item[\ft{102}] $U$ unitary $\iff$ $U\in\cL(\cH)$ and $UU^* = U^*U=I$
-\item[\df{102}] \emph{functional calculus} means we can apply $f:\CC\to\CC$ to create operator $f(T)$
-\item[\df{102}] $\SS = \{z\in\CC\,:\,|z|=1\}$
-\item[\df{103}] \emph{positive} FIXME
-\item[\ft{103}] \textbf{Continuous functional calculus for unitaries.} given $U$ unitary there is a map $C(\SS) \to \cL(\cH)$, $f\mapsto f(U)$ so that
+\item[\df{102}] \emph{functional calculus}: on $T$ we can apply a function $f:\CC\to\CC$ to create an operator $f(T)$
+\item[\df{102}] $\SS = \{z\in\CC\,:\,|z|=1\}$ and $C(\SS)=\{f:\SS\to\CC\,|\,f \text{ is continuous (and periodic)}\}$
+\item[\ft{103}] \textbf{continuous functional calculus for unitaries.} fix $U$ unitary. there is a map $C(\SS) \to \cL(\cH)$, $f\mapsto f(U)$ so that
 \renewcommand{\labelenumi}{(\alph{enumi})}
 \begin{enumerate}
-\item[(0)] $f(U) = I$ if $f(z) = 1$
+\item[(0)] if $f(z) = 1$ then $f(U) = I$
 \setcounter{enumi}{0}
 \item $f(U)^*=\overline{f}(U)$
-\item $f(U)g(U) = (fg)(U)$
-\item if $f\ge 0$ then $f(U)\ge 0$ FIXME
+\item $f(U)g(U) = (fg)(U)$ \hfill {\footnotesize $\leftarrow$ \textbf{thus:} $f(U)g(U)=g(U)f(U)$}
+\item if $f\ge 0$ then $f(U)\ge 0$
+\item $\|f(U)\| = \sup_{z\in\SS} |f(z)|$
 \end{enumerate}
-\item[\df{}] 
-\item[\ft{}] 
+\item[\df{105}] if $X$ is a metric space then $C(X) = \{f:X\to\CC \text{ continuous}\}$
+\item[\df{105}] $\beta:C(X)\to\CC$ is \emph{positive} if $f\ge 0 \implies \beta(f)\ge 0$
+\item[\ft{105}] \textbf{Riesz representation theorem.} suppose $X$ is a compact metric space and $\beta:C(X) \to \CC$ is linear and positive. there is a unique positive Borel measure on $X$ so that
+	$$\beta(f) = \int_X f\,d\mu \qquad \forall f \in C(X)$$
+\item[\df{105}] for $U$ unitary and $v\in\cH$ the \emph{spectral measure} is $\mu_v$ on $\SS$ so that $\ip{v}{f(U)v} = \int_{\SS} f\,d\mu_v$
+\item[\ft{106}] for $\mu$ from the Riesz representation theorem, $C(X) \subset L^2(X,\mu)$ is dense
+\item[\ft{107}] \textbf{spectral theorem for unitaries.} if $\cH$ is a separable Hilbert space and $U\in\cL(\cH)$ is unitary then there is a countable collection of finite measures $\nu_k$ on $\SS$, and a measurable space $(Y,\nu) = \cup_k (\SS,\nu_k)$, and a unitary map $W:L^2(Y,\nu) \to \cH$, so that
+	$$W^{-1} U W = M_\eta$$
+where $M_\eta \in \cL(L^2(Y,\nu))$ is a bounded multiplication operator and $\eta:Y\to \CC$ is equal to $\eta(z)=z$ on each copy of $\SS$
+\item[\df{108}] the \emph{Cayley transform} $\ds \gamma(z) = \frac{z-i}{z+i}$ maps $\RR$ to $\SS$
+\item[\ft{108}] \textbf{spectral theorem (multiplication operator form).} if $\cH$ is a separable Hilbert space and $A$ is self-adjoint on $\cH$ then there is a countable collection of finite Borel measures $\mu_k$ on $\RR$, and a measurable space $(X,\mu) = \cup_k (\RR,\mu_k)$, and a unitary map $Q:L^2(X,\mu) \to \cH$, so that
+	$$Q^{-1} A Q = M_\alpha$$
+where $M_\alpha \in \cL(L^2(X,\mu))$ is a (generally unbounded) multiplication operator and $\alpha:X\to \RR$ is equal to $\alpha(x)=x$ on each copy of $\RR$
 \end{itemize}
 \end{document}

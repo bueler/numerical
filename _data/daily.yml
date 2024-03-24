@@ -1,6 +1,10 @@
 semester: Fall 2023
 daily:
 - name: Friday 22 March
+  description: section 3.2
+  handout: assets/handouts/tospectralthm.pdf
+  handoutname: "handout: Definitions and facts leading to the spectral theorem"
+- name: Friday 22 March
   description: section 3.1
 - name: Wednesday 20 March
   description: Midterm Quiz
