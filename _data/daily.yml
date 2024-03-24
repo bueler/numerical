@@ -1,8 +1,9 @@
-semester: Fall 2023
+semester: Spring 2024
+home: assets/handouts
 daily:
-- name: Friday 22 March
+- name: Monday 25 March
   description: section 3.2
-  handout: assets/handouts/tospectralthm.pdf
+  handout: tospectralthm.pdf
   handoutname: "handout: Definitions and facts leading to the spectral theorem"
 - name: Friday 22 March
   description: section 3.1
@@ -10,7 +11,7 @@ daily:
   description: Midterm Quiz
 - name: Monday 18 March
   description: cont.
-  handout: assets/handouts/qaxioms.pdf
+  handout: qaxioms.pdf
   handoutname: "handout: Axioms of Quantum Mechanics"
 - name: Friday 8 March
   description: cont.
@@ -58,7 +59,7 @@ daily:
   description: cont.
 - name: Monday 22 January
   description: start covering the handout
-  handout: assets/handouts/getstarted.pdf
+  handout: getstarted.pdf
   handoutname: "handout: Definitions and facts (which you will need to get started)"
 - name: Friday 19 January
   description: sections 2.1, 2.2
