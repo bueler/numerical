@@ -46,6 +46,7 @@
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
+\renewcommand{\SS}{\mathbb{S}}
 
 \newcommand{\ip}[2]{\left<#1,#2\right>}
 
@@ -78,7 +79,7 @@
 \bigskip
 
 \normalsize
-Notation: $\forall$=``for all'', $\exists$=``there exists'', $\cH$ is a separable Hilbert space, $T$ is an (unbounded) operator on $\cH$, $U \in \cL(\cH)$ is a unitary operator, and $A$ is an (unbounded) self-adjoint operator on $\cH$.
+Page numbers are given, from Borthwick, \emph{Spectral Theory}.  Notation: $\forall$=``for all'', $\exists$=``there exists'', $\cH$ is a separable Hilbert space, $T$ is an (unbounded) operator on $\cH$, $U \in \cL(\cH)$ is a unitary operator, and $A$ is an (unbounded) self-adjoint operator on $\cH$.
 %\sect{Metric spaces} \label{topic:metric}
 
 
@@ -98,19 +99,40 @@ so that $\ip{T^* v}{u} = \ip{v}{Tu}$ \, for all $v\in\cD(T^*)$, $u\in\cD(T)$
 \item[\ft{44}] \emph{closed graph thm.} when $\cD(T)=\cH$: \, $T$ closed $\iff$ $T\in\cL(\cH)$
 \item[\df{46}] $T$ has \emph{bounded inverse}: \, $\exists$ $T^{-1}\in\cL(\cH)$ s.t.~$TT^{-1}=I$ on $\cH$ and $T^{-1}T=I$ on $\cD(T)$
 \item[\ft{46}] $T^{-1}\in\cL(\cH)$ $\iff$ $T$ is closed, $T$ is bounded away from zero, and $\range(T)$ dense
-\item[\df{47}] $A$ is \emph{self-adjoint} if $A^*=A$ \hfill $\leftarrow$ includes $\cD(A^*)=\cD(A)$
+\item[\df{47}] $A$ is \emph{self-adjoint} if $A^*=A$ \hfill $\leftarrow$ \textbf{requires} $\cD(A^*)=\cD(A)$
 \item[\df{67}] \emph{eigenvalue} and \emph{eigenvector}: \, $T\phi=\lambda\phi$ \,for $\phi\in\cD(T)\setminus\{0\}$ and $\lambda\in\CC$
-\item[\df{67}] \emph{spectrum}: the set $\sigma(T)=\{\lambda \in\CC\,:\,T - \lambda \text{ does not have a bounded inverse}\}$
-\item[\df{67}] \emph{resolvent set}: $\rho(T) = \CC\setminus \sigma(T)$
-\item[\df{67}] if $\lambda\in\rho(T)$ then $R_\lambda = (T-\lambda)^{-1}$ is the \emph{resolvent} operator
-\item[\ft{69}] $\sigma(T) \subset B_{\|T\|} \subset \CC$ if $T$ is bounded
+\item[\df{68}] \emph{spectrum}: the set $\sigma(T)=\{\lambda \in\CC\,:\,T - \lambda \text{ does not have a bounded inverse}\}$
+\item[\df{68}] \emph{resolvent set}: $\rho(T) = \CC\setminus \sigma(T)$
+\item[\df{68}] if $\lambda\in\rho(T)$ then $R_\lambda = (T-\lambda)^{-1}$ is the \emph{resolvent} operator
+\item[\ft{68}] $\sigma(T)=\CC$ if $T$ is not closed
+\item[\ft{69}] $\sigma(T) \subset B_{\|T\|}(0)$ if $T$ is bounded
 \item[\ft{69}] $\sigma(T^*) = \sigma(T)^*$, $\rho(T^*)=\rho(T)^*$, and $\left[(T-z)^{-1}\right]^* = \left(T-\overline{z}\right)^{-1}$
-\item[\df{71}] for measurable $f:X\to\CC$:\, $\operatorname{ess-range} f = \left\{z\in\CC\,:\,\mu(f^{-1}(B_\eps(z))) > 0 \, \forall \eps>0\right\}$
-\item[\ft{}] 
-\item[\df{}] 
-\item[\df{}] 
-\item[\df{}] 
-\item[\df{}] 
+\item[\ft{71}] for  $f:X\to\CC$ measurable and $M_f$ a multiplication operator on $L^2(X,d\mu)$:
+
+$\lambda\in\CC$ is an eigenvalue of $M_f$ $\iff$ $\mu(f^{-1}(\lambda))>0$
+\item[\df{71}] $\operatorname{ess-range} f = \left\{z\in\CC\,:\,\mu(f^{-1}(B_\eps(z))) > 0 \, \forall \eps>0\right\}$
+\item[\ft{71}] $\sigma(M_f) = \operatorname{ess-range} f$
+\item[\ft{71}] $\|(M_f - z)^{-1}\| = \Big(\operatorname{dist}\big(z,\sigma(M_f)\big)\Big)^{-1}$
+\item[\ft{83}] if $T$ closed then $\rho(T)$ is open and $R_z = (T-z)^{-1}$ is analytic in $z$ on $\rho(T)$
+\item[\df{85}] \emph{spectral radius}: $\ds r(T) = \sup_{z \in \sigma(T)} |z|$
+\item[\ft{85}] if $T$ bounded then $r(T) \le \|T\|$
+\item[\ft{86}] $\sigma(A)\subset \RR$
+\item[\ft{87}] $z\in\sigma(A)$ $\iff$ $\exists \{u_n\}\subset \cD(A) \text{ s.t.~} \|u_n\|=1 \text{ and } \|(A-z)u_n\| \to 0$
+\item[\df{17}] $U$ is \emph{unitary} if it is bijective and an isometry (i.e.~$\|Ux\|=\|x\|\,\forall x\in\cH$)
+\item[\ft{17}] $U$ unitary $\iff$ $U$ bijective \& $\ip{Ux}{Uy}=\ip{x}{y}\,\forall x,y\in\cH$
+\item[\ft{102}] $U$ unitary $\iff$ $U\in\cL(\cH)$ and $UU^* = U^*U=I$
+\item[\df{102}] \emph{functional calculus} means we can apply $f:\CC\to\CC$ to create operator $f(T)$
+\item[\df{102}] $\SS = \{z\in\CC\,:\,|z|=1\}$
+\item[\df{103}] \emph{positive} FIXME
+\item[\ft{103}] \textbf{Continuous functional calculus for unitaries.} given $U$ unitary there is a map $C(\SS) \to \cL(\cH)$, $f\mapsto f(U)$ so that
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\begin{enumerate}
+\item[(0)] $f(U) = I$ if $f(z) = 1$
+\setcounter{enumi}{0}
+\item $f(U)^*=\overline{f}(U)$
+\item $f(U)g(U) = (fg)(U)$
+\item if $f\ge 0$ then $f(U)\ge 0$ FIXME
+\end{enumerate}
 \item[\df{}] 
 \item[\ft{}] 
 \end{itemize}
