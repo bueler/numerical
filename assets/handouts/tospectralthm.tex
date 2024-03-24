@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+\usepackage[top=1.2in, bottom=0.8in, left=1.0in, right=1.2in]{geometry}
+
+\usepackage{graphicx,color,enumitem,verbatim,fancyvrb}
+\usepackage{amsmath,amsthm,amsbsy,amssymb,bm}
+\usepackage{palatino}
+\usepackage{mdframed}
+
+\usepackage{tikz}
+\usepackage[colorlinks=true]{hyperref}
+
+\makeatletter
+
+%% The following commands put defined left and right headers on the top, and a page number
+%% on the bottom of all pages beyond page 1
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[R]{\ifx\@docdate\@empty\else\@docdate\fi}
+\headheight 15pt
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\def\docdate#1{\gdef\@docdate{#1}}
+\makeatother
+
+%% General formatting parameters
+\parindent 0pt
+\parskip 6pt plus 1pt
+
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bC}{\mathbf{C}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bX}{\mathbf{X}}
+
+\newcommand{\bzero}{\bm{0}}
+
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cW}{\mathcal{W}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+
+\newcommand{\ip}[2]{\left<#1,#2\right>}
+
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\Span}{\operatorname{span}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\ds}{\displaystyle}
+
+\newcommand{\sect}[1]{\subsection*{#1.}}
+
+\newcommand{\defin}{\emph{Definition.}\,\,}
+\newcommand{\lem}{\emph{Lemma.}\,\,}
+\newcommand{\thm}{\emph{Theorem.}\,\,}
+
+\newlist{enumex}{enumerate}{3}
+\setlist[enumex]{label={Example \Alph*.},leftmargin=27mm,before=\raggedright}
+
+
+
+\doclabel{Math 617 Functional Analysis}
+\docdate{March 2024 (Bueler)}
+
+\begin{document}
+\strut
+\centerline{{\Large \textbf{Definitions and facts}}}
+
+\large \smallskip
+\centerline{{\textbf{(leading to the spectral theorem)}}}
+\bigskip
+
+\normalsize
+Notation: $\forall$=``for all'', $\exists$=``there exists'', $\cH$ is a separable Hilbert space, $T$ is an (unbounded) operator on $\cH$, $U \in \cL(\cH)$ is a unitary operator, and $A$ is an (unbounded) self-adjoint operator on $\cH$.
+%\sect{Metric spaces} \label{topic:metric}
+
+
+\newcommand{\itwo}[2]{{\small \textbf{#1}} {\footnotesize p #2} \,\,}
+\newcommand{\df}[1]{\,\itwo{def}{#1}}
+\newcommand{\ft}[1]{\itwo{\underline{fact}}{#1}}
+
+\begin{itemize}[leftmargin=10mm,itemsep=0mm]
+\item[\df{36}] an \emph{operator} $T$ is a linear map on $\cH$ with a dense domain $\cD(T)$
+\item[\df{38}] the \emph{adjoint} of $T$ is an operator $T^*$, with domain
+	$$\cD(T^*) = \left\{v\in\cH\,:\,\ell(u)=\ip{v}{Tu} \in \cL(\cH,\CC)\right\},$$
+so that $\ip{T^* v}{u} = \ip{v}{Tu}$ \, for all $v\in\cD(T^*)$, $u\in\cD(T)$
+\item[\df{41}] an operator is \emph{closed} if its graph is a closed subset of $\cH\times \cH$
+\item[\ft{43}] the adjoint $T^*$ is always closed
+\item[\ft{44}] $T=T^{**}$ if $T$ is closed
+\item[\ft{44}] $T$ closable $\iff$ $\cD(T^*)$ dense
+\item[\ft{44}] \emph{closed graph thm.} when $\cD(T)=\cH$: \, $T$ closed $\iff$ $T\in\cL(\cH)$
+\item[\df{46}] $T$ has \emph{bounded inverse}: \, $\exists$ $T^{-1}\in\cL(\cH)$ s.t.~$TT^{-1}=I$ on $\cH$ and $T^{-1}T=I$ on $\cD(T)$
+\item[\ft{46}] $T^{-1}\in\cL(\cH)$ $\iff$ $T$ is closed, $T$ is bounded away from zero, and $\range(T)$ dense
+\item[\df{47}] $A$ is \emph{self-adjoint} if $A^*=A$ \hfill $\leftarrow$ includes $\cD(A^*)=\cD(A)$
+\item[\df{67}] \emph{eigenvalue} and \emph{eigenvector}: \, $T\phi=\lambda\phi$ \,for $\phi\in\cD(T)\setminus\{0\}$ and $\lambda\in\CC$
+\item[\df{67}] \emph{spectrum}: the set $\sigma(T)=\{\lambda \in\CC\,:\,T - \lambda \text{ does not have a bounded inverse}\}$
+\item[\df{67}] \emph{resolvent set}: $\rho(T) = \CC\setminus \sigma(T)$
+\item[\df{67}] if $\lambda\in\rho(T)$ then $R_\lambda = (T-\lambda)^{-1}$ is the \emph{resolvent} operator
+\item[\ft{69}] $\sigma(T) \subset B_{\|T\|} \subset \CC$ if $T$ is bounded
+\item[\ft{69}] $\sigma(T^*) = \sigma(T)^*$, $\rho(T^*)=\rho(T)^*$, and $\left[(T-z)^{-1}\right]^* = \left(T-\overline{z}\right)^{-1}$
+\item[\df{71}] for measurable $f:X\to\CC$:\, $\operatorname{ess-range} f = \left\{z\in\CC\,:\,\mu(f^{-1}(B_\eps(z))) > 0 \, \forall \eps>0\right\}$
+\item[\ft{}] 
+\item[\df{}] 
+\item[\df{}] 
+\item[\df{}] 
+\item[\df{}] 
+\item[\df{}] 
+\item[\ft{}] 
+\end{itemize}
+\end{document}
