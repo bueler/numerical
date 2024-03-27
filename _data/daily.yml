@@ -1,8 +1,15 @@
 semester: Spring 2024
 home: assets/handouts
 daily:
-- name: Monday 25 March
+- name: Monday 1 April
+  description: section 3.3
+  due: Assignment 5
+- name: Friday 29 March
+  description: cont.
+- name: Wednesday 27 March
   description: section 3.2
+- name: Monday 25 March
+  description: cont
   handout: tospectralthm.pdf
   handoutname: "handout: Definitions and facts leading to the spectral theorem"
 - name: Friday 22 March
