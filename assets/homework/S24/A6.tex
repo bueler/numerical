@@ -96,14 +96,14 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \large
 \medskip
 
-\centerline{\textbf{Due FIXME 2024}}
+\centerline{\textbf{Due Wednesday 10 April 2024}}
 \medskip
 \normalsize
 
 \thispagestyle{empty}
 
 \bigskip
-\noindent This Assignment is based primarily on sections FIXME of our textbook, Borthwick (2020)~\emph{Spectral Theory: Basic Concepts and Applications}, Springer.
+\noindent This Assignment is based primarily on sections 3.1, 3.2, 3.3, 3.4, and 4.1 of our textbook, Borthwick (2020)~\emph{Spectral Theory: Basic Concepts and Applications}, Springer.  Note that 3.3 is treated very lightly, and 3.5 is skipped for now.
 
 \medskip
 \noindent \textsc{Please do the following exercises.}
@@ -111,22 +111,39 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 \renewcommand{\SS}{\mathbb{S}}
 
-\prob{P28}  a) show that unitary $U$ is bounded; thus from now on once you prove $\ip{Ux}{Uy}=\ip{x}{y}$ for all $x,y$ in domain of operator $U$ then can assume domain is $\cH$
+\prob{P28}  \emph{Recall that an operator $U\in\cL(\cH)$ on a complex Hilbert space $\cH$ is \emph{unitary} if it is bijective (one-to-one and onto) and an isometry.  Note that Section 4.3 defines the phrase ``approximate eigenvalue'' for $z\in\SS$ in the situation you prove in part \emph{\textbf{(d)}}.}
 
-b) show that if $U$ has eigenvalue then it is on unit circle $\SS$
+\epart{a}  Use the correct\footnote{See Assignment \# 3.  The textbook's version, (2.17) on page 17, has sign errors.} polarization identity to show that if $U$ is unitary then $\ip{Ux}{Uy}=\ip{x}{y}$ for all $x,y$ in $\cH$.
 
-c) $U=M_f$ on $L^2(0,1)$ where $f(x) = e^{2\pi i x}$; show unitary, but show it has not eigenvalues; show approximate eigenvalues
+\epart{b}  Suppose $\lambda \in\CC$ is an eigenvalue of a unitary operator $U$.  Show that $\lambda$ is on the unit circle $\SS = \{z\in\CC\,:\,|z|=1\}$.
+
+\epart{c}  Let $\cH = L^2(0,1)$ and fix the function $f(x) = e^{2\pi i x}$.  Show that the multiplication operator $U=M_f$ is bounded and unitary.  (\emph{Hint. Bounded is easy; use Example 2.8 from the textbook. Unitary is also easy.})  Show that this $U$ has no eigenvalues.
+
+\epart{d}  For $U$ from part \textbf{(c)}, and each $z\in\SS$, find a sequence of functions $v_n\in\cH$ so that $\|v_n\|=1$ and $\ds \lim_{n\to\infty} \|(U-z)v_n\|=0$.
 
 
-\prob{P29}  a) define $M_{x^2}$ and $T=d^2/dx^2$ on $L^2(\RR)$, with domains so that self-adjoint; show they have no eigenvalues
+\prob{P29} \emph{Page 47 of the text is important as it defines \emph{self-adjoint}, \emph{symmetric}, and \emph{positive} for unbounded operators.  Hint. Consider vectors of the form $u+iv$ for $u,v\in\cH$.}
+
+\medskip\noindent Prove that a positive operator on a complex Hilbert space $\cH$ is symmetric.
+
+
+\prob{P30} \emph{I am deliberately suppressing most details of \emph{closed} operators, as studied in section 3.3.  However, this exercise uses Definition 3.8, and suggests what ``closed'' is saying.}
+
+\epart{a} Let $T$ be an operator on $\cH$, so $\cD(T)$ is a dense subspace.  Show that
+	$$\|u\|_T = \left(\|u\|^2 + \|Tu\|^2\right)^{1/2}$$
+defines a norm on $\cD(T)$, called the \emph{graph norm} for $T$.
+
+\epart{b} Show that $T$ is closed as an operator on $\cH$ if and only if the normed vector space $(\cD(T),\|\cdot\|_T)$ is complete.
+
+
+\prob{P3X}  a) define $M_{x^2}$ and $T=d^2/dx^2$ on $L^2(\RR)$, with domains so that self-adjoint; show they have no eigenvalues
 
 b) $M_{x^2}$ and $T=d^2/dx^2$ on $L^2(-\pi,\pi)$, with domains so that self-adjoint; show $M$ has no eigenvalues but $T$ does; show $M$ bounded
 
 
-\prob{P30}  show $\sigma(U) \subset \SS$  [ON A7?]
+\prob{P3X}  show $\sigma(U) \subset \SS$  [ON A7?]
 
-\prob{P31} $T\in\cL(\cH)$ implies $\sigma(T) \subset B_{\|T\|}(0)$ [?]
+\prob{P3X} 
 
-\prob{P32} positive $\implies$ symmetric [?]
 
 \end{document}
