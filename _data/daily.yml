@@ -1,6 +1,10 @@
 semester: Spring 2024
 home: assets/handouts
 daily:
+- name: Friday 5 April
+  description: section 3.4
+- name: Wednesday 3 April
+  description: cont.
 - name: Monday 1 April
   description: section 3.3
   due: Assignment 5
