@@ -51,6 +51,9 @@
 \newcommand{\RR}{\mathbb{R}}
 \newcommand{\ZZ}{\mathbb{Z}}
 
+\renewcommand{\Im}{\mathrm{Im}}
+\renewcommand{\Re}{\mathrm{Re}}
+
 \newcommand{\eps}{\epsilon}
 \newcommand{\grad}{\nabla}
 \newcommand{\lam}{\lambda}
@@ -63,47 +66,35 @@
 \newcommand{\rank}{\operatorname{rank}}
 \newcommand{\range}{\operatorname{range}}
 \newcommand{\trace}{\operatorname{tr}}
-
 \newcommand{\Span}{\operatorname{span}}
 
 \newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
-\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
 
 \newcommand{\pts}[1]{(\emph{#1 pts}) }
 \newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
 \newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
 
-\newcommand{\Matlab}{\textsc{Matlab}\xspace}
-\newcommand{\Octave}{\textsc{Octave}\xspace}
-\newcommand{\Python}{\textsc{Python}\xspace}
-\newcommand{\Julia}{\textsc{Julia}\xspace}
-
-\newcommand{\fl}{\operatorname{fl}}
-
 \newcommand{\ds}{\displaystyle}
-
-\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
-frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 \newcommand{\nex}{\medskip\noindent}
 
 
 \begin{document}
-\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{assigned 29 March 2024}
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{assigned 10 April 2024}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment 7}}
 \large
 \medskip
 
-\centerline{\textbf{Due FIXME 2024}}
+\centerline{\textbf{Due Friday 19 April 2024}}
 \medskip
 \normalsize
 
 \thispagestyle{empty}
 
 \bigskip
-\noindent This Assignment is based primarily on sections FIXME of our textbook, Borthwick (2020)~\emph{Spectral Theory: Basic Concepts and Applications}, Springer.
+\noindent This Assignment is based on sections 3.2, 3.3, 3.4, 4.1, and 4.2 of our textbook, Borthwick (2020)~\emph{Spectral Theory: Basic Concepts and Applications}, Springer.
 
 \medskip
 \noindent \textsc{Please do the following exercises.}
@@ -111,13 +102,67 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 \renewcommand{\SS}{\mathbb{S}}
 
-\prob{P33}  \emph{We have already shown that both operators in part \emph{\textbf{(a)}} are self-adjoint, and likewise $M_{x^2}$ in part \emph{\textbf{(b)}}.  Theorem 6.6 shows that $T$ in part \emph{\textbf{(b)}} is self-adjoint.  In any case, you don't need to prove self-adjointness!}
+% start with P33
 
-\epart{a}  Let $\cH = L^2(\RR)$.  Define $\left(M_{x^2}\, v\right)(x) = x^2 v(x)$, an unbounded multiplication operator with domain $\cD(M_{x^2}) = \{v\in\cH\,:\,x^2 v(x) \in \cH\}$.  Define $(Tv)(x) = v''(x)$, an unbounded second derivative operator with domain $\cD(T) = \{v\in\cH\,:\,v''(x) \in \cH\}$.  Show that these operators have no eigenvalues.
+\prob{P33}  The adjoint of a linear map between complex Hilbert spaces $\cH_1$ and $\cH_2$ can be defined.  Here we consider bounded operators only.  For $T \in \cL(\cH_1,\cH_2)$ the \emph{(Hilbert space) adjoint} $T^*$ is the unique linear map $T^* \in \cL(\cH_2,\cH_1)$ so that
+	$$\ip{v}{Tu}_2 = \ip{T^*v}{u}_1 \qquad \text{for all $u\in\cH_1$ and $v\in\cH_2$}.$$
+When $\cH_1=\cH_2$ this is the same definition as in section 3.2.
 
-\epart{b}  Let $\cH = L^2(0,\pi)$.  Define $\left(M_{x^2}\, v\right)(x) = x^2 v(x)$, a multiplication operator with domain $\cD(M_{x^2}) = \{v\in\cH\,:\,x^2 v(x) \in \cH\}$.  Define $(Tv)(x) = v''(x)$, a second derivative operator with domain $\cD(T) = \{v\in\cH\,:\,v''(x) \in \cH \text{ and } v(0)=v(\pi)=0\}$.  Show that $M_{x^2}$ is actually bounded, but that it has no eigenvalues.  Show that $T$ is unbounded, but also show that $\phi_k(x) = \sin(kx)$ is an eigenfunction for each $k\in\NN$; find the corresponding eigenvalues.
+\epart{a}  Show that $(T^*)^* = T$ and that $(ST)^* = T^* S^*$.
 
-\prob{P3X}  show $\sigma(U) \subset \SS$
+\epart{b}  Show that if $T$ is invertible with $T^{-1}\in \cL(\cH_2,\cH_1)$ then $(T^*)^{-1} = (T^{-1})^*$.
+
+\epart{c}  Suppose that $Q \in \cL(\cH_1,\cH_2)$ satisfies $Q^* Q = I_1$ and $Q Q^* = I_2$ where $I_i$ is the identity map on $\cH_i$.  Show that $Q$ is unitary.
+
+\medskip \noindent {\small \emph{Hints.}  For part \textbf{(a)} assume that $S \in \cL(\cH_2,\cH_3)$.  For part \textbf{(b)} use $T T^{-1} = T^{-1} T = I$, then \textbf{(a)}.  For part \textbf{(c)} use the definition on page 17 of the text: $U$ is \emph{unitary} if it is a bijective isometry.}
+
+
+\prob{P34}  Suppose $\{\phi_n\}$ is an orthonormal basis, of a complex Hilbert space $\cH$, consisting of eigenvectors of some (unbounded) linear operator $T$ on $\cH$.  Specifically, $\phi_n \in \cD(T)$ and $T \phi_n = \lambda_n \phi_n$ for $\lambda_n\in\CC$.  
+
+\epart{a}  Define the map $Q\in\cL(\cH,\ell^2)$, where $\ell^2=\ell^2(\NN)$, by $(Qf)_n = \ip{\phi_n}{f}_{\cH}$.  Give a formula for $Q^*$.  Show that $Q$ is unitary.
+
+\epart{b}  Show that $Q$ unitarily diagonalizes $T$ in the sense that
+	$$Q T Q^* = M$$
+defines a multiplication operator on $\ell^2$.
+
+\medskip \noindent {\small \emph{Hints.}  For part \textbf{(a)} you may use \textbf{P33(c)}, though that is not the only way.  For part \textbf{(b)}, make sure to define the action of $M$ on arbitrary elements of $\ell^2$.}
+
+
+\prob{P35}  \ppart{a}  Let $\cH = L^2(\RR)$.  Define $\left(M_{x^2}\, v\right)(x) = x^2 v(x)$, an unbounded multiplication operator with domain $\cD(M_{x^2}) = \{v\in\cH\,:\,x^2 v(x) \in \cH\}$.  Define $(Tv)(x) = v''(x)$, an unbounded second derivative operator with domain $\cD(T) = C_0^\infty(\RR)$.  Show that these operators have no eigenvalues.
+
+\epart{b}  Let $\cH = L^2(0,\pi)$.  Define $\left(M_{x^2}\, v\right)(x) = x^2 v(x)$, a multiplication operator with domain $\cD(M_{x^2}) = \{v\in\cH\,:\,x^2 v(x) \in \cH\}$.  Show that $M_{x^2}$ is actually bounded, but that it has no eigenvalues.
+
+\epart{c}  Let $\cH = L^2(0,\pi)$.  Define $(Tv)(x) = v''(x)$, a second derivative operator with domain $\cD(T) = \{v\in\cH\,:\,v \in C^2[0,\pi] \text{ and } v(0)=v(\pi)=0\}$.  Show that $T$ is unbounded, and that $\phi_k(x) = \sin(kx)$ is an eigenfunction for any $k\in\NN$. Find the corresponding eigenvalues.
+
+\medskip \noindent {\small \emph{Hints.}  For part \textbf{(a)} you may use results in Example 3.3.  For part \textbf{(b)} you may use the result in Example 2.8.}
+
+\medskip \noindent {\small \emph{Comments.}  You do not need to prove self-adjointness or spectrum.  However, textbook Examples 3.2, 3.5, and 3.22 show both $M_{x^2}$ are self-adjoint.  Example 3.26 shows that $T$ in part \textbf{(a)} is essentially self-adjoint.  Example 3.20 sketches why $T$ in part \textbf{(c)} is essentially self-adjoint.  See Theorems 4.5 for the spectrum of both $M_{x^2}$, thus by unitary-equivalence for the closure of $T$ in part \textbf{(a)} also.  Use \textbf{P34(b)} for the spectrum of the closure of $T$ in part \textbf{(b)}.}
+
+
+\prob{P36}  Let $\cH$ be a complex Hilbert space.  Recall that if $A$ is a symmetric operator on $\cH$ then $v\in\cD(A)$ implies $\ip{v}{Av} \in \RR$.  We will write $A-z$ for $A-zI$.
+
+\epart{a}  Suppose $A$ is a symmetric operator on $\cH$.  Show that if $z\in\CC$ then
+	$$\Im \ip{v}{(A-z)v} = - \Im(z) \|v\|^2.$$
+
+\epart{b}  If furthermore $z\in\CC$ is strictly complex, i.e.~$\Im z \ne 0$, then
+	$$\|v\| \le \frac{\|(A-z)v\|}{|\Im(z)|}.$$
+In this situation, show that $A-z$ is injective.
+
+
+\prob{P37}  Let $\cH$ be a complex Hilbert space.  Recall that $\cL(\cH)$ is a normed vector space with norm $\|T\| = \sup_{\|v\|=1} \|Tv\|$.
+
+\epart{a}  Suppose $T\in\cL(\cH)$ and $z\in\CC$.  If $|z| > \|T\|$ then
+	$$\sum_{k=0}^\infty z^{-k} T^k$$
+converges in norm, i.e.~absolutely, in $\cL(\cH)$.  By Theorems 2.4 and 2.10, the sum defines a bounded operator $S \in \cL(\cH)$.
+
+\epart{b}  Under the same assumptions, show that
+	$$S (T-z I) = (T-z I) S = - z I.$$
+Explain why this shows $z \in \rho(T)$.
+
+
+%\prob{P3X}  show $\sigma(U) \subset \SS$
+
+%\prob{P3X}  define eigenspace $W_\lambda$ for $A$; assume $A,B$ commute; show $W_\lambda$ is invariant under$B$; show that if $A$ is diagonalized by an ON basis and if each eigenvalue of $A$ has multiplicity one then $B$ is also diagonalized
 
 
 
