@@ -1,6 +1,8 @@
 semester: Spring 2024
 home: assets/handouts
 daily:
+- name: Monday 8 April
+  description: section 4.1
 - name: Friday 5 April
   description: section 3.4
 - name: Wednesday 3 April
