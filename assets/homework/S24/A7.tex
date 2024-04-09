@@ -80,7 +80,7 @@
 
 
 \begin{document}
-\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{version 2; assigned 10 April 2024}
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{version 3; assigned 10 April 2024}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment 7}}
@@ -115,13 +115,13 @@ When $\cH_1=\cH_2$ this is the same definition as in section 3.2.
 \medskip \noindent {\small \emph{Hints.}  For part \textbf{(a)} assume that $S \in \cL(\cH_2,\cH_3)$.  For part \textbf{(b)} use $T T^{-1} = I_2$ and $T^{-1} T = I_1$, and then apply \textbf{(a)}.  For part \textbf{(c)} use the definition on page 17 of the text: $U$ is \emph{unitary} if it is a bijective isometry.}
 
 
-\prob{P34}  \ppart{a}  Suppose $\{\phi_n\}$ is an orthonormal basis of a complex Hilbert space $\cH$.  Define the map $Q\in\cL(\cH,\ell^2)$, where $\ell^2=\ell^2(\NN)$, by $(Qf)_n = \ip{\phi_n}{f}_{\cH}$.  Give a formula for $Q^*$.  Show that $Q$ is unitary.
+\prob{P34}  \ppart{a}  Suppose $\{\phi_n\}$ is an orthonormal basis of a complex Hilbert space $\cH$.  Define the map $Q\in\cL(\cH,\ell^2)$, where $\ell^2=\ell^2(\NN)$, by $(Qf)_n = \ip{\phi_n}{f}_{\cH}$ for $f\in\cH$.  Give a formula for $Q^*$.  Show that $Q$ is unitary.
 
-\epart{b}  Let $T$ be an (unbounded) linear operator on $\cH$.  Suppose $\phi_n \in \cD(T)$ and $T \phi_n = \lambda_n \phi_n$, for $n\in\NN$ and $\lambda_n\in\CC$.  If $\{\phi_n\}$ is an orthonormal basis of $\cH$ then $Q$ in part \textbf{(a)} unitarily diagonalizes $T$ in the sense that
+\epart{b}  Let $T$ be a closed (unbounded) linear operator on $\cH$.  Suppose $\phi_n \in \cD(T)$ and $T \phi_n = \lambda_n \phi_n$, for $n\in\NN$ and $\lambda_n\in\CC$.  If $\{\phi_n\}$ is an orthonormal basis of $\cH$ then $Q$ in part \textbf{(a)} unitarily diagonalizes $T$ in the sense that
 	$$Q T Q^* = M$$
 defines an unbounded multiplication operator on $\ell^2$.
 
-\medskip \noindent {\small \emph{Hints.}  For part \textbf{(a)} you may use \textbf{P33(c)}, though that is not the only way.  For part \textbf{(b)}, make sure to define the domain of $M$ \emph{and} the action of $M$ on elements of $\cD(M)$.}
+\medskip \noindent {\small \emph{Hints.}  For part \textbf{(a)} you may use \textbf{P33(c)}, though that is not the only way.  For part \textbf{(b)}, make sure to define the domain of $M$ and the action of $M$ on elements of $\cD(M)$.}
 
 
 \prob{P35}  \ppart{a}  Let $\cH = L^2(\RR)$.  Define $\left(M_{x^2}\, v\right)(x) = x^2 v(x)$, an unbounded multiplication operator with domain $\cD(M_{x^2}) = \{v\in\cH\,:\,x^2 v(x) \in \cH\}$.  Define $(Tv)(x) = v''(x)$, an unbounded second derivative operator with domain $\cD(T) = C_0^\infty(\RR)$.  Show that these operators have no eigenvalues.
