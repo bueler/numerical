@@ -1,7 +1,7 @@
 semester: Spring 2024
 home: assets/handouts
 daily:
-- name: Wednesday 10 April
+- name: Wednesday 17 April
   description: section 4.3
   handout: tospectralthm.pdf
   handoutname: "UPDATED handout: Definitions and facts leading to the spectral theorem"
