@@ -16,7 +16,7 @@
 \fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
 \setlength{\headheight}{15pt}
 \fancyhead[L]{{\small Math 617 Functional Analysis}}
-\fancyhead[R]{\emph{v1.0} \, {\small 24 March 2024 (Bueler)}}
+\fancyhead[R]{\emph{v2.0} \, {\small 17 April 2024 (Bueler)}}
 
 
 %% General formatting parameters
@@ -72,8 +72,6 @@
 Page numbers are for Borthwick, \emph{Spectral Theory} Springer 2020.
 
 \textbf{Notation:} $\forall$=``for all'', $\exists$=``there exists'', $\cH$ is a separable Hilbert space, $T$ is an (unbounded) operator on $\cH$, $T-z=T-zI$, $U \in \cL(\cH)$ is a unitary operator, and $A$ is an (unbounded) self-adjoint operator on $\cH$.
-%\sect{Metric spaces} \label{topic:metric}
-
 
 \newcommand{\itwo}[2]{{\small \textbf{#1}} {\footnotesize p #2} \,\,}
 \newcommand{\df}[1]{\,\itwo{def}{#1}}
@@ -100,8 +98,8 @@ so that $\ip{T^* v}{u} = \ip{v}{Tu}$ \, for all $v\in\cD(T^*)$, $u\in\cD(T)$
 \item[\df{68}] \emph{spectrum}: the set $\sigma(T)=\{\lambda \in\CC\,:\,T - \lambda \text{ does not have a bounded inverse}\}$
 \item[\df{68}] \emph{resolvent set}: $\rho(T) = \CC\setminus \sigma(T)$
 \item[\df{68}] if $z\in\rho(T)$ then $R_z = (T-z)^{-1}$ is the \emph{resolvent} operator
-\item[\ft{68}] $\sigma(T)=\CC$ if $T$ is not closed
-\item[\ft{69}] $\sigma(T) \subset B_{\|T\|}(0)$ if $T$ is bounded
+\item[\ft{68}] if $T$ is not closed then $\sigma(T)=\CC$
+\item[\ft{69}] if $T$ is bounded then $\sigma(T) \subset B_{\|T\|}(0)$
 \item[\ft{69}] $\sigma(T^*) = \sigma(T)^*$, $\rho(T^*)=\rho(T)^*$, and $\left[(T-z)^{-1}\right]^* = \left(T-\overline{z}\right)^{-1}$
 \item[\ft{71}] for  $f:X\to\CC$ measurable and $M_f$ a multiplication operator on $L^2(X,d\mu)$:
 
@@ -110,9 +108,15 @@ $\lambda\in\CC$ is an eigenvalue of $M_f$ $\iff$ $\mu(f^{-1}(\lambda))>0$
 \item[\ft{71}] $\sigma(M_f) = \operatorname{ess-range} f$
 \item[\ft{71}] $\|(M_f - z)^{-1}\| = \Big(\operatorname{dist}\big(z,\sigma(M_f)\big)\Big)^{-1}$
 \item[\ft{83}] if $T$ closed then $\rho(T)$ is open and $R_z = (T-z)^{-1}$ is analytic in $z$ on $\rho(T)$
+\item[\ft{85}] if $T$ is bounded then $\sigma(T)\ne \emptyset$
+
+\clearpage\newpage
+\phantom{foo}
+\vspace{-11mm}
+
 \item[\df{85}] \emph{spectral radius}: $r(T) = \sup_{z \in \sigma(T)} |z|$
 \item[\ft{85}] if $T$ bounded then $r(T) \le \|T\|$
-\item[\ft{86}] $\sigma(A)\subset \RR$
+\item[\ft{86}] $\sigma(A)\subset \RR$ \hfill {\footnotesize $\leftarrow$ \textbf{recall notation:} $A$ is self-adjoint}
 \item[\ft{87}] $z\in\sigma(A)$ $\iff$ $\exists \{u_n\}\subset \cD(A) \text{ s.t.~} \|u_n\|=1 \text{ and } \|(A-z)u_n\| \to 0$
 \item[\df{17}] $U$ is \emph{unitary} if it is bijective and an isometry (i.e.~$\|Ux\|=\|x\|\,\forall x\in\cH$)
 \item[\ft{17}] $U$ unitary $\iff$ $U$ bijective \& $\ip{Ux}{Uy}=\ip{x}{y}\,\forall x,y\in\cH$
