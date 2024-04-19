@@ -1,6 +1,8 @@
 semester: Spring 2024
 home: assets/handouts
 daily:
+- name: Friday 19 April
+  description: cont.
 - name: Wednesday 17 April
   description: section 4.3
   handout: tospectralthm.pdf
