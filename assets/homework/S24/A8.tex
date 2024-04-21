@@ -88,14 +88,14 @@
 \large
 \medskip
 
-\centerline{\textbf{Due at 12:00pm NOON on Thursday 2 May 2024}}
+\centerline{\textbf{Due at 5:00pm on Thursday 2 May 2024}}
 \medskip
 \normalsize
 
 \thispagestyle{empty}
 
 \bigskip
-\noindent This Assignment is based on sections 4.1, XX of our textbook, Borthwick (2020)~\emph{Spectral Theory: Basic Concepts and Applications}, Springer.
+\noindent This Assignment is based on sections 3.3, 3.4, 4.1, 4.2, 4.3, 5.1, 5.2, and 5.3 of our textbook, Borthwick (2020)~\emph{Spectral Theory: Basic Concepts and Applications}, Springer.  I recommend working backward from the major theorems in Chapter 5 to understand the material from Chapters 3 and 4 on which they depend.  Note that we have skipped material on compact operators (sections 3.5, 4.4).
 
 \medskip
 \noindent \textsc{Please do the following exercises.}
@@ -105,33 +105,33 @@
 
 
 % Exer 4.4, but made specific to \ell^2
-\prob{P38}  \emph{The basic facts in Lemma 4.3 and Theorem 4.4 are important in this problem.  You have already shown (on the Midterm Quiz!) that $R$ has no eigenvalues.}
+\prob{P38}  \emph{The basic facts in Lemma 4.3 and Theorem 4.4 are important in this problem.  You have already shown (on the Midterm Quiz) that $R$ has no eigenvalues.}
 
 \medskip\noindent Let $R$ be the right shift on $\cH=\ell^2$, a bounded operator:
 	$$R (a_1,a_2,a_3,\dots) = (0,a_1,a_2,\dots).$$
 
 \epart{a}  Show that $L=R^*$ is the left shift, and that $\|R\|=\|L\|=1$.
 
-\epart{b}  Let $\lambda\in\CC$ such that $|\lambda|<1$.  By constructing an eigenvector, show that $\lambda$ is an eigenvalue of $L$.  (\emph{This requires the eigenvector be in $\cH$!})
+\epart{b}  Consider any $\lambda\in\CC$ such that $|\lambda|<1$.  By constructing an eigenvector, show that $\lambda$ is an eigenvalue of $L$.  (\emph{Concretely construct the eigenvector.  Observe/show that it is in $\cH$.})
 
 \epart{c}  Find $\sigma(L)$ and $\sigma(R)$.
 
 
 % Exer 4.6
-\prob{P39}  \emph{By Theorem 4.15, your only job is to show that negative real numbers are in the resolvent set.  One route uses Theorem 3.18, and another (overkill?) uses the spectral theorem.}
+\prob{P39}  \emph{By Theorem 4.15, your only job here is to show that negative real numbers are in $\rho(A)$.  One route uses Theorem 3.18, and another (overkill?) uses the spectral theorem.}
 
 \medskip\noindent Prove that the spectrum of a positive self-adjoint operator $A$ satisfies $\sigma(A) \subset [0,\infty)$.
 
 
 % Exer 4.5
-\prob{P40}  \emph{This can be shown using only the geometric series (4.16) and (4.28).  Of course, your job is to show that any $z\in\CC\setminus \SS$ is in the resolvent set.}
+\prob{P40}  \emph{Your job is to show that any $z\in\CC\setminus \SS$ is in the resolvent set, and this can be shown using only the geometric series (4.16) and (4.28).  Please do not use Theorem 5.5; one should establish $\sigma(U) \subset \SS$ first.}
 
 \medskip\noindent Let $U$ be a unitary operator on $\cH$.  Show that $\sigma(U) \subset \SS = \{z\in\CC\,:\,|z|=1\}$.
 
 
 \prob{P41}  Suppose $A$ is a self-adjoint operator on $\cH$.  We apply the (Borel) functional calculus Theorem 5.9.
 
-\epart{a}  Suppose that $0\in\rho(A)$.  Let $f(x)=1$, the constant function.  Show that the functional calculus yields $f(A)=I$.
+\epart{a}  Suppose $0\in\rho(A)$.  Let $f(x)=1$, the constant function.  Show that $f(A)=I$.
 
 \epart{b}  If $\rho(A)$ is nonempty and $z\in\rho(A)$, show that
 	$$\|(A-z)^{-1}\| = \frac{1}{\operatorname{dist}(z,\sigma(A))}.$$
@@ -140,19 +140,29 @@
 \epart{c}  Suppose $t\in\RR$ and let $f_t(x) = e^{itx}$ and apply the functional calculus to define $U(t) = f_t(A) = e^{itA}$.  Show that: $U(t)$ is unitary, $U(0) = I$, and $U(t+s) = U(t) U(s)$.  (\emph{In summary, each self-adjoint operator $A$ generates a (commutative) unitary group.})
 
 % Exer 5.5
-\prob{P42}  \emph{This is an explanation for why any quantum Hamiltonian operator, which is a self-adjoint operator, generates a unitary time-evolution which preserves total probability.}
+\prob{P42}  \emph{Within quantum mechanics, this calculation explains why a Hamiltonian operator, which is a self-adjoint operator, generates unitary time-evolution, preserving total probability.}
 
 \medskip\noindent Suppose $A$ is a self-adjoint operator on $\cH$.  Let $U(t) = e^{itA}$ as in \textbf{P41}.  Show that for $v\in\cD(A)$,
 	$$\frac{d}{dt}\Big|_{t=0} (U(t)v) = \lim_{t\to 0} \frac{U(t)v-v}{t} = i A v.$$
 
 
-\prob{43}  \emph{xx}
+\prob{43}  \emph{You are rigorously calculating the bound states of a square well potential using the spectral theory of self-adjoint operators and concrete solutions of linear ODEs.}
 
-The potential $V(x)$ is shown in the figure.
+\medskip\noindent Let $\cH=L^2(\RR)$.
 
+\epart{a}  For $L>0$ define the potential function shown in the left figure:
+	$$V_L(x) = \begin{cases} 0, & |x|>1, \\ -L, & |x|<1. \end{cases}$$
+(The values $V_L(\pm 1)$ do not affect the results below.)  Show that the corresponding multiplication operator $M = M_{V_L}$ is self-adjoint and satisfies $\|M\|=L$.
+
+\bigskip
 \begin{center}
-\includegraphics[width=0.4\textwidth]{figs/squarepot.pdf}
+\mbox{\includegraphics[height=60mm]{figs/squarepot.pdf} \hspace{10mm} \includegraphics[height=60mm]{figs/squareeigs.png}}
 \end{center}
+
+\medskip
+\epart{b}  Example 3.23 (page 49) shows that that $A = -d^2/dx^2$ is self-adjoint on domain $\cD(A)=H^2(\RR)=\{v\in\cH\,:\,v',v''\in\cH\}$.  (The precise definition is in section 2.5.)  Given this, show that
+	$$H=-\frac{d^2}{dx^2} + V_L(x) = A + M$$
+is self adjoint with the same domain $\cD(H)=\cD(A)$.
 
 
 \end{document}
