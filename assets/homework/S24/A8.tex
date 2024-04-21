@@ -1,10 +1,10 @@
 \documentclass[12pt]{amsart}
 %prepared in AMSLaTeX, under LaTeX2e
-\addtolength{\oddsidemargin}{-.55in} 
-\addtolength{\evensidemargin}{-.55in}
-\addtolength{\topmargin}{-.4in}
-\addtolength{\textwidth}{1.1in}
-\addtolength{\textheight}{.6in}
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.55in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.8in}
 
 \renewcommand{\baselinestretch}{1.05}
 
@@ -137,21 +137,22 @@
 	$$\|(A-z)^{-1}\| = \frac{1}{\operatorname{dist}(z,\sigma(A))}.$$
 (\emph{Hint. Construct $f\in\cB_b(\RR)$ to do the job, and use part (b) of Theorem 5.9.})
 
-\epart{c}  Suppose $t\RR$ and let $f_t(x) = e^{itx}$ and apply the functional calculus.  Show that:
-\begin{itemize}
-\item $U(t)$ is unitary,
-\item $U(0) = I$,
-\item $U(t+s) = U(t) U(s)$.
-\end{itemize}
-In summary, each self-adjoint operator $A$ generates a (commutative) unitary group.
-
+\epart{c}  Suppose $t\in\RR$ and let $f_t(x) = e^{itx}$ and apply the functional calculus to define $U(t) = f_t(A) = e^{itA}$.  Show that: $U(t)$ is unitary, $U(0) = I$, and $U(t+s) = U(t) U(s)$.  (\emph{In summary, each self-adjoint operator $A$ generates a (commutative) unitary group.})
 
 % Exer 5.5
-\prob{P42}  \emph{Among other things, this is the explanation for why any quantum Hamiltonian operator, which is a self-adjoint operator, generates a unitary time-evolution which preserves total probability.}
+\prob{P42}  \emph{This is an explanation for why any quantum Hamiltonian operator, which is a self-adjoint operator, generates a unitary time-evolution which preserves total probability.}
 
 \medskip\noindent Suppose $A$ is a self-adjoint operator on $\cH$.  Let $U(t) = e^{itA}$ as in \textbf{P41}.  Show that for $v\in\cD(A)$,
 	$$\frac{d}{dt}\Big|_{t=0} (U(t)v) = \lim_{t\to 0} \frac{U(t)v-v}{t} = i A v.$$
 
+
+\prob{43}  \emph{xx}
+
+The potential $V(x)$ is shown in the figure.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{figs/squarepot.pdf}
+\end{center}
 
 
 \end{document}
