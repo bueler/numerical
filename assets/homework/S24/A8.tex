@@ -81,7 +81,7 @@
 
 
 \begin{document}
-\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{version 1; assigned 22 April 2024}
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{version 2; assigned 22 April 2024}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment 8}}
@@ -121,7 +121,7 @@
 
 
 % Exer 4.6
-\prob{P39}  \emph{By Theorem 4.15, your only job here is to show that negative real numbers are in $\rho(A)$.  One route uses Theorem 3.18.}
+\prob{P39}  \emph{By Theorem 4.15, your only job here is to show that negative real numbers are in $\rho(A)$.  One route uses Theorem 3.18, applying Lemma 3.7 to show that the relevant range is dense.}
 
 \medskip\noindent Prove that the spectrum of a positive self-adjoint operator $A$ satisfies $\sigma(A) \subset [0,\infty)$.
 
@@ -132,15 +132,12 @@
 \medskip\noindent Let $U$ be a unitary operator on $\cH$.  Show that $\sigma(U) \subset \SS = \{z\in\CC\,:\,|z|=1\}$.
 
 
-\prob{P41}  Suppose $A$ is a self-adjoint operator on $\cH$.  We apply the (bounded Borel) functional calculus Theorem 5.9.
-
-\epart{a}  Suppose $0\in\rho(A)$.  Let $f(x)=1$, the constant function.  Show that $f(A)=I$.
-
-\epart{b}  If $\rho(A)$ is nonempty and $z\in\rho(A)$, show that
+\prob{P41}  Suppose $A$ is a self-adjoint operator on $\cH$.  Apply the (bounded Borel) functional calculus Theorem 5.9 to show that if $\rho(A)$ is nonempty and $z\in\rho(A)$ then
 	$$\|(A-z)^{-1}\| = \frac{1}{\operatorname{dist}(z,\sigma(A))}.$$
-(\emph{Hint. Construct $f\in\cB_b(\RR)$ to do the job, and use part (b) of Theorem 5.9.})
+(\emph{Hint. Separate the case where $z$ is strictly complex from the case where $z\in\RR$.  Construct a continuous, bounded $f$ to do the job in each case, and use (5.17).})
 
 
+\clearpage\newpage
 \prob{P42}  \emph{Each self-adjoint operator generates a commutative unitary group.  Again we apply the bounded Borel functional calculus.}
 
 \medskip\noindent Let $A$ be a self-adjoint operator on $\cH$.  Suppose $t\in\RR$ and let $f_t(x) = e^{itx}$ and apply the functional calculus to define $U(t) = f_t(A) = e^{itA}$.  Show that: $U(t)$ is unitary, $U(0) = I$, and $U(t+s) = U(t) U(s)$.
