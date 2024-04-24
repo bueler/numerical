@@ -10,5 +10,5 @@ exams:
 - name: Final Exam
   date: Friday 3 May, 1-3 pm
   info: <b>in class</b> or proctored
-  #doc: finalessays.pdf
+  doc: final.pdf
   #rubric: finalrubric.pdf
