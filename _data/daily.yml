@@ -1,8 +1,14 @@
 semester: Spring 2024
 home: assets/handouts
 daily:
-- name: Wednesday 24 April
+- name: Monday 29 April
+  description: section 5.3
+- name: Friday 26 April
   description: section 5.2
+  handout: Chapter6-Hall2013.pdf
+  handoutname: "handout: 'Perspectives on the spectral theorem' by Brian Hall"
+- name: Wednesday 24 April
+  description: cont
 - name: Monday 22 April
   description: section 5.1
 - name: Friday 19 April
