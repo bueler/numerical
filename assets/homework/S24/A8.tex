@@ -81,7 +81,7 @@
 
 
 \begin{document}
-\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{version 2; assigned 22 April 2024}
+\scriptsize \noindent Math 617 Functional Analysis (Bueler) \hfill \emph{version 3; assigned 22 April 2024}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment 8}}
@@ -144,7 +144,7 @@
 
 
 % Exer 5.5
-\prob{P43}  \emph{In quantum mechanics, this calculation explains why the self-adjoint Hamiltonian operator generates unitary time-evolution, preserving total probability.}
+\prob{P43 (Extra Credit)}  \emph{In quantum mechanics, this calculation explains why the self-adjoint Hamiltonian operator generates unitary time-evolution, preserving total probability.}
 
 \epart{a}  Suppose $A$ is a self-adjoint operator on $\cH$.  Let $U(t) = e^{itA}$ as in \textbf{P41}.  Show that for $v\in\cD(A)$,
 	$$\frac{d}{dt}\Big|_{t=0} (U(t)v) = \lim_{\eps\to 0} \frac{U(\eps)v-v}{\eps} = i A v.$$
@@ -156,7 +156,7 @@
 
 \epart{a}  For $L>0$ define the function of $x\in\RR$ which is graphed in the left figure:
 	$$V_L(x) = \begin{cases} 0, & |x|>1, \\ -L, & |x|<1. \end{cases}$$
-(\emph{The values $V_L(\pm 1)$ affect no results.})  Let $\cH=L^2(\RR)$.  Show that the multiplication operator $M = M_{V_L}\in\cL(\RR)$ is self-adjoint and satisfies $\|M\|=L$.
+(\emph{The values $V_L(\pm 1)$ affect no results.})  Let $\cH=L^2(\RR)$.  Show that the multiplication operator $M = M_{V_L}\in\cL(\cH)$ is self-adjoint and satisfies $\|M\|=L$.
 
 \bigskip
 \begin{center}
@@ -164,7 +164,7 @@
 \end{center}
 
 \medskip
-\epart{b}  Example 3.23 (page 49) shows $A = -d^2/dx^2$ is self-adjoint on domain $\cD(A)=H^2(\RR)$, the Sobolev space defined in section 2.5 and, via Fourier transform, on page 37.  Given this, show that
+\epart{b}  Example 3.23 (page 49) shows $A = -d^2/dx^2$ is self-adjoint on domain $\cD(A)=H^2(\RR)\subset\cH$, the Sobolev space defined in section 2.5 and, via Fourier transform, on page 37.  Given this, show that
 	$$H=-\frac{d^2}{dx^2} + V_L(x) = A + M$$
 is a self-adjoint unbounded operator with the same domain $\cD(H)=\cD(A)$.
 
@@ -187,7 +187,7 @@ where $\alpha^2+\beta^2=L^2$.  Turn the known properties of $u(x)$ into facts ab
 \epart{g}  How many negative eigenvalues does $H$ have when $L=44$?  You will need to generate an adequately-accurate graph to answer this.
 
 \medskip
-\epart{Extra Credit A}  Use numerical means to find the values of all eigenvalues in part \textbf{(g)}, accurate to 10 digits.  (\emph{Graphing is recommended to get initial eigenvalue iterates.})  Graph the corresponding eigenfunctions.
+\epart{Extra Credit A}  Use numerical means to find the values of each eigenvalue in part \textbf{(g)} accurate to 10 digits.  (\emph{Graphing is recommended to get initial eigenvalue iterates.})  Graph the corresponding eigenfunctions.
 
 \epart{Extra Credit B}  It is known that there are no eigenvalues $\lambda>0$ of $H$.  However, for any positive $\lambda$, construct an approximate eigenvalue in the sense of Theorem 4.16.  That is, construct an approximate eigenfunction sequence.  (\emph{These are the \emph{scattering states} of the quantum system.})
 
