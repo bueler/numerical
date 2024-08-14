@@ -1,37 +1,9 @@
-semester: Spring 2024
+semester: Fall 2024
 home: assets/homework/S24
 homework:
 - name: Assignment 1
-  due: Friday 26 January (revised)
-  blank: A1.pdf
-  sections: 2.1, 2.2
-  seealsoname: Definitions and facts handout
-  seealsopdf: https://bueler.github.io/fa/assets/handouts/getstarted.pdf
-- name: Assignment 2
-  due: Monday 12 February (revised x2)
-  blank: A2.pdf
-  sections: 2.3, 2.4, 2.6, 2.7
-- name: Assignment 3
-  due: Wednesday 21 February
-  blank: A3.pdf
-  sections: 2.3, 2.4, 2.6, 2.7, 3.1
-- name: Assignment 4
-  due: Wednesday 6 March
-  blank: A4.pdf
-  sections: 2.6, 2.7, 3.1
-- name: Assignment 5
-  due: Monday 1 April
-  blank: A5.pdf
-  sections: 3.1, 3.2, 3.3
-- name: Assignment 6
-  due: Wednesday 10 April
-  blank: A6.pdf
-  sections: 3.2, 3.3, 3.4, 4.1
-- name: Assignment 7
-  due: Monday 22 April (revised)
-  blank: A7.pdf
-  sections: 3.4, 4.1, 4.2
-- name: Assignment 8
-  due: "Thursday 2 May at 5:00pm in my box"
-  blank: A8.pdf
-  sections: 3.3, 3.4, 4.1, 4.2, 4.3, 5.1, 5.2, 5.3
+  due: FIXME
+  #blank: A1.pdf
+  #sections: 2.1, 2.2
+  #seealsoname: Definitions and facts handout
+  #seealsopdf: https://bueler.github.io/fa/assets/handouts/getstarted.pdf
