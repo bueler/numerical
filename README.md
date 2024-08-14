@@ -1,4 +1,4 @@
-# fa
+# numerical
 
-Webpage for Bueler's graduate course in functional analysis (MATH 617) at UAF.
-See [bueler.github.io/fa](https://bueler.github.io/fa).
+Webpage source for Bueler's course in numerica analysis (MATH 426) at UAF.
+See [bueler.github.io/numerical](https://bueler.github.io/numerical).
