@@ -23,7 +23,7 @@
     filecolor=magenta,      
     urlcolor=blue,
     pdfauthor={Ed Bueler}
-    pdftitle={Syllabus for MATH F617 Spring 2024},
+    pdftitle={Syllabus for MATH F426 Fall 2024},
     }
 
 % Paragraph spacing
@@ -35,8 +35,8 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy} 
 %\chead{\large\sf\textbf{}}
-\lhead{\large\sf\textbf{Syllabus MATH F617 {\color{red} (2nd revision 4/23)}}}
-\rhead{\large\sf\textbf{Spring 2024}}
+\lhead{\large\sf\textbf{Syllabus MATH F426}}
+\rhead{\large\sf\textbf{Fall 2024}}
   
 \newcommand{\localhead}[1]{\par\smallskip\textbf{#1} \smallskip\nobreak\\}%
 \def\heading#1{\localhead{\large\emph{#1}}}
@@ -54,77 +54,77 @@
 
 %\vskip -12pt
 \strut\hbox to \hsize{\tableindent\vtop{\halign{#\hfill\ts&#\hfil\cr
-{\emph{Course Title}} & {\Large Functional Analysis} \cr
+\emph{Course Title}   & {\Large Numerical Analysis} \cr
 \strut & \cr
-{\emph{Instructor}} & Ed Bueler \quad \href{mailto:elbueler@alaska.edu}{\texttt{elbueler\@@alaska.edu}} \cr
+\emph{Instructor}     & Ed Bueler \quad \href{mailto:elbueler@alaska.edu}{\texttt{elbueler\@@alaska.edu}} \cr
 \strut & \cr
-{\emph{Class meeting}} & MWF 2:15--3:15 pm, Chapman 107 \cr
+\emph{Class meeting}  & MWF 10:30--11:30 am, Chapman 106 \cr
 \strut & \cr
-{\emph{Section CRNs}} & in-person 901:\, 35367 \quad online 701: 35378 \href{https://canvas.alaska.edu/courses/18441}{(zoom link here)}\cr
+\emph{Section CRNs}   & in-person section 901:\, 73183 \quad online section 701: 73182\cr
 \strut & \cr
-{\emph{Public website}} & \href{https://bueler.github.io/fa/}{\texttt{bueler.github.io/fa}}\cr
+\emph{Public website} & \href{https://bueler.github.io/numerical/}{\texttt{bueler.github.io/numerical}}\cr
 \strut & \cr
-{\emph{Canvas website}} & \href{https://canvas.alaska.edu/courses/18441}{\texttt{canvas.alaska.edu/courses/18441}} \cr
+\emph{Canvas website} & \href{https://canvas.alaska.edu/courses/21626}{\texttt{canvas.alaska.edu/courses/21626}} \cr
 \strut & \cr
-\emph{Required text} & D.~Borthwick, \textsl{Spectral Theory}, Graduate Texts in\cr
- & Mathematics 284, Springer 2020\cr
+\emph{Required text}  & A.~Greenbaum \& T.~Chartier, \textsl{Numerical Methods: Design,}\cr
+ & \textsl{Analysis, and Computer Implementation of Algorithms}, \cr
+ & Princeton University Press 2012\cr
 }
 \hfil}}
 
-
 \heading{Description}
-Functional analysis is the theory of infinite-dimensional vector spaces and linear maps upon them. It is the mathematical home of partial differential equations, boundary value problems, quantum mechanics, the finite element method, field theories (electromagnetic and gravitational), fluid mechanics, and signal processing.
+This course introduces numerical analysis using lecture, small group work in class, homework, a project, and exams.  We will learn methods for solving problems of applied mathematics on computers, and why those methods work.  We will solve problems in calculus, linear algebra, and differential equations, and in related areas.
 
-The UAF catalog description of the course is this:  \textsl{Study of Banach and Hilbert spaces, and continuous linear maps between them.  Linear functionals and the Hahn-Banach theorem. Applications of the Baire Category theorem.  Compact operators, self adjoint operators, and their spectral properties. Weak topology and its applications.}
+Catalog description: \textsl{Direct and iterative solutions of systems of equations, interpolation, numerical differentiation and integration, numerical solutions of ordinary differential equations, and error analysis.}
 
-The above description is accurate, and all of these topics will arise.  However, I will strongly emphasize some aspects and gloss others.  This course will focus on:  \textsl{Hilbert spaces including Sobolev spaces.  Continuous and unbounded operators (linear maps) on Hilbert spaces.  The spectral theory of compact and self-adjoint operators, including the Laplacian.  Connections with finite-dimensional linear algebra and partial differential equations.  Motivation from the axioms and basic concepts of quantum mechanics.}
+\heading{Goals and Outcomes}
+By the end of the course you will be able to evaluate and use numerical tools for solving a variety of mathematical, scientific, and engineering problems.  You will be able to program basic methods, for example for prototyping more substantial solutions.  You will have the mathematics needed for numerical approaches to new problems like optimization and partial differential equations.  Student competence with actual scientific computing, not just theory, is a goal.  You will be comfortable using Matlab or a comparable programming language.
 
-Mathematically-inclined students from the sciences and engineering are encouraged to register, as are graduate students in mathematics looking for an elective with practical relevance.  This course is particularly aimed at students interested in the mathematics of partial differential equations and of quantum mechanics.  On the other hand, this will definitely be a graduate mathematics course, wherein almost every problem will be a proof!
-
-
-\clearpage\newpage
-\phantom{foo}
 \heading{Prerequisites}
-Officially: \textsl{MATH F314 Linear Algebra and MATH 401 Introduction to Real Analysis, or permission of instructor. Recommended: MATH F422 Introduction to Complex Analysis and MATH F641 Real Analysis.}
+Official prerequisites: \textsl{MATH F302 Differential Equations or MATH F314 Linear Algebra.  Recommended: Knowledge of programming.}
 
-For graduate students with a background from another university, these prerequisites describe rigorous, though introductory, exposure to the analysis of real functions, plus a course in linear algebra.  The basics of complex numbers are assumed.  Quite a bit of mathematical maturity and motivation is assumed.  The experienced difficulty of assigned work will depend on the student's comfort doing proofs, especially with vector spaces, sequences, real functions, convergence, continuity, and integrals.
+Regarding the two prerequisite courses, some mathematical maturity beyond calculus is more important than the specific content of either course.  However, we will indeed solve basic differential equations and linear systems by numerical means.
 
+``Knowledge of programming'' commonly translates to some computer science course, or an engineering computer techniques course.  However, what is actually needed is willingness to learn programming in the (easy and protected) environment of Matlab.  Many students have succeeded with this as their first programming class.
+
+\heading{Student Obligations}
+Students come from math, statistics, computer science, physics, geophysics, engineering, and other majors at UAF, so perfect recall of prerequisite material is not expected.  I will devote substantial class time, especially at the beginning of the semester, to collecting the bits of needed prequisite knowledge.  I will help with getting started on Matlab programming, especially in the first week.  However, you must show initiative in a meaningful and timely way, especially when I make it clear that review is needed.
+
+Lectures and homework together make up the core of the class.  Both the theory and practice of numerical analysis, as presented in the lecture and the textbook, will be emphasized on homework and exams.  Note that you will use the mathematical programming language Matlab, or another equivalent language, on every homework assignment, and even on the first assignment, and on your project.  Getting the most out of all parts of the class is \textsl{your} responsibility.  Please ask questions in class, both about the lecture content and about the homework assignments.
 
 \heading{The Hybrid Classroom}
-There are two sections: in-person (901; crn 35367) and online (701; crn 35378).  They are treated as one course and occur synchronously.  In this ``hybrid'' set-up, each lecture will be a recorded Zoom session generated from Chapman 107.  (The link for the Zoom session is \href{https://canvas.alaska.edu/courses/18441}{in Canvas}.  Recordings will be linked from inside Canvas only; they are not public.)  I will try to treat all students the same regarding proctored assessments---see below---and participation during class time.  Students have certain obligations to help make this work:
+There are two sections: in-person (901; crn 73183) and online (701; crn 73182).  They are treated as one course and occur synchronously.  In this ``hybrid'' set-up, each lecture will be a recorded Zoom session generated from Chapman 106.  (The link for the Zoom session is \href{https://canvas.alaska.edu/courses/21626}{in Canvas}.  Recordings will be linked from inside Canvas only; they are not public.)  I will try to treat all students the same regarding proctored assessments and participation during class time.  Please help to make this work:
 \begin{itemize}
-\item \textbf{in-person students}: Please participate as energetically as you can.  I prefer for in-person students to turn in their homework assignments on paper.
-\item \textbf{online students}:  Please sign into the Zoom session, from Canvas, just before class starts.  Please participate as energetically as you can, and, if possible, keep your camera on.  Regarding in-class group work, check for worksheet PDFs from the \href{https://bueler.github.io/fa/}{public site} before class starts.  When you turn in homework assignments electronically, please generate clear, well-ordered, and combined PDFs.  You will need to schedule proctoring for the Midterm Quizzes and Final Exam (see below), or attend in person on those days.
+\item \textbf{in-person students}: Please participate as energetically as you can.  I prefer for in-person students to turn in their Homework assignments on paper.
+\item \textbf{online students}:  Please sign into the Zoom session, from Canvas, before class starts.  Please participate as energetically as you can, and, if possible, keep your camera on.  Regarding in-class group work, check for worksheet PDFs from the \href{https://bueler.github.io/numerical/}{public site} before class starts.  When you turn in Homework assignments electronically, please generate clear, well-ordered, and combined PDFs by email.  You will need to schedule proctoring for the Midterm and Final Exams, or attend in person on those days.
 \end{itemize}
 
 \heading{Schedule and Online Materials}
-The \href{https://bueler.github.io/fa/}{public course website} includes a \href{https://bueler.github.io/nla/assets/general/S24/schedule.pdf}{schedule} and \href{https://bueler.github.io/fa/daily.html}{daily log}.  The schedule includes the due date of each homework Assignment, and the dates for the Midterm Quizzes and Final Exam.  The daily log tracks the textbook sections actually covered during each lecture, and handouts or worksheets used during class.  Please consult these frequently; they are subject to change but they will be kept up to date.
+The \href{https://bueler.github.io/numerical/}{public course website} includes a \href{https://bueler.github.io/numerical/assets/general/F24/schedule.pdf}{schedule} and \href{https://bueler.github.io/numerical/daily.html}{daily log}.  The schedule includes the due date of each Homework assignment, Project due dates, and dates for the Exams.  The daily log tracks the textbook sections actually covered during each lecture, and handouts or worksheets used during class.  Please consult these frequently; they are subject to change.
 
-Most course materials (Homework assignments, worksheets, code examples, etc.) will be posted on the \href{https://bueler.github.io/fa/}{public website}.  Certain specific course materials will go on the \href{https://canvas.alaska.edu/courses/18441}{Canvas site}: student grades, homework solutions, and Quiz solutions.
+Certain specific course materials will go on the \href{https://canvas.alaska.edu/courses/21626}{Canvas site}: student grades, Homework solutions, and Exam solutions.
 
-
-\clearpage\newpage
-\phantom{foo}
 \heading{Office Hours and Communication}
 My office hours are shown online at \href{http://bueler.github.io/OffHrs.htm}{\texttt{bueler.github.io/OffHrs.htm}}; I hold them in Chapman 306C.  Students can also schedule meetings with me outside of these hours.
 
 I will use Canvas to send announcements.  If I need to contact you outside of class times, I will email via Canvas.  Please set your email address in Canvas appropriately.
 
-
 \heading{Evaluation and Grades}
 \vskip -10pt
 
-{\color{red} \textbf{\emph{Revised 2/26 and 4/23.}}}
-
 \begin{tabular}{|l|l|r|}
 \hline
-Homework & nearly weekly & {\color{red} 60\%} \\
+Homework         & nearly weekly & 40\% \\
 \hline
-{\color{red} Midterm Quiz} & {\color{red} in-class Wednesday March 20} & {\color{red} 20\%}  \\
+Project Proposal & start of class on 1 November & 5\% \\
 \hline
-{\color{red} Final Quiz}   & in-class Friday May 3 & {\color{red} 20\%} \\
+Project          & start of class on 6 December & 10\% \\
 \hline
-total & & 100\% \\
+Midterm Exam     & in-class; 11 October & 20\%  \\
+\hline
+Final Exam       & in-class; 10:15am-12:15pm Wednesday 11 December & 25\% \\
+\hline
+total            & & 100\% \\
 \hline
 \end{tabular}
 
@@ -139,30 +139,25 @@ B  & 82--86\%  & C- & not given & F  & $\le$ 56\%
 
 These ranges are a guarantee and a lower bound.  I reserve the right to increase your grade above these ranges based on the actual difficulty of the work and/or on average class performance.  Any such increases will preserve grade ordering by weighted total score.
 
-
 \heading{Homework}
-Homework is due at the start of class.  \emph{Late homework is not accepted.}  If you have unavoidable circumstances which do not allow you to turn in an Assignment on time then please contact me (\href{mailto:elbueler@alaska.edu}{\texttt{elbueler\@@alaska.edu}}) in advance.
+Homework is due at the start of class on the date announced on the \href{https://bueler.github.io/numerical/assets/general/F24/schedule.pdf}{schedule}.  \emph{Late homework is not accepted.}  If you have unavoidable circumstances which do not allow you to turn in an Assignment on time then please contact me (\href{mailto:elbueler@alaska.edu}{\texttt{elbueler\@@alaska.edu}}) in advance. 
 
-The homework consists of proofs, rigorously-justified examples and counter-examples, and by-hand computations.  \LaTeX\xspace is encouraged for Homework, but definitely \textsl{not} required.  Well-organized hand-written proofs are happily accepted!
-
+\heading{Project}
+You will get to choose the topic of your Project.  I will announce the Project rules in mid-October.  You will turn in a Project Proposal on Friday 1 November, and I will give feedback on that.  The final form of your Project is due in-class on the last regular lecture day, Friday 6 December.
 
 \heading{Exams}
-There will be two in-class, hour-long Midterm Quizzes.  These Quizzes will firm-up the basic concepts and definitions addressed more thoroughly in the Homework.  Problems very similar to, e.g.~shortened, Homework problems will appear on the in-class Midterm Quizzes.
+There will be two in-class exams, a Midterm and a Final.  See the \href{https://bueler.github.io/numerical/assets/general/F24/schedule.pdf}{schedule} for dates.  Each will cover problems from identified sections which you have already seen on Homework.
 
-The 2-hour, in-class Final Exam will require you to be familiar with, and prepared on, major themes and theorems in the course.  I will describe the format of the Final in more detail as its date approaches.
-
-Make-up Quizzes/Exam will be given only for documented circumstances, at my discretion.  Department policy (below) does not allow me to move the time of the Final Exam.
-
-\clearpage\newpage
-\phantom{foo}
-\heading{Internet and AI usage, and other assistance, on Homework}
-You will not have access to AI tools, or any other tools except a writing implement, during the Quizzes and Final Exam.  These assessments are proctored and on-paper.
-
-Regarding Homework, you are encouraged to talk to other students about the problems, and to use other tools appropriately, but the work you turn in must be your own.  Please do not copy proofs from online sources, from searching or generated via AI tools like ChatGPT.   If I detect this then I have the right to give you a zero on that Assignment.  Even when you get assistance, it goes without saying that your own thinking, as you do the homework, will have the greatest benefits.  Fully understand the proofs you turn in, even if hints from other sources were used in generating them.
-
+A make-up Midterm Exam will be given only for documented circumstances, at my discretion.  Department policy (below) does not allow me to move the time of the Final Exam.
 
 %\clearpage\newpage
-\phantom{foo}
+%\phantom{foo}
+\heading{Internet and AI usage, and other assistance}
+You will not have access to AI tools, or the internet, or any other tools except a writing implement, during the Midterm and Final Exams.  These assessments are proctored and on-paper, and represent 45\% of your course grade.
+
+Regarding Homework and your Project, you are encouraged to talk to other students about the problems, and to use available tools appropriately.  However, the work you turn in must be your own.  Please do not copy proofs or solutions from online sources, from searching or generated via AI tools like ChatGPT.  If I detect this then I have the right to give you a zero on that assignment, or to require that you explain the solution during my office hours.
+
+When you do get assistance, it goes without saying that \textsl{doing your own thinking will have the greatest benefits}.  Fully understand the material you turn in, even if hints from other sources were used in generating them.
 
 \small
 \heading{Rules and Policies}
