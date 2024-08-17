@@ -25,11 +25,11 @@ Log in to [canvas.alaska.edu/courses/21626](https://canvas.alaska.edu/courses/21
 
 * The [daily log](daily) has the recent happenings, including handouts and worksheets as PDFs.
 
-* Check out the nearly-weekly [homework Assignments](homework).
+* Check out the nearly-weekly [Homework assignments](homework).
 
-* In the middle of the semester I will announce the Project format.
+* In the middle of the semester I will announce the Project format.  Then the [Projects tab](project) will have the materials you need.
 
-* There are two Exams, a Midterm and a Final.  Both are in class, and the Final will happen at the scheduled time.  See the [Exams](exams) tab for review guides.
+* There are two Exams, a Midterm and a Final.  Both are in class, and the Final will happen at the scheduled time.  See the [Exams tab](exams) for review guides.
 
 ---
 _Site design derived from [coordinated Calc I](https://uaf-math251.github.io/), an original [Jekyll](https://jekyllrb.com/) design by [David Maxwell](https://damaxwell.github.io/)._
