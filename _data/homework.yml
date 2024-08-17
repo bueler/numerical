@@ -2,8 +2,7 @@ semester: Fall 2024
 home: assets/homework/F24
 homework:
 - name: Assignment 1
-  due: FIXME
-  #blank: A1.pdf
-  #sections: 2.1, 2.2
+  due: Wednesday, 4 September
+  blank: A1.pdf
   #seealsoname: Definitions and facts handout
   #seealsopdf: https://bueler.github.io/fa/assets/handouts/getstarted.pdf
