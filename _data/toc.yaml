@@ -1,15 +1,17 @@
 sidenavtitle: 'MATH F426'
-
 docs:
 
 - title: Syllabus
-  url: assets/general/F24/syllabus.pdf  # rebuild by "make syllabus.pdf" in assets/general/S24/
+  url: assets/general/F24/syllabus.pdf
 
 - title: Schedule
-  url: assets/general/F24/schedule.pdf  # rebuild by "make schedule.pdf" in assets/general/S24/
+  url: assets/general/F24/schedule.pdf
 
 - title: Homework
   url: homework.html
+
+- title: Project
+  url: project.html
 
 - title: Exams
   url: exams.html
