@@ -9,6 +9,12 @@
     {% if material.more %}
         <br>{{ material.more }}
     {% endif %}
+    {% if material.chapter %}
+        <br>(Chapter {{ material.chapter }})
+    {% endif %}
+    {% if material.chapters %}
+        <br>(Chapters {{ material.chapters }})
+    {% endif %}
     {% if material.handout %}
         <br><a href="{{ data.home }}/{{ material.handout }}">{{ material.handoutname }}</a>
     {% endif %}

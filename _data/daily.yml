@@ -1,8 +1,12 @@
 semester: Fall 2024
 home: assets/handouts
 daily:
-- name: XXX
-  description: YYY
+- name: Monday 26 August
+  description: examples
+  chapters: 1, 2
+#- name: XXX
+#  description: YYY
   #handout: Chapter6-Hall2013.pdf
   #handoutname: "handout: 'Perspectives on the spectral theorem' by Brian Hall"
   #more: x
+  #chapter: x
