@@ -1,13 +1,15 @@
-% EX1INTEGRAL  Evaluate an otherwise-impossible integral using
-%              the trapezoid rule.
+% EX1INTEGRAL  Evaluate an otherwise-impossible integral, namely
+%   int_0^1 sin(x)^(3/2) dx
+% using the trapezoid rule.
 
-dx = 0.1;
-x = 0.0:dx:3.0;          % 31 points
+N = 30;
+dx = 1/N;
+x = 0.0:dx:3.0;          % N+1 points
 y = sin(x).^(3/2);
-%plot(x,y)
+% optional: plot(x,y)
 s = y(1);                % start sum
-for j = 2:30
+for j = 2:N
     s = s + 2.0 * y(j);
 end
-s = s + y(31);
-(dx / 2.0) * s
+s = s + y(N+1);
+TN = (dx / 2.0) * s
