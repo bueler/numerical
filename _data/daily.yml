@@ -1,8 +1,10 @@
 semester: Fall 2024
 home: assets/handouts
 daily:
+- name: Wednesday 28 August
+  description: 3 examples continued; Matlab
 - name: Monday 26 August
-  description: examples
+  description: 3 examples; Matlab
   chapters: 1, 2
 #- name: XXX
 #  description: YYY
