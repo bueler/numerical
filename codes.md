@@ -5,6 +5,10 @@ title: Codes (examples from lecture and homework)
 
 ## Codes
 
+There are a few codes provided by the authors of the textbook.  Go to
+
+[lifeislinear.davidson.edu/numerical/matlab.html](https://lifeislinear.davidson.edu/numerical/matlab.html)
+
 The Matlab/Octave codes below come from examples I did in lecture, or they are parts of the Homework solutions.  For the full Homework solutions go to the [Canvas course page](https://canvas.alaska.edu/courses/21626).
 
   * [ex1integral.m](assets/codes/ex1integral.m)
