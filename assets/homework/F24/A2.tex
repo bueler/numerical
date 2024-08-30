@@ -1,0 +1,131 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.6in} 
+\addtolength{\evensidemargin}{-.6in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\textheight}{.6in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim,fancyvrb}
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\mtt}{\texttt}
+\usepackage{alltt,xspace}
+\newcommand{\mfile}[1]
+{\medskip\begin{quote}\scriptsize \begin{alltt}\input{#1.m}\end{alltt} \normalsize\end{quote}\medskip}
+
+\usepackage[final]{graphicx}
+\newcommand{\mfigure}[1]{\includegraphics[height=2.5in,
+width=3.5in]{#1.eps}}
+\newcommand{\regfigure}[2]{\includegraphics[height=#2in,
+keepaspectratio=true]{#1.eps}}
+\newcommand{\widefigure}[3]{\includegraphics[height=#2in,
+width=#3in]{#1.eps}}
+
+\usepackage{amssymb}
+
+\usepackage[pdftex, colorlinks=true, plainpages=false, linkcolor=black, citecolor=red, urlcolor=red]{hyperref}
+
+% macros
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+%\renewcommand{\det}{\operatorname{det}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1}\quad }
+
+\newcommand{\chapexers}[2]{\prob{Chapter #1, pages #2, Exercises:}}
+\newcommand{\exer}[2]{\prob{Exercise #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=ellipse,draw,inner sep=2pt] (char) {#1};}}
+
+
+\begin{document}
+\scriptsize \noindent Math 310 Numerical Analysis (Bueler) \hfill 30 August 2024 (version 1)
+\normalsize
+
+\medskip\bigskip
+
+\Large\centerline{\textbf{Assignment \#2}}
+\large
+\bigskip
+
+\centerline{\textbf{Due Friday, 13 September 2024, at the start of class}}
+\bigskip
+\normalsize
+
+\thispagestyle{empty}
+
+This Assignment is based on Chapter 4 of the textbook,\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: Design, Analysis, and Computer Implementation of Algorithms}, Princeton University Press 2012).}  especially sections 4.1--4.4.  While bisection may be new to you, I claim you were introduced to Taylor's theorem and Newton's method in calculus.  Nonetheless, read these things carefully here.
+
+\bigskip
+\noindent Remember that when you turn in homework problems involving \Matlab (or language of your choice), the following two expectations will always apply:
+\renewcommand{\labelenumi}{\arabic{enumi}.\,}
+\begin{enumerate}
+\item The commands that you used must be shown, along with the results.
+\item Please strive to minimize use of paper: edit your result to remove extra space \emph{but} keep a clear distinction between your m-files, your input commands, and the computed results and/or figures.
+\end{enumerate}
+
+\bigskip\bigskip
+\noindent \textbf{Do the following exercises from the textbook:}
+
+\medskip
+\renewcommand{\labelenumi}{{\footnotesize\underline{\textsc{Chapter \arabic{enumi}}}}}
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item ~
+    \begin{itemize}
+    \item Exercise 1 on page 102.  (\emph{Hint for (d): See section 4.4.})
+    \item Exercise 2(a) on page 102.  (\emph{Start by plotting the function as requested.  Then write your code.  Please fully understand how bisection is programmed, even if you play with the book's code!})
+    \item Exercise 3 on page 103.
+    \item Exercise 4 on page 103.
+    \item Exercise 6 on page 103.
+    \item Exercise 7 on page 103.
+    \end{itemize}
+\end{enumerate}
+
+\bigskip\bigskip
+\noindent \textbf{Do the following additional problems:}
+
+\bigskip
+\noindent \textbf{P1.}  Consider applying bisection to $f(x)=x^2-2$, using an initial bracket $[1,2]$, to approximate $\sqrt{2}$ to within $10^{-2}$.  Calculate in advance how many steps are needed.  Now run the algorithm \emph{by hand} for that many steps, reporting each bracket.  (\emph{You won't even need a calculator.  In any case, don't run a \Matlab program.})
+
+
+
+
+\end{document}

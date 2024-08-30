@@ -4,5 +4,8 @@ homework:
 - name: Assignment 1
   due: Wednesday, 4 September
   blank: A1.pdf
+- name: Assignment 2
+  due: Friday, 13 September
+  blank: A2.pdf
   #seealsoname: Definitions and facts handout
   #seealsopdf: https://bueler.github.io/fa/assets/handouts/getstarted.pdf
