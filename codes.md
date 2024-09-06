@@ -15,6 +15,8 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
   * [.m](assets/codes/.m)
 -->
 
+  * [bisect.m](assets/codes/bisect.m)
+  * [circleexp.m](assets/codes/circleexp.m)
   * [sincostable.m](assets/codes/sincostable.m)
   * [twoplots.m](assets/codes/twoplots.m)
   * [ex1integral.m](assets/codes/ex1integral.m)
