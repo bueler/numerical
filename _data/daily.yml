@@ -1,6 +1,8 @@
 semester: Fall 2024
 home: assets/handouts
 daily:
+- name: Friday 5 September
+  description: bisection; Matlab function functions
 - name: Wednesday 4 September
   description: root-finding
   chapter: 4
