@@ -1,6 +1,10 @@
 semester: Fall 2024
 home: assets/handouts
 daily:
+- name: Wednesday 11 September
+  description: Taylor's theorem; Newton's method
+- name: Monday 9 September
+  description: bisection finished; Taylor's theorem
 - name: Friday 6 September
   description: bisection; Matlab function functions
 - name: Wednesday 4 September
