@@ -10,5 +10,5 @@ homework:
 - name: Assignment 3
   due: Friday, 20 September
   blank: A3.pdf
-  #seealsoname: Definitions and facts handout
-  #seealsopdf: https://bueler.github.io/fa/assets/handouts/getstarted.pdf
+  seealsoname: slides "How to put a polynomial through points"
+  seealsopdf: https://bueler.github.io/numerical/assets/slides/F24/polynonewt.pdf
