@@ -18,6 +18,9 @@
     {% if material.handout %}
         <br><a href="{{ data.home }}/{{ material.handout }}">{{ material.handoutname }}</a>
     {% endif %}
+    {% if material.otherurl %}
+        <br><a href="{{ material.otherurl }}">{{ material.otherurlname }}</a>
+    {% endif %}
 </li>
 {% endfor %}
 </ul>
