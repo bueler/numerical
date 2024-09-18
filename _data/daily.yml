@@ -1,6 +1,10 @@
 semester: Fall 2024
 home: assets/handouts
 daily:
+- name: Wednesday 18 September
+  description: fixed point iterations
+  otherurl: https://bueler.github.io/numerical/assets/slides/F24/wed18sep.pdf
+  otherurlname: covered slides 1 through 9
 - name: Monday 16 September
   description: asynchronous lecture = polynomial interpolation preview
   otherurl: https://bueler.github.io/numerical/assets/slides/F24/polynonewt.pdf
