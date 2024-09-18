@@ -4,11 +4,11 @@ daily:
 - name: Wednesday 18 September
   description: fixed point iterations
   otherurl: https://bueler.github.io/numerical/assets/slides/F24/wed18sep.pdf
-  otherurlname: covered slides 1 through 9
+  otherurlname: "PDF slides: covered slides 1 through 9"
 - name: Monday 16 September
   description: asynchronous lecture = polynomial interpolation preview
   otherurl: https://bueler.github.io/numerical/assets/slides/F24/polynonewt.pdf
-  otherurlname: "slides: How to put a polynomial through points"
+  otherurlname: "PDF slides: How to put a polynomial through points"
 - name: Friday 13 September
   description: Newton's method rate of convergence
 - name: Wednesday 11 September
