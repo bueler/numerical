@@ -12,3 +12,6 @@ homework:
   blank: A3.pdf
   seealsoname: slides "How to put a polynomial through points"
   seealsopdf: https://bueler.github.io/numerical/assets/slides/F24/polynonewt.pdf
+- name: Assignment 4
+  due: Monday, 30 September
+  blank: A4.pdf
