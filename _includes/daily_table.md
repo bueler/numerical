@@ -2,7 +2,7 @@
 
 <ul>
 {% for material in data.daily %}
-<li style=" margin-bottom: 10px;">{{ material.name }}: {{ material.description }}
+<li style="margin-bottom: 10px;"><b>{{ material.name }}</b> {{ material.description }}
     {% if material.due %}
         <br><b>due: {{ material.due }}</b>
     {% endif %}
@@ -15,8 +15,8 @@
     {% if material.chapters %}
         <br>(Chapters {{ material.chapters }})
     {% endif %}
-    {% if material.handout %}
-        <br><a href="{{ data.home }}/{{ material.handout }}">{{ material.handoutname }}</a>
+    {% if material.doc %}
+        <br><a href="{{ data.home }}/{{ material.doc }}">{{ material.docname }}</a>
     {% endif %}
     {% if material.otherurl %}
         <br><a href="{{ material.otherurl }}">{{ material.otherurlname }}</a>

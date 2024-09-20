@@ -1,22 +1,22 @@
 semester: Fall 2024
-home: assets/handouts
+home: assets/
 daily:
 - name: Monday 23 September
   description: floating point
-  otherurl: https://bueler.github.io/numerical/assets/worksheets/F24/binary12.pdf
-  otherurlname: "worksheet: how binary12 might work"
+  doc: worksheets/F24/binary12.pdf
+  docname: "worksheet: how binary12 might work"
 - name: Friday 20 September
   description: fixed point iterations; fractals; floating point
-  otherurl: https://bueler.github.io/numerical/assets/worksheets/F24/ieeefloat.pdf
-  otherurlname: "2 page PDF summary: the IEEE 754 standard"
+  doc: worksheets/F24/ieeefloat.pdf
+  docname: "2 page PDF summary: the IEEE 754 standard"
 - name: Wednesday 18 September
   description: fixed point iterations
-  otherurl: https://bueler.github.io/numerical/assets/slides/F24/wed18sep.pdf
-  otherurlname: "PDF slides: covered slides 1 through 9"
+  doc: slides/F24/wed18sep.pdf
+  docname: "PDF slides: covered slides 1 through 9"
 - name: Monday 16 September
   description: asynchronous lecture = polynomial interpolation preview
-  otherurl: https://bueler.github.io/numerical/assets/slides/F24/polynonewt.pdf
-  otherurlname: "PDF slides: How to put a polynomial through points"
+  doc: slides/F24/polynonewt.pdf
+  docname: "PDF slides: How to put a polynomial through points"
 - name: Friday 13 September
   description: Newton's method rate of convergence
 - name: Wednesday 11 September
@@ -37,9 +37,5 @@ daily:
 - name: Monday 26 August
   description: 3 examples; Matlab
   chapters: 1, 2
-#- name: XXX
-#  description: YYY
-  #handout: Chapter6-Hall2013.pdf
-  #handoutname: "handout: 'Perspectives on the spectral theorem' by Brian Hall"
   #more: x
   #chapter: x
