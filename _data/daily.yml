@@ -1,6 +1,12 @@
 semester: Fall 2024
 home: assets/handouts
 daily:
+- name: Monday 23 September
+  description: floating point
+- name: Friday 20 September
+  description: fixed point iterations; fractals; floating point
+  otherurl: https://bueler.github.io/numerical/assets/worksheets/F24/ieeefloat.pdf
+  otherurlname: "2 page PDF summary: the IEEE 754 standard"
 - name: Wednesday 18 September
   description: fixed point iterations
   otherurl: https://bueler.github.io/numerical/assets/slides/F24/wed18sep.pdf
