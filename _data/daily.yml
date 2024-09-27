@@ -1,12 +1,16 @@
 semester: Fall 2024
 home: assets/
 daily:
+- name: Friday 27 September
+  description: "Chapter 7: linear systems"
+- name: Wednesday 25 September
+  description: floating point
 - name: Monday 23 September
   description: floating point
   doc: worksheets/F24/binary12.pdf
   docname: "worksheet: how binary12 might work"
 - name: Friday 20 September
-  description: fixed point iterations; fractals; floating point
+  description: "fixed point iterations; fractals; Chapter 5: floating point"
   doc: worksheets/F24/ieeefloat.pdf
   docname: "2 page PDF summary: the IEEE 754 standard"
 - name: Wednesday 18 September
@@ -26,7 +30,7 @@ daily:
 - name: Friday 6 September
   description: bisection; Matlab function functions
 - name: Wednesday 4 September
-  description: root-finding
+  description: "Chapter 4: root-finding"
   chapter: 4
 - name: Monday 2 September
   description: Labor Day, no class
@@ -35,7 +39,7 @@ daily:
 - name: Wednesday 28 August
   description: 3 examples continued; Matlab
 - name: Monday 26 August
-  description: 3 examples; Matlab
+  description: "Chapter 2: Matlab; 3 examples"
   chapters: 1, 2
   #more: x
   #chapter: x
