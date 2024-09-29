@@ -1,0 +1,181 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.6in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim,fancyvrb}
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\mtt}{\texttt}
+\usepackage{alltt,xspace}
+\newcommand{\mfile}[1]
+{\medskip\begin{quote}\scriptsize \begin{alltt}\input{#1.m}\end{alltt} \normalsize\end{quote}\medskip}
+
+\usepackage[final]{graphicx}
+\newcommand{\mfigure}[1]{\includegraphics[height=2.5in,
+width=3.5in]{#1.eps}}
+\newcommand{\regfigure}[2]{\includegraphics[height=#2in,
+keepaspectratio=true]{#1.eps}}
+\newcommand{\widefigure}[3]{\includegraphics[height=#2in,
+width=#3in]{#1.eps}}
+
+\usepackage{amssymb}
+
+\usepackage[pdftex, colorlinks=true, plainpages=false, linkcolor=black, citecolor=red, urlcolor=red]{hyperref}
+
+% macros
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+%\renewcommand{\det}{\operatorname{det}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=ellipse,draw,inner sep=2pt] (char) {#1};}}
+
+
+\begin{document}
+\scriptsize \noindent Math 426 Numerical Analysis (Bueler) \hfill 30 September 2024
+\normalsize
+
+\medskip\bigskip
+
+\Large\centerline{\textbf{Assignment \#5}}
+\large
+\bigskip
+
+\centerline{\textbf{Due Monday, 7 October 2024, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\begin{quote}
+{\small
+This Assignment is based on Chapters 5 and 7 of the textbook,\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: Design, Analysis, and Computer Implementation of Algorithms}, Princeton University Press 2012).} and mostly on the latter Chapter.  Please read these Chapters!  Understanding the (long) section 7.2 is especially important, though subsections 7.2.4 and 7.2.5 less so.
+
+\medskip
+\noindent When you turn in homework problems, please put the problems in the order they appear below.  Also, two expectations always apply:
+\renewcommand{\labelenumi}{\arabic{enumi}.\,}
+\begin{enumerate}
+\item When you use \Matlab, or other language of your choice, the commands you used must be shown, along with the results.
+\item Please minimize use of paper; edit your result to remove extra space.  However, please keep a clear distinction between codes, input commands, and computed results and/or figures.
+\end{enumerate}
+}
+\end{quote}
+
+\bigskip
+\noindent \textbf{Do the following exercises from the textbook:}
+
+\medskip
+\renewcommand{\labelenumi}{{\footnotesize\underline{\textsc{Chapter \arabic{enumi}}}}}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item ~
+    \begin{itemize}
+    \item Exercise 15 on page 123.
+    \end{itemize}
+\setcounter{enumi}{6}
+\item ~
+    \begin{itemize}
+    \item Exercise 2 on page 175.
+    \item Exercise 3 on pages 175--176.
+    \item Exercise 4 on page 176.
+    \item Exercise 6 on page 176.
+    \end{itemize}
+\end{enumerate}
+
+\bigskip
+\noindent \textbf{Do the following additional problems:}
+
+\prob{P4}  \ppart{a}  Consider the linear system
+\begin{align*}
+2 x_1 + 3 x_2 - x_3 &= 5 \\
+4 x_1 - 3 x_2 + 2 x_3 &= 1 \\
+2 x_1 + x_2 + x_3 &= 3
+\end{align*}
+Perform Gaussian elimination with back substitution \emph{by hand} to solve the system.  (\emph{Do not swap rows.  Please indicate the row operations you do, and the result of each elimination stage, but otherwise there is no need to show arithmetic.})
+
+\epart{b}  Let $M$ be the augmented matrix $M = \left[A \big| b\right]$, and also define
+  $$L_1 = \begin{bmatrix}
+  1 & 0 & 0 \\ -2 & 1 & 0 \\ -1 & 0 & 1
+  \end{bmatrix}, \qquad
+  L_2 = \begin{bmatrix}
+  1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & -\frac{2}{9} & 1
+  \end{bmatrix}.$$
+Compute $L_2 L_1 M$ \emph{by hand}.  Confirm that the resulting augmented matrix is the upper triangular system which you solved, i.e.~by back substitution, in part \textbf{(a)}.
+
+\medskip
+\noindent \emph{In the remaining parts feel free to use \Matlab (or language of your choice).}
+
+\epart{c}  The original system has form $A \bx = \bb$.  Enter $A$ and $\bb$ into \Matlab etc.~and confirm your by-hand solution by \,\verb|x = A \ b| (or equivalent in your language).
+
+\epart{d}  Using the matrices defined in part \textbf{(b)}, compute $U=L_2 L_1 A$ and $L = (L_2 L_1)^{-1}$.  Confirm that $LU=A$.
+
+\epart{e}  In section 7.2 it says ``\dots to solve $A\bx = LU\bx = \bb$, one first solves the lower triangular system $L\by = \bb$ (to obtain $\by = U\bx$) and then the upper triangular system $U\bx=\by$.''  Using $U$ and $L$ from part \textbf{(d)}, solve the two triangular systems using the backslash operator (or equivalent in your language).  Confirm that you get the same answer this way as in \textbf{(a)}.
+
+
+\prob{P5}  \emph{Do Exercise 2 (page 175) first, before doing this problem.}
+
+\epart{a}  Open a new m-file\footnote{If you are using a language other than \Matlab, please interpret this problem in a reasonable manner.  That is, implement basic Gaussian elimination using \texttt{for} loops and direct array indexing.} called \texttt{geinplace.m}.  Type in the code from section 7.2, at the top of page 137, ``\verb|% Gaussian elimination without pivoting|''.  It is recommended that you make this a function,
+
+\verb|function [newA, newb] = geinplace(A, b, n)|
+
+\noindent which returns the new $A,\bb$, but this is not required.  Of course, you don't need to type in the comments, but please be careful with the loop indices and other details.  However you write it, the variables \texttt{A,b,n} must be defined (and of the right size).
+
+\epart{b} Consider the $4\times 4$ linear system $A\bx = \bb$:
+\begin{align*}
+x_1 + 2 x_2 + 3 x_3 + 4 x_4    &= \,\,\, 7 \\
+2 x_1 + x_2 \quad \qquad - x_4 &= - 1 \\
+x_1 \quad \qquad \qquad + x_4  &= \,\,\, 4 \\
+\qquad 2 x_2 - 2 x_3 \qquad    &= - 8
+\end{align*}
+Run \texttt{geinplace.m} on this example.  Show the resulting/new $A$ and $\bb$.  (\emph{These will be different from the ones you typed in!})
+
+\epart{c} As a result of part \textbf{(b)}, the system is now upper triangular.  Extract $U$ and solve the system using the code \texttt{usolve} which you wrote in Exercise 2.
+
+\epart{d}  Assuming \verb|x| is what you computed in \textbf{(c)}, and using the original $A$ and $\bb$, confirm using  \,\verb|norm(A*x - b)|\, that \textbf{(c)} was correct.
+
+\epart{e}  Confirm using \,\verb|A \ b|,\, on the original $A$ and $\bb$, that you have the correct solution in part \textbf{(c)}.
+
+
+\end{document}
