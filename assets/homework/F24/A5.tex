@@ -12,6 +12,8 @@
 
 \usepackage{palatino}
 
+\usepackage[dvipsnames]{xcolor}
+
 \newtheorem*{thm}{Theorem}
 \newtheorem*{defn}{Definition}
 \newtheorem*{example}{Example}
@@ -74,7 +76,7 @@ width=#3in]{#1.eps}}
 
 
 \begin{document}
-\scriptsize \noindent Math 426 Numerical Analysis (Bueler) \hfill 30 September 2024
+\scriptsize \noindent Math 426 Numerical Analysis (Bueler) \hfill {\color{BrickRed} corrected; 1 October 2024}
 \normalsize
 
 \medskip\bigskip
@@ -154,13 +156,13 @@ Compute $L_2 L_1 M$ \emph{by hand}.  Confirm that the resulting augmented matrix
 \epart{e}  In section 7.2 it says ``\dots to solve $A\bx = LU\bx = \bb$, one first solves the lower triangular system $L\by = \bb$ (to obtain $\by = U\bx$) and then the upper triangular system $U\bx=\by$.''  Using $U$ and $L$ from part \textbf{(d)}, solve the two triangular systems using the backslash operator (or equivalent in your language).  Confirm that you get the same answer this way as in \textbf{(a)}.
 
 
-\prob{P5}  \emph{Do Exercise 2 (page 175) first, before doing this problem.}
+\prob{P5}  \emph{{\color{BrickRed} Completely revised!}  Do Exercise 2 (page 175) first, before doing this problem.}
 
-\epart{a}  Open a new m-file\footnote{If you are using a language other than \Matlab, please interpret this problem in a reasonable manner.  That is, implement basic Gaussian elimination using \texttt{for} loops and direct array indexing.} called \texttt{geinplace.m}.  Type in the code from section 7.2, at the top of page 137, ``\verb|% Gaussian elimination without pivoting|''.  It is recommended that you make this a function,
+\epart{a}  Open a new m-file\footnote{If you are using a language other than \Matlab, please interpret this problem in a reasonable manner.  That is, implement basic Gaussian elimination using \texttt{for} loops and direct array indexing.} called \texttt{ge.m}.  Type in the code from section 7.2, at the top of page 137, ``\verb|% Gaussian elimination without pivoting|''.  It is recommended that you make this a function,
 
-\verb|function [newA, newb] = geinplace(A, b, n)|
+\verb|function [newA, newb] = ge(A, b, n)|
 
-\noindent which returns the new $A,\bb$, but this is not required.  Of course, you don't need to type in the comments, but please be careful with the loop indices and other details.  However you write it, the variables \texttt{A,b,n} must be defined (and of the right size).
+\noindent which returns the new $A,\bb$, but this is not required.  Of course, you don't need to type in the comments, but please be careful with the loop indices and other details.  However you write it, the variables \texttt{A,b,n} must be defined and of the right size.
 
 \epart{b} Consider the $4\times 4$ linear system $A\bx = \bb$:
 \begin{align*}
@@ -169,13 +171,13 @@ x_1 + 2 x_2 + 3 x_3 + 4 x_4    &= \,\,\, 7 \\
 x_1 \quad \qquad \qquad + x_4  &= \,\,\, 4 \\
 \qquad 2 x_2 - 2 x_3 \qquad    &= - 8
 \end{align*}
-Run \texttt{geinplace.m} on this example.  Show the resulting/new $A$ and $\bb$.  (\emph{These will be different from the ones you typed in!})
+Run \texttt{ge.m} on this example.  Show the resulting/new $A$ and $\bb$.  (\emph{These will be different from the ones you typed in!})
 
-\epart{c} As a result of part \textbf{(b)}, the system is now upper triangular.  Extract $U$ and solve the system using the code \texttt{usolve} which you wrote in Exercise 2.
+\epart{c} As a result of part \textbf{(b)}, the system is now upper triangular.  Solve the system using the code \texttt{usolve} which you wrote in Exercise 2.
 
-\epart{d}  Assuming \verb|x| is what you computed in \textbf{(c)}, and using the original $A$ and $\bb$, confirm using  \,\verb|norm(A*x - b)|\, that \textbf{(c)} was correct.
+\epart{d}  Assuming \verb|x| is what you computed in \textbf{(c)}, and using the original $A$ and $\bb$, confirm using  \,\verb|norm(A*x - b)|\, that $x$ is correct.
 
-\epart{e}  Confirm using \,\verb|A \ b|,\, on the original $A$ and $\bb$, that you have the correct solution in part \textbf{(c)}.
+\epart{e}  Confirm using \,\verb|A \ b|,\, on the original $A$ and $\bb$, that you have the correct solution $x$.  (\emph{This is simply another way to check what you already know from part} \textbf{(d)}).
 
 
 \end{document}
