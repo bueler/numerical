@@ -4,11 +4,10 @@ exams:
 - name: Midterm Exam
   date: Friday 11 October
   info: <b>in class</b> or proctored
-  #reviewguide: review/mid.pdf
+  reviewguide: midreview.pdf
   #blank: mid.pdf
   #solutions: midsolns.pdf
 - name: Final Exam
   date: Wednesday 11 December, 10:15am--12:15pm
   info: <b>in class</b> or proctored
-  #blank: final.pdf
   #rubric: finalrubric.pdf

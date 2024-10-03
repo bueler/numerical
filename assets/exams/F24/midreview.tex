@@ -1,9 +1,9 @@
 \documentclass[12pt]{amsart}
 \addtolength{\topmargin}{-0.6in} % usually -0.25in
-\addtolength{\textheight}{1.1in} % usually 1.25in
-\addtolength{\oddsidemargin}{-0.7in}
-\addtolength{\evensidemargin}{-0.7in}
-\addtolength{\textwidth}{1.5in} %\setlength{\parindent}{0pt}
+\addtolength{\textheight}{0.9in} % usually 1.25in
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in} %\setlength{\parindent}{0pt}
 
 \newcommand{\normalspacing}{\renewcommand{\baselinestretch}{1.05}\tiny\normalsize}
 \newcommand{\bigspacing}{\renewcommand{\baselinestretch}{1.13}\tiny\normalsize}
@@ -65,62 +65,63 @@
 
 
 \begin{document}
-\scriptsize \noindent Math 310 Numerical Analysis (Bueler) \hfill 13 October 2019
+\scriptsize \noindent Math 310 Numerical Analysis (Bueler) \hfill 3 October 2024
 \thispagestyle{empty}
 
 \bigskip
 \Large\textbf{\centerline{Review Guide for Midterm Exam}}
 
-\Large\textbf{\centerline{on Thursday, 17 October 2019}}
+\Large\textbf{\centerline{on Friday, 11 October 2024}}
 
 \normalsize
 \bigskip
-The in-class Midterm Exam on Thursday is \emph{closed book} and \emph{closed notes} and \emph{no calculator}.  (Bring only a writing implement.)  I will aim for an exam which takes 60 minutes to do, but you will have the whole 90 minute period if you want that.  You can leave the room once you are done (and you have double-checked your answers).
+The in-class Midterm Exam is \emph{closed book} and \emph{closed notes}.  No internet, calculator, or electronics are allowed.  Please bring only a writing implement.   I will aim for an exam which takes 45 minutes to do, but you will have 65 minutes if start right on time.  If you come prepared it will be easy.
 
 \medskip
-I encourage you to work with other students on this Review Guide.  Read the relevant parts of the textbook\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: Design, Analysis, and Computer Implementation of Algorithms}, Princeton University Press 2012.} and identify the first items you \emph{don't} understand as you get to them.  Talk about that!  If you come prepared it will be easy.
-
-\medskip
-Problems will be in these categories:
-\begin{itemize}
-\item apply an algorithm/method in a simple concrete case,
-
-\emph{E.g.~Do two steps of bisection on this problem.}
-
-\item state a theorem or definition,
-
-\emph{E.g.~State Taylor's Theorem.  (I will not ask you to \emph{prove} theorems.  Two theorems you should memorize are listed below.)}
-
-\item write a short pseudocode or \Matlab code to state an algorithm,
-
-\emph{E.g.~Write Newton's method as a \Matlab code or pseudocode.}
-
-\item explain/show in words, and
-
-\emph{E.g.~Why is one of these methods better than another, when applied to this example?  (Write in complete sentences.)}
-
-\item derive an algorithm.
-
-\emph{E.g.~Derive Newton's method.  Also draw a sketch which illustrates one step.}
-\end{itemize}
+I encourage you to work with other students on this Review Guide.  Please read the relevant parts of the textbook\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: \dots}, Princeton University Press 2012.} and identify the items you \emph{don't} understand as you get to them.
 
 \newcommand{\sgpart}[1]{\bigskip\noindent\large\textbf{#1.} \normalsize}
 
+\sgpart{Problem types}  Problems will be in these categories, \emph{with examples in italics}:
+\begin{itemize}
+\item apply an algorithm/method in a simple concrete case,
+
+\emph{Do two steps of bisection on this problem.}
+
+\item state a theorem or definition,
+
+\emph{State Taylor's Theorem.  (I will not ask you to \emph{prove} theorems.  The two theorems you should memorize are listed below.)}
+
+\item write a short pseudocode or \Matlab code to state an algorithm,
+
+\emph{Write Newton's method as a \Matlab code or pseudocode.}
+
+\item explain/show in words, and
+
+\emph{Why is one of these methods better than another, when applied to this example?  (Write in complete sentences.)}
+
+\item derive an algorithm.
+
+\emph{Derive Newton's method.  Also draw a sketch which illustrates one step.}
+\end{itemize}
+
+
 \sgpart{Sections} See these textbook sections which we covered in lecture and homework:
 
-\qquad 2.1--2.10, \quad 4.1--4.5, \quad 5.2--5.5, \quad 7.1, 7.2.1--7.2.3
+\qquad 2.1--2.10, \quad 4.1--4.5, \quad 5.2--5.4, 5.7, \quad 7.1, 7.2.1--7.2.3, 7.3
 
-\noindent Also read the Chapter introductions for Chapters 2, 4, 5, and 7.  You can omit Chapter 3 and 6 entirely, for now, but rereading Chapter 1 is not a bad idea.  Reading sections 5.1, 5.6, and 5.7 is mostly unnecessary but might be interesting.  For now you can stop reading at the start of section 7.2.4.
+\noindent Also read the Chapter introductions for Chapters 2, 4, 5, and 7.  You can omit Chapter 3 and 6 entirely, for now, but rereading Chapter 1 is not a bad idea.  Reading sections 5.1, 5.5, 5.6 is unnecessary but might be interesting.
 
 \sgpart{Definitions}  Please be able to use these words correctly and/or write a definition when requested.
   \begin{itemize}
   \item  the \emph{absolute error} of $\hat y$, a computed quantity, versus the exact value $y$ is $|\hat y - y|$
   \item  the \emph{relative error} of $\hat y$ versus the nonzero exact value $y$ is $|\hat y - y|/|y|$  
+  \item  \emph{bracket} of a root (defined in class; used for bisection)
   \item  \emph{fixed point} and \emph{fixed point iteration}  (section 4.5)
+  \item  \emph{floating-point representation}, \emph{machine precision}, \emph{single precision}, \emph{double precision}, \emph{overflow}, and \emph{underflow}  (Chapter 5)
   \end{itemize}
-\vfill
 
-\newpage
+\clearpage\newpage
 \sgpart{Theorems}  You should understand the statements of these theorems, and be able to apply them in particular cases.  I will not ask you for the proofs.
   \begin{itemize}
   \item  Intermediate Value Theorem (Thm 4.1.1) \qquad  \textsc{Memorize}
@@ -129,7 +130,7 @@ Problems will be in these categories:
   \item  fixed point convergence theorem (Thm 4.5.1)
   \end{itemize}
 
-\sgpart{Algorithms}  You need to be able to recall these algorithms from memory, or re-derive them as needed.
+\sgpart{Algorithms}  Please recall these algorithms from memory, or re-derive them as needed.
   \begin{itemize}
   \item  bisection method (section 4.1)
   \item  Newton's method (section 4.3)
@@ -151,12 +152,13 @@ Your \underline{three key concerns} about algorithms should be:
   \begin{itemize}
   \item anonymous functions in \Matlab (section 2.8)
   \item number of steps $k$ for bisection to reduce interval size to $2\delta$ (section 4.1, p.~78)
-  \item floating-point representation and IEEE double precision (sections 5.3 \& 5.4)
+  \item Newton's iteration turns a root-finding problem $f(x_*)=0$ into a fast-converging fixed-point iteration $x_{k+1} = \varphi(x_k)$ where $\varphi'(x_*)=0$ at the fixed point (section 4.5)
+  \item floating-point representation and IEEE double precision (sections 5.3 \& 5.4)\footnote{For a given floating-point system you should \emph{understand} a description of the bit representation.  You should \emph{be able to find} the machine precision $\eps$, the largest representable number, and the smallest positive (normal) representable number.  Other more finicky questions will not be asked.}
   \item row operations as left multiplication by lower-triangular matrices (section 7.2)
   \item counting operations (subsection 7.2.1)
   \item using a factorization $A=LU$ to solve $A\bx=\bb$ by two triangular solves (section 7.2)
   \end{itemize}
-For a given floating-point system you should \emph{understand} a description of the bit representation and \emph{be able to find} the machine precision $\eps$, the largest representable number, and the smallest positive (normal) representable number.
+
 
 \end{document}
 
