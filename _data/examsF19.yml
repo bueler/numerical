@@ -1,0 +1,10 @@
+semester: Fall 2019
+home: assets/exams/F19
+exams:
+- name: Midterm Exam
+  info: <b>in class</b> or proctored
+  blank: midterm.pdf
+  solutions: solns-midterm.pdf
+- name: Final Exam
+  info: <b>in class</b> or proctored
+  #rubric: finalrubric.pdf

@@ -1,0 +1,235 @@
+\documentclass[11pt]{amsart}
+%\pagestyle{empty} 
+\setlength{\topmargin}{-0.5in} % usually -0.25in
+\addtolength{\textheight}{1.2in} % usually 1.25in
+\addtolength{\oddsidemargin}{-0.95in}
+\addtolength{\evensidemargin}{-0.95in}
+\addtolength{\textwidth}{1.9in} %\setlength{\parindent}{0pt}
+
+\newcommand{\normalspacing}{\renewcommand{\baselinestretch}{1.1}\tiny\normalsize}
+\normalspacing
+
+% macros
+\usepackage{amssymb,xspace,alltt,verbatim}
+\usepackage[final]{graphicx}
+\usepackage[pdftex,colorlinks=true]{hyperref}
+\usepackage{fancyvrb}
+\usepackage{tikz}
+
+\newtheorem*{lem*}{Lemma}
+
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\bbf}{\mathbf{f}}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\ZZn}{{\mathbb{Z}}_n}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\ip}[2]{\mathrm{\left<#1,#2\right>}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\newcommand{\Log}{\operatorname{Log}}
+
+\newcommand{\grad}{\nabla}
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\pylab}{\textsc{pylab}\xspace}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.} }
+\newcommand{\pts}[1]{(\emph{#1 pts})}
+
+\newcommand{\probpts}[2]{\prob{#1} \pts{#2} \quad}
+\newcommand{\ppartpts}[2]{\textbf{(#1)} \pts{#2} \quad}
+\newcommand{\epartpts}[2]{\medskip\noindent \textbf{(#1)} \pts{#2} \quad}
+
+
+\begin{document}
+\hfill \Large Name:\underline{\phantom{Ed Bueler really really long long long name}}
+\medskip
+
+\scriptsize \noindent Math 310 Numerical Analysis (Bueler) \hfill Thursday, 17 October 2019
+\medskip
+
+\Large\centerline{\textbf{Midterm Exam}}
+
+\smallskip
+\large
+\begin{center}
+\textbf{In class.  No book, electronics, or notes.  95 minutes maximum.  115 points possible.}
+\end{center}
+
+\medskip
+
+\thispagestyle{empty}
+
+\prob{1}  \ppartpts{a}{5}  A differentiable function $f(x)$ and an iterate $x_k$ are shown on the axes below.  Sketch, with appropriate labeling, how Newton's method determines the next iterate $x_{k+1}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=3.1]
+\draw[->,gray,thin] (-2.0,0.0) -- (2.5,0.0) node[below] {$x$};
+\draw[->,gray,thin] (0.0,-0.5) -- (0.0,1.2) node[left] {$y$};
+\node[gray,xshift=-0.2cm,yshift=-0.2cm] at (0.0,0.0) {$0$};
+
+\draw[domain=-1.8:2.4,smooth,variable=\x] plot ({\x},{0.4 +0.2*\x*\x*\x - 0.2*\x*\x - 0.5*\x)});
+
+\draw (-0.5,-0.03) -- (-0.5,0.02);
+\node at (-0.5,-0.1) {$x_k$};
+\end{tikzpicture}
+\end{center}
+
+\medskip
+
+\epartpts{b}{10} Suppose $\ell(x)$ is the linearization of $f(x)$ at $x_k$.  Give a formula for $\ell(x)$ and then a formula for where it crosses the $x$-axis.  Write the result as Newton's method in the box below.
+
+\vfill
+
+\qquad \framebox{\Huge $\strut$ \large $x_{k+1}=$ \hspace{70mm}}
+
+\bigskip
+
+\newpage
+\prob{2} \ppartpts{a}{10}  Consider the equation $x^3 - 3x + 1 = 0$ and suppose $a_0=-1$ and $b_0=1$ is a bracket.  Apply two steps of the bisection method, reporting the bracket at the end of each step.
+\vfill
+
+\epartpts{b}{10}  For the same equation as in \textbf{(a)}, with $x_0=-1$ and $x_1=1$, apply one step of the secant method.
+\vfill
+
+
+\newpage
+\probpts{3}{15}  Solve the following system by Gauss elimination and back-substitution:
+\begin{align*}
+ 3 x_1 +   x_2 + 2 x_3 &= 11 \\
+ 3 x_1 + 4 x_2 +   x_3 &= 14 \\
+-3 x_1 + 5 x_2 - 2 x_3 &= 1
+\end{align*}
+Show your steps in an organized way.  It must be clear that you are following the algorithm we considered in class.  (\emph{Hints:  Pivoting is \emph{not} requested.  The numbers are integers at every stage if you follow the algorithm.})
+
+\vfill
+
+
+\newpage
+\probpts{4}{5}  Suppose we have used Gauss elimination with partial pivoting to factor some matrix $A$, so that $PA=LU$.  Here $P$ is a known permutation matrix, $L$ is a known lower-triangular matrix, and $U$ is a known upper-triangular matrix.  Explain how to use this factorization to easily solve $A \bx = \bb$, assuming $\bb$ is also given, and identify what algorithms are needed.
+\vspace{2.5in}
+
+
+\probpts{5}{10}  Consider lower-triangular matrices with unit diagonal:
+$$L = \begin{bmatrix}
+    1          & 0          & 0        & \dots  & 0 \\
+    \ell_{2,1} & 1          & 0        &        & 0 \\
+    \ell_{3,1} & \ell_{3,2} & 1        &        & 0 \\
+    \vdots     &            &          & \ddots & \vdots \\
+    \ell_{n,1} & \ell_{n,2} & \dots    & \ell_{n,n-1} & 1 \end{bmatrix}$$
+
+\noindent Write a \Matlab/\Octave code, or a complete pseudocode, to solve systems $L\by=\bb$, with $L$ in the above form, by forward substitution.
+
+\bigskip
+\noindent
+\texttt{function y = forwardsub(L,b)}
+\vfill
+
+
+\newpage
+\prob{6}  Suppose that the IEEE standard for floating point representation discussed in class had an 8 bit version.  It might look like this:
+
+\medskip\large
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+$s$ & $e_1$ & $e_2$ & $e_3$ & $b_1$ & $b_2$ & $b_3$ & $b_4$ \\ \hline
+\end{tabular}
+\end{center}
+\medskip\normalsize
+
+\noindent These 8 bits would represent the number
+\medskip\large
+\begin{equation*}
+	x = (-1)^s\,(1.b_1 b_2 b_3 b_4)_2 \,\times\, 2^{(e_1 e_2 e_3)_2 - 3}.
+\end{equation*}
+However, normal numbers would not use exponents $(000)_2$ nor $(111)_2$, which have special uses.
+\normalsize
+
+\medskip
+\epartpts{a}{5}  What is the representation of $1$ (one) in this system?  (\emph{Give all the bits.})
+\vspace{0.8in}
+
+\hfill \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+\phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$a$} \LARGE \strut \\ \hline
+\end{tabular}
+
+\bigskip
+\epartpts{b}{5}  What is the largest number that this system can represent?
+\vspace{1.8in}
+
+\epartpts{c}{5}  What is the value of ``machine epsilon'' in this system?
+\vfill
+
+\epartpts{d}{3}  How would zero be represented?  (\emph{Give all the bits.})
+\vspace{15mm}
+
+\hfill \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+\phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$a$} \LARGE \strut \\ \hline
+\end{tabular}
+
+\bigskip
+\epartpts{e}{2}  Give the bits of a nonzero subnormal number.  (\emph{Just pick one.})
+\vspace{15mm}
+
+\hfill \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+\phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$m$} & \phantom{$a$} \LARGE \strut \\ \hline
+\end{tabular}
+
+
+\newpage
+\prob{7}  \ppartpts{a}{5} Find all the fixed points $x_\ast$ of $\varphi(x) = \frac{1}{4} x^2 + \frac{3}{4} x - \frac{1}{2}$.  (\emph{Hint:  There are two.})
+\vspace{3.0in}
+
+\epartpts{b}{10} Recall Theorem 4.5.1:
+
+\medskip
+\begin{quote}
+\noindent \emph{Theorem}.  Assume that $\varphi\in C^1$ and $|\varphi'(x)|<1$ in some interval $[x_\ast - \delta,x_\ast+\delta]$ around a fixed point $x_\ast$ of $\varphi$.  If $x_0$ is in this interval then the fixed point iteration converges to $x_\ast$.
+\end{quote}
+
+\medskip
+\noindent For the same function $\varphi(x)$ as in part \textbf{(a)}, will the iteration
+	$$x_{k+1} = \varphi(x_k)$$
+converge to each fixed point $x_\ast$ for all $x_0$ near $x_\ast$?  (\emph{Hint:  Consider each $x_\ast$ in turn.})
+\vfill
+
+
+\newpage
+\prob{8} \ppartpts{a}{5}  State Taylor's theorem with remainder in the $n=2$ case.  Be sure to include the assumptions about the function $f(x)$.
+
+\bigskip
+\noindent \textbf{Theorem.}  
+\vspace{2.5in}
+
+\epartpts{b}{5}  Using the Theorem above, find the quadratic (degree two) Taylor polynomial for $f(x)=\sqrt{x}$ using basepoint $a=4$.
+\vfill
+
+\epartpts{c}{5}  The result of \textbf{(b)} is a polynomial $P_2(x)$ such that $f(x)\approx P_2(x)$.  Use the Theorem in \textbf{(a)} to estimate the size of the error $|P_2(x)-f(x)|$ for all $x$ in the interval $[3,5]$.
+\vfill
+
+
+\newpage
+\probpts{Extra Credit}{3}  Do one step of Newton's method to find the first-quadrant intersection of the circle $x^2+y^2=4$ and the graph $y=e^x$.  Start from $(x_0,y_0)=(1,2)$, which is not too far from the intersection.
+
+\vfill
+
+\noindent \hrulefill
+
+\tiny
+\noindent \textsc{blank space} \hfill \textsc{blank space}
+\vfill
+
+\end{document}

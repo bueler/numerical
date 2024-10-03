@@ -10,3 +10,10 @@ The table below gives the date and coverage for the Exams; also see the [Schedul
 {% include exam_table.md  data=site.data.exams %}
 
 <div style="padding-bottom: 40px"></div>
+
+---
+### Old Exams
+
+#### Fall 2019
+
+{% include exam_table.md  data=site.data.examsF19 %}
