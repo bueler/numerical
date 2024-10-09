@@ -20,6 +20,7 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
   * [smoothpolyapprox.m](assets/codes/smoothpolyapprox.m)
   * [randsixpoly.m](assets/codes/randsixpoly.m)
   * [newtfrac.m](assets/codes/newtfrac.m)
+  * [bisector.m](assets/codes/bisector.m)
   * [bisect.m](assets/codes/bisect.m)
   * [circleexp.m](assets/codes/circleexp.m)
   * [sincostable.m](assets/codes/sincostable.m)
