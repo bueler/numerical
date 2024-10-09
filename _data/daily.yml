@@ -1,6 +1,14 @@
 semester: Fall 2024
 home: assets/
 daily:
+- name: Wednesday 9 October
+  description: "Chapter 8: polynomial interpolation"
+- name: Monday 7 October
+  description: linear systems
+- name: Friday 4 October
+  description: counting operations
+- name: Wednesday 2 October
+  description: linear systems
 - name: Monday 30 September
   description: Gaussian elimination as LU
 - name: Friday 27 September
@@ -20,7 +28,7 @@ daily:
   doc: slides/F24/wed18sep.pdf
   docname: "PDF slides: covered slides 1 through 9"
 - name: Monday 16 September
-  description: asynchronous lecture = polynomial interpolation preview
+  description: "asynchronous: polynomial interpolation preview"
   doc: slides/F24/polynonewt.pdf
   docname: "PDF slides: How to put a polynomial through points"
 - name: Friday 13 September
