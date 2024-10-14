@@ -1,6 +1,12 @@
 semester: Fall 2024
 home: assets/
 daily:
+- name: Wednesday 16 October
+  description: polynomial error theorem
+- name: Monday 14 October
+  description: Lagrange's form
+- name: Friday 11 October
+  description: Midterm Exam
 - name: Wednesday 9 October
   description: "Chapter 8: polynomial interpolation"
 - name: Monday 7 October
