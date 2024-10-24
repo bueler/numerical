@@ -1,0 +1,135 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.3in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\textheight}{.3in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim,fancyvrb}
+
+\usepackage{palatino}
+
+\usepackage[dvipsnames]{xcolor}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\mtt}{\texttt}
+\usepackage{alltt,xspace}
+\newcommand{\mfile}[1]
+{\medskip\begin{quote}\scriptsize \begin{alltt}\input{#1.m}\end{alltt} \normalsize\end{quote}\medskip}
+
+\usepackage[final]{graphicx}
+\newcommand{\mfigure}[1]{\includegraphics[height=2.5in,
+width=3.5in]{#1.eps}}
+\newcommand{\regfigure}[2]{\includegraphics[height=#2in,
+keepaspectratio=true]{#1.eps}}
+\newcommand{\widefigure}[3]{\includegraphics[height=#2in,
+width=#3in]{#1.eps}}
+
+\usepackage{amssymb}
+
+\usepackage[pdftex, colorlinks=true, plainpages=false, linkcolor=black, citecolor=red, urlcolor=red]{hyperref}
+
+% macros
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+%\renewcommand{\det}{\operatorname{det}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=ellipse,draw,inner sep=2pt] (char) {#1};}}
+
+
+\begin{document}
+\scriptsize \noindent Math 426 Numerical Analysis (Bueler) \hfill 25 October 2024
+\normalsize
+
+\medskip\bigskip
+
+\Large\centerline{\textbf{Assignment \#7}}
+\large
+\bigskip
+
+\centerline{\textbf{Due Friday, FIMXE October 2024, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\begin{quote}
+{\small
+FIXME SEE OLD Assignment 7
+
+This Assignment is based on Chapter 8 of the textbook.\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: Design, Analysis, and Computer Implementation of Algorithms}, Princeton University Press 2012).} Please read sections 8.1, 8.2, 8.4, 8.5, and 8.6.  You can ignore the material in sections 8.3 and 8.7.  You can also ignore the material on barycentric form in subsection 8.2, and the material on \texttt{chebfun} in section 8.5, and subsection 8.6.1.
+
+\medskip
+\noindent When you turn in homework problems, please put the problems in the order they appear below.  Also, two expectations always apply:
+\renewcommand{\labelenumi}{\arabic{enumi}.\,}
+\begin{enumerate}
+\item When you use \Matlab, or other language of your choice, the commands you used must be shown, along with the results.
+\item Please minimize use of paper; edit your result to remove extra space.  However, please keep a clear distinction between codes, input commands, and computed results and/or figures.
+\end{enumerate}
+}
+
+\medskip
+\noindent Finally, especially relevant to this Assignment, when generating the graph of a smooth function, please use a fine grid.  This technique has been shown in class, and several times in my solutions.
+\end{quote}
+
+\bigskip
+\noindent \textbf{Do the following exercises from the textbook:}
+
+\medskip
+\renewcommand{\labelenumi}{{\footnotesize\underline{\textsc{Chapter \arabic{enumi}}}}}
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item ~
+    \begin{itemize}
+    \item Exercise FIXME chapters 8 and 10
+    \end{itemize}
+\end{enumerate}
+
+\bigskip
+\noindent \textbf{Do the following additional problems:}
+
+\prob{P8}  \ppart{a} clenshaw curtis
+
+\epart{b}  
+
+\prob{P9}  "draw your hand" with cubic splines
+
+\end{document}
