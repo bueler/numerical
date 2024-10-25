@@ -1,6 +1,16 @@
 semester: Fall 2024
 home: assets/
 daily:
+- name: Friday 25 October
+  description: cubic splines; project start
+  otherurl: https://www.youtube.com/watch?v=gnbl1LKxcK4
+  otherurlname: YouTube video on physical spline for drafting
+- name: Wednesday 23 October
+  description: piecewise-linear interpolation
+- name: Monday 21 October
+  description: Chebyshev points
+- name: Friday 18 October
+  description: cont.
 - name: Wednesday 16 October
   description: polynomial error theorem
 - name: Monday 14 October
