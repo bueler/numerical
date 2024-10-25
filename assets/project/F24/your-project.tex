@@ -75,7 +75,7 @@
 
 
 \begin{document}
-\scriptsize \noindent Math 426 Numerical Analysis (Bueler) \hfill 23 October 2024
+\scriptsize \noindent Math 426 Numerical Analysis (Bueler) \hfill 25 October 2024
 \bigskip
 
 \Large\centerline{\textbf{your Math 426 project}}
@@ -85,17 +85,19 @@
 
 \bigskip
 
-\subsection*{Overview}  The goal of your project is to get practical experience in numerical analysis by working on a project which is more substantial than a homework problem.  The topic, which should be diff is chosen by you, but I am happy to consult, and feel free to ask other advisors or professors, etc.  The project is not intended to be a big thing, but rather an opportunity to look at a numerical algorithm which is not covered in class.  You are expected to write about the subject (a modest essay), and run a small example, and include appropriate citations.
+\subsection*{Overview}  The goal of your Math 426 project is to get practical experience in numerical analysis by doing more substantial work on a topic that you would in a homework problem.  The topic, which should be different from those we have already covered, or will cover, is chosen by you.  I am happy to consult on the topic, or any other aspect of your Project.  Feel free to ask other advisors or professors, etc., for topic suggestions.  The Project is not intended to be a terribly big thing (see below for length expectations), but rather an opportunity to look in a little detail at a new-to-you kind of problem and some numerical algorithm(s) which solve it.  It should be at least a little bit of fun!  You are expected to write about the subject---essentially an essay, but with equations and images where appropriate---and run a small example.
 
-\subsection*{Subject suggestions}  This suggestion list is \emph{not} exhaustive; you can find other topics.  The subjects appear alphabetically, thus not in order of importance in any sense:
+\section*{Topic suggestions}
+
+This suggestion list is \emph{not} exhaustive; you can find other topics.  These appear alphabetically, not in order of importance or difficulty etc.
 \begin{itemize}
 \item banded matrix systems (tridiagonal, etc.): algorithms for solving
-\item Chebfun (\texttt{chebfun.org})
+\item \texttt{chebfun.org}
 \item computer graphics calculation(s)
 \item eigenvalues: algorithms for finding
 \item fast Fourier transform
-\item finite element meshes and method
-\item global position system (GPS)
+\item finite element (triangular meshes, and the method)
+\item global position system (GPS) computations
 \item integration in multiple variables
 \item iterated function system fractals
 \item linear programming
@@ -109,58 +111,44 @@
 \item partial differential equations: Laplace, heat, wave, or Schr\"odinger equation
 \item QR factorization of matrices
 \item random number generators
-\item cubic and other splines
+\item splines (in addition to cubic; e.g.~B\'ezier curves and B-splines)
 \item stochastic processes
 \item time series: filters
 \end{itemize}
 
-\medskip \noindent The intrinsic difficulty of the standard examples of these problems varies quite a bit. Nonetheless, I think I am able to advise on what you might try to do.  In any case, please do a web search for topics you find interesting, and at least look for a wikipedia page.  Also, Chapter 1 of our textbook\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: Design, Analysis, and Computer Implementation of Algorithms}, Princeton University Press 2012).} is a reasonable source for ideas.
+\medskip \noindent Please do a web search for topics you find interesting, and at least look for a wikipedia page.  There are some excellent YouTube videos out there.  Also, Chapter 1 of our textbook\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: Design, \dots}, Princeton University Press 2012.} is a reasonable source for ideas.  The intrinsic difficulty of the standard examples of these problems varies quite a bit. Nonetheless, I think I am able to advise on what you can do in the time available.
 
-\subsection*{Content requirements}  FIXME Once you choose a subject and category, you will next choose a (consistent) numerical scheme or schemes.  Give an explanation of your choices.  ``Ease of implementation'' is indeed a valid reason, but it it unlikely to be the only one.  Other reasons might be stability, order of accuracy, or the availability of existing implementations for the problem class.  It might also be the case that you are interested in learning about that kind of scheme, e.g.~``I want to learn about implicit schemes for nonlinear equations'' or ``I want to learn about high-resolution advection schemes.''
 
-For your chosen scheme or schemes applied to your chosen continuum problem, two actions are required:
-\renewcommand{\labelenumi}{\Alph{enumi}.}
+\section*{Content and length of Project Proposal}   
+
+Please write a \textbf{one page} (at most) Project Proposal, and turn it in on \textbf{Monday 4 November at the start of class}.
+
+This Proposal should contain:
 \begin{enumerate}
-\item numerical analysis
-\item practical computation
+\item Describe in several paragraphs what is your topic.  Address the main mathematical ideas, and identify one or two applications.  Why can't the problem be solved by hand?  What kinds of guarantees/arguments/proofs tell you about accuracy or speed?
+\item Identify/state a basic example which you will actually compute.  For this example, you will write and run some Matlab/etc.~code in the final version of your Project.  (However, code is not expected in the Proposal.)  Try to identify one of the simplest examples which truly reflects the topic you have chosen.  You will have to use your judgment about which ``black boxes'' make sense in context, but generally try to avoid them.  (For example, I don't necessarily expect you to write your own implementation of the Fast Fourier Transform (FFT) yourself, but if not you should plan to apply Matlab's \texttt{fft} to a couple of different kinds of problems related to extracting frequencies etc.  Or you could implement the FFT, and check for correctness, but not worry much about applying it.)
+\item List 2 or 3 sources for your proposal.  Given URLs for websites if appropriate, or journal article or book citations, or (if appropriate) where it is covered in the book.
 \end{enumerate}
 
-Regarding requirement A, you must make some attempt to understand and explain the efficiency, stability, convergence, and accuracy of your numerical scheme(s).  In particular, for each of the following actions you should ask whether it is possible and meaningful to do so, and if so you should probably do it.  Concretely, I expect you to \textbf{do at least two of the following analyses}:
-\renewcommand{\labelenumi}{\roman{enumi}.}
-\begin{enumerate}
-\item compute truncation error (and thus show consistency)
-\item do stability analysis
-\item prove convergence (though this is only rarely possible)
-\item assess the computational cost of the algorithm
-\item manufacture (or otherwise find) an exact solution, and verify with it.
-\end{enumerate}
-If you are unable to accomplish two or three of the above actions then your problem is too hard.
+Originality is \textbf{not} required for your Project.  So feel free to propose to write and test a code even in a case where you already have good available models to follow.
 
-I do not expect you to derive the equations of the continuum model, though you may do so briefly in an introduction or appendix.  Generally, careful derivation of the continuum equations is a subject for other courses.  However, please briefly explain the physical/engineering/mathematical context as you introduce the problem, and carefully state the equations of the model, giving precise references including a source of the derivation.  Explain the meaning of the symbols you use.  Clearly state the role/meaning of your particular computation (e.g.~what is being predicted from what data).
-
-Regarding requirement B, you must do some practical computation in \Matlab or Python or etc., though I do not expect you to produce a production-quality code.  Rather, your goal should be a functioning and readable prototype.  Please use built-in numerical linear algebra, and don't write your own.  In some cases it will also be appropriate to use built-in ODE IVP solvers (e.g.~\texttt{ode45}), or a solver for a scalar nonlinear equation (\texttt{fzero}), but otherwise black-box usage is strongly discouraged.  Programming tricks are generally undesireable, but vectorizing to avoid loops may be appropriate.
-
-You are encouraged to try methods other than finite differences for your practical computation, for instance finite volume, finite element, or spectral methods.  However, because these methods differ in implementation and analysis from course content, working with them will be intrinsically more difficult.  The required numerical analysis will be harder.  See me if you want your project to go in such a direction \dots and I can ``weight for difficulty'' when grading.
-
-\subsection*{Length and format of Project Proposal (due Monday 3 April at start of class)}  In addition to outlining the project, ideally a proposal will do a little bit of everything that will go into the final product.  It should be a useful skeleton on which to build the complete Project.  It needs to be readable, but it need not be polished.  The length should be between 4 and 8 pages total.  Note that it is worth 5\% of the course grade. 
-
-Please include the following 7 section headings:
-\renewcommand{\labelenumi}{\arabic{enumi}.}
-\begin{enumerate}
-\item \textbf{Introduction}  This includes the scientific/engineering context and a sketch/gloss of the numerical scheme, computation, and analysis you do.
-\item \textbf{Continuum Model [or Continuum Problem]}  State the PDE etc.~itself here, with clear specification of the particular problem including boundary conditions and parameters.  State notation and meaning of symbols.  Propose and illustrate an exact solution.  (The details might go in an appendix.)
-\item \textbf{Numerical Scheme(s)}  State the method, discuss the reasons for this choice, discuss implementability and efficiency.  A start on the code, or small excerpts, is appropriate.
-\item \textbf{Analysis}  Identify the analyses you are planning to do: truncation error, stability, convergence, algorithmic cost/complexity, verification.  Verification results go here; they are part of an analysis.
-\item \textbf{Results}  Show figures, and perhaps a few key numbers, in the ``real'' cases you are solving.  However, the Results part should be quite short, and may be empty, in the Proposal.
-\item[] \textbf{References}  At least four; quality matters!
-\item[] \textbf{Appendix(ices)}  If needed, put the full codes in an appendix, along with tangential analysis or computation, perhaps detailed computation of an exact solution, and possibly failed attempts if significant.
-\end{enumerate}
-
-The proposal should be in a digital form which can be modified into the final Project.  However, turn it in on paper, and likewise the final Project.  Please make it double-sided if possible.
+You should probably write your Proposal in a digital form, which can then be a starting draft which you modify into the final Project.  However, please turn your Proposal in on paper, and likewise the final Project.  (Except if you are attending online: emailed PDFs are fine.)
 
 After you turn in the Proposal, I will give you feedback which is intended to improve your grade on the complete Project.  I am happy to talk to you about your Project at any stage.
 
+The Proposal is worth 5\% of your course grade.  Please take it seriously, recognizing that a good Proposal will lead to an easier-to-complete Project.
 
-\subsection*{Length and format of the complete Project (due Monday 1 May at 5pm, in my office box)}  Fill out the skeleton built in the Proposal.  Please use the same section headings as in the Proposal (see above).  Think through your approach given the feedback you have received.  You will likely need to alter your earlier plans, so don't worry if the complete Project has different computational or analytical details than proposed.  Please make your completed Project reasonably clean and neat.  The length should be between 12 and 20 pages total; \emph{25 pages is a firm maximum}, and less than 10 pages is a sign of insufficient effort.  The completed Project is worth 15\% of your course grade.
+
+\section*{Content and length of of the final Project}  
+
+Please write up your Project as a document of \textbf{between 10 and 20 pages}.  Turn it, on paper (unless attending online) on \textbf{Friday 6 December, either at the start of class or by 5pm in my office box}.  Please make your paper document double-sided if possible.  Please make it organized and professional looking.  Include your name, the date, and the title near the top of the first page.
+
+Use reasonable section headings; recommended headings are \emph{Introduction}, \emph{Example Problem(s)}, \emph{Algorithm(s)}, \emph{Analysis}, \emph{Results}, and \emph{References}.  The Algorithm(s) section should show the code you wrote.  Note that ``Analysis'' should address either how accurate the method is, or how fast it runs, or both; in some cases analysis in advance is difficult, but you can analyze the results of your numerical experiments, for correctness, accuracy, or speed.
+
+In your Project, fill out the skeleton you have already proposed, taking into account my feedback on your Proposal.  You may need to alter your earlier plans!  It is fine, and often appropriate, for the final Project to have different computational or analytical details, or a different kind of example, than proposed.
+
+I expect your work to be your own.  If it looks like you are mindlessly copying things which you don't understand then I will go ahead and ask you to explain what you did in person.
+
+The completed Project is worth 10\% of your course grade.
 
 \end{document}
