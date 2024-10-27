@@ -76,7 +76,7 @@ width=#3in]{#1.eps}}
 
 
 \begin{document}
-\scriptsize \noindent Math 426 Numerical Analysis (Bueler) \hfill 25 October 2024
+\scriptsize \noindent Math 426 Numerical Analysis (Bueler) \hfill 28 October 2024
 \normalsize
 
 \medskip\bigskip
@@ -85,7 +85,7 @@ width=#3in]{#1.eps}}
 \large
 \bigskip
 
-\centerline{\textbf{Due Friday, FIMXE October 2024, at the start of class}}
+\centerline{\textbf{Due Friday, 8 November 2024, at the start of class}}
 \medskip
 \normalsize
 
@@ -93,21 +93,18 @@ width=#3in]{#1.eps}}
 
 \begin{quote}
 {\small
-FIXME SEE OLD Assignment 7
-
-This Assignment is based on Chapter 8 of the textbook.\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: Design, Analysis, and Computer Implementation of Algorithms}, Princeton University Press 2012).} Please read sections 8.1, 8.2, 8.4, 8.5, and 8.6.  You can ignore the material in sections 8.3 and 8.7.  You can also ignore the material on barycentric form in subsection 8.2, and the material on \texttt{chebfun} in section 8.5, and subsection 8.6.1.
+This Assignment is based mostly on Chapter 10 of the textbook.\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: Design, Analysis, and Computer Implementation of Algorithms}, Princeton University Press 2012).}  Please read sections 10.1, 10.2, and FIXME
 
 \medskip
-\noindent When you turn in homework problems, please put the problems in the order they appear below.  Also, two expectations always apply:
+\noindent These expectations always apply to homework:
 \renewcommand{\labelenumi}{\arabic{enumi}.\,}
 \begin{enumerate}
-\item When you use \Matlab, or other language of your choice, the commands you used must be shown, along with the results.
-\item Please minimize use of paper; edit your result to remove extra space.  However, please keep a clear distinction between codes, input commands, and computed results and/or figures.
+\item Please put the problems in the order they appear below.
+\item When you use \Matlab/etc.~the commands you used must be shown, along with the results.
+\item Please keep a clear distinction between codes, input commands, and computed results and/or figures.
+\item Other than the text you write, please minimize use of paper.  For example, computer outputs and figures do not need extra space.
 \end{enumerate}
 }
-
-\medskip
-\noindent Finally, especially relevant to this Assignment, when generating the graph of a smooth function, please use a fine grid.  This technique has been shown in class, and several times in my solutions.
 \end{quote}
 
 \bigskip
@@ -126,10 +123,16 @@ This Assignment is based on Chapter 8 of the textbook.\footnote{Greenbaum \& Cha
 \bigskip
 \noindent \textbf{Do the following additional problems:}
 
-\prob{P8}  \ppart{a} clenshaw curtis
+\prob{P9}  \ppart{a} clenshaw curtis
 
 \epart{b}  
 
-\prob{P9}  "draw your hand" with cubic splines
+\prob{P8}  Find some grid paper with roughly 1/4 inch grid and trace the outline of your hand on it.  (\emph{I googled ``printable grid paper,'' etc.})  Add 30 to 50 \emph{roughly} equally-spaced points along the outline, generally including tips of fingers and saddle points between fingers.  (\emph{At this point my result looked like the figure below, with $n=36$ points.  You can read values off this graph if you want, and you'll get a picture of \emph{my} hand, but yours is more fun!})  Type into the Matlab (or other) editor, so you only have to do it once, the $(x_k,y_k)$ locations of each point, for $k=1,\dots,n$, choosing coordinates on the grid paper in some manner.
+
+Now the idea is to get a cubic spline interpolant which is a \textbf{parameterized curve} $(x(t),y(t))$.  The indexing can be regarded as $t$-values, namely $t_k=k$ for $k=1,\dots,n$.  The function $x(t)$ interpolates all the pairs $(t_k,x_k)$ and $y(t)$ interpolates all the $(t_k,y_k)$ pairs.
+
+Plot the interpolating parameterized curve $(x(t),y(t))$ in the $x,y$ plane using the Matlab \texttt{interp1()} function (twice), with the last argument \texttt{'spline'}.  For plotting you will need to generate a fine grid of $t$ values on the interval $[1,n]$.  Turn in the plot and your code.
+
+Only plot the $(x,y)$ values in the main figure, but feel free to generate separate figures for the functions $x(t)$ and $y(t)$; this is optional.  Other than the data for the points $(x_k,y_k)$, your Matlab program should only be a few lines.
 
 \end{document}
