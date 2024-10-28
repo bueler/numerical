@@ -15,6 +15,8 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
   * [.m](assets/codes/.m)
 -->
 
+  * [clenshawcurtis.m](assets/codes/clenshawcurtis.m)
+  * [mytrap.m](assets/codes/mytrap.m)
   * [ge.m](assets/codes/ge.m)
   * [usolve.m](assets/codes/usolve.m)
   * [smoothpolyapprox.m](assets/codes/smoothpolyapprox.m)
