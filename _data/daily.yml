@@ -1,6 +1,8 @@
 semester: Fall 2024
 home: assets/
 daily:
+- name: Monday 28 October
+  description: "Chapter 10: numerical integration"
 - name: Friday 25 October
   description: cubic splines; project start
   otherurl: https://www.youtube.com/watch?v=gnbl1LKxcK4
