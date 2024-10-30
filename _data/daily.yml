@@ -1,6 +1,10 @@
 semester: Fall 2024
 home: assets/
 daily:
+- name: Friday 1 November
+  description: Gauss quadrature
+- name: Wednesday 30 October
+  description: Simpson's rule and composite rules
 - name: Monday 28 October
   description: "Chapter 10: numerical integration"
 - name: Friday 25 October
