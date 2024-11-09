@@ -1,0 +1,172 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.3in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\textheight}{.3in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim,fancyvrb}
+
+\usepackage{palatino}
+
+\usepackage[dvipsnames]{xcolor}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\mtt}{\texttt}
+\usepackage{alltt,xspace}
+\newcommand{\mfile}[1]
+{\medskip\begin{quote}\scriptsize \begin{alltt}\input{#1.m}\end{alltt} \normalsize\end{quote}\medskip}
+
+\usepackage[final]{graphicx}
+\newcommand{\mfigure}[1]{\includegraphics[height=2.5in,
+width=3.5in]{#1.eps}}
+\newcommand{\regfigure}[2]{\includegraphics[height=#2in,
+keepaspectratio=true]{#1.eps}}
+\newcommand{\widefigure}[3]{\includegraphics[height=#2in,
+width=#3in]{#1.eps}}
+
+\usepackage{amssymb}
+
+\usepackage[pdftex, colorlinks=true, plainpages=false, linkcolor=black, citecolor=red, urlcolor=red]{hyperref}
+
+% macros
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+%\renewcommand{\det}{\operatorname{det}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=ellipse,draw,inner sep=2pt] (char) {#1};}}
+
+
+\begin{document}
+\scriptsize \noindent Math 426 Numerical Analysis (Bueler) \hfill 11 November 2024
+\normalsize
+
+\medskip\bigskip
+
+\Large\centerline{\textbf{Assignment \#8}}
+\large
+\bigskip
+
+\centerline{\textbf{Due Monday, 18 November 2024, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\begin{quote}
+{\small
+With the exception of \textbf{P10}, this Assignment is based on Chapter 11 of our textbook,\footnote{Greenbaum \& Chartier, \emph{Numerical Methods: Design, Analysis, and Computer Implementation of Algorithms}, Princeton University Press 2012).} which is a good introduction to solving ordinary differential equations on computers.  Please read all of sections 11.1 and 11.2; the latter is very substantial!  You can skip section 11.3, but please read section 11.4 through page 289; you can skip the rest (pages 290--294).  In addition to doing the exercises, I recommend playing with additional \texttt{ode45()} and Euler's method examples---for the latter writing the codes yourself.
+
+\medskip
+\noindent These expectations always apply to homework:
+\renewcommand{\labelenumi}{\arabic{enumi}.\,}
+\begin{enumerate}
+\item Please put the problems in the order they appear below.
+\item When you use \Matlab/etc, show the commands and the results.
+\item Keep a clear distinction between codes, input commands, computed results, and figures.
+\item Other than the text you write, please minimize use of paper.
+\end{enumerate}
+}
+\end{quote}
+
+\bigskip
+\noindent \textbf{Do these exercises from the textbook:}
+
+\smallskip
+\renewcommand{\labelenumi}{{\footnotesize\underline{\textsc{Chapter \arabic{enumi}}}}}
+\begin{enumerate}
+\setcounter{enumi}{10}
+\item ~
+    \begin{itemize}
+    \item Exercise 1 (a), (b) on page 295.
+    \item Exercise 3 on page 295. \quad \emph{Hint.  There are 2 solutions to this ``bad'' ODEIVP.}
+
+    \bigskip
+    \emph{For Exercise 5, skip Heun's method, but indeed ``do the same'' for the (explicit) midpoint method defined in section 11.2.3.}
+
+    \medskip
+    \item Exercise 5 on page 295.
+
+    \bigskip
+    \item Exercise 6 on page 295.
+    \item Exercise 15 on page 298.
+    \end{itemize}
+\end{enumerate}
+
+\medskip
+
+\noindent \textbf{Do these additional problems:}
+
+\prob{P10}  \ppart{a}  Apply \href{https://bueler.github.io/numerical/assets/codes/mytrap.m}{\texttt{mytrap.m}} (see the \href{https://bueler.github.io/numerical/codes.html}{Codes tab}) to accurately approximate
+          $$\int_0^5 \cos(x^2)\,dx$$
+by the trapezoid rule.  (I do not know how to find the exact value.)  Use increasing large values for $n$, and report what you did.  Your goal should be at least 6 correct digits.  How many correct digits do you think you have?
+
+\epart{b}  Implement Romberg integration as described in class, in the form of 
+      
+       \verb|    [z, count] = myromberg(f,a,b,M)|
+
+\noindent Here \verb|z| is the integral and \verb|count| is the total number of function evaluations.  The input \verb|M| is the number of times you double the number of subintervals in the trapezoid rule evaluation.  You might start with two subintervals when you first evaluate the trapezoid rule.  In any case, you may call \href{https://bueler.github.io/numerical/assets/codes/mytrap.m}{\texttt{mytrap.m}}.  You may use\footnote{\quad Or you may implement following the book's version on page 243.  However, I think you will have more fun with setting up polynomial extrapolation to zero!} \texttt{polyfit} to do the extrapolation, in $h^2$, to $h=0$.  Test your implementation on an integral or two where you \emph{do} know the exact answer.
+
+\epart{c}  Now use Romberg integration on the integral in part \textbf{(a)}.  You should be able to get the same number of correct digits with far fewer function evaluations.
+
+
+\prob{P11}  \ppart{a} Verify that $y(t) = \ln(t^2/2 + t + 1)$ exactly solves
+	$$y'=(t+1)e^{-y}, \quad y(0)=0.$$
+
+\epart{b}  Using $h=1.0$, apply 10 steps of Euler's method, formula (11.7), to the ODE IVP in part \textbf{(a)}.  Put the $t_k$ and $y_k$ values in a table, along with the exact $y$ values at the $t_k$ points.
+
+\epart{c}  Add another column to the table by applying the midpoint rule, formulas (11.14) and (11.15), to the same problem, again using $h=1.0$.  Comment on accuracy.
+
+
+\prob{P12} Consider the ODE IVP
+        $$y'=1+y^2, \qquad y(0)=0.$$
+Note that $f(t,y)=1+y^2$ when we write this in the form (11.1).
+
+\epart{a} Apply the trapezoid method (11.18) to the above ODE.  That is, write down the nonlinear equation for $y_{k+1}$ at each time step, based on knowing $y_k$ from the previous step, for this $f$.
+
+\epart{b} For $y_0=0$ and $h=0.1$, part \textbf{(a)} gives an equation which must be solved to find $y_1$.  Write this equation.  Solve it exactly, but observe that you get two solutions.  Which is the one which is the correct step of the trapezoid rule?
+
+\epart{c} In part \textbf{(b)} you have an equation to solve for $y_1$.  Use Euler's method to give a first guess $y_1^{(0)}$ for the solution to that equation.  Then do one step of Newton's method to get $y_1^{(1)}$; this will be very close to one of the two values from part \textbf{(b)}.
+
+\medskip
+\noindent \emph{It is common to accept a fixed and small number of steps of Newton's method when doing trapezoid rule steps.  That is, to not solve the implicit step equation accurately.}
+
+\end{document}
