@@ -1,26 +1,26 @@
 semester: Fall 2024
 home: assets/homework/F24
 homework:
-- name: Assignment 1
-  due: Wednesday, 4 September
-  blank: A1.pdf
-- name: Assignment 2
-  due: Friday, 13 September
-  blank: A2.pdf
+- name: Assignment 7
+  due: Friday, 8 November
+  blank: A7.pdf
+- name: Assignment 6
+  due: Friday, 25 October
+  blank: A6.pdf
+- name: Assignment 5
+  due: Wednesday, 9 October (revised)
+  blank: A5.pdf
+- name: Assignment 4
+  due: Monday, 30 September
+  blank: A4.pdf
 - name: Assignment 3
   due: Friday, 20 September
   blank: A3.pdf
   seealsoname: slides "How to put a polynomial through points"
   seealsopdf: https://bueler.github.io/numerical/assets/slides/F24/polynonewt.pdf
-- name: Assignment 4
-  due: Monday, 30 September
-  blank: A4.pdf
-- name: Assignment 5
-  due: Wednesday, 9 October (revised)
-  blank: A5.pdf
-- name: Assignment 6
-  due: Friday, 25 October
-  blank: A6.pdf
-- name: Assignment 7
-  due: Friday, 8 November
-  blank: A7.pdf
+- name: Assignment 2
+  due: Friday, 13 September
+  blank: A2.pdf
+- name: Assignment 1
+  due: Wednesday, 4 September
+  blank: A1.pdf
