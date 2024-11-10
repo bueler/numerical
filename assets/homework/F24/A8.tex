@@ -118,16 +118,9 @@ With the exception of \textbf{P10}, this Assignment is based on Chapter 11 of ou
     \begin{itemize}
     \item Exercise 1 (a), (b) on page 295.
     \item Exercise 3 on page 295. \quad \emph{Hint.  There are 2 solutions to this ``bad'' ODEIVP.}
-
-    \bigskip
-    \emph{For Exercise 5, skip Heun's method, but indeed ``do the same'' for the (explicit) midpoint method defined in section 11.2.3.}
-
-    \medskip
-    \item Exercise 5 on page 295.
-
-    \bigskip
-    \item Exercise 6 on page 295.
-    \item Exercise 15 on page 298.
+    \item Exercise 5 on page 295. \quad \emph{Skip Heun's method.}
+    \item Exercise 6 on page 295. \quad \emph{Skip the ``local truncation error'' part.}
+% MOVE TO A9    \item Exercise 15 on page 298. \quad \emph{You may use} \href{https://bueler.github.io/numerical/assets/codes/rk4.m}{\texttt{rk4.m}} \emph{from the \href{https://bueler.github.io/numerical/codes.html}{Codes tab}.}
     \end{itemize}
 \end{enumerate}
 
@@ -139,11 +132,11 @@ With the exception of \textbf{P10}, this Assignment is based on Chapter 11 of ou
           $$\int_0^5 \cos(x^2)\,dx$$
 by the trapezoid rule.  (I do not know how to find the exact value.)  Use increasing large values for $n$, and report what you did.  Your goal should be at least 6 correct digits.  How many correct digits do you think you have?
 
-\epart{b}  Implement Romberg integration as described in class, in the form of 
+\epart{b}  Implement Romberg integration as described in lecture,\footnote{On Wednesday 6 November, in particular.} in the form of 
       
        \verb|    [z, count] = myromberg(f,a,b,M)|
 
-\noindent Here \verb|z| is the integral and \verb|count| is the total number of function evaluations.  The input \verb|M| is the number of times you double the number of subintervals in the trapezoid rule evaluation.  You might start with two subintervals when you first evaluate the trapezoid rule.  In any case, you may call \href{https://bueler.github.io/numerical/assets/codes/mytrap.m}{\texttt{mytrap.m}}.  You may use\footnote{\quad Or you may implement following the book's version on page 243.  However, I think you will have more fun with setting up polynomial extrapolation to zero!} \texttt{polyfit} to do the extrapolation, in $h^2$, to $h=0$.  Test your implementation on an integral or two where you \emph{do} know the exact answer.
+\noindent Here \verb|z| is the integral and \verb|count| is the total number of function evaluations.  The input \verb|M| is the number of times you double the number of subintervals in the trapezoid rule evaluation, so I would not expect you to use $M>10$ for example.  You might start with two subintervals when you first evaluate the trapezoid rule.  In any case, you may call \href{https://bueler.github.io/numerical/assets/codes/mytrap.m}{\texttt{mytrap.m}}.  You may use\footnote{Or you may implement following the book's version on page 243.  However, I think you will have more fun with setting up polynomial extrapolation to zero!} \texttt{polyfit} to do the extrapolation, in $h^2$, to $h=0$.  Test your implementation on an integral or two where you \emph{do} know the exact answer.
 
 \epart{c}  Now use Romberg integration on the integral in part \textbf{(a)}.  You should be able to get the same number of correct digits with far fewer function evaluations.
 
