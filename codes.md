@@ -15,6 +15,8 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
   * [.m](assets/codes/.m)
 -->
 
+  * [rabbitsfoxes.m](assets/codes/rabbitsfoxes.m)
+  * [basicblack.m](assets/codes/basicblack.m)
   * [eulerex.m](assets/codes/eulerex.m)
   * [wigglyintegral.m](assets/codes/wigglyintegral.m)
   * [mysimpsons.m](assets/codes/mysimpsons.m)
