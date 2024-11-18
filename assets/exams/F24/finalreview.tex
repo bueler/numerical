@@ -1,0 +1,211 @@
+\documentclass[12pt]{amsart}
+\addtolength{\topmargin}{-0.6in} % usually -0.25in
+\addtolength{\textheight}{1.1in} % usually 1.25in
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.5in} %\setlength{\parindent}{0pt}
+
+\newcommand{\normalspacing}{\renewcommand{\baselinestretch}{1.05}\tiny\normalsize}
+\newcommand{\bigspacing}{\renewcommand{\baselinestretch}{1.13}\tiny\normalsize}
+\newcommand{\tablespacing}{\renewcommand{\baselinestretch}{1.0}\tiny\normalsize}
+\normalspacing
+
+% macros
+\usepackage{amssymb,xspace,enumitem}
+\usepackage[pdftex,colorlinks=true]{hyperref}
+
+\usepackage[final]{graphicx}
+\newcommand{\regfigure}[3]{\includegraphics[height=#2in,width=#3in]{#1.eps}}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{lem}{Lemma}
+
+\newcommand{\mtt}{\texttt}
+\newcommand{\mtl}[1]{{\texttt{>>#1}}}
+\usepackage{alltt}
+\usepackage{fancyvrb}
+
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\ZZn}{{\mathbb{Z}}_n}
+\newcommand{\NN}{{\mathbb{N}}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\ip}[2]{\mathrm{\left<#1,#2\right>}}
+\newcommand{\erf}{\operatorname{erf}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Arg}{\operatorname{Arg}}
+
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+\newcommand{\Null}{\operatorname{null}}
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\pylab}{\textsc{pylab}\xspace}
+\newcommand{\longMOP}{\textsc{Matlab}\big|\textsc{Octave}\big|\textsc{pylab}\xspace}
+\newcommand{\MOP}{\textsc{M}\big|\textsc{O}\big|\textsc{p}\xspace}
+
+\newcommand{\prob}[1]{\bigskip\noindent\large\textbf{#1.} \normalsize}
+\newcommand{\bookprob}[1]{\bigskip\noindent\large\textbf{Exercise #1.} \normalsize}
+\newcommand{\probpart}[1]{\smallskip\noindent\textbf{(#1)}\quad }
+\newcommand{\aprobpart}[1]{\textbf{(#1)}\quad }
+
+
+\begin{document}
+\scriptsize \noindent Math 310 Numerical Analysis (Bueler) \hfill 3 December 2019
+\thispagestyle{empty}
+
+\bigskip
+\Large\textbf{\centerline{Review Guide for Final Exam}}
+
+\Large\textbf{\centerline{on Tuesday, 10 December 2019, 10:15am--12:15}}
+
+\normalsize
+\bigskip
+This exam is in-class, closed-book, and 120 minutes long.  No calculators or computers or phones are allowed.  However, \textbf{you may bring 1/2 of one sheet of letter size paper} with any notes you want on it.  This exam covers the whole course, but material from least squares (section 7.6) onward will be emphasized; earlier material appeared on the Midterm.
+
+\medskip
+I encourage you to work through this Guide with other students.  Read the relevant parts of the textbook (Greenbaum \& Chartier, 2012) and identify the first items you \emph{don't} understand as you get to them.  Talk about that!  If you come prepared it will be easy.
+
+\newcommand{\sgpart}[1]{\bigskip\noindent\textbf{#1} \normalsize}
+
+\sgpart{How I will create the exam.}  I'll ask myself: ``Did a question like that appear on homework or a worksheet?'' and ``Is it easy to do without a computer?'' and ``Will the answers be cluttered and hard to grade?''  (Should be: yes, yes, no.)
+
+Problems will be in these categories:
+\begin{itemize}
+\item apply an algorithm/method in a simple concrete case
+
+\emph{E.g.~Do two steps of bisection on this problem.}
+
+\item state a theorem or definition (no need to \emph{prove} theorems)
+
+\emph{E.g.~State Taylor's Theorem with remainder.}
+
+\emph{E.g.~Define the Chebyshev points on the interval $[-1,1]$.}
+
+\item write a short pseudocode or \Matlab code to state an algorithm
+
+\emph{E.g.~Write Gauss elimination as a \Matlab code or pseudocode.}
+
+\emph{E.g.~State the midpoint rule for ODEs as a \Matlab code or pseudocode.}
+
+\item explain/show in words (write in complete sentences)
+
+\emph{E.g.~Which of [these methods] is best for [this problem]?  Explain.}
+
+\item derive an algorithm
+
+\emph{E.g.~Derive Newton's method.  Also draw a sketch which illustrates one step.}
+\end{itemize}
+
+
+\sgpart{Sections.}  See these textbook sections which we covered in lecture and homework:
+\begin{itemize}[leftmargin=25mm,labelsep=5mm]
+\item[2.1--2.11]     introduction to \Matlab
+\item[4.1--4.5]      solving nonlinear equations in one variable
+\item[5.2--5.4]      introduction to floating-point arithmetic
+\item[7.1--7.3,7.6]  solving linear systems
+\item[8.1--8.6]      polynomial interpolation
+\item[10.1--10.5]    numerical integration
+\item[11.1--11.2]    numerical solution of ODE IVPs
+\end{itemize}
+
+\noindent Also read the Chapter introductions for Chapters 2, 4, 5, 7, 10, and 11.  You can omit Chapters 3, 6, 9, and 12--14 entirely, but rereading Chapter 1 is not a bad idea.
+
+\sgpart{Slides to review.}  I have posted two sets of slides, good for reviewing particular material:
+    \begin{itemize}
+    \item \href{http://bueler.github.io/polybasics.pdf}{\texttt{bueler.github.io/polybasics.pdf}}: \, \emph{How to put a polynomial through points}
+    \item \href{http://bueler.github.io/M310F19/euler302.pdf}{\texttt{bueler.github.io/M310F19/euler302.pdf}}: \, \emph{2 illustrations of Euler's method}
+    \end{itemize}
+
+\newpage
+\sgpart{Definitions.}  Be able to use these words correctly and/or write a definition if requested.
+  \begin{itemize}
+  \item  the \emph{absolute error} of $\hat y$ versus the exact value $y$:\quad $|\hat y - y|$
+  \item  the \emph{relative error} of $\hat y$ versus the (nonzero) exact value $y$:\quad $|\hat y - y|/|y|$  
+  \item  \emph{fixed point} and \emph{fixed point iteration}  (section 4.5)
+  %\item \emph{norm} for vectors and matrices (section 7.4)
+  %\item \emph{condition number} for matrices (section 7.4, p.~160)
+  \item \emph{normal equations} (section 7.6, p.~167, equation (7.14))
+  \item \emph{Chebyshev points on} $[-1,1]$ (p.~192)
+  \item \emph{ordinary differential equation initial value problem} (ODE IVP) (p.~251)
+  \item \emph{local truncation error} for a one-step ODE scheme (p.~271)
+  \end{itemize}
+
+\sgpart{Theorems.}  You should understand the statements of these theorems, and be able to apply them in particular cases.  I will not ask you for the proofs.
+  \begin{itemize}
+  \item intermediate value theorem (Thm 4.1.1)
+  \item Taylor's theorem with remainder (Thm 4.2.1) \qquad  \textsc{Memorize}
+  \item Newton's method converges quadratically theorem (Thm 4.3.1)
+  \item fixed point convergence theorem (Thm 4.5.1)
+  \item polynomial interpolation error theorem with remainder (Thm 8.4.1) \qquad  \textsc{Memorize}
+  \item piecewise-linear interpolation error estimate (p.~198, section 8.6)
+  \item error formulas for trapezoid and Simpson's rules (Table 10.3 on p.~235)\footnote{Table 10.3 will be printed on the exam.}
+  \item theorem on order of accuracy of Gauss quadrature (Thm 10.3.1)
+  \item existence and uniqueness theorem for ODE IVPs (Thm 11.1.2)
+  \end{itemize}
+
+\sgpart{Algorithms.}  Recall or re-derive these algorithms as needed.
+  \begin{itemize}
+  \item  bisection method (section 4.1)
+  \item  Newton's method (section 4.3)
+  \item  secant method (section 4.4.3)
+  \item  forward/backward substitution for triangular systems (section 7.2)
+  \item  Gaussian elimination \emph{as LU decomposition} (section 7.2)
+  \item  Gaussian elimination \emph{with partial pivoting} (subsection 7.2.3)
+  \item  normal equations for least squares problems (section 7.6)
+  \item  constructing the interpolating polynomial (sections 8.1,8.2):
+    \begin{itemize}
+    \item[$\circ$] Vandermonde matrix method
+    \item[$\circ$] Lagrange's formula for the polynomial
+    %\item[$\circ$] Newton form of polynomial
+    \end{itemize}
+  \item piecewise-linear interpolation (section 8.6)
+  %\item cubic spline interpolation (section 8.6)
+  \item Newton-Cotes formulas: trapezoid, Simpson's (section 10.1)
+  \item composite versions of above (section 10.2)
+  \item Gauss quadrature (section 10.3)
+  \item Clenshaw-Curtis quadrature (section 10.4)
+  \item Euler method for ODE IVPs (section 11.2)
+  \item midpoint method for ODE IVPs (section 11.2)
+  \item trapezoid method (implicit) for ODE IVPs (section 11.2)
+  \item classical Runge-Kutta (RK4) method for ODE IVPs (section 11.2)
+  \end{itemize}
+
+\newpage
+\sgpart{The three key concerns.}  Your key concerns about the above algorithms should be:
+\begin{enumerate}
+\item What problem does it solve?
+\item Can I run the algorithm by hand in small cases with nice/convenient numbers?
+\item How does it compare to the other algorithms which solve similar/same problems?
+\end{enumerate}
+
+\sgpart{Other concepts.}
+  \begin{itemize}
+  \item anonymous functions in \Matlab (section 2.8)
+  \item number of steps $k$ for bisection to reduce interval size to $2\delta$ (section 4.1, p.~78)
+  \item floating-point representation and IEEE double precision (sections 5.3 \& 5.4); be able to \emph{understand} a description of the bit representation and then \emph{find} the machine precision $\eps$, the largest representable number, and the smallest positive (normal) representable number
+  \item row operations as left multiplication by lower-triangular matrices (section 7.2)
+  \item counting operations (subsection 7.2.1; e.g.~exercise \#6 on p.~176)
+  \item using a factorization $A=LU$ to solve $A\bx=\bb$ by two triangular solves (section 7.2)
+  \item why the Chebyshev points are superior for polynomial interpolation? (see the remainder term in Theorem 8.4.1)
+  \item what is the basic idea behind all numerical integration methods in Chapter 10?  (replace the integrand by a polynomial and integrate that)
+  \item why are Runge-Kutta methods more convenient than Taylor methods? (we only need to evaluate $f(t,y)$ and not its derivatives)
+  \end{itemize}
+
+
+\end{document}
+
