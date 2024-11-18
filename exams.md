@@ -18,4 +18,6 @@ The table below gives the date and coverage for the Exams; also see the [Schedul
 
 {% include exam_table.md  data=site.data.examsF19 %}
 
-  * [Additional blank sample Final](assets/exams/sample/final.pdf), and [its solutions](assets/exams/sample/solns-final.pdf).
+#### Additional sample
+
+  * [Blank sample Final](assets/exams/sample/final.pdf), and [its solutions](assets/exams/sample/solns-final.pdf).
