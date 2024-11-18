@@ -17,11 +17,11 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
 
   * [rabbitsfoxes.m](assets/codes/rabbitsfoxes.m)
   * [basicblack.m](assets/codes/basicblack.m)
+  * [rk4.m](assets/codes/rk4.m)
   * [eulerex.m](assets/codes/eulerex.m)
   * [wigglyintegral.m](assets/codes/wigglyintegral.m)
   * [mysimpsons.m](assets/codes/mysimpsons.m)
   * [myhand.m](assets/codes/myhand.m)
-  * [rk4.m](assets/codes/rk4.m)
   * [clenshawcurtis.m](assets/codes/clenshawcurtis.m)
   * [mytrap.m](assets/codes/mytrap.m)
   * [ge.m](assets/codes/ge.m)

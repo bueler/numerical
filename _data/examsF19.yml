@@ -7,4 +7,6 @@ exams:
   solutions: solns-midterm.pdf
 - name: Final Exam
   info: <b>in class</b> or proctored
+  blank: final.pdf
+  solutions: solns-final.pdf
   #rubric: finalrubric.pdf
