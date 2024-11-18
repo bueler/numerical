@@ -1,6 +1,14 @@
 semester: Fall 2024
 home: assets/
 daily:
+- name: Monday 18 November
+  description: ode45, implicit methods
+- name: Friday 15 November
+  description: midpoint and RK4; compare to numerical integration
+- name: Wednesday 13 November
+  description: Euler method
+- name: Monday 11 November
+  description: examples, well-posedness
 - name: Friday 8 November
   description: ordinary differential equations; Assignment 7 due
 - name: Wednesday 6 November
