@@ -15,6 +15,8 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
   * [.m](assets/codes/.m)
 -->
 
+  * [eulermid.m](assets/codes/eulermid.m)
+  * [myromberg.m](assets/codes/myromberg.m)
   * [stiffsys.m](assets/codes/stiffsys.m)
   * [fastdecay.m](assets/codes/fastdecay.m)
   * [rabbitsfoxes.m](assets/codes/rabbitsfoxes.m)
