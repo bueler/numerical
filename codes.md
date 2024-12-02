@@ -15,6 +15,9 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
   * [.m](assets/codes/.m)
 -->
 
+  * [badrng.m](assets/codes/badrng.m)
+  * [randpiplot.m](assets/codes/randpiplot.m)
+  * [randpi.m](assets/codes/randpi.m)
   * [eulermid.m](assets/codes/eulermid.m)
   * [myromberg.m](assets/codes/myromberg.m)
   * [stiffsys.m](assets/codes/stiffsys.m)
