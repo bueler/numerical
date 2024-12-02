@@ -1,6 +1,14 @@
 semester: Fall 2024
 home: assets/
 daily:
+- name: Monday 2 December
+  description: random numbers, Monte Carlo
+- name: Monday 25 November
+  description: proof that Euler method converges
+- name: Friday 22 November
+  description: "activity: P14 on Assignment 9"
+- name: Wednesday 20 November
+  description: implicit, local truncation error
 - name: Monday 18 November
   description: ode45, implicit methods
 - name: Friday 15 November
