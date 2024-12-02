@@ -1,5 +1,5 @@
-function [newA, newb] = ge(A, b, n)
-% GE  Gaussian elimination without pivoting.
+function [newA, newb] = gebasic(A, b, n)
+% GEBASIC  Gaussian elimination without pivoting.
 % WARNING:  Do not use for production purposes.
 
 for j = 1:n-1                             % loop over columns

@@ -28,7 +28,7 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
   * [myhand.m](assets/codes/myhand.m)
   * [clenshawcurtis.m](assets/codes/clenshawcurtis.m)
   * [mytrap.m](assets/codes/mytrap.m)
-  * [ge.m](assets/codes/ge.m)
+  * [gebasic.m](assets/codes/gebasic.m)
   * [usolve.m](assets/codes/usolve.m)
   * [smoothpolyapprox.m](assets/codes/smoothpolyapprox.m)
   * [randsixpoly.m](assets/codes/randsixpoly.m)
