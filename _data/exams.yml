@@ -10,4 +10,5 @@ exams:
 - name: Final Exam
   date: Wednesday 11 December, 10:15am--12:15pm
   info: <b>in class</b> or proctored
+  reviewguide: finalreview.pdf
   #rubric: finalrubric.pdf

@@ -65,24 +65,24 @@
 
 
 \begin{document}
-\scriptsize \noindent Math 310 Numerical Analysis (Bueler) \hfill 3 December 2019
+\scriptsize \noindent Math 310 Numerical Analysis (Bueler) \hfill 4 December 2024
 \thispagestyle{empty}
 
 \bigskip
 \Large\textbf{\centerline{Review Guide for Final Exam}}
 
-\Large\textbf{\centerline{on Tuesday, 10 December 2019, 10:15am--12:15}}
+\large\textbf{\centerline{(which is on Wednesday, 11 December 2024, 10:15am--12:15pm)}}
 
 \normalsize
 \bigskip
-This exam is in-class, closed-book, and 120 minutes long.  No calculators or computers or phones are allowed.  However, \textbf{you may bring 1/2 of one sheet of letter size paper} with any notes you want on it.  This exam covers the whole course, but material from least squares (section 7.6) onward will be emphasized; earlier material appeared on the Midterm.
+This exam is in-class, closed-book, and 120 minutes long.  No calculators or computers or phones/internet are allowed.  However, \textbf{you may bring 1/2 of one sheet of letter size paper}, with any notes you want, on both sides.  This exam covers the whole course, but earlier material covered on the Midterm will be emphasized less.
 
 \medskip
-I encourage you to work through this Guide with other students.  Read the relevant parts of the textbook (Greenbaum \& Chartier, 2012) and identify the first items you \emph{don't} understand as you get to them.  Talk about that!  If you come prepared it will be easy.
+I encourage you to work through this Guide with other students.  Read the relevant parts of the textbook (Greenbaum \& Chartier, 2012) and identify the first items you \emph{don't} understand as you get to them.  Discuss that!  If you come prepared it will be easy.
 
 \newcommand{\sgpart}[1]{\bigskip\noindent\textbf{#1} \normalsize}
 
-\sgpart{How I will create the exam.}  I'll ask myself: ``Did a question like that appear on homework or a worksheet?'' and ``Is it easy to do without a computer?'' and ``Will the answers be cluttered and hard to grade?''  (Should be: yes, yes, no.)
+\sgpart{How I will create the exam.}  I'll ask myself: ``Did a question like that appear on homework or a worksheet?'' and ``Is it easy to do without a computer?'' and ``Will the answers be cluttered and hard to grade?''  I will create problems for which the answers are yes, yes, and no.
 
 Problems will be in these categories:
 \begin{itemize}
@@ -115,23 +115,19 @@ Problems will be in these categories:
 \sgpart{Sections.}  See these textbook sections which we covered in lecture and homework:
 \begin{itemize}[leftmargin=25mm,labelsep=5mm]
 \item[2.1--2.11]     introduction to \Matlab
-\item[4.1--4.5]      solving nonlinear equations in one variable
+\item[4.1--4.5]      solving nonlinear equations in one variable, and Taylor's theorem
 \item[5.2--5.4]      introduction to floating-point arithmetic
-\item[7.1--7.3,7.6]  solving linear systems
-\item[8.1--8.6]      polynomial interpolation
-\item[10.1--10.5]    numerical integration
+\item[7.1--7.2]      solving square linear systems by Gaussian elimination and backsubstitution
+\item[8.1--8.6]      polynomial and piecewise-polynomial interpolation
+\item[10.1--10.4]    numerical integration
 \item[11.1--11.2]    numerical solution of ODE IVPs
 \end{itemize}
+There will be no problems from other sections.
 
-\noindent Also read the Chapter introductions for Chapters 2, 4, 5, 7, 10, and 11.  You can omit Chapters 3, 6, 9, and 12--14 entirely, but rereading Chapter 1 is not a bad idea.
+\noindent Also read the Chapter introductions for Chapters 2, 4, 5, 7, 10, and 11.  You can omit Chapters 3, 6, 9, and 12--14 entirely for the Final Exam, but rereading Chapter 1 is not a bad idea.
 
-\sgpart{Slides to review.}  I have posted two sets of slides, good for reviewing particular material:
-    \begin{itemize}
-    \item \href{http://bueler.github.io/polybasics.pdf}{\texttt{bueler.github.io/polybasics.pdf}}: \, \emph{How to put a polynomial through points}
-    \item \href{http://bueler.github.io/M310F19/euler302.pdf}{\texttt{bueler.github.io/M310F19/euler302.pdf}}: \, \emph{2 illustrations of Euler's method}
-    \end{itemize}
+\sgpart{PDFs to review.}  I have posted slides and worksheets on the \href{https://bueler.github.io/numerical/daily.html}{Daily log tab of the public site}.  Specifically, make sure to look at the \href{https://bueler.github.io/numerical/assets//slides/F24/polynonewt.pdf}{\emph{How to put a polynomial through points}} slides, and the worksheets on floating point (\href{https://bueler.github.io/numerical/assets//worksheets/F24/ieeefloat.pdf}{\emph{IEEE 754: What it means \dots}} and \href{https://bueler.github.io/numerical/assets//worksheets/F24/binary12.pdf}{\emph{If IEEE 754 had a 12-bit standard}}).
 
-\newpage
 \sgpart{Definitions.}  Be able to use these words correctly and/or write a definition if requested.
   \begin{itemize}
   \item  the \emph{absolute error} of $\hat y$ versus the exact value $y$:\quad $|\hat y - y|$
@@ -139,10 +135,10 @@ Problems will be in these categories:
   \item  \emph{fixed point} and \emph{fixed point iteration}  (section 4.5)
   %\item \emph{norm} for vectors and matrices (section 7.4)
   %\item \emph{condition number} for matrices (section 7.4, p.~160)
-  \item \emph{normal equations} (section 7.6, p.~167, equation (7.14))
+  %\item \emph{normal equations} (section 7.6, p.~167, equation (7.14))
   \item \emph{Chebyshev points on} $[-1,1]$ (p.~192)
   \item \emph{ordinary differential equation initial value problem} (ODE IVP) (p.~251)
-  \item \emph{local truncation error} for a one-step ODE scheme (p.~271)
+  \item \emph{local truncation error} for the Euler method (p.~259)
   \end{itemize}
 
 \sgpart{Theorems.}  You should understand the statements of these theorems, and be able to apply them in particular cases.  I will not ask you for the proofs.
@@ -153,10 +149,11 @@ Problems will be in these categories:
   \item fixed point convergence theorem (Thm 4.5.1)
   \item polynomial interpolation error theorem with remainder (Thm 8.4.1) \qquad  \textsc{Memorize}
   \item piecewise-linear interpolation error estimate (p.~198, section 8.6)
-  \item error formulas for trapezoid and Simpson's rules (Table 10.3 on p.~235)\footnote{Table 10.3 will be printed on the exam.}
+  \item error formulas for trapezoid and Simpson's rules (Table 10.3 on p.~235)
   \item theorem on order of accuracy of Gauss quadrature (Thm 10.3.1)
   \item existence and uniqueness theorem for ODE IVPs (Thm 11.1.2)
   \end{itemize}
+Table 10.3 will be printed on the exam.
 
 \sgpart{Algorithms.}  Recall or re-derive these algorithms as needed.
   \begin{itemize}
@@ -166,7 +163,7 @@ Problems will be in these categories:
   \item  forward/backward substitution for triangular systems (section 7.2)
   \item  Gaussian elimination \emph{as LU decomposition} (section 7.2)
   \item  Gaussian elimination \emph{with partial pivoting} (subsection 7.2.3)
-  \item  normal equations for least squares problems (section 7.6)
+  %\item  normal equations for least squares problems (section 7.6)
   \item  constructing the interpolating polynomial (sections 8.1,8.2):
     \begin{itemize}
     \item[$\circ$] Vandermonde matrix method
@@ -182,7 +179,7 @@ Problems will be in these categories:
   \item Euler method for ODE IVPs (section 11.2)
   \item midpoint method for ODE IVPs (section 11.2)
   \item trapezoid method (implicit) for ODE IVPs (section 11.2)
-  \item classical Runge-Kutta (RK4) method for ODE IVPs (section 11.2)
+  %\item classical Runge-Kutta (RK4) method for ODE IVPs (section 11.2)
   \end{itemize}
 
 \newpage
@@ -203,7 +200,7 @@ Problems will be in these categories:
   \item using a factorization $A=LU$ to solve $A\bx=\bb$ by two triangular solves (section 7.2)
   \item why the Chebyshev points are superior for polynomial interpolation? (see the remainder term in Theorem 8.4.1)
   \item what is the basic idea behind all numerical integration methods in Chapter 10?  (replace the integrand by a polynomial and integrate that)
-  \item why are Runge-Kutta methods more convenient than Taylor methods? (we only need to evaluate $f(t,y)$ and not its derivatives)
+  %\item why are Runge-Kutta methods more convenient than Taylor methods? (we only need to evaluate $f(t,y)$ and not its derivatives)
   \end{itemize}
 
 
