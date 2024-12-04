@@ -15,6 +15,8 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
   * [.m](assets/codes/.m)
 -->
 
+  * [rfdeaths.m](assets/codes/rfdeaths.m)
+  * [rfnoisy.m](assets/codes/rfnoisy.m)
   * [tightorbit.m](assets/codes/tightorbit.m)
   * [rkorbits.m](assets/codes/rkorbits.m)
   * [circleorbit.m](assets/codes/circleorbit.m)
