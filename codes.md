@@ -15,6 +15,11 @@ The Matlab/Octave codes below come from examples I did in lecture, or they are f
   * [.m](assets/codes/.m)
 -->
 
+  * [tightorbit.m](assets/codes/tightorbit.m)
+  * [rkorbits.m](assets/codes/rkorbits.m)
+  * [circleorbit.m](assets/codes/circleorbit.m)
+  * [sensitivelorenz.m](assets/codes/sensitivelorenz.m)
+  * [lorenz.m](assets/codes/lorenz.m)
   * [badrng.m](assets/codes/badrng.m)
   * [randpiplot.m](assets/codes/randpiplot.m)
   * [randpi.m](assets/codes/randpi.m)
