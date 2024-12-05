@@ -1,6 +1,10 @@
 semester: Fall 2024
 home: assets/
 daily:
+- name: Friday 6 December
+  description: a stochastic differential equation example
+- name: Wednesday 4 December
+  description: CDFs, expectations, pseudorandom number generators
 - name: Monday 2 December
   description: random numbers, Monte Carlo
 - name: Monday 25 November
